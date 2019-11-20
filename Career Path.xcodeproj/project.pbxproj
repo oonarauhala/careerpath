@@ -13,6 +13,9 @@
 		6A0E5D87238536170057612D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0E5D85238536170057612D /* LaunchScreen.storyboard */; };
 		6A0E5D92238536170057612D /* Career_PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D91238536170057612D /* Career_PathTests.swift */; };
 		6A0E5D9D238536170057612D /* Career_PathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D9C238536170057612D /* Career_PathUITests.swift */; };
+		6AB2A404238548E4003E2E0C /* ProfileStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB2A403238548E4003E2E0C /* ProfileStoryboard.storyboard */; };
+		6AB2A406238549F8003E2E0C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2A405238549F8003E2E0C /* ProfileViewController.swift */; };
+		6AB2A40823854B97003E2E0C /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2A40723854B97003E2E0C /* UserClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		6A0E5D98238536170057612D /* Career PathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Career PathUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0E5D9C238536170057612D /* Career_PathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career_PathUITests.swift; sourceTree = "<group>"; };
 		6A0E5D9E238536170057612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AB2A403238548E4003E2E0C /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileStoryboard.storyboard; sourceTree = "<group>"; };
+		6AB2A405238549F8003E2E0C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6AB2A40723854B97003E2E0C /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,9 @@
 				6A0E5D85238536170057612D /* LaunchScreen.storyboard */,
 				6A0E5D88238536170057612D /* Info.plist */,
 				6A0E5D80238536150057612D /* Career_Path.xcdatamodeld */,
+				6AB2A403238548E4003E2E0C /* ProfileStoryboard.storyboard */,
+				6AB2A405238549F8003E2E0C /* ProfileViewController.swift */,
+				6AB2A40723854B97003E2E0C /* UserClass.swift */,
 			);
 			path = "Career Path";
 			sourceTree = "<group>";
@@ -186,7 +195,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Mikael Kuokkanen";
+				ORGANIZATIONNAME = "Team Awesome";
 				TargetAttributes = {
 					6A0E5D75238536150057612D = {
 						CreatedOnToolsVersion = 10.1;
@@ -242,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB2A404238548E4003E2E0C /* ProfileStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB2A406238549F8003E2E0C /* ProfileViewController.swift in Sources */,
 				6A0E5D82238536150057612D /* Career_Path.xcdatamodeld in Sources */,
 				6A0E5D7A238536150057612D /* AppDelegate.swift in Sources */,
+				6AB2A40823854B97003E2E0C /* UserClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
