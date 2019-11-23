@@ -13,6 +13,7 @@
 		6A0E5D92238536170057612D /* Career_PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D91238536170057612D /* Career_PathTests.swift */; };
 		6A0E5D9D238536170057612D /* Career_PathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D9C238536170057612D /* Career_PathUITests.swift */; };
 		6AB2A40823854B97003E2E0C /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2A40723854B97003E2E0C /* UserClass.swift */; };
+		6AB2A41E2389863A003E2E0C /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB2A41D2389863A003E2E0C /* UserTests.swift */; };
 		6AC62BED2386E66100826AA7 /* MyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC62BE32386E66100826AA7 /* MyStoryboard.storyboard */; };
 		6AC62BEE2386E66100826AA7 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC62BE42386E66100826AA7 /* Degree.swift */; };
 		6AC62BEF2386E66100826AA7 /* CareerInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC62BE52386E66100826AA7 /* CareerInfo.storyboard */; };
@@ -58,6 +59,7 @@
 		6A0E5D9C238536170057612D /* Career_PathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career_PathUITests.swift; sourceTree = "<group>"; };
 		6A0E5D9E238536170057612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AB2A40723854B97003E2E0C /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserClass.swift; path = "Career Path/UserClass.swift"; sourceTree = SOURCE_ROOT; };
+		6AB2A41D2389863A003E2E0C /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		6AC62BE32386E66100826AA7 /* MyStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyStoryboard.storyboard; path = "Career Path/MyStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
 		6AC62BE42386E66100826AA7 /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Degree.swift; path = "Career Path/Degree.swift"; sourceTree = SOURCE_ROOT; };
 		6AC62BE52386E66100826AA7 /* CareerInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CareerInfo.storyboard; path = "Career Path/CareerInfo.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -148,6 +150,7 @@
 			children = (
 				6A0E5D91238536170057612D /* Career_PathTests.swift */,
 				6A0E5D93238536170057612D /* Info.plist */,
+				6AB2A41D2389863A003E2E0C /* UserTests.swift */,
 			);
 			path = "Career PathTests";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB2A41E2389863A003E2E0C /* UserTests.swift in Sources */,
 				6A0E5D92238536170057612D /* Career_PathTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
