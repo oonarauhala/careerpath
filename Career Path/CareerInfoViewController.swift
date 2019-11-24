@@ -14,7 +14,7 @@ An astronomer is a scientist in the field of astronomy who focuses their studies
 Astronomers usually fall under either of two main types: observational and theoretical. Observational astronomers make direct observations of celestial objects and analyze the data. In contrast, theoretical astronomers create and investigate models of things that cannot be observed. Because it takes millions to billions of years for a system of stars or a galaxy to complete a life cycle, astronomers must observe snapshots of different systems at unique points in their evolution to determine how they form, evolve, and die. They use these data to create models or simulations to theorize how different celestial objects work.
 """
 
-let testCareer = Career(careerName: "Astronomer", description: testDescription, medianSalary: 105680, education: Degree.Doctorate)
+let testCareer = Career(careerName: "Astronomer", description: testDescription, medianSalary: 105680, education: Degree.Doctorate, personalityType: PersonalityType.INTJ)
 
 
 class CareerInfoViewController: UIViewController {
