@@ -62,20 +62,20 @@
 		6A0E5D98238536170057612D /* Career PathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Career PathUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0E5D9C238536170057612D /* Career_PathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career_PathUITests.swift; sourceTree = "<group>"; };
 		6A0E5D9E238536170057612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AB2A40723854B97003E2E0C /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserClass.swift; path = "Career Path/UserClass.swift"; sourceTree = SOURCE_ROOT; };
+		6AB2A40723854B97003E2E0C /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserClass.swift; path = "Career Path/Model/UserClass.swift"; sourceTree = SOURCE_ROOT; };
 		6AB2A41D2389863A003E2E0C /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		6AC62BE32386E66100826AA7 /* MyStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyStoryboard.storyboard; path = "Career Path/MyStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
-		6AC62BE42386E66100826AA7 /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Degree.swift; path = "Career Path/Degree.swift"; sourceTree = SOURCE_ROOT; };
-		6AC62BE52386E66100826AA7 /* CareerInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CareerInfo.storyboard; path = "Career Path/CareerInfo.storyboard"; sourceTree = SOURCE_ROOT; };
-		6AC62BE62386E66100826AA7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "Career Path/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
-		6AC62BE72386E66100826AA7 /* PersonalityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalityType.swift; path = "Career Path/PersonalityType.swift"; sourceTree = SOURCE_ROOT; };
-		6AC62BE82386E66100826AA7 /* PersonalityTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalityTest.swift; path = "Career Path/PersonalityTest.swift"; sourceTree = SOURCE_ROOT; };
-		6AC62BE92386E66100826AA7 /* CareerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CareerInfoViewController.swift; path = "Career Path/CareerInfoViewController.swift"; sourceTree = SOURCE_ROOT; };
-		6AC62BEA2386E66100826AA7 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundButton.swift; path = "Career Path/RoundButton.swift"; sourceTree = SOURCE_ROOT; };
-		6AC62BEB2386E66100826AA7 /* Career.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Career.swift; path = "Career Path/Career.swift"; sourceTree = SOURCE_ROOT; };
-		6AC62BEC2386E66100826AA7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = "Career Path/Home.storyboard"; sourceTree = SOURCE_ROOT; };
-		6AC62BF72386E71900826AA7 /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileStoryboard.storyboard; path = "Career Path/ProfileStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
-		6AC62BF82386E71900826AA7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Career Path/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BE32386E66100826AA7 /* MyStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyStoryboard.storyboard; path = "Career Path/Storyboards/MyStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
+		6AC62BE42386E66100826AA7 /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Degree.swift; path = "Career Path/Model/Degree.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BE52386E66100826AA7 /* CareerInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CareerInfo.storyboard; path = "Career Path/Storyboards/CareerInfo.storyboard"; sourceTree = SOURCE_ROOT; };
+		6AC62BE62386E66100826AA7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "Career Path/ViewControllers/HomeViewController.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BE72386E66100826AA7 /* PersonalityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalityType.swift; path = "Career Path/Model/PersonalityType.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BE82386E66100826AA7 /* PersonalityTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalityTest.swift; path = "Career Path/Model/PersonalityTest.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BE92386E66100826AA7 /* CareerInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CareerInfoViewController.swift; path = "Career Path/ViewControllers/CareerInfoViewController.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BEA2386E66100826AA7 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundButton.swift; path = "Career Path/CustomViews/RoundButton.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BEB2386E66100826AA7 /* Career.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Career.swift; path = "Career Path/Model/Career.swift"; sourceTree = SOURCE_ROOT; };
+		6AC62BEC2386E66100826AA7 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = "Career Path/Storyboards/Home.storyboard"; sourceTree = SOURCE_ROOT; };
+		6AC62BF72386E71900826AA7 /* ProfileStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileStoryboard.storyboard; path = "Career Path/Storyboards/ProfileStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
+		6AC62BF82386E71900826AA7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = "Career Path/ViewControllers/ProfileViewController.swift"; sourceTree = SOURCE_ROOT; };
 		6AC62BFB2386E77A00826AA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ACDD10D238A917C0016B6BD /* CareerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerResponse.swift; sourceTree = "<group>"; };
 		6ACDD10E238A917C0016B6BD /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
@@ -131,28 +131,16 @@
 		6A0E5D78238536150057612D /* Career Path */ = {
 			isa = PBXGroup;
 			children = (
-				6ACDD113238A928D0016B6BD /* CareerListViewController.swift */,
-				6ACDD10D238A917C0016B6BD /* CareerResponse.swift */,
-				6ACDD10E238A917C0016B6BD /* NetworkRequest.swift */,
+				6ACDD11B238A96E60016B6BD /* CustomControllers */,
+				6ACDD11A238A96E00016B6BD /* Model */,
+				6ACDD117238A96470016B6BD /* CustomViews */,
+				6ACDD119238A968E0016B6BD /* Storyboards */,
+				6ACDD118238A96840016B6BD /* ViewControllers */,
 				6AC62BFB2386E77A00826AA7 /* Assets.xcassets */,
-				6AC62BF72386E71900826AA7 /* ProfileStoryboard.storyboard */,
-				6AC62BF82386E71900826AA7 /* ProfileViewController.swift */,
-				6AC62BEB2386E66100826AA7 /* Career.swift */,
-				6AC62BE52386E66100826AA7 /* CareerInfo.storyboard */,
-				6AC62BE92386E66100826AA7 /* CareerInfoViewController.swift */,
-				6AC62BE42386E66100826AA7 /* Degree.swift */,
-				6AC62BEC2386E66100826AA7 /* Home.storyboard */,
-				6AC62BE62386E66100826AA7 /* HomeViewController.swift */,
-				6AC62BE32386E66100826AA7 /* MyStoryboard.storyboard */,
-				6AC62BE82386E66100826AA7 /* PersonalityTest.swift */,
-				6AC62BE72386E66100826AA7 /* PersonalityType.swift */,
-				6AC62BEA2386E66100826AA7 /* RoundButton.swift */,
 				6A0E5D79238536150057612D /* AppDelegate.swift */,
 				6A0E5D85238536170057612D /* LaunchScreen.storyboard */,
 				6A0E5D88238536170057612D /* Info.plist */,
 				6A0E5D80238536150057612D /* Career_Path.xcdatamodeld */,
-				6AB2A40723854B97003E2E0C /* UserClass.swift */,
-				6ACDD115238A933F0016B6BD /* CareerListCell.swift */,
 			);
 			path = "Career Path";
 			sourceTree = "<group>";
@@ -174,6 +162,58 @@
 				6A0E5D9E238536170057612D /* Info.plist */,
 			);
 			path = "Career PathUITests";
+			sourceTree = "<group>";
+		};
+		6ACDD117238A96470016B6BD /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				6AC62BEA2386E66100826AA7 /* RoundButton.swift */,
+				6ACDD115238A933F0016B6BD /* CareerListCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		6ACDD118238A96840016B6BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6AC62BE62386E66100826AA7 /* HomeViewController.swift */,
+				6AC62BF82386E71900826AA7 /* ProfileViewController.swift */,
+				6AC62BE92386E66100826AA7 /* CareerInfoViewController.swift */,
+				6ACDD113238A928D0016B6BD /* CareerListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6ACDD119238A968E0016B6BD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6AC62BEC2386E66100826AA7 /* Home.storyboard */,
+				6AC62BE32386E66100826AA7 /* MyStoryboard.storyboard */,
+				6AC62BF72386E71900826AA7 /* ProfileStoryboard.storyboard */,
+				6AC62BE52386E66100826AA7 /* CareerInfo.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6ACDD11A238A96E00016B6BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6AB2A40723854B97003E2E0C /* UserClass.swift */,
+				6AC62BE82386E66100826AA7 /* PersonalityTest.swift */,
+				6AC62BE42386E66100826AA7 /* Degree.swift */,
+				6AC62BE72386E66100826AA7 /* PersonalityType.swift */,
+				6AC62BEB2386E66100826AA7 /* Career.swift */,
+				6ACDD10D238A917C0016B6BD /* CareerResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6ACDD11B238A96E60016B6BD /* CustomControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6ACDD10E238A917C0016B6BD /* NetworkRequest.swift */,
+			);
+			path = CustomControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
