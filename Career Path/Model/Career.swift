@@ -23,7 +23,12 @@ struct Career {
     init(careerName: String, description: String, medianSalary: Double, education: Degree, personalityType: PersonalityType) {
         self.careerName = careerName
         self.description = description
-        self.medianSalary = medianSalary
+        if medianSalary < 0 {
+            self.medianSalary = 0
+        }
+        else {
+           self.medianSalary = medianSalary
+        }
         self.educationRequirement = education
         self.personalityType = personalityType
         print("Career \(careerName) initialized")
@@ -33,6 +38,9 @@ struct Career {
         let mutableString = NSMutableString(string: String(value))
         let length = String(value).count
         
+        if length < 4 {
+            return String("$\(mutableString)")
+        }
         switch length {
         case 7:
             mutableString.insert(",", at: 4)
@@ -46,6 +54,7 @@ struct Career {
         default:
             return "A ridiculous amount"
         }
+        
         return String("$\(mutableString)")
     }
 }
