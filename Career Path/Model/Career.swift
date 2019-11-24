@@ -14,16 +14,19 @@ struct Career {
     let description: String
     let medianSalary: Double
     let educationRequirement: Degree
+    let personalityType: PersonalityType
     
     var salaryToString: String {
         return separateThousands(value: Int(medianSalary))
     }
     
-    init(careerName: String, description: String, medianSalary: Double, education: Degree) {
+    init(careerName: String, description: String, medianSalary: Double, education: Degree, personalityType: PersonalityType) {
         self.careerName = careerName
         self.description = description
         self.medianSalary = medianSalary
         self.educationRequirement = education
+        self.personalityType = personalityType
+        print("Career \(careerName) initialized")
     }
     
     func separateThousands(value: Int) -> String {
