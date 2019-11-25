@@ -13,7 +13,6 @@ struct NetworkRequest {
         let urlString = "http://localhost:3000/careers"
         
         guard let url = URL(string: urlString) else {
-            print("The request URL did not respond")
             return
         }
         

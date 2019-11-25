@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 // The controller for the Scene that contains a TableView of Careers
 
 class CareerListViewController: UIViewController {
+    
+    var fetchedResultsController: NSFetchedResultsController<CareerEntity>?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,57 +22,102 @@ class CareerListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        fetchData()
+        
+        let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: PersistenceService.context, sectionNameKeyPath: nil, cacheName: nil)
 
-        // Do any additional setup after loading the view.
+        
+        fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
+        try? fetchedResultsController?.performFetch()
+        
+        fetchData()
     }
     
-    //MARK: Private functions
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+        }
+    }
     
-    // Loads all the careers from a backend API
-    // and sets to the tableView's dataSource
-    private func fetchData() {
-        request.fetchCareers { (f) in
-            for result in f {
-                let converted = result.convertToCareer()
-                self.careers.append(converted)
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+    // MARK: Prepare for segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowInfo", let destination = segue.destination as? CareerInfoViewController {
+            if let cell = sender as? CareerListCell, let indexPath = tableView.indexPath(for: cell) {
+                destination.career = self.fetchedResultsController?.object(at: indexPath).convertToCareer()
             }
         }
     }
     
+    //MARK: Private functions
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func fetchFromContext() {
+        let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
+        
+        do {
+            let careerEntities = try PersistenceService.context.fetch(fetchRequest)
+            if careerEntities.count > 0
+            {
+                for ce in careerEntities {
+                    let career = ce.convertToCareer()
+                    careers.append(career)
+                }
+                self.tableView.reloadData()
+            }
+        }
+        catch {}
     }
-    */
-
+    
+    // Loads all the careers from a backend API
+    private func fetchData() {
+        request.fetchCareers { (f) in
+            // and compares them with the existing context in Core Data
+            PersistenceService.compareCareerContext(responseArray: f)
+            // compareCareerContext creates a new entity if one doesn't exist
+        }
+    }
 }
+
+// MARK: TableView Delegates
 
 extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return careers.count
+        if let sections = fetchedResultsController!.sections, sections.count > 0 {
+            return sections[section].numberOfObjects
+        } else {
+            return 0
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController!.sections?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let career = careers[indexPath.row]
+        guard let careerEntity = self.fetchedResultsController?.object(at: indexPath) else {
+            fatalError("not found")
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CareerListCell") as! CareerListCell
-        cell.populateCell(career: career)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CareerListCell", for: indexPath) as! CareerListCell
+        cell.populateCell(career: careerEntity.convertToCareer())
         
         return cell
     }
 
+}
+
+extension CareerListViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        print("controllerDidChangeContent")
+        tableView.reloadData()
+    }
 }
  

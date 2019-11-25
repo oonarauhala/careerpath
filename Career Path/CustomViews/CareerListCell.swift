@@ -11,6 +11,7 @@ import UIKit
 class CareerListCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var salary: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +26,7 @@ class CareerListCell: UITableViewCell {
     
     func populateCell(career: Career) {
         name.text = career.careerName
-        //salary.text = "Salary: \(career.separateThousands(value: Int(career.medianSalary)))"
+        salary.text = "Salary: \(career.separateThousands(value: Int(career.medianSalary)))"
     }
     
 }
