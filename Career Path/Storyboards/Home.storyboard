@@ -403,7 +403,8 @@
         <image name="icon4" width="900" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="oau-lq-8qu"/>
         <segue reference="mdQ-bx-X8T"/>
-        <segue reference="kw0-Wc-113"/>
+        <segue reference="gDD-Hz-ceW"/>
     </inferredMetricsTieBreakers>
 </document>

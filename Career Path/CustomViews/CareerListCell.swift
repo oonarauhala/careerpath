@@ -12,6 +12,7 @@ class CareerListCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var salary: UILabel!
+    @IBOutlet weak var img: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +26,10 @@ class CareerListCell: UITableViewCell {
     }
     
     func populateCell(career: Career) {
+        img.image = UIImage(named: "careerImg")
         name.text = career.careerName
         salary.text = "Salary: \(career.separateThousands(value: Int(career.medianSalary)))"
     }
+    
     
 }
