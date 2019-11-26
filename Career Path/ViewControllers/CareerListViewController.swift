@@ -50,8 +50,10 @@ class CareerListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowInfo", let destination = segue.destination as? CareerInfoViewController {
-            if let cell = sender as? CareerListCell, let indexPath = tableView.indexPath(for: cell) {
-                destination.career = self.fetchedResultsController?.object(at: indexPath).convertToCareer()
+            if let cell = sender as? Career {
+                destination.career = cell
+            } else {
+                fatalError("Segue sender not a Career")
             }
         }
     }
@@ -97,6 +99,13 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let careerEntity = self.fetchedResultsController?.object(at: indexPath) else {
+            fatalError("not found")
+        }
+        self.performSegue(withIdentifier: "ShowInfo", sender: careerEntity.convertToCareer())
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController!.sections?.count ?? 1
     }
@@ -106,7 +115,7 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("not found")
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CareerListCell", for: indexPath) as! CareerListCell
+        let cell = Bundle.main.loadNibNamed("CareerListCell", owner: self, options: nil)?.first as! CareerListCell
         cell.populateCell(career: careerEntity.convertToCareer())
         
         return cell
