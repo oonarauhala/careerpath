@@ -18,7 +18,6 @@ class CareerListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let request = NetworkRequest()
-    var careers = [Career]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,23 +58,6 @@ class CareerListViewController: UIViewController {
     }
     
     //MARK: Private functions
-    
-    private func fetchFromContext() {
-        let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
-        
-        do {
-            let careerEntities = try PersistenceService.context.fetch(fetchRequest)
-            if careerEntities.count > 0
-            {
-                for ce in careerEntities {
-                    let career = ce.convertToCareer()
-                    careers.append(career)
-                }
-                self.tableView.reloadData()
-            }
-        }
-        catch {}
-    }
     
     // Loads all the careers from a backend API
     private func fetchData() {
