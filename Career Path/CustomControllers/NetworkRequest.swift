@@ -9,6 +9,7 @@
 import Foundation
 
 struct NetworkRequest {
+    
     func fetchCareers(completion: @escaping (([CareerResponse]) -> Void)) {
         let urlString = "http://localhost:3000/careers"
         
