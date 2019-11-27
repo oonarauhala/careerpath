@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="Okr-Tb-W4B">
+            <objects>
+                <viewController storyboardIdentifier="AlertVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="VwE-F2-DMk" customClass="AlertViewController" customModule="Career_Path" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZmD-AT-r4a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-dl-xI7">
+                                <rect key="frame" x="67.5" y="278.5" width="240" height="110.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-ec-FZN">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8B4-dB-rmw" customClass="RoundButton" customModule="Career_Path" customModuleProvider="target">
+                                                <rect key="frame" x="202" y="5" width="30" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="X">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="cancelButton:" destination="VwE-F2-DMk" eventType="touchUpInside" id="9Hv-CW-YpH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.68836207599999999" blue="0.35310658839999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="vqI-jF-nLX"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree info goes gere. This alert changes height based on the length of text in it :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-zE-JSt">
+                                        <rect key="frame" x="10" y="50" width="220" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="67h-Pw-Bh0"/>
+                                    <constraint firstItem="c9G-zE-JSt" firstAttribute="top" secondItem="hYT-ec-FZN" secondAttribute="bottom" constant="10" id="AHB-hs-KE9"/>
+                                    <constraint firstItem="hYT-ec-FZN" firstAttribute="leading" secondItem="LNe-dl-xI7" secondAttribute="leading" id="FuW-bH-j8x"/>
+                                    <constraint firstItem="hYT-ec-FZN" firstAttribute="top" secondItem="LNe-dl-xI7" secondAttribute="top" id="IAW-NZ-8xQ"/>
+                                    <constraint firstItem="c9G-zE-JSt" firstAttribute="leading" secondItem="LNe-dl-xI7" secondAttribute="leading" constant="10" id="PRD-Na-rVy"/>
+                                    <constraint firstAttribute="trailing" secondItem="c9G-zE-JSt" secondAttribute="trailing" constant="10" id="Rps-cV-jno"/>
+                                    <constraint firstAttribute="trailing" secondItem="hYT-ec-FZN" secondAttribute="trailing" id="wpn-FZ-sgB"/>
+                                    <constraint firstAttribute="bottom" secondItem="c9G-zE-JSt" secondAttribute="bottom" constant="10" id="xfS-Qm-8Gj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LNe-dl-xI7" firstAttribute="centerY" secondItem="ZmD-AT-r4a" secondAttribute="centerY" id="VyH-6v-u7d"/>
+                            <constraint firstItem="LNe-dl-xI7" firstAttribute="centerX" secondItem="ZmD-AT-r4a" secondAttribute="centerX" id="qSG-Rj-Hp5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="byR-f4-0sY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7S-pD-m3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="168.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
