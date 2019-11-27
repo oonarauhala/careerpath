@@ -14,7 +14,7 @@ class AlertService {
     
     func alert() -> AlertViewController {
         
-        // don't know if bundle is righr??
+        // don't know if bundle is right??
         let storyboard = UIStoryboard(name: "Alert", bundle: .main)
         
         let alertVC = storyboard.instantiateViewController(withIdentifier: "AlertVC") as! AlertViewController

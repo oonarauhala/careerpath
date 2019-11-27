@@ -13,13 +13,13 @@
         <!--Alert View Controller-->
         <scene sceneID="Okr-Tb-W4B">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="VwE-F2-DMk" customClass="AlertViewController" customModule="Career_Path" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="VwE-F2-DMk" customClass="AlertViewController" customModule="Career_Path" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZmD-AT-r4a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-dl-xI7">
-                                <rect key="frame" x="67.5" y="228.5" width="240" height="210.5"/>
+                                <rect key="frame" x="67.5" y="278.5" width="240" height="110.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-ec-FZN">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
@@ -41,9 +41,8 @@
                                             <constraint firstAttribute="height" constant="40" id="vqI-jF-nLX"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-zE-JSt">
-                                        <rect key="frame" x="10" y="50" width="220" height="150.5"/>
-                                        <string key="text">That's the way I look when I get home late; black and blue. I like to beat the brush. Now let's put some happy little clouds in here. Decide where your cloud lives. Maybe he lives right in here. There he comes. Everything is happy if you choose to make it that way.</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree info goes gere. This alert changes height based on the length of text in it :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-zE-JSt">
+                                        <rect key="frame" x="10" y="50" width="220" height="50.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -61,13 +60,6 @@
                                     <constraint firstAttribute="bottom" secondItem="c9G-zE-JSt" secondAttribute="bottom" constant="10" id="xfS-Qm-8Gj"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOD-1O-pRz">
-                                <rect key="frame" x="10" y="10" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
