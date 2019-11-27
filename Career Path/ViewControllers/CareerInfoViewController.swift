@@ -6,21 +6,17 @@
 //  Copyright © 2019 Mikael Kuokkanen. All rights reserved.
 //
 
+// The controller for a single career scene
+// Contains all there is to know about the selected career
+// and presents it onto the scene
+
 import UIKit
-
-let testDescription = """
-An astronomer is a scientist in the field of astronomy who focuses their studies on a specific question or field outside the scope of Earth. They observe astronomical objects such as stars, planets, moons, comets, and galaxies – in either observational (by analyzing the data) or theoretical astronomy. Examples of topics or fields astronomers study include planetary science, solar astronomy, the origin or evolution of stars, or the formation of galaxies. Related but distinct subjects like physical cosmology, which studies the Universe as a whole.
-
-Astronomers usually fall under either of two main types: observational and theoretical. Observational astronomers make direct observations of celestial objects and analyze the data. In contrast, theoretical astronomers create and investigate models of things that cannot be observed. Because it takes millions to billions of years for a system of stars or a galaxy to complete a life cycle, astronomers must observe snapshots of different systems at unique points in their evolution to determine how they form, evolve, and die. They use these data to create models or simulations to theorize how different celestial objects work.
-"""
-
-let testCareer = Career(careerName: "Astronomer", description: testDescription, medianSalary: 105680, education: Degree.Doctorate, personalityType: PersonalityType.INTJ)
-
 
 class CareerInfoViewController: UIViewController {
     
     //MARK: Properties
     
+    var career: Career?
     // Views
     @IBOutlet weak var scrollView: UIScrollView!
     // Labels
@@ -32,11 +28,12 @@ class CareerInfoViewController: UIViewController {
     // Custom
     private var showMore = false
     
+    
+    // MARK: Lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        salaryLabel.text = "Salary: \(testCareer.salaryToString)"
-        descriptionLabelSetup()
-        educationLabelSetup()
+        initialSetup()
         toggleShowMore()
     }
     
@@ -52,12 +49,21 @@ class CareerInfoViewController: UIViewController {
     
     //MARK: Initializers
     
-    func descriptionLabelSetup() {
-        descriptionLabel.text = testCareer.description
+    func initialSetup() {
+        guard let careerUnwrapped = career else {
+            fatalError("Career not found from segue")
+        }
+        salaryLabel.text = "Salary: \(careerUnwrapped.salaryToString)"
+        descriptionLabelSetup(c: careerUnwrapped)
+        educationLabelSetup(c: careerUnwrapped)
     }
     
-    func educationLabelSetup() {
-        educationLabel.text = testCareer.educationRequirement.rawValue
+    func descriptionLabelSetup(c: Career) {
+        descriptionLabel.text = c.description
+    }
+    
+    func educationLabelSetup(c: Career) {
+        educationLabel.text = c.educationRequirement.rawValue
         educationLabel.textColor = .blue
         // create a gesture recognizer
         let labelTapGesture = UITapGestureRecognizer(target:self,action:#selector(self.showEducationInfo))
@@ -87,9 +93,15 @@ class CareerInfoViewController: UIViewController {
     }
     
     @objc private func showEducationInfo() {
-        let alert = UIAlertController(title: testCareer.educationRequirement.rawValue, message: testCareer.educationRequirement.description(), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        guard let careerUnwrapped = career else {
+            fatalError("Career not found from segue")
+        }
+        let careerDsc = careerUnwrapped.educationRequirement.description()
+        let alert = UIAlertController(
+            title: careerUnwrapped.educationRequirement.rawValue,
+            message: careerDsc, preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
 }

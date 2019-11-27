@@ -9,7 +9,7 @@
 import Foundation
 
 struct Career {
-    //private let futureDemand - some enum like .High, .Medium, .Low or boolean
+    let futureDemand: Demand
     let careerName: String
     let description: String
     let medianSalary: Double
@@ -20,7 +20,7 @@ struct Career {
         return separateThousands(value: Int(medianSalary))
     }
     
-    init(careerName: String, description: String, medianSalary: Double, education: Degree, personalityType: PersonalityType) {
+    init(careerName: String, description: String, medianSalary: Double, education: Degree, personalityType: PersonalityType, demand: Demand) {
         self.careerName = careerName
         self.description = description
         if medianSalary < 0 {
@@ -31,6 +31,7 @@ struct Career {
         }
         self.educationRequirement = education
         self.personalityType = personalityType
+        self.futureDemand = demand
         print("Career \(careerName) initialized")
     }
     

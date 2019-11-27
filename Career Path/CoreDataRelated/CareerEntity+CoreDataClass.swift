@@ -1,24 +1,20 @@
 //
-//  CareerResponse.swift
+//  CareerEntity+CoreDataClass.swift
 //  Career Path
 //
-//  Created by iosdev on 22/11/2019.
+//  Created by mikael on 24/11/2019.
 //  Copyright © 2019 Team Awesome. All rights reserved.
+//
 //
 
 import Foundation
+import CoreData
 
+@objc(CareerEntity)
+public class CareerEntity: NSManagedObject {
 
-struct CareerResponse:Decodable {
-    let name: String
-    let description: String
-    let salary: Int
-    let degree: Int
-    let personality: Int
-    let futureDemand: Int
-    
     func convertToCareer() -> Career {
-        return Career(careerName: self.name, description: self.description, medianSalary: Double(self.salary), education: convertToDegree(intValue: self.degree), personalityType: convertToPersonalityType(intValue: self.personality), demand: Demand(rawValue: self.futureDemand) ?? Demand.Medium)
+        return Career(careerName: self.name!, description: self.careerDescription ?? "Oops! Something went wrong...", medianSalary: self.salary, education: convertToDegree(intValue: Int(self.degree)), personalityType: convertToPersonalityType(intValue: Int(self.personalityType)), demand: Demand(rawValue: Int(self.demand)) ?? Demand.Medium)
     }
     
     func convertToDegree(intValue: Int) -> Degree {
@@ -34,7 +30,7 @@ struct CareerResponse:Decodable {
         case 4:
             return Degree.Licentiate
         default:
-            fatalError("Degree value not found from CareerResponse struct \(self.name)")
+            fatalError("Degree value not found from CareerResponse initialization for: \(String(describing: self.name))")
         }
     }
     
@@ -73,7 +69,7 @@ struct CareerResponse:Decodable {
         case 15:
             return PersonalityType.ENTJ
         default:
-            fatalError("Personality value missing from CareerResponse struct \(self.name)")
+            fatalError("Personality value missing from CareerResponse initialization for: \(String(describing: self.name))")
         }
     }
 }
