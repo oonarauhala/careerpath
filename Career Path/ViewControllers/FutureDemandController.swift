@@ -13,15 +13,11 @@ import UIKit
 // have high future demand
 
 class FutureDemandController: UIViewController {
-    
-    // MARK: Lifecycle methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         performSegue(withIdentifier: "FutureDemand", sender: self)
     }
-    
-    // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "FutureDemand", let destination = segue.destination as? CareerListViewController {

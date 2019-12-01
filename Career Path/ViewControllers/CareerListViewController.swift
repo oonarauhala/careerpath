@@ -21,11 +21,18 @@ class CareerListViewController: UIViewController {
     // MARK: Properties
     
     let request = NetworkRequest()
+    let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
+    
     var fetchedResultsController: NSFetchedResultsController<CareerEntity>?
-    private var sortedBySalaryAscending = true
     // displayState defines what kind of Careers to display
     // -> set this in prepare for segue
     var displayState: DisplayState = .Default
+    var resultCareers = [Career]()
+
+    private var sortedBySalaryAscending = true
+    private var sortedByNameAscending = true
+    private var sortedByDegreeAscending = true
+    private var headerCurrentHeight: CGFloat = 50
 
     // MARK: Outlets
     
@@ -36,13 +43,18 @@ class CareerListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        commonSetup()
+        tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
         
         if displayState == .Default {
             defaultSetup()
         }
         else if displayState == .FutureDemand {
             futureDemandSetup()
+        }
+        else if displayState == .Results {
+            testResultsSetup()
         }
     }
     
@@ -54,19 +66,49 @@ class CareerListViewController: UIViewController {
         }
     }
     
-    // MARK: Initializer methods
-    
-    func commonSetup() {
-        tableView.tableFooterView = UIView()
-        tableView.delegate = self
-        tableView.dataSource = self
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //print(scrollView.contentOffset.y)
+        if headerCurrentHeight == 250 {
+            if scrollView.contentOffset.y >= 285 {
+                // The magical number 285.
+                // This is where the header lets go of its place (currently)
+                // in the TableView, so the next time it is instantiated
+                // -> all it's content will be hidden, so need to
+                // update its height here as well
+                forceCollapseSortSelection()
+            }
+        }
     }
     
-    // Display all careers
-    func defaultSetup() {
-        let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-
+    // MARK: Initializer methods
+    
+    // -> Used every time when the TableView is initialized or it's display style changes
+    private func initFectchedResultsController(sortingKey: String, ascending: Bool, state: DisplayState) {
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortingKey, ascending: ascending)]
+        
+        if state == .FutureDemand {
+            fetchRequest.predicate = NSPredicate(format: "demand == %d", Int16(2))
+        }
+        else if state == .Results {
+            var predicateString = "name == "
+            if (resultCareers.count > 0) {
+                // This for loop iterates over the Career results defined in the segue
+                // after career test and converts them into a string appropriate for NSPredicate
+                for i in 0..<resultCareers.count {
+                    // Add Logical OR at the end of the string if not the last element in the array
+                    if i < (resultCareers.count - 1) {
+                        predicateString = predicateString + "\"\(resultCareers[i].careerName)\"" + " OR name == "
+                    } else {
+                        // At the end of the array here, so no need for another Logical OR
+                        predicateString = predicateString + "\"\(resultCareers[i].careerName)\""
+                    }
+                }
+            } else {
+                fatalError("Trying to initiate CareerListViewController without setting the results in segue")
+            }
+            //print("Predicate string: ", predicateString)
+            fetchRequest.predicate = NSPredicate(format: predicateString)
+        }
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: PersistenceService.context,
@@ -75,31 +117,20 @@ class CareerListViewController: UIViewController {
         fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
         try? fetchedResultsController?.performFetch()
         
-        fetchData()
+    } // --------------------End----initFetchedResultsController----------------------------------
+    
+    // Display all careers
+    func defaultSetup() {
+        initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
     }
     
     // Display careers with high future demand
     func futureDemandSetup() {
-        let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        // demand is an Int16 value from 0..2 -> representing: Low, Medium, High
-        fetchRequest.predicate = NSPredicate(format: "demand == %d", Int16(2))
-        
-        fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
-            managedObjectContext: PersistenceService.context,
-            sectionNameKeyPath: nil, cacheName: nil)
-        
-        fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
-        try? fetchedResultsController?.performFetch()
-        
-        fetchData()
+        initFectchedResultsController(sortingKey: "demand", ascending: true, state: displayState)
     }
     
-    // MARK: Actions
-    
-    @objc func sortButtonClicked(_ sender: Any) {
-        sortBySalary()
+    func testResultsSetup() {
+        initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
     }
     
     // MARK: Navigation
@@ -131,27 +162,6 @@ class CareerListViewController: UIViewController {
             print(error)
         }
     }
-    
-    func sortBySalary() {
-        sortedBySalaryAscending = !sortedBySalaryAscending
-        
-        let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "salary", ascending: sortedBySalaryAscending)]
-        
-        if displayState == .FutureDemand {
-            fetchRequest.predicate = NSPredicate(format: "demand == %d", Int16(2))
-        }
-        
-        fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
-            managedObjectContext: PersistenceService.context,
-            sectionNameKeyPath: nil, cacheName: nil)
-        
-        fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
-        try? fetchedResultsController?.performFetch()
-        
-        tableView.reloadData()
-    }
 }
 
 // MARK: TableView Delegates
@@ -170,15 +180,18 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
      //viewForHeaderInSection
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = Bundle.main.loadNibNamed("CareerListHeader", owner: self, options: nil)?.first as! CareerListHeader
-        
         switch displayState {
-            case .Default:
-                header.initialSetup(title: "A list of all our careers")
             case .FutureDemand:
                 header.initialSetup(title: "A list of careers with high future demand")
+            case .Results:
+                header.initialSetup(title: "Your results")
+            default:
+                header.initialSetup(title: "A list of all our careers")
             }
-        // This action currently sorts Careers by salary only
-        header.sortButton.addTarget(self, action: #selector(self.sortButtonClicked(_:)), for: .touchUpInside)
+        header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
+        header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
+        header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
+        header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
         
         return header
     }
@@ -199,7 +212,7 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
     // heightForHeaderInSection
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         // Needs to be set to CareerListHeader's height when it's fully implemented
-        return 50
+        return headerCurrentHeight
     }
     
     // cellForRowAt
@@ -214,10 +227,11 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
 
 }
 
-//MARK: NSFetchedResultsControllerDelegate
+// MARK: NSFetchedResultsControllerDelegate
 
 extension CareerListViewController: NSFetchedResultsControllerDelegate {
     
@@ -226,4 +240,55 @@ extension CareerListViewController: NSFetchedResultsControllerDelegate {
         tableView.reloadData()
     }
 }
- 
+
+// MARK : Sorting
+
+extension CareerListViewController {
+    
+    private func forceCollapseSortSelection() {
+        headerCurrentHeight = 50
+        self.tableView.beginUpdates()
+        self.view.layoutIfNeeded()
+        self.tableView.endUpdates()
+    }
+    
+    @objc func sortButtonClicked(_ sender: Any) {
+        self.tableView.beginUpdates()
+        
+        if headerCurrentHeight == 50 {
+            headerCurrentHeight = 250
+        } else {
+            headerCurrentHeight = 50
+        }
+        self.view.layoutIfNeeded()
+        self.tableView.endUpdates()
+    }
+    
+    @objc func sortBySalary(_ sender: Any) {
+        sortedBySalaryAscending = !sortedBySalaryAscending
+        initFectchedResultsController(sortingKey: "salary", ascending: sortedBySalaryAscending, state: displayState)
+        forceCollapseSortSelection()
+        sortedByDegreeAscending = true
+        sortedByNameAscending = true
+        tableView.reloadData()
+    }
+    
+    @objc func sortByName(_ sender: Any) {
+        sortedByNameAscending = !sortedByNameAscending
+        initFectchedResultsController(sortingKey: "name", ascending: !sortedByNameAscending, state: displayState)
+        forceCollapseSortSelection()
+        sortedBySalaryAscending = true
+        sortedByDegreeAscending = true
+        tableView.reloadData()
+    }
+    
+    // DEGREE NEEDS REFACTORING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    @objc func sortByDegree(_ sender: Any) {
+        sortedByDegreeAscending = !sortedByDegreeAscending
+        initFectchedResultsController(sortingKey: "degree", ascending: sortedByDegreeAscending, state: displayState)
+        forceCollapseSortSelection()
+        sortedBySalaryAscending = true
+        sortedByNameAscending = true
+        tableView.reloadData()
+    }
+}
