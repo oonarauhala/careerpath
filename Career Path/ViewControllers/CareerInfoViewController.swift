@@ -2,10 +2,9 @@
 //  CareerInfoViewController.swift
 //  CareerPath
 //
-//  Created by iosdev on 18/11/2019.
-//  Copyright © 2019 Mikael Kuokkanen. All rights reserved.
+//  Created by mikael on 18/11/2019.
+//  Copyright © 2019 Team Awesome. All rights reserved.
 //
-
 // The controller for a single career scene
 // Contains all there is to know about the selected career
 // and presents it onto the scene
@@ -27,7 +26,6 @@ class CareerInfoViewController: UIViewController {
     @IBOutlet weak var educationTitleLabel: UILabel!
     // Custom
     private var showMore = false
-    
     
     // MARK: Lifecycle methods
     

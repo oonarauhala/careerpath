@@ -110,22 +110,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2192.8000000000002" y="-78.710644677661179"/>
+            <point key="canvasLocation" x="2078" y="-80"/>
         </scene>
         <!--Career List View Controller-->
         <scene sceneID="ilN-2C-Mfd">
             <objects>
-                <viewController id="p8e-X6-y6p" customClass="CareerListViewController" customModule="Career_Path" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CareerList" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p8e-X6-y6p" customClass="CareerListViewController" customModule="Career_Path" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lm9-eM-2hi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eLW-Jl-Jj0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eLW-Jl-Jj0">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="red-JK-WcO" customClass="CareerListCell" customModule="Career_Path" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CareerCell" id="red-JK-WcO" customClass="CareerListCell" customModule="Career_Path" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="red-JK-WcO" id="IxM-To-PCA">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -140,10 +140,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="eLW-Jl-Jj0" firstAttribute="top" secondItem="hKo-7f-5q6" secondAttribute="top" id="CZK-Yd-Ke2"/>
-                            <constraint firstItem="eLW-Jl-Jj0" firstAttribute="leading" secondItem="hKo-7f-5q6" secondAttribute="leading" id="G9j-DP-XD4"/>
-                            <constraint firstItem="hKo-7f-5q6" firstAttribute="bottom" secondItem="eLW-Jl-Jj0" secondAttribute="bottom" id="cwK-T8-NhK"/>
-                            <constraint firstItem="hKo-7f-5q6" firstAttribute="trailing" secondItem="eLW-Jl-Jj0" secondAttribute="trailing" id="pQh-IX-nD9"/>
+                            <constraint firstItem="eLW-Jl-Jj0" firstAttribute="leading" secondItem="hKo-7f-5q6" secondAttribute="leading" id="G5m-oO-ztx"/>
+                            <constraint firstItem="hKo-7f-5q6" firstAttribute="bottom" secondItem="eLW-Jl-Jj0" secondAttribute="bottom" id="IJX-hM-Tjd"/>
+                            <constraint firstItem="eLW-Jl-Jj0" firstAttribute="trailing" secondItem="hKo-7f-5q6" secondAttribute="trailing" id="Yz0-bA-3ac"/>
+                            <constraint firstItem="eLW-Jl-Jj0" firstAttribute="top" secondItem="hKo-7f-5q6" secondAttribute="top" id="c4P-rT-Mue"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hKo-7f-5q6"/>
                     </view>
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki6-BQ-Fl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415.2" y="-77.811094452773617"/>
+            <point key="canvasLocation" x="1360.8" y="-79.610194902548727"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AKU-uy-E49">
@@ -172,7 +172,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Dv-ne-gck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="-77.811094452773617"/>
+            <point key="canvasLocation" x="649" y="-79"/>
         </scene>
     </scenes>
 </document>

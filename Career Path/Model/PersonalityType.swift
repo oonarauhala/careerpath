@@ -2,8 +2,8 @@
 //  PersonalityType.swift
 //  CareerPath
 //
-//  Created by iosdev on 19/11/2019.
-//  Copyright © 2019 Mikael Kuokkanen. All rights reserved.
+//  Created by mikael on 19/11/2019.
+//  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
 enum PersonalityType : String {
