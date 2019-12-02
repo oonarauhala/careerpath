@@ -28,4 +28,36 @@ struct NetworkRequest {
             }
             .resume()
     }
+    
+    func fetchGetUser(userID: String) -> Void {
+        
+        let urlString: String = "http://localhost:3000/users" + userID
+        
+        guard let url = URL(string: urlString) else {
+            print("Error: URL not created")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { (data, response, err) in
+            guard let dataResponse = data else {
+                print("Error: No data received")
+                return
+            }
+            
+            do {
+                guard let json = try JSONSerialization.jsonObject(with: dataResponse, options: []) as? [String: Any]
+                    else {
+                        print("problemc in json serialization")
+                        return
+                }
+                print("json is: " + json.description)
+            }
+            catch {
+                print("catch in fetchgetuser")
+            }
+            
+            }
+            .resume()
+        
+    }
 }

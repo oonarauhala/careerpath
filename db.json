@@ -384,5 +384,14 @@
             "personality": 13,
             "futureDemand": 1
         }
-    ]
+    ],
+
+      "users": [
+	{	
+	     "id": 1,
+             "firstname": "John",
+	     "lastname": "Smith",
+	     "age": 20,
+	},
+      ]
 }
