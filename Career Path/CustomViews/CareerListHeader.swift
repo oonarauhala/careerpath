@@ -28,6 +28,9 @@ class CareerListHeader: UITableViewHeaderFooterView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        setupButtons()
+        
     }
     
     func initialSetup(title: String) {
@@ -36,8 +39,19 @@ class CareerListHeader: UITableViewHeaderFooterView {
     
     @IBAction func sortByPressed(_ sender: Any) {
         expandedElements.isHidden = !expandedElements.isHidden
-        print(expandedElements.isHidden)
     }
     
+    private func createShadows(button: UIButton) {
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
+        button.layer.shadowRadius = 2
+        button.layer.shadowOpacity = 0.5
+    }
+    
+    private func setupButtons() {
+        createShadows(button: salaryButton)
+        createShadows(button: degreeButton)
+        createShadows(button: alphabeticalButton)
+    }
     
 }

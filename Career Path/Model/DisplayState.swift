@@ -12,5 +12,5 @@ import Foundation
 // for displaying the correct careers
 
 enum DisplayState {
-    case Default, FutureDemand, Name, Degree, Results
+    case Default, FutureDemand, Name, Degree, Results, ExistingCareers
 }

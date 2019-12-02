@@ -27,16 +27,19 @@ class CareerListViewController: UIViewController {
     // displayState defines what kind of Careers to display
     // -> set this in prepare for segue
     var displayState: DisplayState = .Default
-    var resultCareers = [Career]()
+    var existingCareers: [Career]?
+    var results: TestResults?
 
     private var sortedBySalaryAscending = true
     private var sortedByNameAscending = true
     private var sortedByDegreeAscending = true
     private var headerCurrentHeight: CGFloat = 50
 
+    
     // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    
     
     // MARK: Lifecycle methods
     
@@ -82,33 +85,51 @@ class CareerListViewController: UIViewController {
     
     // MARK: Initializer methods
     
+    
+    // ---------------------<MAIN INITIALIZER >-------------------------------------------
     // -> Used every time when the TableView is initialized or it's display style changes
-    private func initFectchedResultsController(sortingKey: String, ascending: Bool, state: DisplayState) {
+    
+    private func initFectchedResultsController(
+        sortingKey: String, ascending: Bool, state: DisplayState)
+    {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortingKey, ascending: ascending)]
         
+        // -> When navigated to this controller from home/navigation pressing "Future jobs"
         if state == .FutureDemand {
             fetchRequest.predicate = NSPredicate(format: "demand == %d", Int16(2))
         }
+            
+        // -> When navigated to this controller when showing careers based on test results
         else if state == .Results {
+            guard let res = results else {
+                fatalError("CareerListViewController.results not defined in segue")
+            }
+            fetchRequest.predicate = NSPredicate(format: "personalityType == %d", Int16(res.personalityType.convertToInt()))
+        }
+            
+        // -> When navigated to this controller already knowing a set of career names
+        else if state == .ExistingCareers {
+            guard let careers = existingCareers else {
+                fatalError("CareerListViewController.existingCareers not set")
+            }
             var predicateString = "name == "
-            if (resultCareers.count > 0) {
+            if (careers.count > 0) {
                 // This for loop iterates over the Career results defined in the segue
-                // after career test and converts them into a string appropriate for NSPredicate
-                for i in 0..<resultCareers.count {
+                // after career test and converts them into a string combined with
+                // OR logic so it can be used as an NSPredicate
+                for i in 0..<careers.count {
                     // Add Logical OR at the end of the string if not the last element in the array
-                    if i < (resultCareers.count - 1) {
-                        predicateString = predicateString + "\"\(resultCareers[i].careerName)\"" + " OR name == "
+                    if i < (careers.count - 1) {
+                        predicateString = predicateString + "\"\(careers[i].careerName)\"" + " OR name == "
                     } else {
-                        // At the end of the array here, so no need for another Logical OR
-                        predicateString = predicateString + "\"\(resultCareers[i].careerName)\""
+                        // At the end of the array here, so only appending the careerName at the end
+                        predicateString = predicateString + "\"\(careers[i].careerName)\""
                     }
                 }
-            } else {
-                fatalError("Trying to initiate CareerListViewController without setting the results in segue")
             }
-            //print("Predicate string: ", predicateString)
             fetchRequest.predicate = NSPredicate(format: predicateString)
         }
+        
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: PersistenceService.context,
@@ -116,8 +137,9 @@ class CareerListViewController: UIViewController {
         
         fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
         try? fetchedResultsController?.performFetch()
-        
-    } // --------------------End----initFetchedResultsController----------------------------------
+    }
+    // ---------------------</MAIN INITIALIZER >-------------------------------------------
+    
     
     // Display all careers
     func defaultSetup() {
@@ -129,9 +151,11 @@ class CareerListViewController: UIViewController {
         initFectchedResultsController(sortingKey: "demand", ascending: true, state: displayState)
     }
     
+    // Display careers based on test results (defined in prepare for segue)
     func testResultsSetup() {
         initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
     }
+    
     
     // MARK: Navigation
     
@@ -146,6 +170,7 @@ class CareerListViewController: UIViewController {
             }
         }
     }
+    
     
     //MARK: Private functions
     
@@ -211,7 +236,6 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
     
     // heightForHeaderInSection
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        // Needs to be set to CareerListHeader's height when it's fully implemented
         return headerCurrentHeight
     }
     
@@ -241,10 +265,14 @@ extension CareerListViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
+
 // MARK : Sorting
 
 extension CareerListViewController {
     
+    // ->Collapses the sorting selection
+    //   used whenever tableview content updates
+    //   and when the header cell gets re-used
     private func forceCollapseSortSelection() {
         headerCurrentHeight = 50
         self.tableView.beginUpdates()
@@ -253,14 +281,12 @@ extension CareerListViewController {
     }
     
     @objc func sortButtonClicked(_ sender: Any) {
-        self.tableView.beginUpdates()
-        
         if headerCurrentHeight == 50 {
             headerCurrentHeight = 250
         } else {
             headerCurrentHeight = 50
         }
-        self.view.layoutIfNeeded()
+        self.tableView.beginUpdates()
         self.tableView.endUpdates()
     }
     
