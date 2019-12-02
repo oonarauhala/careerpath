@@ -37,21 +37,72 @@ class CareerListHeader: UITableViewHeaderFooterView {
         headerTitle.text = title
     }
     
-    @IBAction func sortByPressed(_ sender: Any) {
-        expandedElements.isHidden = !expandedElements.isHidden
+    func setButtonTitles(salaryTitle: String, nameTitle: String, degreeTitle: String) {
+        salaryButton.setTitle(salaryTitle, for: .normal)
+        alphabeticalButton.setTitle(nameTitle, for: .normal)
+        degreeButton.setTitle(degreeTitle, for: .normal)
     }
     
-    private func createShadows(button: UIButton) {
+    @IBAction func sortByPressed(_ sender: UIButton) {
+        let originalAlpha: CGFloat = 1
+        
+        if expandedElements.isHidden {
+            sortByButton.setTitle("Hide", for: .normal)
+            sender.alpha = originalAlpha * 0.75
+        } else {
+            sortByButton.setTitle("Sort", for: .normal)
+            sender.alpha = originalAlpha
+        }
+        expandedElements.isHidden = !expandedElements.isHidden
+        UIButton.animate(
+            withDuration: 0.15, animations: {
+                sender.transform = CGAffineTransform(scaleX: 0.33, y: 0.33)},
+                completion: { finish in
+                UIButton.animate(withDuration: 0.15, animations: {
+                    sender.transform = CGAffineTransform.identity
+                })
+        })
+    }
+    
+    private func createButtonStyles(button: UIButton) {
         button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOffset = CGSize(width: 2, height: 2)
-        button.layer.shadowRadius = 2
-        button.layer.shadowOpacity = 0.5
+        button.layer.shadowOffset = CGSize(width: 1, height: 1)
+        button.layer.shadowRadius = 1.5
+        button.layer.shadowOpacity = 0.8
+        button.layer.cornerRadius = 5
+        button.layer.borderWidth = 1
+        
     }
     
     private func setupButtons() {
-        createShadows(button: salaryButton)
-        createShadows(button: degreeButton)
-        createShadows(button: alphabeticalButton)
+        createButtonStyles(button: salaryButton)
+        createButtonStyles(button: degreeButton)
+        createButtonStyles(button: alphabeticalButton)
+        createButtonStyles(button: sortByButton)
+    }
+}
+
+extension CareerListHeader {
+    func pulsate() {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 1
+        pulse.fromValue = 0.9
+        pulse.toValue = 1.0
+        pulse.autoreverses = false
+        pulse.repeatCount = 0
+        pulse.initialVelocity = 1
+        pulse.damping = 1
+        layer.add(pulse, forKey: nil)
+    }
+    func flash() {
+        let flash = CABasicAnimation(keyPath: "opacity")
+        flash.duration = 0.3
+        flash.fromValue = 1
+        flash.toValue = 0.1
+        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        flash.autoreverses = true
+        flash.repeatCount = 0
+        layer.add(flash, forKey: nil)
     }
     
 }

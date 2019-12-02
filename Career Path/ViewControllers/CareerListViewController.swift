@@ -33,15 +33,17 @@ class CareerListViewController: UIViewController {
     private var sortedBySalaryAscending = true
     private var sortedByNameAscending = true
     private var sortedByDegreeAscending = true
-    private var headerCurrentHeight: CGFloat = 50
+    private var headerCurrentHeight: CGFloat = 100
+    private var headerMinHeightConstant: CGFloat = 100
+    private var headerMaxHeightConstant: CGFloat = 250
 
     
-    // MARK: Outlets
+// MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
     
     
-    // MARK: Lifecycle methods
+// MARK: Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +73,7 @@ class CareerListViewController: UIViewController {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         //print(scrollView.contentOffset.y)
-        if headerCurrentHeight == 250 {
+        if headerCurrentHeight == headerMaxHeightConstant {
             if scrollView.contentOffset.y >= 285 {
                 // The magical number 285.
                 // This is where the header lets go of its place (currently)
@@ -83,7 +85,7 @@ class CareerListViewController: UIViewController {
         }
     }
     
-    // MARK: Initializer methods
+// MARK: Initializer methods
     
     
     // ---------------------<MAIN INITIALIZER >-------------------------------------------
@@ -148,6 +150,9 @@ class CareerListViewController: UIViewController {
     
     // Display careers with high future demand
     func futureDemandSetup() {
+        headerCurrentHeight = 130
+        headerMinHeightConstant = 130
+        headerMaxHeightConstant = 280
         initFectchedResultsController(sortingKey: "demand", ascending: true, state: displayState)
     }
     
@@ -157,7 +162,7 @@ class CareerListViewController: UIViewController {
     }
     
     
-    // MARK: Navigation
+// MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowInfo",
@@ -172,7 +177,7 @@ class CareerListViewController: UIViewController {
     }
     
     
-    //MARK: Private functions
+//MARK: Private functions
     
     // -> Loads all the careers from a backend API
     private func fetchData() {
@@ -186,6 +191,94 @@ class CareerListViewController: UIViewController {
         catch {
             print(error)
         }
+    }
+    
+    private func defineButtonTitles() -> (salary: String, degree: String, name: String) {
+        
+        var titleForSalaryButton = "Sort by salary (descending)"
+        var titleForDegreeButton = "Sort by education (descending)"
+        var titleForAlphabeticalButton = "Sort by name (A - Z)"
+        
+        if !sortedBySalaryAscending {
+            titleForSalaryButton = "Sort by salary (ascending)"
+        }
+        if !sortedByDegreeAscending {
+            titleForDegreeButton = "Sort by education (ascending)"
+        }
+        if !sortedByNameAscending {
+            titleForAlphabeticalButton = "Sort by name (Z - A)"
+        }
+        
+        return(titleForSalaryButton, titleForDegreeButton, titleForAlphabeticalButton)
+    }
+}
+
+
+// MARK: NSFetchedResultsControllerDelegate
+
+extension CareerListViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        print("controllerDidChangeContent")
+        tableView.reloadData()
+    }
+}
+
+
+// MARK : Sorting
+
+extension CareerListViewController {
+    
+    // ->Collapses the sorting selection
+    //   used whenever tableview content updates
+    //   and when the header cell gets re-used
+    private func forceCollapseSortSelection() {
+        headerCurrentHeight = headerMinHeightConstant
+        self.tableView.beginUpdates()
+        self.view.layoutIfNeeded()
+        self.tableView.endUpdates()
+    }
+    
+    @objc func sortButtonClicked(_ sender: Any) {
+        if headerCurrentHeight == headerMinHeightConstant {
+            headerCurrentHeight = headerMaxHeightConstant
+        } else {
+            headerCurrentHeight = headerMinHeightConstant
+        }
+        self.tableView.beginUpdates()
+        self.tableView.endUpdates()
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+    }
+    
+    @objc func sortBySalary(_ sender: UIButton) {
+        sortedBySalaryAscending = !sortedBySalaryAscending
+        initFectchedResultsController(sortingKey: "salary", ascending: sortedBySalaryAscending, state: displayState)
+        forceCollapseSortSelection()
+        sortedByDegreeAscending = true
+        sortedByNameAscending = true
+        tableView.reloadDataWithAnimation(!sortedBySalaryAscending)
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+    }
+    
+    @objc func sortByName(_ sender: UIButton) {
+        sortedByNameAscending = !sortedByNameAscending
+        initFectchedResultsController(sortingKey: "name", ascending: !sortedByNameAscending, state: displayState)
+        forceCollapseSortSelection()
+        sortedBySalaryAscending = true
+        sortedByDegreeAscending = true
+        tableView.reloadDataWithAnimation(!sortedByNameAscending)
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+    }
+    
+    // DEGREE NEEDS REFACTORING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    @objc func sortByDegree(_ sender: UIButton) {
+        sortedByDegreeAscending = !sortedByDegreeAscending
+        initFectchedResultsController(sortingKey: "degree", ascending: sortedByDegreeAscending, state: displayState)
+        forceCollapseSortSelection()
+        sortedBySalaryAscending = true
+        sortedByNameAscending = true
+        tableView.reloadDataWithAnimation(!sortedByDegreeAscending)
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
     }
 }
 
@@ -202,21 +295,26 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-     //viewForHeaderInSection
+    //viewForHeaderInSection
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = Bundle.main.loadNibNamed("CareerListHeader", owner: self, options: nil)?.first as! CareerListHeader
+        let header = Bundle.main.loadNibNamed(
+            "CareerListHeader", owner: self, options: nil)?.first as! CareerListHeader
         switch displayState {
-            case .FutureDemand:
-                header.initialSetup(title: "A list of careers with high future demand")
-            case .Results:
-                header.initialSetup(title: "Your results")
-            default:
-                header.initialSetup(title: "A list of all our careers")
-            }
+        case .FutureDemand:
+            header.initialSetup(title: "A list of careers with high future demand")
+        case .Results:
+            header.initialSetup(title: "Your results")
+        default:
+            header.initialSetup(title: "A list of all our careers")
+        }
         header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
         header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
         header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
         header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
+        
+        let titles = defineButtonTitles()
+        
+        header.setButtonTitles(salaryTitle: titles.salary, nameTitle: titles.name, degreeTitle: titles.degree)
         
         return header
     }
@@ -251,70 +349,24 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
-
 }
 
-// MARK: NSFetchedResultsControllerDelegate
+//MARK: Animation extensions
 
-extension CareerListViewController: NSFetchedResultsControllerDelegate {
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        print("controllerDidChangeContent")
-        tableView.reloadData()
-    }
-}
-
-
-// MARK : Sorting
-
-extension CareerListViewController {
-    
-    // ->Collapses the sorting selection
-    //   used whenever tableview content updates
-    //   and when the header cell gets re-used
-    private func forceCollapseSortSelection() {
-        headerCurrentHeight = 50
-        self.tableView.beginUpdates()
-        self.view.layoutIfNeeded()
-        self.tableView.endUpdates()
-    }
-    
-    @objc func sortButtonClicked(_ sender: Any) {
-        if headerCurrentHeight == 50 {
-            headerCurrentHeight = 250
-        } else {
-            headerCurrentHeight = 50
+extension UITableView {
+    func reloadDataWithAnimation(_ sortAscending: Bool) {
+        var direction = CATransitionSubtype.fromBottom
+        if sortAscending {
+            direction = .fromTop
         }
-        self.tableView.beginUpdates()
-        self.tableView.endUpdates()
-    }
-    
-    @objc func sortBySalary(_ sender: Any) {
-        sortedBySalaryAscending = !sortedBySalaryAscending
-        initFectchedResultsController(sortingKey: "salary", ascending: sortedBySalaryAscending, state: displayState)
-        forceCollapseSortSelection()
-        sortedByDegreeAscending = true
-        sortedByNameAscending = true
-        tableView.reloadData()
-    }
-    
-    @objc func sortByName(_ sender: Any) {
-        sortedByNameAscending = !sortedByNameAscending
-        initFectchedResultsController(sortingKey: "name", ascending: !sortedByNameAscending, state: displayState)
-        forceCollapseSortSelection()
-        sortedBySalaryAscending = true
-        sortedByDegreeAscending = true
-        tableView.reloadData()
-    }
-    
-    // DEGREE NEEDS REFACTORING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    @objc func sortByDegree(_ sender: Any) {
-        sortedByDegreeAscending = !sortedByDegreeAscending
-        initFectchedResultsController(sortingKey: "degree", ascending: sortedByDegreeAscending, state: displayState)
-        forceCollapseSortSelection()
-        sortedBySalaryAscending = true
-        sortedByNameAscending = true
-        tableView.reloadData()
+        let transition = CATransition()
+        transition.type = CATransitionType.reveal
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.fillMode = CAMediaTimingFillMode.forwards
+        transition.duration = 0.6
+        transition.subtype = direction
+        self.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
+        // Update your data source here
+        self.reloadData()
     }
 }
