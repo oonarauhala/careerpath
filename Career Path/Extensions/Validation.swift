@@ -8,7 +8,8 @@
 
 import Foundation
 
-// this file provides validation for user input in registration and login
+// This file provides validation for user input in registration and login
+// In the future, checking for username/email that's already linked to an account happens here
 
 extension String {
     
