@@ -20,6 +20,7 @@ class CareerListViewController: UIViewController {
     
     // MARK: Properties
     
+    var header: CareerListHeader!
     let request = NetworkRequest()
     let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
     
@@ -29,28 +30,27 @@ class CareerListViewController: UIViewController {
     var displayState: DisplayState = .Default
     var existingCareers: [Career]?
     var results: TestResults?
-
+    
     private var sortedBySalaryAscending = true
     private var sortedByNameAscending = true
     private var sortedByDegreeAscending = true
+    
     private var headerCurrentHeight: CGFloat = 100
     private var headerMinHeightConstant: CGFloat = 100
     private var headerMaxHeightConstant: CGFloat = 250
-
     
-// MARK: Outlets
+    
+    // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
     
     
-// MARK: Lifecycle methods
+    // MARK: Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableViewSetup()
         
         if displayState == .Default {
             defaultSetup()
@@ -71,21 +71,21 @@ class CareerListViewController: UIViewController {
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //print(scrollView.contentOffset.y)
-        if headerCurrentHeight == headerMaxHeightConstant {
-            if scrollView.contentOffset.y >= 285 {
-                // The magical number 285.
-                // This is where the header lets go of its place (currently)
-                // in the TableView, so the next time it is instantiated
-                // -> all it's content will be hidden, so need to
-                // update its height here as well
-                forceCollapseSortSelection()
-            }
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        //print(scrollView.contentOffset.y)
+//        if headerCurrentHeight == headerMaxHeightConstant {
+//            if scrollView.contentOffset.y >= 285 {
+//                // The magical number 285.
+//                // This is where the header lets go of its place (currently)
+//                // in the TableView, so the next time it is instantiated
+//                // -> all it's content will be hidden, so need to
+//                // update its height here as well
+//                forceCollapseSortSelection()
+//            }
+//        }
+//    }
     
-// MARK: Initializer methods
+    // MARK: Initializer methods
     
     
     // ---------------------<MAIN INITIALIZER >-------------------------------------------
@@ -101,7 +101,7 @@ class CareerListViewController: UIViewController {
             fetchRequest.predicate = NSPredicate(format: "demand == %d", Int16(2))
         }
             
-        // -> When navigated to this controller when showing careers based on test results
+            // -> When navigated to this controller when showing careers based on test results
         else if state == .Results {
             guard let res = results else {
                 fatalError("CareerListViewController.results not defined in segue")
@@ -109,7 +109,7 @@ class CareerListViewController: UIViewController {
             fetchRequest.predicate = NSPredicate(format: "personalityType == %d", Int16(res.personalityType.convertToInt()))
         }
             
-        // -> When navigated to this controller already knowing a set of career names
+            // -> When navigated to this controller already knowing a set of career names
         else if state == .ExistingCareers {
             guard let careers = existingCareers else {
                 fatalError("CareerListViewController.existingCareers not set")
@@ -162,7 +162,7 @@ class CareerListViewController: UIViewController {
     }
     
     
-// MARK: Navigation
+    // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowInfo",
@@ -177,7 +177,32 @@ class CareerListViewController: UIViewController {
     }
     
     
-//MARK: Private functions
+    //MARK: Private functions
+    
+    fileprivate func tableViewSetup() {
+        tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.contentInsetAdjustmentBehavior = .never
+        
+        header = Bundle.main.loadNibNamed(
+            "CareerListHeader", owner: self, options: nil)?.first as? CareerListHeader
+        switch displayState {
+        case .FutureDemand:
+            header?.initialSetup(title: "A list of careers with high future demand")
+        case .Results:
+            header?.initialSetup(title: "Your results")
+        default:
+            header?.initialSetup(title: "A list of all our careers")
+        }
+        header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
+        header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
+        header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
+        header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
+        header.frame.size.height = 100
+        
+        tableView.tableHeaderView = header
+    }
     
     // -> Loads all the careers from a backend API
     private func fetchData() {
@@ -191,25 +216,6 @@ class CareerListViewController: UIViewController {
         catch {
             print(error)
         }
-    }
-    
-    private func defineButtonTitles() -> (salary: String, degree: String, name: String) {
-        
-        var titleForSalaryButton = "Sort by salary (descending)"
-        var titleForDegreeButton = "Sort by education (descending)"
-        var titleForAlphabeticalButton = "Sort by name (A - Z)"
-        
-        if !sortedBySalaryAscending {
-            titleForSalaryButton = "Sort by salary (ascending)"
-        }
-        if !sortedByDegreeAscending {
-            titleForDegreeButton = "Sort by education (ascending)"
-        }
-        if !sortedByNameAscending {
-            titleForAlphabeticalButton = "Sort by name (Z - A)"
-        }
-        
-        return(titleForSalaryButton, titleForDegreeButton, titleForAlphabeticalButton)
     }
 }
 
@@ -231,8 +237,9 @@ extension CareerListViewController {
     
     // ->Collapses the sorting selection
     //   used whenever tableview content updates
-    //   and when the header cell gets re-used
+    //   and when the header view should collapse
     private func forceCollapseSortSelection() {
+        header.sortByPressed()
         headerCurrentHeight = headerMinHeightConstant
         self.tableView.beginUpdates()
         self.view.layoutIfNeeded()
@@ -247,7 +254,8 @@ extension CareerListViewController {
         }
         self.tableView.beginUpdates()
         self.tableView.endUpdates()
-        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+        //self.view = self.view.forFirstBaselineLayout
+        //        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
     }
     
     @objc func sortBySalary(_ sender: UIButton) {
@@ -257,7 +265,12 @@ extension CareerListViewController {
         sortedByDegreeAscending = true
         sortedByNameAscending = true
         tableView.reloadDataWithAnimation(!sortedBySalaryAscending)
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        
+        
+        
+        //self.view = self.view.forFirstBaselineLayout
+        //        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
     }
     
     @objc func sortByName(_ sender: UIButton) {
@@ -267,7 +280,7 @@ extension CareerListViewController {
         sortedBySalaryAscending = true
         sortedByDegreeAscending = true
         tableView.reloadDataWithAnimation(!sortedByNameAscending)
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
     }
     
     // DEGREE NEEDS REFACTORING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -278,7 +291,8 @@ extension CareerListViewController {
         sortedBySalaryAscending = true
         sortedByNameAscending = true
         tableView.reloadDataWithAnimation(!sortedByDegreeAscending)
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        
     }
 }
 
@@ -295,30 +309,6 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    //viewForHeaderInSection
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = Bundle.main.loadNibNamed(
-            "CareerListHeader", owner: self, options: nil)?.first as! CareerListHeader
-        switch displayState {
-        case .FutureDemand:
-            header.initialSetup(title: "A list of careers with high future demand")
-        case .Results:
-            header.initialSetup(title: "Your results")
-        default:
-            header.initialSetup(title: "A list of all our careers")
-        }
-        header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
-        header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
-        header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
-        header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
-        
-        let titles = defineButtonTitles()
-        
-        header.setButtonTitles(salaryTitle: titles.salary, nameTitle: titles.name, degreeTitle: titles.degree)
-        
-        return header
-    }
-    
     // didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let careerEntity = self.fetchedResultsController?.object(at: indexPath) else {
@@ -330,11 +320,6 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
     // numberOfSections
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController!.sections?.count ?? 1
-    }
-    
-    // heightForHeaderInSection
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return headerCurrentHeight
     }
     
     // cellForRowAt
