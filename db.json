@@ -391,7 +391,13 @@
 	     "id": 1,
              "firstname": "John",
 	     "lastname": "Smith",
-	     "age": 20,
+	     "age": 20
 	},
+	{
+		"id": 2,
+		"firstname": "John",
+	     "lastname": "Doe",
+	     "age": 21
+	}
       ]
 }

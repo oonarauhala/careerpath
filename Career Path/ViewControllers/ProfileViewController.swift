@@ -32,6 +32,13 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func locationBtn(_ sender: Any) {
+        loadUserInfo()
+    }
+    
+    func loadUserInfo() {
+        let test = NetworkRequest()
+        
+        test.fetchGetUser(userID: "1")
     }
     
 
