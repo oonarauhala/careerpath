@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Used in a Career object, to indicate that career's demand in the future
+
 enum Demand : Int {
     case Low = 0, Medium = 1, High = 2
 }

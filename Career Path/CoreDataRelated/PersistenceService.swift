@@ -85,6 +85,7 @@ class PersistenceService {
                     careerEntity.name = response.name
                     careerEntity.personalityType = Int16(response.personality)
                     careerEntity.salary = Double(response.salary)
+                    careerEntity.demand = Int16(response.futureDemand)
                     contextNeedsSaving = true
                 }
                 else {

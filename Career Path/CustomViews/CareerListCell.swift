@@ -2,7 +2,7 @@
 //  CareerListCell.swift
 //  Career Path
 //
-//  Created by iosdev on 22/11/2019.
+//  Created by mikael on 22/11/2019.
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 

@@ -2,11 +2,13 @@
 //  Career.swift
 //  CareerPath
 //
-//  Created by iosdev on 18/11/2019.
-//  Copyright © 2019 Mikael Kuokkanen. All rights reserved.
+//  Created by mikael on 18/11/2019.
+//  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
 import Foundation
+
+// The main Career object that is used in everything career-related
 
 struct Career {
     let futureDemand: Demand
@@ -27,7 +29,6 @@ struct Career {
         self.educationRequirement = education
         self.personalityType = personalityType
         self.futureDemand = demand
-        print("Career \(careerName) initialized")
     }
     
     func separateThousands(value: Int) -> String {

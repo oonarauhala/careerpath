@@ -2,9 +2,11 @@
 //  EducationInfo.swift
 //  CareerPath
 //
-//  Created by iosdev on 18/11/2019.
-//  Copyright © 2019 Mikael Kuokkanen. All rights reserved.
+//  Created by mikael on 18/11/2019.
+//  Copyright © 2019 Team Awesome. All rights reserved.
 //
+
+// NEEDS REFACTORING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 enum Degree : String, CaseIterable {
     case Doctorate = "Doctor's degree"
