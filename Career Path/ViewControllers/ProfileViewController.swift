@@ -39,6 +39,7 @@ class ProfileViewController: UIViewController {
         let test = NetworkRequest()
         
         test.fetchGetUser(userID: "1")
+        test.fetchPostUser(userID: "3")
     }
     
 
