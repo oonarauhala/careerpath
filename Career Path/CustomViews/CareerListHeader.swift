@@ -41,6 +41,7 @@ class CareerListHeader: UITableViewHeaderFooterView {
         if expandedElements.isHidden {
             sortByButton.setTitle("Hide", for: .normal)
             sender.alpha = originalAlpha * 0.75
+           /*
             self.frame.size.height = 250
             print(self.frame.size.height)
         } else {
@@ -48,7 +49,9 @@ class CareerListHeader: UITableViewHeaderFooterView {
             sender.alpha = originalAlpha
             self.frame.size.height = 100
             print(self.frame.size.height)
+            */
         }
+ 
         expandedElements.isHidden = !expandedElements.isHidden
         UIButton.animate(
             withDuration: 0.15, animations: {

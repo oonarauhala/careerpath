@@ -26,7 +26,7 @@ class CareerListCell: UITableViewCell {
     }
     
     func populateCell(career: Career) {
-        img.image = UIImage(named: "careerImg")
+        img.image = UIImage(named: career.careerName)
         name.text = career.careerName
         salary.text = "Salary: \(career.separateThousands(value: Int(career.medianSalary)))"
     }

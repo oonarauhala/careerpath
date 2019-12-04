@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResultViewController: BaseViewController {
     
     //MARK: variables
     var responses: [Answer]!
@@ -21,6 +21,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        addSlideMenuButton()
         //"personal type" result and description based on "personal type" test
         resultLabel.text = personalityTest1.definePersonalityType(responses: responses).rawValue
         descriptionText.text = personalityTest1.definePersonalityType(responses: responses).description
