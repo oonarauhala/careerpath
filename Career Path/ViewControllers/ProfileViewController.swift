@@ -102,9 +102,6 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     
     //location - is it necessary?
     
-    @IBAction func locationBtn(_ sender: Any) {
-        loadUserInfo()
-    }
     
     func loadUserInfo() {
         let test = NetworkRequest()

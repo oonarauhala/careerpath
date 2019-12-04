@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EO-Yg-U1W" customClass="RoundButton" customModule="Career_Path" customModuleProvider="target">
-                                <rect key="frame" x="160.5" y="241" width="187.5" height="166.5"/>
+                                <rect key="frame" x="160.5" y="285" width="187.5" height="166.5"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" red="0.37575897110000001" green="0.48998322030000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,7 +47,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zex-Qt-D19" customClass="RoundButton" customModule="Career_Path" customModuleProvider="target">
-                                <rect key="frame" x="31" y="45" width="187.5" height="167"/>
+                                <rect key="frame" x="31" y="89" width="187.5" height="167"/>
                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40y-Z5-iqd" customClass="RoundButton" customModule="Career_Path" customModuleProvider="target">
-                                <rect key="frame" x="27" y="436.5" width="187.5" height="167"/>
+                                <rect key="frame" x="27" y="480.5" width="187.5" height="167"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Check out future job">
@@ -314,8 +314,4 @@
     <resources>
         <image name="background_image" width="868" height="1300"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="CMU-C5-dd3"/>
-        <segue reference="kw0-Wc-113"/>
-    </inferredMetricsTieBreakers>
 </document>
