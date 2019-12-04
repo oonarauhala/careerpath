@@ -25,19 +25,22 @@ class RegisterViewController: UIViewController {
         
         // Disable register button
         registerButton.isEnabled = false
-        
     }
     
     // Keeps track of valid fiels to enable register button
-    var validFields = 0
+    var usernameValidity = false
+    var emailValidity = false
+    var passwordValidity = false
     
     // Checks number of valid fields to enable register button
     func checkFields() {
-        if validFields == 4 {
+        if (usernameValidity == true && emailValidity == true && passwordValidity == true) {
+            print("All fields are valid")
             enableRegisterButton()
         }
         else {
-            print("Only \(validFields) fields are valid")
+            disableButton()
+            print("All fields are not valid")
         }
     }
     
@@ -46,20 +49,25 @@ class RegisterViewController: UIViewController {
         registerButton.isEnabled = true
     }
     
+    // Disables button
+    func disableButton() {
+        registerButton.isEnabled = false
+    }
     
-    //actions for all fields
-    @IBAction func usernameEditingChanged(_ sender: UITextField) {
+    
+    // Actions for all fields
+     @IBAction func usernameEditingChanged(_ sender: UITextField) {
+        disableButton()
         guard let username = usernameField.text else {
             return
         }
         if username.isValid(.username) {
             print("Username is valid")
-            
-            validFields += 1
+            usernameValidity = true
             checkFields()
         }
         else {
-            
+            usernameValidity = false
             //show user their username was not valid
             
             print("Not a valid username")
@@ -67,17 +75,17 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func emailEditingChanged(_ sender: UITextField) {
+        disableButton()
         guard let email = emailField.text else {
             return
         }
         if email.isValid(.email) {
             print("Email is valid")
-            
-            validFields += 1
+            emailValidity = true
             checkFields()
         }
         else {
-            
+            emailValidity = false
             //show user email was not valid
             
             print("Not a valid email")
@@ -85,14 +93,24 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
-        guard let password = passwordField.text else {
+        disableButton()
+        guard let password1 = passwordField.text else {
             return
         }
-        if password.isValid(.password) {
+        guard let password2 = password2Field.text else {
+            return
+        }
+        if password1.isValid(.password) {
             print("Password is valid")
             
-            validFields += 1
-            checkFields()
+            if password1 == password2 {
+                passwordValidity = true
+                checkFields()
+            }
+            else {
+                passwordValidity = false
+                print("Passwords don't match, sender: field1")
+            }
         }
         else {
             
@@ -103,6 +121,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func password2EditingChanged(_ sender: UITextField) {
+        disableButton()
         guard let password2 = password2Field.text else {
             return
         }
@@ -114,12 +133,12 @@ class RegisterViewController: UIViewController {
             print("Password2 is valid")
             
             if password1 == password2 {
-            
-                validFields += 1
+            passwordValidity = true
                 checkFields()
             }
             else {
-                print("Passwords don't match")
+                passwordValidity = false
+                print("Passwords don't match, sender:a field2")
             }
         }
         else {
@@ -135,9 +154,6 @@ class RegisterViewController: UIViewController {
         
         if registerButton.isEnabled == true {
             print("Button enabled")
-        }
-        else {
-            print("Button disabled")
         }
         
         // Send/save data here
