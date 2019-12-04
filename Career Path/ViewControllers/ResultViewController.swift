@@ -27,5 +27,12 @@ class ResultViewController: BaseViewController {
         descriptionText.text = personalityTest1.definePersonalityType(responses: responses).description
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowResults", let destination = segue.destination as? CareerListViewController {
+            destination.displayState = .Results
+            destination.results = TestResults(user: User("asd", "sfsdfasdasd", 50), personalityType: personalityTest1.definePersonalityType(responses: responses))
+        }
+    }
+    
 
 }
