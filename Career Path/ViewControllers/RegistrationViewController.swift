@@ -11,7 +11,6 @@ import UIKit
 // View controller for registration page
 
 class RegisterViewController: UIViewController {
-    
     // Outlets for all fields
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!

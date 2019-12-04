@@ -8,11 +8,8 @@
 
 import Foundation
 
-
-    
    //MARK: MBTI personality test based on personality types
 
-    
     struct Question {
         var text: String
         var answers: [Answer]
@@ -30,7 +27,7 @@ import Foundation
 
     class PersonalityTest {
    
-        //now 40 questions (in test 70 questions)
+        //now 40 questions (in oroginal MBTI test 70 questions)
         
     var questions: [Question] = [
         

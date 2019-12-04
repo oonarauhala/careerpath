@@ -2,8 +2,8 @@
 //  PersonalityType.swift
 //  CareerPath
 //
-//  Created by iosdev on 19/11/2019.
-//  Copyright © 2019 Mikael Kuokkanen. All rights reserved.
+//  Created by mikael on 19/11/2019.
+//  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
 enum PersonalityType : String {
@@ -62,4 +62,40 @@ enum PersonalityType : String {
         }
         
     }
+    func convertToInt() -> Int {
+        switch self {
+        case .ISTJ:
+            return 0
+        case .ISFJ:
+            return 1
+        case .INFJ:
+            return 2
+        case .INTJ:
+            return 3
+        case .ISTP:
+            return 4
+        case .ISFP:
+            return 5
+        case .INFP:
+            return 6
+        case .INTP:
+            return 7
+        case .ESTP:
+            return 8
+        case .ESFP:
+            return 9
+        case .ENFP:
+            return 10
+        case .ENTP:
+            return 11
+        case .ESTJ:
+            return 12
+        case .ESFJ:
+            return 13
+        case .ENFJ:
+            return 14
+        case .ENTJ:
+            return 15
+    }
+}
 }

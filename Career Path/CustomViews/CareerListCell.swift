@@ -2,7 +2,7 @@
 //  CareerListCell.swift
 //  Career Path
 //
-//  Created by iosdev on 22/11/2019.
+//  Created by mikael on 22/11/2019.
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
@@ -26,7 +26,7 @@ class CareerListCell: UITableViewCell {
     }
     
     func populateCell(career: Career) {
-        img.image = UIImage(named: "careerImg")
+        img.image = UIImage(named: career.careerName)
         name.text = career.careerName
         salary.text = "Salary: \(career.separateThousands(value: Int(career.medianSalary)))"
     }

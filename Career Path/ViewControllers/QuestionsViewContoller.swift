@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionsViewController: UIViewController {
+class QuestionsViewController: BaseViewController {
     
     
     //MARK:variables
@@ -29,7 +29,12 @@ class QuestionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSlideMenuButton()
+        self.title = "Personality Test"
         updateUI()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     //UI will update when question will change
