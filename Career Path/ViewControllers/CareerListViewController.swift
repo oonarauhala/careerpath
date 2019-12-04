@@ -18,12 +18,13 @@ import CoreData
 
 class CareerListViewController: UIViewController {
     
-    // MARK: Properties
+// MARK: Properties
     
-    var header: CareerListHeader!
+    let colorTheme: Themes = .t8
     let request = NetworkRequest()
     let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
     
+    var header: CareerListHeader!
     var fetchedResultsController: NSFetchedResultsController<CareerEntity>?
     // displayState defines what kind of Careers to display
     // -> set this in prepare for segue
@@ -35,22 +36,17 @@ class CareerListViewController: UIViewController {
     private var sortedByNameAscending = true
     private var sortedByDegreeAscending = true
     
-    private var headerCurrentHeight: CGFloat = 100
-    private var headerMinHeightConstant: CGFloat = 100
-    private var headerMaxHeightConstant: CGFloat = 250
-    
-    
-    // MARK: Outlets
+// MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    // MARK: Lifecycle methods
+// MARK: Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableViewSetup()
+        colorSetup(theme: .t6)
         
         if displayState == .Default {
             defaultSetup()
@@ -61,6 +57,7 @@ class CareerListViewController: UIViewController {
         else if displayState == .Results {
             testResultsSetup()
         }
+        fetchData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,11 +82,19 @@ class CareerListViewController: UIViewController {
 //        }
 //    }
     
-    // MARK: Initializer methods
+// MARK: Initializer methods
     
+    fileprivate func colorSetup(theme: Themes) {
+        guard let navBar = navigationController?.navigationBar else { return }
+        navBar.barTintColor = UIColor.navigationBar(theme: colorTheme)
+        navBar.isTranslucent = true
+        view.backgroundColor = UIColor.careerListView(theme: colorTheme)
+        tableView.backgroundColor = UIColor.careerListBackground(theme: colorTheme)
+    }
     
-    // ---------------------<MAIN INITIALIZER >-------------------------------------------
-    // -> Used every time when the TableView is initialized or it's display style changes
+//----------------------<MAIN INITIALIZER >-------------------------------------------
+    
+//--> Used every time when the TableView is initialized or it's display style changes
     
     private func initFectchedResultsController(
         sortingKey: String, ascending: Bool, state: DisplayState)
@@ -100,16 +105,14 @@ class CareerListViewController: UIViewController {
         if state == .FutureDemand {
             fetchRequest.predicate = NSPredicate(format: "demand == %d", Int16(2))
         }
-            
-            // -> When navigated to this controller when showing careers based on test results
+        // -> When navigated to this controller when showing careers based on test results
         else if state == .Results {
             guard let res = results else {
                 fatalError("CareerListViewController.results not defined in segue")
             }
             fetchRequest.predicate = NSPredicate(format: "personalityType == %d", Int16(res.personalityType.convertToInt()))
         }
-            
-            // -> When navigated to this controller already knowing a set of career names
+        // -> When navigated to this controller already knowing a set of career names
         else if state == .ExistingCareers {
             guard let careers = existingCareers else {
                 fatalError("CareerListViewController.existingCareers not set")
@@ -140,8 +143,7 @@ class CareerListViewController: UIViewController {
         fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
         try? fetchedResultsController?.performFetch()
     }
-    // ---------------------</MAIN INITIALIZER >-------------------------------------------
-    
+//----------------------</MAIN INITIALIZER >-------------------------------------------
     
     // Display all careers
     func defaultSetup() {
@@ -150,9 +152,6 @@ class CareerListViewController: UIViewController {
     
     // Display careers with high future demand
     func futureDemandSetup() {
-        headerCurrentHeight = 130
-        headerMinHeightConstant = 130
-        headerMaxHeightConstant = 280
         initFectchedResultsController(sortingKey: "demand", ascending: true, state: displayState)
     }
     
@@ -161,8 +160,7 @@ class CareerListViewController: UIViewController {
         initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
     }
     
-    
-    // MARK: Navigation
+// MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowInfo",
@@ -176,8 +174,7 @@ class CareerListViewController: UIViewController {
         }
     }
     
-    
-    //MARK: Private functions
+// MARK: Private functions
     
     fileprivate func tableViewSetup() {
         tableView.tableFooterView = UIView()
@@ -189,19 +186,21 @@ class CareerListViewController: UIViewController {
             "CareerListHeader", owner: self, options: nil)?.first as? CareerListHeader
         switch displayState {
         case .FutureDemand:
-            header?.initialSetup(title: "A list of careers with high future demand")
+            header.headerTitle.text = "A list of careers with high future demand"
         case .Results:
-            header?.initialSetup(title: "Your results")
+            header.headerTitle.text = "Your results"
         default:
-            header?.initialSetup(title: "A list of all our careers")
+            header.headerTitle.text = "A list of all our careers"
         }
         header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
         header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
         header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
         header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
-        header.frame.size.height = 100
-        
+    
         tableView.tableHeaderView = header
+        // custom lifecycle hack ->
+        header.initiliazed = true
+        header.initialSetup(theme: colorTheme)
     }
     
     // -> Loads all the careers from a backend API
@@ -219,7 +218,6 @@ class CareerListViewController: UIViewController {
     }
 }
 
-
 // MARK: NSFetchedResultsControllerDelegate
 
 extension CareerListViewController: NSFetchedResultsControllerDelegate {
@@ -230,7 +228,6 @@ extension CareerListViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
-
 // MARK : Sorting
 
 extension CareerListViewController {
@@ -240,22 +237,14 @@ extension CareerListViewController {
     //   and when the header view should collapse
     private func forceCollapseSortSelection() {
         header.sortByPressed()
-        headerCurrentHeight = headerMinHeightConstant
         self.tableView.beginUpdates()
         self.view.layoutIfNeeded()
         self.tableView.endUpdates()
     }
     
     @objc func sortButtonClicked(_ sender: Any) {
-        if headerCurrentHeight == headerMinHeightConstant {
-            headerCurrentHeight = headerMaxHeightConstant
-        } else {
-            headerCurrentHeight = headerMinHeightConstant
-        }
         self.tableView.beginUpdates()
         self.tableView.endUpdates()
-        //self.view = self.view.forFirstBaselineLayout
-        //        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
     }
     
     @objc func sortBySalary(_ sender: UIButton) {
@@ -266,11 +255,6 @@ extension CareerListViewController {
         sortedByNameAscending = true
         tableView.reloadDataWithAnimation(!sortedBySalaryAscending)
         header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
-        
-        
-        
-        //self.view = self.view.forFirstBaselineLayout
-        //        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
     }
     
     @objc func sortByName(_ sender: UIButton) {
@@ -328,9 +312,9 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("not found")
         }
         tableView.register(UINib(nibName: "CareerListCell", bundle: nil), forCellReuseIdentifier: "CareerCell")
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath) as! CareerListCell
         cell.populateCell(career: careerEntity.convertToCareer())
+        cell.setStyles(theme: colorTheme, cell: cell)
         
         return cell
     }
@@ -345,13 +329,24 @@ extension UITableView {
             direction = .fromTop
         }
         let transition = CATransition()
-        transition.type = CATransitionType.reveal
-        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.fade
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         transition.fillMode = CAMediaTimingFillMode.forwards
-        transition.duration = 0.6
+        transition.duration = 0.35
         transition.subtype = direction
         self.layer.add(transition, forKey: "UITableViewReloadDataAnimationKey")
         // Update your data source here
         self.reloadData()
+    }
+    
+    func getAllIndexPaths() -> [IndexPath] {
+        var indexPaths: [IndexPath] = []
+        
+        for i in 0..<self.numberOfSections {
+            for j in 0..<self.numberOfRows(inSection: i) {
+                indexPaths.append(IndexPath(row: j, section: i))
+            }
+        }
+        return indexPaths
     }
 }
