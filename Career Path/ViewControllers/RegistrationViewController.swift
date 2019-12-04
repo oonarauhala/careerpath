@@ -8,24 +8,44 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+// View controller for registration page
 
-    var validFields = 0
-    
-    func checkNumberOfFields() {
-        if validFields == 4 {
-            //enable button
-        }
-        else {
-            print("Only \(validFields) fields are valid")
-        }
-    }
+class RegisterViewController: UIViewController {
     
     // Outlets for all fields
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var password2Field: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Disable register button
+        registerButton.isEnabled = false
+        
+    }
+    
+    // Keeps track of valid fiels to enable register button
+    var validFields = 0
+    
+    // Checks number of valid fields to enable register button
+    func checkFields() {
+        if validFields == 4 {
+            enableRegisterButton()
+        }
+        else {
+            print("Only \(validFields) fields are valid")
+        }
+    }
+    
+    // Enables button
+    func enableRegisterButton() {
+        registerButton.isEnabled = true
+    }
+    
     
     //actions for all fields
     @IBAction func usernameEditingChanged(_ sender: UITextField) {
@@ -35,10 +55,8 @@ class RegisterViewController: UIViewController {
         if username.isValid(.username) {
             print("Username is valid")
             
-            //set username to core data/database HERE!!
-            
             validFields += 1
-            checkNumberOfFields()
+            checkFields()
         }
         else {
             
@@ -55,10 +73,8 @@ class RegisterViewController: UIViewController {
         if email.isValid(.email) {
             print("Email is valid")
             
-            //set email to core data/database HERE!!
-            
             validFields += 1
-            checkNumberOfFields()
+            checkFields()
         }
         else {
             
@@ -76,7 +92,7 @@ class RegisterViewController: UIViewController {
             print("Password is valid")
             
             validFields += 1
-            checkNumberOfFields()
+            checkFields()
         }
         else {
             
@@ -98,12 +114,9 @@ class RegisterViewController: UIViewController {
             print("Password2 is valid")
             
             if password1 == password2 {
-                
-            
-                //set password to core data/database HERE!!
             
                 validFields += 1
-                checkNumberOfFields()
+                checkFields()
             }
             else {
                 print("Passwords don't match")
@@ -115,5 +128,18 @@ class RegisterViewController: UIViewController {
             
             print("Password should be 4-8 characters, numbers or letters")
         }
+    }
+    
+    // Action for register button
+    @IBAction func registerButtonTouchUpInside(_ sender: UIButton) {
+        
+        if registerButton.isEnabled == true {
+            print("Button enabled")
+        }
+        else {
+            print("Button disabled")
+        }
+        
+        // Send/save data here
     }
 }
