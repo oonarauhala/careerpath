@@ -31,5 +31,11 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FutureDemand", let destination = segue.destination as? CareerListViewController {
+            destination.displayState = .FutureDemand
+        }
+    }
  
 }
