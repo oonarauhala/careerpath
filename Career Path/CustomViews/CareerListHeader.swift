@@ -47,6 +47,7 @@ class CareerListHeader: UITableViewHeaderFooterView {
 //MARK: Actions
 
     @IBAction func sortByPressed(_ sender: UIButton = UIButton()) {
+
         UIView.animate(withDuration: 0.15, delay: 0, options: .curveLinear, animations: {
             if self.expandedElements.isHidden {
                 self.sortByButton.setTitle("Hide", for: .normal)
@@ -63,6 +64,7 @@ class CareerListHeader: UITableViewHeaderFooterView {
             }
         })
         expandedElements.backgroundColor = UIColor.black
+      
         UIButton.animate(
             withDuration: 0.15, animations: {
                 sender.transform = CGAffineTransform(scaleX: 0.33, y: 0.33)},
