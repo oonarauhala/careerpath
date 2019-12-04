@@ -30,24 +30,36 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="usernameEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="akq-zz-fLf"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Qs-lx-veU">
                                                 <rect key="frame" x="0.0" y="38" width="122" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="emailEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="MfP-Lj-El0"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlQ-lw-HkZ">
                                                 <rect key="frame" x="0.0" y="76" width="122" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="passwordEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YTF-10-in7"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password again" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWg-I1-w9o">
                                                 <rect key="frame" x="0.0" y="114" width="122" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="password2EditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Sc8-Zy-FbY"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -58,6 +70,12 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" red="0.91529864072799683" green="0.24680858850479126" blue="0.20107656717300415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JUu-bb-Unr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -68,6 +86,13 @@
                         <color key="backgroundColor" red="0.84289239414477835" green="1" blue="0.47844103209187661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="7Qs-lx-veU" id="8Yk-W0-VK4"/>
+                        <outlet property="password2Field" destination="kWg-I1-w9o" id="fdo-yV-91G"/>
+                        <outlet property="passwordField" destination="zlQ-lw-HkZ" id="yYa-HU-3au"/>
+                        <outlet property="registerButton" destination="dXU-CW-zT4" id="VgS-iX-7Ii"/>
+                        <outlet property="usernameField" destination="bis-sr-fJg" id="p6c-9l-3GL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -406,7 +431,7 @@
                                             <constraint firstAttribute="width" constant="374" id="8gK-cb-JLT"/>
                                             <constraint firstAttribute="height" constant="300" id="x6e-Hi-trJ"/>
                                         </constraints>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
