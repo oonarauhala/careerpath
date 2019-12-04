@@ -12,7 +12,7 @@ import UIKit
 // changing it's displayState, so that it displays only Careers that
 // have high future demand
 
-class FutureDemandController: UIViewController {
+class FutureDemandController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()

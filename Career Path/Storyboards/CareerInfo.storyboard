@@ -154,6 +154,38 @@
             </objects>
             <point key="canvasLocation" x="2077.5999999999999" y="-80.50974512743629"/>
         </scene>
+        <!--MenuViewController-->
+        <scene sceneID="qrX-GH-8dY">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MenuViewController" storyboardName="Home" referencedIdentifier="MenuViewController" id="i8p-sT-Ydu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evn-yf-RIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2730" y="-310"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="chJ-6w-JBf">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Home" storyboardName="Home" referencedIdentifier="Home" id="ixe-Mb-gYz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZW-Q6-VsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733" y="-264"/>
+        </scene>
+        <!--Test-->
+        <scene sceneID="zc9-0L-69E">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Test" storyboardName="MyStoryboard" referencedIdentifier="Test" id="nLr-Jl-3Yx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvc-gs-sXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2725" y="-228"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="E1C-uu-0eD">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="ProfileStoryboard" referencedIdentifier="Profile" id="NBM-1q-Lx8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZdX-VB-zxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2736" y="-193"/>
+        </scene>
         <!--Career List View Controller-->
         <scene sceneID="ilN-2C-Mfd">
             <objects>
