@@ -35,14 +35,14 @@ class LoginViewConroller: UIViewController {
     
     // Field actions
     @IBAction func usernameEditingChanged(_ sender: UITextField) {
-        disableLoginButton()
+        enableLoginButton()()
         guard let username = usernameField.text else {
             return
         }
     }
     
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
-        disableLoginButton()
+        enableLoginButton()()
         guard let password = passwordField.text else {
             return
         }

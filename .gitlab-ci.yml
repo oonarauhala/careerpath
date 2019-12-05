@@ -5,5 +5,5 @@ build_project:
   stage: build
   script:
     - xcodebuild clean -project Career\ Path.xcodeproj -scheme Career\ Path 
-    - xcodebuild test -project Career\ Path.xcodeproj -scheme Career\ Path -destination 'platform=iOS Simulator, name=iPhone XR,OS=12.1'
+    - xcodebuild test -project Career\ Path.xcodeproj -scheme Career\ Path -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.1'
   tags:
