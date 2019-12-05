@@ -35,6 +35,10 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     
     //MARK: Actions
 
+    @IBAction func locationButtonAction(_ sender: Any) {
+        NetworkRequest().fetchGetUsers{data in print(data)}
+    }
+    
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -104,9 +108,7 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     
     
     func loadUserInfo() {
-        let test = NetworkRequest()
         
-        test.fetchGetUser(userID: "1")
         
     }
     

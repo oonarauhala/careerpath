@@ -389,15 +389,15 @@
       "users": [
 	{	
 	     "id": 1,
-             "firstname": "John",
-	     "lastname": "Smith",
-	     "age": 20
+             "username": "jsmith",
+		"email": "jsmith@email.com",
+		"password": "password1"
 	},
 	{
 		"id": 2,
-		"firstname": "John",
-	     "lastname": "Doe",
-	     "age": 21
+		"username": "Doe",
+		"email": "doe@email.com",
+		"password": "password2"
 	}
       ]
 }

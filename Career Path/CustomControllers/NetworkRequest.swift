@@ -33,9 +33,9 @@ struct NetworkRequest {
             .resume()
     }
     
-    func fetchGetUser(userID: String) -> Void {
+    func fetchGetUsers(completion: @escaping ((AnyObject) -> Void)){
         
-        let urlString: String = "http://localhost:3000/users/" + userID
+        let urlString: String = "http://localhost:3000/users"
         
         guard let url = URL(string: urlString) else {
             print("Error: URL not created")
@@ -49,12 +49,20 @@ struct NetworkRequest {
             }
             
             do {
-                guard let json = try JSONSerialization.jsonObject(with: dataResponse, options: []) as? [String: Any]
+                guard let json = try JSONSerialization.jsonObject(with: dataResponse, options: []) as? [[String: Any]]
                     else {
-                        print("problemc in json serialization")
+                        print("problem in json serialization")
                         return
                 }
                 print("json is: " + json.description)
+                for obj in json {
+                    //let value2 = String(describing: value)
+                    if let a = obj["username"] {
+                        print(String(describing: a) + "  ")
+                    }
+                    
+                    // access all key / value pairs in dictionary
+                }
             }
             catch {
                 print("catch in fetchgetuser")

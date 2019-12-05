@@ -179,7 +179,7 @@
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="locationBtn:" destination="kFC-f2-Azm" eventType="touchUpInside" id="l4b-VX-j3N"/>
+                                                    <action selector="locationButtonAction:" destination="kFC-f2-Azm" eventType="touchUpInside" id="4qE-cA-MOz"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-Qh-VTV">

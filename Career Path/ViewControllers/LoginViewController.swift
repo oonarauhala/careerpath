@@ -50,5 +50,15 @@ class LoginViewConroller: UIViewController {
     
     // Button action
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        userExists()
+    }
+    
+    func userExists() -> Bool {
+        NetworkRequest().fetchGetUsers{data in
+            print(data)
+            
+        }
+        
+        return false
     }
 }
