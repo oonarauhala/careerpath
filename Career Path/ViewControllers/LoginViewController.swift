@@ -35,7 +35,7 @@ class LoginViewConroller: UIViewController {
     
     // Field actions
     @IBAction func usernameEditingChanged(_ sender: UITextField) {
-        enableLoginButton
+        enableLoginButton()
         guard let username = usernameField.text else {
             return
         }
