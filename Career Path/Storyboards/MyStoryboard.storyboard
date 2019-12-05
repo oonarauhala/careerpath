@@ -184,6 +184,14 @@
             </objects>
             <point key="canvasLocation" x="2174" y="429"/>
         </scene>
+        <!--CareerList-->
+        <scene sceneID="2mg-gJ-VSP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CareerInfo" referencedIdentifier="CareerList" id="L5c-sS-QEe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TjO-Kq-CNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2938" y="524"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="9bD-ha-uFc">
             <objects>
@@ -513,6 +521,9 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="L5c-sS-QEe" kind="show" identifier="ShowResults" id="0sd-XM-LBa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

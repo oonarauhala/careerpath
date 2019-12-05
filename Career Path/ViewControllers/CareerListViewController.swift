@@ -16,7 +16,7 @@ import CoreData
 // Populates the TableView with data from CoreData
 // automatically, using NSFetchedResultsControllerDelegate
 
-class CareerListViewController: UIViewController {
+class CareerListViewController: BaseViewController {
     
 // MARK: Properties
     
@@ -44,6 +44,7 @@ class CareerListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSlideMenuButton()
         
         tableViewSetup()
         colorSetup(theme: .t6)
