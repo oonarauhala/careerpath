@@ -33,7 +33,7 @@ struct NetworkRequest {
             .resume()
     }
     
-    func fetchGetUsers(completion: @escaping ((AnyObject) -> Void)){
+    func fetchGetUsers(completion: @escaping (([[String: Any]]) -> Void)){
         
         let urlString: String = "http://localhost:3000/users"
         
@@ -55,14 +55,7 @@ struct NetworkRequest {
                         return
                 }
                 print("json is: " + json.description)
-                for obj in json {
-                    //let value2 = String(describing: value)
-                    if let a = obj["username"] {
-                        print(String(describing: a) + "  ")
-                    }
-                    
-                    // access all key / value pairs in dictionary
-                }
+                completion(json)
             }
             catch {
                 print("catch in fetchgetuser")
