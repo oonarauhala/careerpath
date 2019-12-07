@@ -18,15 +18,15 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var profileTableView: UITableView!
 
     //Placeholder user information
-    private var user: User = User("Firstname ", "Lastname", 20)
+    private var user: User = User("Firstname ", "Lastname", "password")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //button "menu"
         addSlideMenuButton()
         self.title = "Profile"
-        self.nameLabel.text = user.firstName + user.lastName
-        self.ageLabel.text = String(user.age)
+        self.nameLabel.text = user.username
+        self.ageLabel.text = String(user.email)
         profileTableView.delegate = self as UITableViewDelegate
         profileTableView.dataSource = self as UITableViewDataSource
         profileTableView.tableFooterView = UIView()

@@ -66,6 +66,8 @@ class LoginViewConroller: UIViewController {
         
         if userExists() == true {
             UserDefaults.standard.set(true, forKey: "userLoggedIn")
+            //prints 0 for false and 1 for true
+            print("is user logged in: " + (UserDefaults.standard.string(forKey: "userLoggedIn") ?? ""))
         }
     }
     
@@ -78,12 +80,12 @@ class LoginViewConroller: UIViewController {
             //Iterate through json user objects
             for object in data {
                 //Check if valid and remove optional
-                if let username = object["username"] {
+                if let username = object["storedUsername"] {
                     print("fetched username: " + String(describing: username))
                     print("entered username: " + self.username)
                     //Check if entered username matches a username in json.db
                     if String(describing: username) == self.username{
-                        if let password = object["password"] {
+                        if let password = object["storedPassword"] {
                             //Check if entered password matches users password
                             print("fetched password: " + String(describing: password))
                             print("entered password: " + self.password)

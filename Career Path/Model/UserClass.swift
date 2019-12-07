@@ -10,59 +10,50 @@ import Foundation
 
 struct User: Codable {
     
-    private  let storedFirstName: String
-    var firstName: String {
+    private  let storedUsername: String
+    var username: String {
         get {
-            return storedFirstName
+            return storedUsername
         }
     }
     
-    private  let storedLastName: String
-    var lastName: String {
+    private  let storedEmail: String
+    var email: String {
         get {
-            return storedLastName
+            return storedEmail
+        }
+    }
+    
+    private  let storedPassword: String
+    var password: String {
+        get {
+            return storedPassword
         }
     }
     
     
-    private var storedAge: Int
-    var age: Int {
-        get {
-            return storedAge
+
+    
+    init(_ username: String,_ email: String,_ password: String) {
+        if (username).isEmpty || username == "" {
+            self.storedUsername = "Anonymous"
+        }
+        else {
+            self.storedUsername = username
         }
         
-        set {
-            if newValue < storedAge {
-                
-            }
-            else if newValue < 16 {
-                
-            }
-            else {
-                storedAge = newValue
-            }
-        }
-    }
-    
-    init(_ firstName: String,_ lastName: String,_ age: Int) {
-        if (firstName).isEmpty || firstName == "" {
-            self.storedFirstName = "Anonymous"
+        if (email).isEmpty || email == "" {
+            self.storedEmail = "Anonymous"
         }
         else {
-            self.storedFirstName = firstName
-        }
-        if (lastName).isEmpty || lastName == "" {
-            self.storedLastName = "Anonymous"
-        }
-        else {
-            self.storedLastName = lastName
+            self.storedEmail = email
         }
         
-        if age < 16 || age > 150 {
-            self.storedAge = 0
+        if (password).isEmpty || password == "" {
+            self.storedPassword = "Anonymous"
         }
         else {
-            self.storedAge = age
+            self.storedPassword = password
         }
         
     }

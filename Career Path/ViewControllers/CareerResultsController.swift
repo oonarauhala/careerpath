@@ -27,7 +27,7 @@ class CareerResultsController: UIViewController {
 //            let typeAndF3 = TypeAndFrequency(type: PersonalType.F, frequency: 8)
 //            let typeAndF4 = TypeAndFrequency(type: PersonalType.P, frequency: 5)
             
-            destination.results = TestResults(user: User("asd", "sfsdfasdasd", 50), personalityType: PersonalityType.INFP)
+            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: PersonalityType.INFP)
         }
     }
 }

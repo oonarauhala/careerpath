@@ -66,9 +66,9 @@ struct NetworkRequest {
         
     }
     
-    func fetchPostUser(userID: String, firstname: String, lastname: String, age: Int) -> Void {
+    func fetchPostUser(username: String, email: String, password: String) -> Void {
         
-        let urlString: String = "http://localhost:3000/users/" + userID
+        let urlString: String = "http://localhost:3000/users/"
         
         guard let url = URL(string: urlString) else {
             print("Error: URL not created")
@@ -78,7 +78,7 @@ struct NetworkRequest {
         var request = URLRequest(url: url)
         
         
-        let user = User(firstname, lastname, age)
+        let user = User(username, email, password)
         
         guard let uploadData = try? JSONEncoder().encode(user) else {
             print("could not encode user")
