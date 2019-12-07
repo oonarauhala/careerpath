@@ -34,6 +34,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self as UITableViewDataSource
         //removes empty cells from the table
         tableView.tableFooterView = UIView()
+       
     }
     
     override func didReceiveMemoryWarning() {

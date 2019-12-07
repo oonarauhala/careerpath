@@ -20,18 +20,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Pe-iW-kuz">
-                        <rect key="frame" x="0.0" y="8" width="328" height="229"/>
+                        <rect key="frame" x="0.0" y="8" width="328" height="199"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Describe the contents here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzI-w7-XIT">
-                                <rect key="frame" x="0.0" y="0.0" width="328" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <rect key="frame" x="0.0" y="0.0" width="328" height="23"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGE-Bd-atp">
-                                <rect key="frame" x="0.0" y="37" width="328" height="42"/>
+                                <rect key="frame" x="40" y="31" width="248" height="36"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="qbI-ZG-GJ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Sort">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -40,35 +43,44 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LF7-hi-zQ9">
-                                <rect key="frame" x="0.0" y="87" width="328" height="142"/>
+                                <rect key="frame" x="40" y="75" width="248" height="124"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9W-mN-ObX">
-                                        <rect key="frame" x="0.0" y="0.0" width="328" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="36"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Sort by salary ↓">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05k-rd-ZXI">
-                                        <rect key="frame" x="0.0" y="50" width="328" height="42"/>
+                                        <rect key="frame" x="0.0" y="44" width="248" height="36"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Sort by name ↓">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4B-Xs-Ntc">
-                                        <rect key="frame" x="0.0" y="100" width="328" height="42"/>
+                                        <rect key="frame" x="0.0" y="88" width="248" height="36"/>
                                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Sort by education ↓">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="248" id="fma-Aa-2gj"/>
+                                </constraints>
                             </stackView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YGE-Bd-atp" secondAttribute="trailing" constant="40" id="EQ2-Ch-v61"/>
+                            <constraint firstItem="LF7-hi-zQ9" firstAttribute="leading" secondItem="9Pe-iW-kuz" secondAttribute="leading" constant="40" id="Fdt-ec-B8L"/>
+                            <constraint firstItem="YGE-Bd-atp" firstAttribute="leading" secondItem="9Pe-iW-kuz" secondAttribute="leading" constant="40" id="Icg-mU-lJ8"/>
+                            <constraint firstAttribute="trailing" secondItem="LF7-hi-zQ9" secondAttribute="trailing" constant="40" id="zgO-iS-Xev"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -87,7 +99,7 @@
                 <outlet property="salaryButton" destination="M9W-mN-ObX" id="eOx-Xq-52t"/>
                 <outlet property="sortByButton" destination="YGE-Bd-atp" id="RTA-bU-7eL"/>
             </connections>
-            <point key="canvasLocation" x="1013" y="-22"/>
+            <point key="canvasLocation" x="1154" y="-166"/>
         </tableViewCell>
     </objects>
 </document>

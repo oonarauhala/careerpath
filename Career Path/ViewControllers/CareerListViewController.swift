@@ -20,7 +20,7 @@ class CareerListViewController: BaseViewController {
     
 // MARK: Properties
     
-    let colorTheme: Themes = .t8
+    let colorTheme: Themes = .t9
     let request = NetworkRequest()
     let fetchRequest: NSFetchRequest<CareerEntity> = CareerEntity.fetchRequest()
     
@@ -47,7 +47,7 @@ class CareerListViewController: BaseViewController {
         addSlideMenuButton()
         
         tableViewSetup()
-        colorSetup(theme: .t6)
+        colorSetup(theme: .t9)
         
         if displayState == .Default {
             defaultSetup()
@@ -59,6 +59,11 @@ class CareerListViewController: BaseViewController {
             testResultsSetup()
         }
         fetchData()
+        
+        self.title = "List of all careers"
+        // for default navigation bar title color
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hex: "#007BFFff") ?? UIColor.white]
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
