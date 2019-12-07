@@ -102,17 +102,16 @@ class CareerInfoViewController: UIViewController {
         }
     }
     
+    // Show education info using custom alert
     @objc private func showEducationInfo() {
         guard let careerUnwrapped = career else {
             fatalError("Career not found from segue")
         }
         let careerDsc = careerUnwrapped.educationRequirement.description()
-        let alert = UIAlertController(
-            title: careerUnwrapped.educationRequirement.rawValue,
-            message: careerDsc, preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true)
+        let alertService = AlertService()
+        let alertVC = alertService.alert()
+        present(alertVC, animated: true)
     }
     
     //fuction for resizing image and function "textToimage" -> career name to image
