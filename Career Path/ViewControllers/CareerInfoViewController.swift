@@ -110,7 +110,7 @@ class CareerInfoViewController: UIViewController {
         let careerDsc = careerUnwrapped.educationRequirement.description()
         
         let alertService = AlertService()
-        let alertVC = alertService.alert()
+        let alertVC = alertService.alert(body: careerDsc)
         present(alertVC, animated: true)
     }
     

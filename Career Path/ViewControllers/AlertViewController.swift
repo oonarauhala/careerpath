@@ -17,11 +17,17 @@ class AlertViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBOutlet weak var body: UILabel!
+    
+    var alertBody = String()
+    
+    func setupView() {
+        body.text = alertBody
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Define label text (degree info)
-        
+        setupView()
     }
 }
 
