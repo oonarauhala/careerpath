@@ -7,7 +7,7 @@
 //
 
 enum Themes {
-    case t0, t1, t2, t3, t4, t5, t6, t7, t8
+    case t0, t1, t2, t3, t4, t5, t6, t7, t8, t9
 }
 
 import UIKit
@@ -188,6 +188,26 @@ extension UIColor {
         return UIColor(hex: "#026873ff") ?? UIColor.white
     }
 }
+// Theme 9
+extension UIColor {
+    class var theme9_1: UIColor {
+        return UIColor(hex: "#FFAA0Dff") ?? UIColor.white
+    }
+    class var theme9_2: UIColor {
+        return UIColor(hex: "#007BFFff") ?? UIColor.white
+    }
+    class var theme9_3: UIColor {
+        return UIColor(hex: "#EFEEEEff") ?? UIColor.white
+    }
+    class var theme9_4: UIColor {
+        return UIColor(hex: "#9BD7D1ff") ?? UIColor.white
+    }
+    class var theme9_5: UIColor {
+        return UIColor(hex: "#325D79ff") ?? UIColor.white
+    }
+}
+
+
 
 extension UIColor {
     
@@ -211,6 +231,8 @@ extension UIColor {
             return UIColor.theme7_4
         case .t8:
             return UIColor.theme8_3
+        case .t9:
+            return UIColor.theme9_1
         }
     }
     class func sortingButtonsTitle(theme: Themes) -> UIColor{
@@ -233,6 +255,8 @@ extension UIColor {
             return UIColor.theme7_5
         case .t8:
             return UIColor.theme8_4
+        case .t9:
+            return UIColor.white
         }
     }
     class func careerListHeaderTitle(theme: Themes) -> UIColor{
@@ -255,6 +279,8 @@ extension UIColor {
             return UIColor.theme7_5
         case .t8:
             return UIColor.theme8_3
+        case .t9:
+            return UIColor.theme9_2
         }
     }
     class func careerCellNameText(theme: Themes) -> UIColor{
@@ -277,6 +303,9 @@ extension UIColor {
             return UIColor.theme7_2
         case .t8:
             return UIColor.theme8_1
+        case .t9:
+            return UIColor.theme9_2
+            
         }
     }
     class func careerCellDegreeText(theme: Themes) -> UIColor{
@@ -299,6 +328,8 @@ extension UIColor {
             return UIColor.theme7_3
         case .t8:
             return UIColor.theme8_4
+        case .t9:
+            return UIColor.black
         }
     }
     class func careerCellSalaryText(theme: Themes) -> UIColor{
@@ -321,6 +352,8 @@ extension UIColor {
             return UIColor.theme7_3
         case .t8:
             return UIColor.theme8_4
+        case .t9:
+            return UIColor.black
         }
     }
     class func careerCellBackground(theme: Themes) -> UIColor{
@@ -343,6 +376,8 @@ extension UIColor {
             return UIColor.theme7_5
         case .t8:
             return UIColor.theme8_3
+        case .t9:
+            return UIColor.theme9_3
         }
     }
     class func careerListView(theme: Themes) -> UIColor {
@@ -365,6 +400,8 @@ extension UIColor {
             return UIColor.theme7_4
         case .t8:
             return UIColor.theme8_1
+        case .t9:
+            return UIColor.theme9_3
         }
     }
     class func navigationBar(theme: Themes) -> UIColor {
@@ -386,6 +423,8 @@ extension UIColor {
         case .t7:
             return careerListView(theme: theme)
         case .t8:
+            return careerListView(theme: theme)
+        case .t9:
             return careerListView(theme: theme)
         }
     }
@@ -409,6 +448,8 @@ extension UIColor {
             return UIColor.theme7_3
         case .t8:
             return UIColor.theme8_4
+        case .t9:
+            return UIColor.theme9_3
         }
     }
     class func careerListHeaderBackground(theme: Themes) -> UIColor {
@@ -430,6 +471,8 @@ extension UIColor {
         case .t7:
             return UIColor.careerListBackground(theme: theme)
         case .t8:
+            return UIColor.careerListBackground(theme: theme)
+        case .t9:
             return UIColor.careerListBackground(theme: theme)
         }
     }
