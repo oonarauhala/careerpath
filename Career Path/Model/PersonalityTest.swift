@@ -23,6 +23,27 @@ import Foundation
     enum PersonalType: String {
         case E = "extraverted", I = "introverted", S = "sensing", N = "iNtuitive",
              T = "thinking", F = "feeling", J = "judging", P = "perceiving"
+        
+        func convertToInt() -> Int {
+            switch self {
+            case .E:
+                return 0
+            case .I:
+                return 1
+            case .S:
+                return 2
+            case .N:
+                return 3
+            case .T:
+                return 4
+            case .F:
+                return 5
+            case .J:
+                return 6
+            case .P:
+                return 7
+            }
+        }
     }
 
     class PersonalityTest {

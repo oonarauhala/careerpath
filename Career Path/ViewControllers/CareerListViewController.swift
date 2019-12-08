@@ -108,10 +108,38 @@ class CareerListViewController: BaseViewController {
         }
         // -> When navigated to this controller when showing careers based on test results
         else if state == .Results {
+            var firstKeywordToInt: Int!
+            var secondKeywordToInt: Int!
+            var thirdKeywordToInt: Int!
+            var fourthKeywordToInt: Int!
+            // code below will give fatalerror if values above don't exist
             guard let res = results else {
-                fatalError("CareerListViewController.results not defined in segue")
+                fatalError("no keywords found in CareerEntity")
             }
-            fetchRequest.predicate = NSPredicate(format: "personalityType == %d", Int16(res.personalityType.convertToInt()))
+            for i in 0..<res.keywords.count {
+                if i == 0 {
+                    firstKeywordToInt = res.keywords[i].type.convertToInt()
+                }
+                else if i == 1 {
+                    secondKeywordToInt = res.keywords[i].type.convertToInt()
+                }
+                else if i == 2 {
+                    thirdKeywordToInt = res.keywords[i].type.convertToInt()
+                }
+                else if i == 3 {
+                    fourthKeywordToInt = res.keywords[i].type.convertToInt()
+                }
+            }
+            let personalityTypePredicate = NSPredicate(format: "personalityType == %d", Int16(res.personalityType.convertToInt()))
+            let keywordsPredicate1 = NSPredicate(format: "%d in keywords", firstKeywordToInt)
+            let keywordsPredicate2 = NSPredicate(format: "%d in keywords", secondKeywordToInt)
+            let keywordsPredicate3 = NSPredicate(format: "%d in keywords", thirdKeywordToInt)
+            let keywordsPredicate4 = NSPredicate(format: "%d in keywords", fourthKeywordToInt)
+            let compoundPredicate = NSCompoundPredicate(orPredicateWithSubpredicates:
+                [personalityTypePredicate, keywordsPredicate1, keywordsPredicate2, keywordsPredicate3, keywordsPredicate4])
+            
+            fetchRequest.predicate = compoundPredicate
+            print(compoundPredicate)
         }
         // -> When navigated to this controller already knowing a set of career names
         else if state == .ExistingCareers {
@@ -314,9 +342,38 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         tableView.register(UINib(nibName: "CareerListCell", bundle: nil), forCellReuseIdentifier: "CareerCell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath) as! CareerListCell
-        cell.populateCell(career: careerEntity.convertToCareer())
-        cell.setStyles(theme: colorTheme, cell: cell)
+        let career = careerEntity.convertToCareer()
         
+        // <displayState == .Results>
+        if displayState == .Results {
+            // Checking each careers suitability (the pointing system is arbitrary)
+            // personalityType.getComponents() splits the personality type into its singular components
+            let careerPersonalityTypeComponents = career.personalityType.getComponents()
+            var suitability = 0
+            // the test results have a property for the specified personality type,
+            // so comparing its components into every career's personality type's components
+            if results?.personalityType == career.personalityType {
+                suitability += 5 // <--- +5 points in suitability if personality types match
+            }
+            // pointing system
+            if let resultKeywords = results?.keywords {
+                for keyword in resultKeywords {
+                    for component in careerPersonalityTypeComponents {
+                        if keyword.type == component {
+                            suitability += (1*keyword.frequency) // <--- +1 point in suitability if a component matches
+                        }
+                    }
+                }
+            } else {
+                print("results?.keywords failed")
+            }
+            print("Career: \(career.careerName)\nSuitability: \(suitability)")
+            // add optional propert to CareerCell that holds the suitability and is initialized here
+        } // </displayState == .Results>
+        
+        cell.populateCell(career: career)
+        cell.setStyles(theme: colorTheme, cell: cell)
+
         return cell
     }
 }

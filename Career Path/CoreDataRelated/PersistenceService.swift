@@ -86,6 +86,11 @@ class PersistenceService {
                     careerEntity.personalityType = Int16(response.personality)
                     careerEntity.salary = Double(response.salary)
                     careerEntity.demand = Int16(response.futureDemand)
+                    var keywords: [Int] = []
+                    for component in careerEntity.convertToCareer().personalityType.getComponents() {
+                        keywords.append(Int(component.convertToInt()))
+                    }
+                    careerEntity.keywords = keywords
                     contextNeedsSaving = true
                 }
                 else {

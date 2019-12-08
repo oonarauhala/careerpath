@@ -20,16 +20,14 @@
 		6A0A7B94238F1F3600497DEC /* CareerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A7B92238F1F3600497DEC /* CareerEntity+CoreDataProperties.swift */; };
 		6A0A7B95238F1F3600497DEC /* CareerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A7B93238F1F3600497DEC /* CareerEntity+CoreDataClass.swift */; };
 		6A0A7B97238F1F4B00497DEC /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A7B96238F1F4B00497DEC /* PersistenceService.swift */; };
-		6A0E22742395409600D598BD /* LanguageStringPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A0E22762395409600D598BD /* LanguageStringPList.plist */; };
 		6A0A7BA42392BEAF00497DEC /* FutureDemand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0A7BA32392BEAF00497DEC /* FutureDemand.storyboard */; };
+		6A0E22742395409600D598BD /* LanguageStringPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A0E22762395409600D598BD /* LanguageStringPList.plist */; };
 		6A0E5D7A238536150057612D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D79238536150057612D /* AppDelegate.swift */; };
 		6A0E5D82238536150057612D /* Career_Path.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D80238536150057612D /* Career_Path.xcdatamodeld */; };
 		6A0E5D87238536170057612D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0E5D85238536170057612D /* LaunchScreen.storyboard */; };
 		6A0E5D92238536170057612D /* Career_PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D91238536170057612D /* Career_PathTests.swift */; };
 		6A0E5D9D238536170057612D /* Career_PathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D9C238536170057612D /* Career_PathUITests.swift */; };
-
 		6A8DAACB2397ACF400DD8BDA /* ColorThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DAACA2397ACF400DD8BDA /* ColorThemes.swift */; };
-
 		6A906AFA2393E984004D98D9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A906AF92393E984004D98D9 /* MenuViewController.swift */; };
 		6A906AFC2393EB8D004D98D9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A906AFB2393EB8D004D98D9 /* BaseViewController.swift */; };
 		6A906AFE2393F7EF004D98D9 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A906AFD2393F7EF004D98D9 /* MenuTableViewCell.swift */; };
@@ -97,9 +95,9 @@
 		6A0A7B92238F1F3600497DEC /* CareerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CareerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A0A7B93238F1F3600497DEC /* CareerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CareerEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6A0A7B96238F1F4B00497DEC /* PersistenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		6A0A7BA32392BEAF00497DEC /* FutureDemand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FutureDemand.storyboard; sourceTree = "<group>"; };
 		6A0E22752395409600D598BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/LanguageStringPList.plist; sourceTree = "<group>"; };
 		6A0E2277239540B400D598BD /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fi; path = fi.lproj/LanguageStringPList.plist; sourceTree = "<group>"; };
-		6A0A7BA32392BEAF00497DEC /* FutureDemand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FutureDemand.storyboard; sourceTree = "<group>"; };
 		6A0E5D76238536150057612D /* Career Path.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Career Path.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0E5D79238536150057612D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Career Path/AppDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		6A0E5D81238536150057612D /* Career_Path.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Career_Path.xcdatamodel; sourceTree = "<group>"; };
@@ -111,9 +109,7 @@
 		6A0E5D98238536170057612D /* Career PathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Career PathUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0E5D9C238536170057612D /* Career_PathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career_PathUITests.swift; sourceTree = "<group>"; };
 		6A0E5D9E238536170057612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		6A8DAACA2397ACF400DD8BDA /* ColorThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemes.swift; sourceTree = "<group>"; };
-
 		6A906AF92393E984004D98D9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6A906AFB2393EB8D004D98D9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6A906AFD2393F7EF004D98D9 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };

@@ -96,6 +96,42 @@ enum PersonalityType : String {
             return 14
         case .ENTJ:
             return 15
+        }
     }
-}
+    func getComponents() -> [PersonalType] {
+        switch self {
+        case .ISTJ:
+            return [.I, .S, .T, .J]
+        case .ISFJ:
+            return [.I, .S, .F, .J]
+        case .INFJ:
+            return [.I, .N, .F, .J]
+        case .INTJ:
+            return [.I, .N, .T, .J]
+        case .ISTP:
+            return [.I, .S, .T, .P]
+        case .ISFP:
+            return [.I, .S, .F, .P]
+        case .INFP:
+            return [.I, .N, .F, .P]
+        case .INTP:
+            return [.I, .N, .T, .P]
+        case .ESTP:
+            return [.E, .S, .T, .P]
+        case .ESFP:
+            return [.E, .S, .F, .P]
+        case .ENFP:
+            return [.E, .N, .F, .P]
+        case .ENTP:
+            return [.E, .N, .T, .P]
+        case .ESTJ:
+            return [.E, .S, .T, .J]
+        case .ESFJ:
+            return [.E, .S, .F, .J]
+        case .ENFJ:
+            return [.E, .N, .F, .J]
+        case .ENTJ:
+            return [.E, .N, .T, .J]
+        }
+    }
 }

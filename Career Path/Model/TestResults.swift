@@ -11,11 +11,12 @@ struct TestResults {
     let personalityType: PersonalityType
     // implement keywords to provide a more
     // detailed display of careers if time
-    let keywords = [TypeAndFrequency]()
+    var keywords: [TypeAndFrequency] = []
     
-    init(user: User, personalityType: PersonalityType) {
+    init(user: User, personalityType: PersonalityType, keywords: [TypeAndFrequency]) {
         self.user = user
         self.personalityType = personalityType
+        self.keywords = keywords
     }
 }
 
