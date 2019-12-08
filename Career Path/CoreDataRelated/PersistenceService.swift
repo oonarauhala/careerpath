@@ -86,22 +86,28 @@ class PersistenceService {
                     careerEntity.personalityType = Int16(response.personality)
                     careerEntity.salary = Double(response.salary)
                     careerEntity.demand = Int16(response.futureDemand)
-                    var keywords: [Int] = []
+                    // Splitting the personality type into its components (keywords).
+                    // These components will be used as predicates for offering
+                    // the best possible career recommendations.
+                    var keywords: [Int16] = []
                     for component in careerEntity.convertToCareer().personalityType.getComponents() {
-                        keywords.append(Int(component.convertToInt()))
+                        keywords.append(Int16(component.convertToInt()))
                     }
-                    careerEntity.keywords = keywords
+                    careerEntity.keyword1 = keywords[0]
+                    careerEntity.keyword2 = keywords[1]
+                    careerEntity.keyword3 = keywords[2]
+                    careerEntity.keyword4 = keywords[3]
+                    // The 0th component is always the first letter of the personality type, hence "dominant"
+                    careerEntity.dominantKeyword = keywords[0]
+                    
                     contextNeedsSaving = true
-                }
-                else {
-                    print("found existing career")
                 }
             } catch {
                 print(error)
             }
         }
-        // The View Controller controlling the list of Careers
-        // will update its TableView on context change
+        // The View Controller controlling the list of careers
+        // will update its TableView upon context change, so notifying it here.
         if (contextNeedsSaving) {
             saveContext()
         }

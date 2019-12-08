@@ -108,38 +108,27 @@ class CareerListViewController: BaseViewController {
         }
         // -> When navigated to this controller when showing careers based on test results
         else if state == .Results {
-            var firstKeywordToInt: Int!
-            var secondKeywordToInt: Int!
-            var thirdKeywordToInt: Int!
-            var fourthKeywordToInt: Int!
-            // code below will give fatalerror if values above don't exist
             guard let res = results else {
-                fatalError("no keywords found in CareerEntity")
+                fatalError("Results not initialized in segue to CareerListViewController")
             }
-            for i in 0..<res.keywords.count {
-                if i == 0 {
-                    firstKeywordToInt = res.keywords[i].type.convertToInt()
-                }
-                else if i == 1 {
-                    secondKeywordToInt = res.keywords[i].type.convertToInt()
-                }
-                else if i == 2 {
-                    thirdKeywordToInt = res.keywords[i].type.convertToInt()
-                }
-                else if i == 3 {
-                    fourthKeywordToInt = res.keywords[i].type.convertToInt()
-                }
-            }
-            let personalityTypePredicate = NSPredicate(format: "personalityType == %d", Int16(res.personalityType.convertToInt()))
-            let keywordsPredicate1 = NSPredicate(format: "%d in keywords", firstKeywordToInt)
-            let keywordsPredicate2 = NSPredicate(format: "%d in keywords", secondKeywordToInt)
-            let keywordsPredicate3 = NSPredicate(format: "%d in keywords", thirdKeywordToInt)
-            let keywordsPredicate4 = NSPredicate(format: "%d in keywords", fourthKeywordToInt)
-            let compoundPredicate = NSCompoundPredicate(orPredicateWithSubpredicates:
-                [personalityTypePredicate, keywordsPredicate1, keywordsPredicate2, keywordsPredicate3, keywordsPredicate4])
+            // Setting the first 3 components of a personality type as an NSPredicate
+            // the number of components can be changed -> Lower (more results) or -> Higher (less results)
+            let personalityTypeComponents = res.personalityType.getComponents()
+            let component1 = personalityTypeComponents[0].convertToInt()
+            let component2 = personalityTypeComponents[1].convertToInt()
+            let component3 = personalityTypeComponents[2].convertToInt()
+
+            // should return all careers stat start with 3 of the same components
+            // for example, personalityType: "ESTP" returns careers for personality types: ESTP & ESTJ
+            let keywordsPredicate1 = NSPredicate(format: "keyword1 == %d", Int16(component1))
+            let keywordsPredicate2 = NSPredicate(format: "keyword2 == %d", Int16(component2))
+            let keywordsPredicate3 = NSPredicate(format: "keyword3 == %d", Int16(component3))
+            
+            let compoundPredicate = NSCompoundPredicate(
+                andPredicateWithSubpredicates: [keywordsPredicate1, keywordsPredicate2, keywordsPredicate3])
             
             fetchRequest.predicate = compoundPredicate
-            print(compoundPredicate)
+            print("Predicate: \(compoundPredicate)")
         }
         // -> When navigated to this controller already knowing a set of career names
         else if state == .ExistingCareers {
@@ -367,7 +356,7 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 print("results?.keywords failed")
             }
-            print("Career: \(career.careerName)\nSuitability: \(suitability)")
+            print("Career: \(career.careerName) Suitability: \(suitability) PersonalityType: \(career.personalityType)")
             // add optional propert to CareerCell that holds the suitability and is initialized here
         } // </displayState == .Results>
         

@@ -4,12 +4,16 @@
         <attribute name="careerDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="degree" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="demand" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="keywords" optional="YES" attributeType="Transformable" customClassName="Int" syncable="YES"/>
+        <attribute name="dominantKeyword" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" customClassName="Int" syncable="YES"/>
+        <attribute name="keyword1" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="keyword2" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="keyword3" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="keyword4" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personalityType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="salary" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CareerEntity" positionX="-54" positionY="-9" width="128" height="150"/>
+        <element name="CareerEntity" positionX="-54" positionY="-9" width="128" height="210"/>
     </elements>
 </model>

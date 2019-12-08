@@ -23,6 +23,11 @@ extension CareerEntity {
     @NSManaged public var personalityType: Int16
     @NSManaged public var careerDescription: String?
     @NSManaged public var demand: Int16
-    @NSManaged public var keywords: [Int]
+    @NSManaged public var keyword1: Int16
+    @NSManaged public var keyword2: Int16
+    @NSManaged public var keyword3: Int16
+    @NSManaged public var keyword4: Int16
+    @NSManaged public var dominantKeyword: Int16
+    
 
 }
