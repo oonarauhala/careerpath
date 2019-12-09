@@ -50,4 +50,24 @@ struct Career {
         }
         return String("$\(mutableString)")
     }
+    
+    // -> Calculates the career suitability (only relevant in test results)
+    func calculateSuitability(_ suitabilityBarValue: inout Float, _ mostSuitable: Float, _ isResults: inout Bool, _ resultComponents: TestResults) {
+        // personalityType.getComponents() splits the personality type into its singular components
+        let currentComponents = self.personalityType.getComponents()
+        var suitability = 0
+        // the test results have a property for the specified personality type,
+        // so comparing every career's personality type to its components
+        for keyword in resultComponents.personalityType.getComponents() {
+            for component in currentComponents {
+                if keyword == component {
+                    suitability += 1 // <--- +1 point in suitability if a component matches
+                }
+            }
+        }
+        print("Career: \(self.careerName) Suitability: \(suitability) PersonalityType: \(self.personalityType)")
+        
+        suitabilityBarValue = Float(suitability) / mostSuitable
+        isResults = true
+    }
 }

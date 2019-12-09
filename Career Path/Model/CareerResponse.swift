@@ -75,7 +75,7 @@ struct CareerResponse:Decodable {
         case 15:
             return PersonalityType.ENTJ
         default:
-            fatalError("Personality value missing from CareerResponse struct \(self.name)")
+            fatalError("Personality value missing or is incorrect in CareerResponse struct \(self.name) -> value: \(intValue)")
         }
     }
 }

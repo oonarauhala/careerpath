@@ -5,39 +5,36 @@
 //  Created by iosdev on 24/11/2019.
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
-//  Are these tests useful? Probably need more implementation using
-//  enums, to test stuff
 
 import XCTest
 @testable import Career_Path
 
 class DegreeTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testRequiredDegreeBasic() {
+        let degree = Degree.Basic
+        XCTAssert(degree.requiredDegree() == nil)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testRequiredDegreeBachelor() {
+        let degree = Degree.Bachelor
+        XCTAssert(degree.requiredDegree() == .Basic)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testRequiredDegreeMaster() {
+        let degree = Degree.Master
+        XCTAssert(degree.requiredDegree() == .Bachelor)
     }
-    
-    func testCaseDoc() {
+    func testRequiredDegreeLicentiate() {
+        let degree = Degree.Licentiate
+        XCTAssert(degree.requiredDegree() == .Bachelor)
     }
-    
-    func testCaseMaster() {
-        
+    func testRequiredDegreeDoctorate() {
+        let degree = Degree.Doctorate
+        XCTAssert(degree.requiredDegree() == .Master)
     }
-
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

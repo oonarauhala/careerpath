@@ -29,6 +29,7 @@
 		6A0E5D9D238536170057612D /* Career_PathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D9C238536170057612D /* Career_PathUITests.swift */; };
 		6A3A3CCB239AF83E000055D3 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A3CCA239AF83E000055D3 /* DesignView.swift */; };
 		6A8C42DE239D6B22001EA2B6 /* CareerSuitability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8C42DD239D6B22001EA2B6 /* CareerSuitability.swift */; };
+		6A8C42E0239E9898001EA2B6 /* CareerResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8C42DF239E9898001EA2B6 /* CareerResponseTest.swift */; };
 		6A8DAACB2397ACF400DD8BDA /* ColorThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DAACA2397ACF400DD8BDA /* ColorThemes.swift */; };
 		6A906AFA2393E984004D98D9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A906AF92393E984004D98D9 /* MenuViewController.swift */; };
 		6A906AFC2393EB8D004D98D9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A906AFB2393EB8D004D98D9 /* BaseViewController.swift */; };
@@ -113,6 +114,7 @@
 		6A0E5D9E238536170057612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3A3CCA239AF83E000055D3 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
 		6A8C42DD239D6B22001EA2B6 /* CareerSuitability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerSuitability.swift; sourceTree = "<group>"; };
+		6A8C42DF239E9898001EA2B6 /* CareerResponseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareerResponseTest.swift; sourceTree = "<group>"; };
 		6A8DAACA2397ACF400DD8BDA /* ColorThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemes.swift; sourceTree = "<group>"; };
 		6A906AF92393E984004D98D9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6A906AFB2393EB8D004D98D9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				6A0E5D91238536170057612D /* Career_PathTests.swift */,
 				6A0E5D93238536170057612D /* Info.plist */,
 				6AB2A41D2389863A003E2E0C /* UserTests.swift */,
+				6A8C42DF239E9898001EA2B6 /* CareerResponseTest.swift */,
 			);
 			path = "Career PathTests";
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB2A41E2389863A003E2E0C /* UserTests.swift in Sources */,
+				6A8C42E0239E9898001EA2B6 /* CareerResponseTest.swift in Sources */,
 				6AB2A4202389EF15003E2E0C /* DegreeTests.swift in Sources */,
 				6AB2A4222389EF5A003E2E0C /* PersonalityTest_Tests.swift in Sources */,
 				6A0E5D92238536170057612D /* Career_PathTests.swift in Sources */,

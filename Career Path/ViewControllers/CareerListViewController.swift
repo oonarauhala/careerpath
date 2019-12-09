@@ -48,9 +48,8 @@ class CareerListViewController: BaseViewController {
     
 // MARK: Lifecycle methods
     
+    //viewDidLoad
     override func viewDidLoad() {
-        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable") // <--- <3
-        
         super.viewDidLoad()
         addSlideMenuButton()
         
@@ -66,11 +65,13 @@ class CareerListViewController: BaseViewController {
         else if displayState == .Results {
             testResultsSetup()
         }
+        
         fetchData()
         
-        self.title = "List of all careers"
+        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
     }
     
+    //viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -89,10 +90,39 @@ class CareerListViewController: BaseViewController {
         tableView.backgroundColor = UIColor.careerListBackground(theme: colorTheme)
     }
     
-//--> Used every time when the TableView is initialized or it's display style changes
-    private func initFectchedResultsController(
-        sortingKey: String, ascending: Bool, state: DisplayState)
-    {
+    fileprivate func tableViewSetup() {
+        tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.contentInsetAdjustmentBehavior = .never
+        headerSetup()
+    }
+    
+    fileprivate func headerSetup() {
+        header = Bundle.main.loadNibNamed(
+            "CareerListHeader", owner: self, options: nil)?.first as? CareerListHeader
+        
+        switch displayState {
+        case .FutureDemand:
+            self.title = "Careers with high future demand"
+        case .Results:
+            self.title = "Your results"
+        default:
+            self.title = "List of all careers"
+        }
+        
+        header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
+        header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
+        header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
+        header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        tableView.tableHeaderView = header
+        header.initiliazed = true
+        header.initialSetup(theme: colorTheme)
+    }
+    
+//--> The main initializer that sets up the fetchedResultsController
+    private func initFectchedResultsController(sortingKey: String, ascending: Bool, state: DisplayState) {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortingKey, ascending: ascending)]
         
         // -> When navigated to this controller from home/navigation pressing "Future jobs"
@@ -145,7 +175,6 @@ class CareerListViewController: BaseViewController {
             }
             fetchRequest.predicate = NSPredicate(format: predicateString)
         }
-        
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: PersistenceService.context,
@@ -180,8 +209,9 @@ class CareerListViewController: BaseViewController {
         if segue.identifier == "ShowInfo",
             let destination = segue.destination as? CareerInfoViewController {
             
-            if let cell = sender as? Career {
-                destination.career = cell
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let selectedRow = indexPath.row
+                destination.career = self.data[selectedRow].convertToCareer()
             } else {
                 fatalError("Segue sender not a Career, aborting mission!")
             }
@@ -189,61 +219,6 @@ class CareerListViewController: BaseViewController {
     }
     
 // MARK: Private functions
-    
-    fileprivate func tableViewSetup() {
-        tableView.tableFooterView = UIView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.contentInsetAdjustmentBehavior = .never
-        
-        header = Bundle.main.loadNibNamed(
-            "CareerListHeader", owner: self, options: nil)?.first as? CareerListHeader
-        
-        switch displayState {
-        case .FutureDemand:
-            header.headerTitle.text = ""
-        case .Results:
-            header.headerTitle.text = ""
-        default:
-            header.headerTitle.text = ""
-        }
- 
-        header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
-        header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
-        header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
-        header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
-        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
-    
-        tableView.tableHeaderView = header
-        // custom lifecycle hack ->
-        header.initiliazed = true
-        header.initialSetup(theme: colorTheme)
-    }
-    
-    // -> Calculates the career suitability when in test results
-    fileprivate func calculateSuitability(_ career: Career, _ suitabilityBarValue: inout Float, _ mostSuitable: Float, _ isResults: inout Bool) {
-        // personalityType.getComponents() splits the personality type into its singular components
-        let currentComponents = career.personalityType.getComponents()
-        var suitability = 0
-        // the test results have a property for the specified personality type,
-        // so comparing every career's personality type to its components
-        if let resultComponents = results?.keywords {
-            for keyword in resultComponents {
-                for component in currentComponents {
-                    if keyword.type == component {
-                        suitability += 1 // <--- +1 point in suitability if a component matches
-                    }
-                }
-            }
-        } else {
-            print("results?.keywords failed")
-        }
-        print("Career: \(career.careerName) Suitability: \(suitability) PersonalityType: \(career.personalityType)")
-        
-        suitabilityBarValue = Float(suitability) / mostSuitable
-        isResults = true
-        print("Results personalityType: \(results!.personalityType)")
-    }
     
     // -> Loads all the careers from a backend API
     private func fetchData() {
@@ -413,7 +388,11 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         let mostSuitable: Float = 4 // <--- Most suitable career is when all (four) personality type components match
         
         if displayState == .Results {
-            calculateSuitability(career, &suitabilityBarValue, mostSuitable, &isResults)
+            if let resultComponents = results {
+                career.calculateSuitability(&suitabilityBarValue, mostSuitable, &isResults, resultComponents)
+            } else {
+                print("results?.keywords failed")
+            }
         }
         
         cell.populateCell(career: career, isResult: isResults, progress: suitabilityBarValue)

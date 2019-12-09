@@ -6,8 +6,6 @@
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
-// NEEDS REFACTORING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 enum Degree : String, CaseIterable {
     case Doctorate = "Doctor's degree"
     case Master = "Master's degree"
