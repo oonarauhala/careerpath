@@ -133,13 +133,13 @@ class CareerListHeader: UITableViewHeaderFooterView {
         var titleForDegreeButton = "Sort by education ↑"
         var titleForAlphabeticalButton = "Sort by name ↑"
         
-        if !salaryAscending {
+        if salaryAscending {
             titleForSalaryButton = "Sort by salary ↓"
         }
-        if !degreeAscending {
+        if degreeAscending {
             titleForDegreeButton = "Sort by education ↓"
         }
-        if !nameAscending {
+        if nameAscending {
             titleForAlphabeticalButton = "Sort by name ↓"
         }
         setButtonTitles(titleForSalaryButton, titleForAlphabeticalButton, titleForDegreeButton)

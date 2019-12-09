@@ -31,10 +31,16 @@ class CareerListViewController: BaseViewController {
     var displayState: DisplayState = .Default
     var existingCareers: [Career]?
     var results: TestResults?
+    var data = [CareerEntity]()
     
-    private var sortedBySalaryAscending = true
-    private var sortedByNameAscending = true
-    private var sortedByDegreeAscending = true
+    private var sortedBySalaryAscending = false
+    private var sortedByNameAscending = false
+    private var sortedByDegreeAscending = false
+    private var sortedBySuitabilityAscending = false
+    private var salaryNeedsSorting = false
+    private var nameNeedsSorting = false
+    private var degreeNeedsSorting = false
+    private var suitabilityNeedsSorting = true
     
 // MARK: Outlets
     
@@ -43,6 +49,8 @@ class CareerListViewController: BaseViewController {
 // MARK: Lifecycle methods
     
     override func viewDidLoad() {
+        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable") // <--- <3
+        
         super.viewDidLoad()
         addSlideMenuButton()
         
@@ -74,20 +82,6 @@ class CareerListViewController: BaseViewController {
         }
     }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        //print(scrollView.contentOffset.y)
-//        if headerCurrentHeight == headerMaxHeightConstant {
-//            if scrollView.contentOffset.y >= 285 {
-//                // The magical number 285.
-//                // This is where the header lets go of its place (currently)
-//                // in the TableView, so the next time it is instantiated
-//                // -> all it's content will be hidden, so need to
-//                // update its height here as well
-//                forceCollapseSortSelection()
-//            }
-//        }
-//    }
-    
 // MARK: Initializer methods
     
     fileprivate func colorSetup(theme: Themes) {
@@ -98,10 +92,7 @@ class CareerListViewController: BaseViewController {
         tableView.backgroundColor = UIColor.careerListBackground(theme: colorTheme)
     }
     
-//----------------------<MAIN INITIALIZER >-------------------------------------------
-    
 //--> Used every time when the TableView is initialized or it's display style changes
-    
     private func initFectchedResultsController(
         sortingKey: String, ascending: Bool, state: DisplayState)
     {
@@ -166,21 +157,24 @@ class CareerListViewController: BaseViewController {
         fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
         try? fetchedResultsController?.performFetch()
     }
-//----------------------</MAIN INITIALIZER >-------------------------------------------
     
     // Display all careers
     func defaultSetup() {
+        sortedByNameAscending = true
         initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
     }
     
     // Display careers with high future demand
     func futureDemandSetup() {
+        sortedByNameAscending = true
         initFectchedResultsController(sortingKey: "demand", ascending: true, state: displayState)
     }
     
     // Display careers based on test results (defined in prepare for segue)
     func testResultsSetup() {
-        initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
+        // personalityType == \(results!.personalityType.convertToInt())
+        sortedBySuitabilityAscending = true
+        initFectchedResultsController(sortingKey: "personalityType", ascending: true, state: displayState)
     }
     
 // MARK: Navigation
@@ -219,11 +213,37 @@ class CareerListViewController: BaseViewController {
         header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
         header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
         header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
     
         tableView.tableHeaderView = header
         // custom lifecycle hack ->
         header.initiliazed = true
         header.initialSetup(theme: colorTheme)
+    }
+    
+    // -> Calculates the career suitability when in test results
+    fileprivate func calculateSuitability(_ career: Career, _ suitabilityBarValue: inout Float, _ mostSuitable: Float, _ isResults: inout Bool) {
+        // personalityType.getComponents() splits the personality type into its singular components
+        let currentComponents = career.personalityType.getComponents()
+        var suitability = 0
+        // the test results have a property for the specified personality type,
+        // so comparing every career's personality type to its components
+        if let resultComponents = results?.keywords {
+            for keyword in resultComponents {
+                for component in currentComponents {
+                    if keyword.type == component {
+                        suitability += 1 // <--- +1 point in suitability if a component matches
+                    }
+                }
+            }
+        } else {
+            print("results?.keywords failed")
+        }
+        print("Career: \(career.careerName) Suitability: \(suitability) PersonalityType: \(career.personalityType)")
+        
+        suitabilityBarValue = Float(suitability) / mostSuitable
+        isResults = true
+        print("Results personalityType: \(results!.personalityType)")
     }
     
     // -> Loads all the careers from a backend API
@@ -238,16 +258,6 @@ class CareerListViewController: BaseViewController {
         catch {
             print(error)
         }
-    }
-}
-
-// MARK: NSFetchedResultsControllerDelegate
-
-extension CareerListViewController: NSFetchedResultsControllerDelegate {
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        print("controllerDidChangeContent")
-        tableView.reloadData()
     }
 }
 
@@ -271,35 +281,91 @@ extension CareerListViewController {
     }
     
     @objc func sortBySalary(_ sender: UIButton) {
+//        initFectchedResultsController(sortingKey: "salary", ascending: sortedBySalaryAscending, state: displayState)
+        salaryNeedsSorting = true
+        suitabilityNeedsSorting = false
+        degreeNeedsSorting = false
+        nameNeedsSorting = false
+        sortedByNameAscending = false
+        sortedByDegreeAscending = false
+        sortedByNameAscending = false
         sortedBySalaryAscending = !sortedBySalaryAscending
-        initFectchedResultsController(sortingKey: "salary", ascending: sortedBySalaryAscending, state: displayState)
-        forceCollapseSortSelection()
-        sortedByDegreeAscending = true
-        sortedByNameAscending = true
-        tableView.reloadDataWithAnimation(!sortedBySalaryAscending)
         header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        tableView.reloadDataWithAnimation(sortedBySalaryAscending)
+        forceCollapseSortSelection()
     }
     
     @objc func sortByName(_ sender: UIButton) {
+//        initFectchedResultsController(sortingKey: "name", ascending: !sortedByNameAscending, state: displayState)
+        nameNeedsSorting = true
+        degreeNeedsSorting = false
+        salaryNeedsSorting = false
+        suitabilityNeedsSorting = false
+        sortedBySalaryAscending = false
+        sortedBySuitabilityAscending = false
+        sortedByDegreeAscending = false
         sortedByNameAscending = !sortedByNameAscending
-        initFectchedResultsController(sortingKey: "name", ascending: !sortedByNameAscending, state: displayState)
-        forceCollapseSortSelection()
-        sortedBySalaryAscending = true
-        sortedByDegreeAscending = true
-        tableView.reloadDataWithAnimation(!sortedByNameAscending)
         header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        tableView.reloadDataWithAnimation(sortedByNameAscending)
+        forceCollapseSortSelection()
     }
     
-    // DEGREE NEEDS REFACTORING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     @objc func sortByDegree(_ sender: UIButton) {
+//        initFectchedResultsController(sortingKey: "degree", ascending: sortedByDegreeAscending, state: displayState)
+        degreeNeedsSorting = true
+        salaryNeedsSorting = false
+        nameNeedsSorting = false
+        suitabilityNeedsSorting = false
+        sortedBySalaryAscending = false
+        sortedByNameAscending = false
+        sortedBySuitabilityAscending = false
         sortedByDegreeAscending = !sortedByDegreeAscending
-        initFectchedResultsController(sortingKey: "degree", ascending: sortedByDegreeAscending, state: displayState)
-        forceCollapseSortSelection()
-        sortedBySalaryAscending = true
-        sortedByNameAscending = true
-        tableView.reloadDataWithAnimation(!sortedByDegreeAscending)
         header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        tableView.reloadDataWithAnimation(sortedByDegreeAscending)
+        forceCollapseSortSelection()
         
+    }
+    
+    fileprivate func sortData() {
+        if displayState == .Results {
+            // Sorting for results
+            if suitabilityNeedsSorting {
+                data = data.sorted { (lh: CareerEntity, rh: CareerEntity) -> Bool in
+                    if sortedBySuitabilityAscending {
+                        return lh.convertToCareer().personalityType == results!.personalityType
+                    } else {
+                        return rh.convertToCareer().personalityType == results!.personalityType
+                    }
+                }
+            }
+        }
+        if degreeNeedsSorting {
+            data = data.sorted { (lh: CareerEntity, rh: CareerEntity) -> Bool in
+                if sortedByDegreeAscending {
+                    return lh.degree > rh.degree
+                } else {
+                    return lh.degree < rh.degree
+                }
+            }
+        }
+        if nameNeedsSorting {
+            data = data.sorted { (lh: CareerEntity, rh: CareerEntity) -> Bool in
+                if sortedByNameAscending {
+                    return lh.name! < rh.name!
+                } else {
+                    return lh.name! > rh.name!
+                }
+            }
+        }
+        if salaryNeedsSorting {
+            data = data.sorted { (lh: CareerEntity, rh: CareerEntity) -> Bool in
+                if sortedBySalaryAscending {
+                    return lh.salary > rh.salary
+                } else {
+                    return lh.salary < rh.salary
+                }
+            }
+        }
     }
 }
 
@@ -315,7 +381,6 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
     }
-    
     // didSelectRowAt
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let careerEntity = self.fetchedResultsController?.object(at: indexPath) else {
@@ -323,52 +388,49 @@ extension CareerListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         self.performSegue(withIdentifier: "ShowInfo", sender: careerEntity.convertToCareer())
     }
-    
     // numberOfSections
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController!.sections?.count ?? 1
     }
-    
     // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let careerEntity = self.fetchedResultsController?.object(at: indexPath) else {
-            fatalError("not found")
+        guard let careerEntities = self.fetchedResultsController?.fetchedObjects else {
+            fatalError("Career entities not found from fetchedResultsController")
         }
+        data = careerEntities
+        
+        if degreeNeedsSorting || salaryNeedsSorting || nameNeedsSorting || suitabilityNeedsSorting {
+            sortData()
+        }
+        let careerEntity = data[indexPath[1]]
+        
         tableView.register(UINib(nibName: "CareerListCell", bundle: nil), forCellReuseIdentifier: "CareerCell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "CareerCell", for: indexPath) as! CareerListCell
         let career = careerEntity.convertToCareer()
         
-        // <displayState == .Results>
-        if displayState == .Results {
-            // Checking each careers suitability (the pointing system is arbitrary)
-            // personalityType.getComponents() splits the personality type into its singular components
-            let careerPersonalityTypeComponents = career.personalityType.getComponents()
-            var suitability = 0
-            // the test results have a property for the specified personality type,
-            // so comparing its components into every career's personality type's components
-            if results?.personalityType == career.personalityType {
-                suitability += 5 // <--- +5 points in suitability if personality types match
-            }
-            // pointing system
-            if let resultKeywords = results?.keywords {
-                for keyword in resultKeywords {
-                    for component in careerPersonalityTypeComponents {
-                        if keyword.type == component {
-                            suitability += (1*keyword.frequency) // <--- +1 point in suitability if a component matches
-                        }
-                    }
-                }
-            } else {
-                print("results?.keywords failed")
-            }
-            print("Career: \(career.careerName) Suitability: \(suitability) PersonalityType: \(career.personalityType)")
-            // add optional propert to CareerCell that holds the suitability and is initialized here
-        } // </displayState == .Results>
+        // 3 lines below are related to only displayState == .Results
+        var isResults = false
+        var suitabilityBarValue: Float = 0.5
+        let mostSuitable: Float = 4 // <--- Most suitable career is when all (four) personality type components match
         
-        cell.populateCell(career: career)
+        if displayState == .Results {
+            calculateSuitability(career, &suitabilityBarValue, mostSuitable, &isResults)
+        }
+        
+        cell.populateCell(career: career, isResult: isResults, progress: suitabilityBarValue)
         cell.setStyles(theme: colorTheme, cell: cell)
 
         return cell
+    }
+}
+
+// MARK: NSFetchedResultsControllerDelegate
+
+extension CareerListViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        print("controllerDidChangeContent")
+        tableView.reloadData()
     }
 }
 

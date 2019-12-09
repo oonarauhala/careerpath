@@ -10,10 +10,15 @@ import UIKit
 
 class CareerListCell: UITableViewCell {
     
+    // new
+    let suitabilityBar = CareerSuitability(frame: .zero)
+    
     @IBOutlet weak var degree: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var salary: UILabel!
     @IBOutlet weak var img: UIImageView!
+    // new
+    @IBOutlet weak var infoStackView: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,11 +31,14 @@ class CareerListCell: UITableViewCell {
     }
     
     // Populates the cells with appropriate data
-    func populateCell(career: Career) {
+    func populateCell(career: Career, isResult: Bool = false, progress: Float = 0.5) { // new: isResult, progress
         img.image = UIImage(named: career.careerName)
         name.text = career.careerName
         degree.text = career.educationRequirement.rawValue
         salary.text = "Salary: \(career.separateThousands(value: Int(career.medianSalary)))"
+        if isResult {
+            addSuitabilityBar(progress: progress)
+        }
     }
     
     func setStyles(theme: Themes, cell: UITableViewCell) {
@@ -42,6 +50,17 @@ class CareerListCell: UITableViewCell {
 //        cell.layer.cornerRadius = 50
 //        cell.layer.masksToBounds = true
         
+    }
+    
+    // new
+    func addSuitabilityBar(progress: Float) {
+        // Adds a progress bar under the name label
+        infoStackView.insertArrangedSubview(suitabilityBar, at: 1)
+        NSLayoutConstraint.activate([
+            suitabilityBar.heightAnchor.constraint(equalToConstant: 4),
+            suitabilityBar.widthAnchor.constraint(equalToConstant: infoStackView.frame.width)
+            ])
+        suitabilityBar.progress = progress
     }
     
 }

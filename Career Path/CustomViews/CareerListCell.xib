@@ -99,6 +99,7 @@
             <connections>
                 <outlet property="degree" destination="tc0-HL-VxJ" id="5y8-kC-6Ce"/>
                 <outlet property="img" destination="Teh-gL-Kzc" id="dV1-dz-WLS"/>
+                <outlet property="infoStackView" destination="vGj-dH-EPm" id="bw4-dI-ET4"/>
                 <outlet property="name" destination="u0t-hv-IaY" id="ZWh-6T-fKx"/>
                 <outlet property="salary" destination="P89-30-Que" id="Di4-RS-dcF"/>
             </connections>

@@ -20,15 +20,15 @@ public class CareerEntity: NSManagedObject {
     func convertToDegree(intValue: Int) -> Degree {
         switch intValue {
         case 0:
-            return Degree.Doctorate
-        case 1:
-            return Degree.Master
-        case 2:
-            return Degree.Bachelor
-        case 3:
             return Degree.Basic
-        case 4:
+        case 1:
+            return Degree.Bachelor
+        case 2:
+            return Degree.Master
+        case 3:
             return Degree.Licentiate
+        case 4:
+            return Degree.Doctorate
         default:
             fatalError("Degree value not found from CareerResponse initialization for: \(String(describing: self.name))")
         }

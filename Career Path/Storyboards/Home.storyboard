@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1058" y="-443"/>
         </scene>
-        <!--CareerInfo-->
+        <!--CareerList-->
         <scene sceneID="4fX-45-pB0">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CareerInfo" storyboardName="CareerInfo" id="j25-8U-zp5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="CareerInfo" storyboardName="CareerInfo" referencedIdentifier="CareerList" id="j25-8U-zp5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5b-L0-LQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1617" y="15"/>
