@@ -10,12 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: Propertie
+    @IBOutlet weak var career_test: UIButton!
+    @IBOutlet weak var my_results: UIButton!
+    @IBOutlet weak var future_jobs: UIButton!
     
+    //MARK: Actions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hex: "#01326Cff") ?? UIColor.white]
     }
     
     override func didReceiveMemoryWarning() {

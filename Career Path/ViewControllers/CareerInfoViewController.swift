@@ -36,6 +36,13 @@ class CareerInfoViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
         toggleShowMore()
+        
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barStyle = .default
+        self.navigationController?.navigationBar.backgroundColor = .none
+        self.navigationController?.navigationBar.setBackgroundImage(.none, for: .default)
+     
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -56,12 +63,18 @@ class CareerInfoViewController: UIViewController {
             fatalError("Career not found from segue")
         }
         salaryLabel.text = "\(careerUnwrapped.salaryToString)"
-        //image resizing
         
+        //image resizing
         let careerImage =  resizeImage(image: UIImage(named: careerUnwrapped.careerName)!, targetSize: size)
         //text to image
         careerImg.image = textToImage(drawText: careerUnwrapped.careerName, inImage: careerImage, atPoint: CGPoint(x:145, y:600))
-      
+        /*
+        let coverLayer = CALayer()
+        coverLayer.frame = careerImg.bounds
+        coverLayer.backgroundColor = UIColor.black.cgColor
+        coverLayer.opacity = 0.3
+        careerImg.layer.addSublayer(coverLayer)
+      */
         descriptionLabelSetup(c: careerUnwrapped)
         educationLabelSetup(c: careerUnwrapped)
         
