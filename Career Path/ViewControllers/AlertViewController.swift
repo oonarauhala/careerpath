@@ -17,17 +17,27 @@ class AlertViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var body: UILabel!
+    @IBOutlet weak var topBar: UIView!
     
     var alertBody = String()
     
     func setupView() {
         body.text = alertBody
+        topBar.backgroundColor = UIColor.sortingButtons(theme: .t9)
+        containerView.layer.cornerRadius = 15;
+        containerView.layer.masksToBounds = true;
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismiss(animated: true)
     }
 }
 

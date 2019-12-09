@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNe-dl-xI7">
-                                <rect key="frame" x="32" y="287" width="311" height="93.5"/>
+                                <rect key="frame" x="32" y="275" width="311" height="117.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYT-ec-FZN">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
@@ -43,8 +43,8 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree info goes gere. This alert changes height based on the length of text in it :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9G-zE-JSt">
-                                        <rect key="frame" x="10" y="50" width="291" height="33.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <rect key="frame" x="10" y="50" width="291" height="57.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -72,6 +72,8 @@
                     </view>
                     <connections>
                         <outlet property="body" destination="c9G-zE-JSt" id="uqw-oR-8K0"/>
+                        <outlet property="containerView" destination="LNe-dl-xI7" id="0OG-hl-aTq"/>
+                        <outlet property="topBar" destination="hYT-ec-FZN" id="3UJ-7s-Vo0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s7S-pD-m3f" userLabel="First Responder" sceneMemberID="firstResponder"/>

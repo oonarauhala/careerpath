@@ -8,6 +8,8 @@
 
 import UIKit
 
+// test controller for displaying results
+
 class CareerResultsController: UIViewController {
     
     var testCareers = [Career]()
