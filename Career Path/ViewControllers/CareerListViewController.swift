@@ -29,7 +29,6 @@ class CareerListViewController: BaseViewController {
     // displayState defines what kind of Careers to display
     // -> set this in prepare for segue
     var displayState: DisplayState = .Default
-    var existingCareers: [Career]?
     var results: TestResults?
     var data = [CareerEntity]()
     
@@ -103,22 +102,46 @@ class CareerListViewController: BaseViewController {
             "CareerListHeader", owner: self, options: nil)?.first as? CareerListHeader
         
         switch displayState {
-        case .FutureDemand:
-            self.title = "Careers with high future demand"
-        case .Results:
-            self.title = "Your results"
-        default:
-            self.title = "List of all careers"
+            case .FutureDemand:
+                self.title = "Careers with high future demand"
+            case .Results:
+                self.title = "Your results"
+            default:
+                self.title = "List of all careers"
         }
-        
+        if (displayState == .Results) {
+            header.isResults = true
+        }
         header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
         header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
         header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)
         header.alphabeticalButton.addTarget(self, action: #selector(sortByName(_:)), for: .touchUpInside)
-        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        header.suitabilityButton.addTarget(self, action: #selector(sortBySuitability(_:)), for: .touchUpInside)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending, suitabilityAscending: sortedBySuitabilityAscending)
         tableView.tableHeaderView = header
         header.initiliazed = true
         header.initialSetup(theme: colorTheme)
+    }
+    
+    // Display all careers
+    func defaultSetup() {
+        nameNeedsSorting = true
+        sortedByNameAscending = true
+        initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
+    }
+    
+    // Display careers with high future demand
+    func futureDemandSetup() {
+        nameNeedsSorting = true
+        sortedByNameAscending = true
+        initFectchedResultsController(sortingKey: "demand", ascending: true, state: displayState)
+    }
+    
+    // Display careers based on test results (defined in prepare for segue)
+    func testResultsSetup() {
+        suitabilityNeedsSorting = true
+        sortedBySuitabilityAscending = true
+        initFectchedResultsController(sortingKey: "personalityType", ascending: true, state: displayState)
     }
     
 //--> The main initializer that sets up the fetchedResultsController
@@ -153,28 +176,6 @@ class CareerListViewController: BaseViewController {
             fetchRequest.predicate = compoundPredicate
             print("Predicate: \(compoundPredicate)")
         }
-        // -> When navigated to this controller already knowing a set of career names
-        else if state == .ExistingCareers {
-            guard let careers = existingCareers else {
-                fatalError("CareerListViewController.existingCareers not set")
-            }
-            var predicateString = "name == "
-            if (careers.count > 0) {
-                // This for loop iterates over the Career results defined in the segue
-                // after career test and converts them into a string combined with
-                // OR logic so it can be used as an NSPredicate
-                for i in 0..<careers.count {
-                    // Add Logical OR at the end of the string if not the last element in the array
-                    if i < (careers.count - 1) {
-                        predicateString = predicateString + "\"\(careers[i].careerName)\"" + " OR name == "
-                    } else {
-                        // At the end of the array here, so only appending the careerName at the end
-                        predicateString = predicateString + "\"\(careers[i].careerName)\""
-                    }
-                }
-            }
-            fetchRequest.predicate = NSPredicate(format: predicateString)
-        }
         fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
             managedObjectContext: PersistenceService.context,
@@ -182,25 +183,6 @@ class CareerListViewController: BaseViewController {
         
         fetchedResultsController!.delegate = self as NSFetchedResultsControllerDelegate
         try? fetchedResultsController?.performFetch()
-    }
-    
-    // Display all careers
-    func defaultSetup() {
-        sortedByNameAscending = true
-        initFectchedResultsController(sortingKey: "name", ascending: true, state: displayState)
-    }
-    
-    // Display careers with high future demand
-    func futureDemandSetup() {
-        sortedByNameAscending = true
-        initFectchedResultsController(sortingKey: "demand", ascending: true, state: displayState)
-    }
-    
-    // Display careers based on test results (defined in prepare for segue)
-    func testResultsSetup() {
-        // personalityType == \(results!.personalityType.convertToInt())
-        sortedBySuitabilityAscending = true
-        initFectchedResultsController(sortingKey: "personalityType", ascending: true, state: displayState)
     }
     
 // MARK: Navigation
@@ -250,6 +232,7 @@ extension CareerListViewController {
     }
     
     @objc func sortButtonClicked(_ sender: Any) {
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending, suitabilityAscending: sortedBySuitabilityAscending)
         self.tableView.beginUpdates()
         self.tableView.endUpdates()
     }
@@ -264,7 +247,7 @@ extension CareerListViewController {
         sortedByDegreeAscending = false
         sortedByNameAscending = false
         sortedBySalaryAscending = !sortedBySalaryAscending
-        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending, suitabilityAscending: sortedBySuitabilityAscending)
         tableView.reloadDataWithAnimation(sortedBySalaryAscending)
         forceCollapseSortSelection()
     }
@@ -279,7 +262,7 @@ extension CareerListViewController {
         sortedBySuitabilityAscending = false
         sortedByDegreeAscending = false
         sortedByNameAscending = !sortedByNameAscending
-        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending, suitabilityAscending: sortedBySuitabilityAscending)
         tableView.reloadDataWithAnimation(sortedByNameAscending)
         forceCollapseSortSelection()
     }
@@ -294,10 +277,24 @@ extension CareerListViewController {
         sortedByNameAscending = false
         sortedBySuitabilityAscending = false
         sortedByDegreeAscending = !sortedByDegreeAscending
-        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending)
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending, suitabilityAscending: sortedBySuitabilityAscending)
         tableView.reloadDataWithAnimation(sortedByDegreeAscending)
         forceCollapseSortSelection()
-        
+    }
+    
+    @objc func sortBySuitability(_ sender: UIButton) {
+        //        initFectchedResultsController(sortingKey: "degree", ascending: sortedByDegreeAscending, state: displayState)
+        suitabilityNeedsSorting = true
+        degreeNeedsSorting = false
+        salaryNeedsSorting = false
+        nameNeedsSorting = false
+        sortedBySalaryAscending = false
+        sortedByNameAscending = false
+        sortedByDegreeAscending = false
+        sortedBySuitabilityAscending = !sortedBySuitabilityAscending
+        header.setButtonTitles(salaryAscending: sortedBySalaryAscending, degreeAscending: sortedByDegreeAscending, nameAscending: sortedByNameAscending, suitabilityAscending: sortedBySuitabilityAscending)
+        tableView.reloadDataWithAnimation(sortedByDegreeAscending)
+        forceCollapseSortSelection()
     }
     
     fileprivate func sortData() {

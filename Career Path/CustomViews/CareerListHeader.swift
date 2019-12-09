@@ -15,11 +15,21 @@ class CareerListHeader: UITableViewHeaderFooterView {
     
 // MARK: Properties
 
+    var minHeight: CGFloat = 70
+    var maxHeight: CGFloat = 200
+    var isResults = false {
+        didSet {
+            if isResults {
+                suitabilityButton.isHidden = false
+                maxHeight = maxHeight + 40
+            }
+        }
+    }
     // Implementing a custom lifecycle method to get
     // the updated frame.size.height after the subviews are laid out
     var initiliazed = false {
         didSet {
-            self.frame.size.height = 70 + headerTitle.frame.size.height
+            self.frame.size.height = minHeight + headerTitle.frame.size.height
         }
     }
     let originalAlpha: CGFloat = 1
@@ -37,6 +47,7 @@ class CareerListHeader: UITableViewHeaderFooterView {
     @IBOutlet weak var salaryButton: UIButton!
     @IBOutlet weak var alphabeticalButton: UIButton!
     @IBOutlet weak var degreeButton: UIButton!
+    @IBOutlet weak var suitabilityButton: UIButton!
     
 // MARK: Lifecycle methods
     
@@ -54,13 +65,13 @@ class CareerListHeader: UITableViewHeaderFooterView {
                 self.sortByButton.alpha = self.originalAlpha * 0.65
                 self.setButtonAlphas()
                 self.expandedElements.isHidden = !self.expandedElements.isHidden
-                self.frame.size.height = 220 + self.headerTitle.frame.size.height
+                self.frame.size.height = self.maxHeight + self.headerTitle.frame.size.height
             } else {
                 self.sortByButton.setTitle("Sort", for: .normal)
                 self.sortByButton.alpha = self.originalAlpha
                 self.setButtonAlphas()
                 self.expandedElements.isHidden = !self.expandedElements.isHidden
-                self.frame.size.height = 70 + self.headerTitle.frame.size.height
+                self.frame.size.height = self.minHeight + self.headerTitle.frame.size.height
             }
         })
         expandedElements.backgroundColor = UIColor.black
@@ -112,6 +123,7 @@ class CareerListHeader: UITableViewHeaderFooterView {
         createButtonStyles(button: degreeButton, theme: theme)
         createButtonStyles(button: alphabeticalButton, theme: theme)
         createButtonStyles(button: sortByButton, theme: theme)
+        createButtonStyles(button: suitabilityButton, theme: theme)
     }
     
 //MARK: Custom functions -> Animations and styling logic
@@ -123,17 +135,20 @@ class CareerListHeader: UITableViewHeaderFooterView {
             alphabeticalButton.alpha = 1
             salaryButton.alpha = 1
             degreeButton.alpha = 1
+            suitabilityButton.alpha = 1
         } else {
             alphabeticalButton.alpha = 0
             salaryButton.alpha = 0
             degreeButton.alpha = 0
+            suitabilityButton.alpha = 0
         }
     }
     
-    func setButtonTitles(salaryAscending: Bool, degreeAscending: Bool, nameAscending: Bool) {
+    func setButtonTitles(salaryAscending: Bool, degreeAscending: Bool, nameAscending: Bool, suitabilityAscending: Bool) {
         var titleForSalaryButton = "Sort by salary ↑"
         var titleForDegreeButton = "Sort by education ↑"
         var titleForAlphabeticalButton = "Sort by name ↑"
+        var titleForSuitabilityButton = "Sort by suitability ↑"
         
         if salaryAscending {
             titleForSalaryButton = "Sort by salary ↓"
@@ -144,12 +159,16 @@ class CareerListHeader: UITableViewHeaderFooterView {
         if nameAscending {
             titleForAlphabeticalButton = "Sort by name ↓"
         }
-        setButtonTitles(titleForSalaryButton, titleForAlphabeticalButton, titleForDegreeButton)
+        if suitabilityAscending {
+            titleForSuitabilityButton = "Sort by suitability ↓"
+        }
+        setButtonTitles(titleForSalaryButton, titleForAlphabeticalButton, titleForDegreeButton, titleForSuitabilityButton)
     }
     
-    func setButtonTitles(_ salaryTitle: String,_ nameTitle: String,_ degreeTitle: String) {
+    func setButtonTitles(_ salaryTitle: String,_ nameTitle: String,_ degreeTitle: String, _ suitabilityTitle: String) {
         salaryButton.setTitle(salaryTitle, for: .normal)
         alphabeticalButton.setTitle(nameTitle, for: .normal)
         degreeButton.setTitle(degreeTitle, for: .normal)
+        suitabilityButton.setTitle(suitabilityTitle, for: .normal)
     }
 }
