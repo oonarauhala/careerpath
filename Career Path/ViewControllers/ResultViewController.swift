@@ -11,7 +11,7 @@ import UIKit
 class ResultViewController: BaseViewController {
     
     //MARK: variables
-     let colorTheme: Themes = .t9
+    let colorTheme: Themes = .t9
     var responses: [Answer]!
     //MARK: labels
     @IBOutlet weak var resultLabel: UILabel!

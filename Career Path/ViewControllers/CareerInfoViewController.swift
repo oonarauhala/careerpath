@@ -14,7 +14,7 @@ import UIKit
 class CareerInfoViewController: UIViewController {
     
     //MARK: Properties
-    
+    let colorTheme: Themes = .t9
     var career: Career?
     // Views
     @IBOutlet weak var scrollView: UIScrollView!
@@ -24,8 +24,10 @@ class CareerInfoViewController: UIViewController {
     @IBOutlet weak var educationLabel: UILabel!
     @IBOutlet weak var showMoreButton: UIButton!
     @IBOutlet weak var educationTitleLabel: UILabel!
+    @IBOutlet weak var careerNameLabel: UILabel!
     //career image
     @IBOutlet weak var careerImg: UIImageView!
+    @IBOutlet weak var salaryHeaderLabel: UILabel!
     // Custom
     private var showMore = false
     private var size = CGSize(width: 1200.0, height: 693.0)
@@ -36,13 +38,23 @@ class CareerInfoViewController: UIViewController {
         super.viewDidLoad()
         initialSetup()
         toggleShowMore()
+        colorSetup(theme: .t9)
+    }
+    
+    //transparent navigation bar
+    
+    override func viewWillAppear(_ animated: Bool) {
         
-        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.barStyle = .default
-        self.navigationController?.navigationBar.backgroundColor = .none
-        self.navigationController?.navigationBar.setBackgroundImage(.none, for: .default)
-     
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -54,8 +66,6 @@ class CareerInfoViewController: UIViewController {
             
         }
     }
- 
-    
     //MARK: Initializers
     
     func initialSetup() {
@@ -66,8 +76,13 @@ class CareerInfoViewController: UIViewController {
         
         //image resizing
         let careerImage =  resizeImage(image: UIImage(named: careerUnwrapped.careerName)!, targetSize: size)
+        careerImg.image = careerImage
+        //career_name_label
+        careerNameLabel.text = careerUnwrapped.careerName
+        
+        //Katja
         //text to image
-        careerImg.image = textToImage(drawText: careerUnwrapped.careerName, inImage: careerImage, atPoint: CGPoint(x:145, y:600))
+        //careerImg.image = textToImage(drawText: careerUnwrapped.careerName, inImage: careerImage, atPoint: CGPoint(x:145, y:600))
         /*
         let coverLayer = CALayer()
         coverLayer.frame = careerImg.bounds
@@ -75,6 +90,8 @@ class CareerInfoViewController: UIViewController {
         coverLayer.opacity = 0.3
         careerImg.layer.addSublayer(coverLayer)
       */
+        //Katja
+        
         descriptionLabelSetup(c: careerUnwrapped)
         educationLabelSetup(c: careerUnwrapped)
         
@@ -87,7 +104,7 @@ class CareerInfoViewController: UIViewController {
     
     func educationLabelSetup(c: Career) {
         educationLabel.text = c.educationRequirement.rawValue
-        educationLabel.textColor = .blue
+        educationLabel.textColor = UIColor(hex: "#007AFFff")
         // create a gesture recognizer
         let labelTapGesture = UITapGestureRecognizer(target:self,action:#selector(self.showEducationInfo))
         // add it to the education label
@@ -106,7 +123,7 @@ class CareerInfoViewController: UIViewController {
     // Has the description label display only a certain number of lines when collapsed
     private func toggleShowMore() {
         if (!showMore) {
-            descriptionLabel.numberOfLines = 10
+            descriptionLabel.numberOfLines = 6
             showMoreButton.setTitle("show more...", for: .normal)
             scrollView.setContentOffset(.zero, animated: false)
         } else {
@@ -151,7 +168,7 @@ class CareerInfoViewController: UIViewController {
         return newImage!
     
     }
-    //2
+    //2 overlaing text to image
     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         
@@ -177,9 +194,16 @@ class CareerInfoViewController: UIViewController {
         return newImage!
     }
     
-    
-    
-    
+    //styling
+    fileprivate func colorSetup(theme: Themes) {
+        
+        view.backgroundColor = UIColor.viewBackground(theme: colorTheme)
+        careerNameLabel.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+        educationTitleLabel.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+        salaryHeaderLabel.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+        
+    }
+
 }
 
 
