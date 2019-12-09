@@ -9,6 +9,7 @@
 import UIKit
 
 // View controller for registration page
+// Includes some validation logic for responsiveness
 
 class RegisterViewController: UIViewController {
     // Outlets for all fields
@@ -53,73 +54,75 @@ class RegisterViewController: UIViewController {
         registerButton.isEnabled = false
     }
     
+    // Changes text colour to red
+    func red(field: UITextField) {
+        field.textColor = UIColor.red    }
+    
+    // Changes text colour to black
+    func black(field: UITextField) {
+        field.textColor = UIColor.black
+    }
+    
     
     // Actions for all fields
-     @IBAction func usernameEditingChanged(_ sender: UITextField) {
+    @IBAction func usernameEditingChanged(_ sender: UITextField) {
         disableButton()
+        black(field: usernameField)
         guard let username = usernameField.text else {
             return
         }
         if username.isValid(.username) {
+            black(field: usernameField)
             print("Username is valid")
             usernameValidity = true
             checkFields()
         }
         else {
             usernameValidity = false
-            //show user their username was not valid
+            red(field: usernameField)
             
             print("Not a valid username")
         }
     }
     
     @IBAction func emailEditingChanged(_ sender: UITextField) {
+        black(field: emailField)
         disableButton()
         guard let email = emailField.text else {
             return
         }
         if email.isValid(.email) {
+            black(field: emailField)
             print("Email is valid")
             emailValidity = true
             checkFields()
         }
         else {
+            red(field: emailField)
             emailValidity = false
-            //show user email was not valid
             
             print("Not a valid email")
         }
     }
     
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
+        black(field: passwordField)
         disableButton()
         guard let password1 = passwordField.text else {
             return
         }
-        guard let password2 = password2Field.text else {
-            return
-        }
         if password1.isValid(.password) {
+            black(field: passwordField)
             print("Password is valid")
-            
-            if password1 == password2 {
-                passwordValidity = true
-                checkFields()
-            }
-            else {
-                passwordValidity = false
-                print("Passwords don't match, sender: field1")
-            }
         }
         else {
-            
-            //show user password was not valid
-            
+            red(field: passwordField)
             print("Password should be 4-8 characters, numbers or letters")
         }
     }
     
     @IBAction func password2EditingChanged(_ sender: UITextField) {
+        black(field: password2Field)
         disableButton()
         guard let password2 = password2Field.text else {
             return
@@ -129,21 +132,21 @@ class RegisterViewController: UIViewController {
         }
         
         if password2.isValid(.password) {
+            black(field: password2Field)
             print("Password2 is valid")
             
             if password1 == password2 {
-            passwordValidity = true
+                passwordValidity = true
                 checkFields()
             }
             else {
                 passwordValidity = false
+                red(field: password2Field)
                 print("Passwords don't match, sender:a field2")
             }
         }
         else {
-            
-            //show user password was not valid
-            
+            red(field: password2Field)
             print("Password should be 4-8 characters, numbers or letters")
         }
     }
