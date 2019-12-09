@@ -12,12 +12,16 @@ import UIKit
 
 class AlertService {
     
-    func alert() -> AlertViewController {
+    func alert(body: String) -> AlertViewController {
         
         // don't know if bundle is right??
         let storyboard = UIStoryboard(name: "Alert", bundle: .main)
         
         let alertVC = storyboard.instantiateViewController(withIdentifier: "AlertVC") as! AlertViewController
+        
+        // Set body text
+        
+        alertVC.alertBody = body
         
         return alertVC
     }
