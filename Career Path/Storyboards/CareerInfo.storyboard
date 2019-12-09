@@ -27,12 +27,11 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="6Jk-yF-cqI">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="530"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fine artist" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-sV-stT" customClass="RoundImage" customModule="Career_Path" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Landscape architect" translatesAutoresizingMaskIntoConstraints="NO" id="6ZQ-sV-stT" customClass="RoundImage" customModule="Career_Path" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="300" id="vzl-68-X0Y"/>
+                                                            <constraint firstAttribute="height" constant="300" id="3zg-ko-clW"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -102,19 +101,20 @@
                                                     </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="6ZQ-sV-stT" firstAttribute="leading" secondItem="6Jk-yF-cqI" secondAttribute="leading" id="AgK-Y8-JBQ"/>
+                                                    <constraint firstItem="6ZQ-sV-stT" firstAttribute="leading" secondItem="6Jk-yF-cqI" secondAttribute="leading" id="82V-BR-Kme"/>
+                                                    <constraint firstItem="6ZQ-sV-stT" firstAttribute="top" secondItem="6Jk-yF-cqI" secondAttribute="top" id="D6K-Ng-xeh"/>
                                                     <constraint firstAttribute="trailing" secondItem="HmD-ze-Oak" secondAttribute="trailing" constant="10" id="ETF-Ox-J4a"/>
-                                                    <constraint firstItem="6ZQ-sV-stT" firstAttribute="top" secondItem="6Jk-yF-cqI" secondAttribute="top" id="GpS-FG-n5N"/>
+                                                    <constraint firstItem="HmD-ze-Oak" firstAttribute="top" secondItem="6ZQ-sV-stT" secondAttribute="bottom" constant="30" id="Zu3-4v-7sB"/>
                                                     <constraint firstItem="HmD-ze-Oak" firstAttribute="leading" secondItem="6Jk-yF-cqI" secondAttribute="leading" constant="10" id="nE2-nN-CvI"/>
                                                     <constraint firstAttribute="trailing" secondItem="B0L-vW-yiM" secondAttribute="trailing" constant="10" id="nem-J7-kc0"/>
                                                     <constraint firstItem="B0L-vW-yiM" firstAttribute="leading" secondItem="6Jk-yF-cqI" secondAttribute="leading" constant="10" id="rk2-xa-ID7"/>
                                                     <constraint firstItem="HmD-ze-Oak" firstAttribute="top" secondItem="6Jk-yF-cqI" secondAttribute="top" constant="330" id="tpK-sq-GR4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="6ZQ-sV-stT" secondAttribute="trailing" id="w5w-CE-rce"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="6Jk-yF-cqI" firstAttribute="width" secondItem="mn5-Xx-dUO" secondAttribute="width" id="Ap9-fU-fhq"/>
                                             <constraint firstAttribute="trailing" secondItem="6Jk-yF-cqI" secondAttribute="trailing" id="VV0-um-C8O"/>
                                             <constraint firstAttribute="height" secondItem="6Jk-yF-cqI" secondAttribute="height" id="dtY-ha-PUN"/>
                                             <constraint firstItem="6Jk-yF-cqI" firstAttribute="top" secondItem="mn5-Xx-dUO" secondAttribute="top" id="lNy-GA-57q"/>
@@ -126,17 +126,18 @@
                                     <constraint firstAttribute="bottom" secondItem="mn5-Xx-dUO" secondAttribute="bottom" id="0f3-nO-g8E"/>
                                     <constraint firstItem="mn5-Xx-dUO" firstAttribute="top" secondItem="mHK-bz-GPN" secondAttribute="top" id="3vN-JH-u2p"/>
                                     <constraint firstAttribute="trailing" secondItem="mn5-Xx-dUO" secondAttribute="trailing" id="5Zk-dB-0Jo"/>
+                                    <constraint firstItem="6ZQ-sV-stT" firstAttribute="width" secondItem="mHK-bz-GPN" secondAttribute="width" id="FCl-IC-gW6"/>
+                                    <constraint firstItem="mn5-Xx-dUO" firstAttribute="width" secondItem="mHK-bz-GPN" secondAttribute="width" id="KY9-Pu-0A4"/>
                                     <constraint firstItem="mn5-Xx-dUO" firstAttribute="leading" secondItem="mHK-bz-GPN" secondAttribute="leading" id="rwa-Bf-IjI"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PAb-Ra-Mtc" firstAttribute="bottom" secondItem="mHK-bz-GPN" secondAttribute="bottom" id="3MX-8Z-NTA"/>
-                            <constraint firstItem="mn5-Xx-dUO" firstAttribute="width" secondItem="PAb-Ra-Mtc" secondAttribute="width" id="Cp6-Q5-a4b"/>
-                            <constraint firstItem="mHK-bz-GPN" firstAttribute="top" secondItem="PAb-Ra-Mtc" secondAttribute="top" id="Pmx-35-sVI"/>
-                            <constraint firstItem="PAb-Ra-Mtc" firstAttribute="trailing" secondItem="mHK-bz-GPN" secondAttribute="trailing" id="QMl-Qn-j1D"/>
-                            <constraint firstItem="mHK-bz-GPN" firstAttribute="leading" secondItem="PAb-Ra-Mtc" secondAttribute="leading" id="dO6-6G-MVl"/>
+                            <constraint firstAttribute="bottom" secondItem="mHK-bz-GPN" secondAttribute="bottom" id="3MX-8Z-NTA"/>
+                            <constraint firstItem="mHK-bz-GPN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="Pmx-35-sVI"/>
+                            <constraint firstItem="mHK-bz-GPN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dO6-6G-MVl"/>
+                            <constraint firstItem="mHK-bz-GPN" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qAn-3g-oba"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PAb-Ra-Mtc"/>
                     </view>
@@ -250,6 +251,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Fine artist" width="1680" height="1120"/>
+        <image name="Landscape architect" width="960" height="640"/>
     </resources>
 </document>

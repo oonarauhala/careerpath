@@ -69,9 +69,6 @@ class CareerListViewController: BaseViewController {
         fetchData()
         
         self.title = "List of all careers"
-        // for default navigation bar title color
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(hex: "#007BFFff") ?? UIColor.white]
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -201,14 +198,16 @@ class CareerListViewController: BaseViewController {
         
         header = Bundle.main.loadNibNamed(
             "CareerListHeader", owner: self, options: nil)?.first as? CareerListHeader
+        
         switch displayState {
         case .FutureDemand:
-            header.headerTitle.text = "A list of careers with high future demand"
+            header.headerTitle.text = ""
         case .Results:
-            header.headerTitle.text = "Your results"
+            header.headerTitle.text = ""
         default:
-            header.headerTitle.text = "A list of all our careers"
+            header.headerTitle.text = ""
         }
+ 
         header.sortByButton.addTarget(self, action: #selector(sortButtonClicked(_:)), for: .touchUpInside)
         header.salaryButton.addTarget(self, action: #selector(sortBySalary(_:)), for: .touchUpInside)
         header.degreeButton.addTarget(self, action: #selector(sortByDegree(_:)), for: .touchUpInside)

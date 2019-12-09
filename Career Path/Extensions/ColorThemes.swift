@@ -173,13 +173,13 @@ extension UIColor {
 // https://stock.adobe.com/fi//89225064/
 extension UIColor {
     class var theme8_1: UIColor {
-        return UIColor(hex: "#011826ff") ?? UIColor.white
+        return UIColor(hex: "#8CD3FFff") ?? UIColor.white
     }
     class var theme8_2: UIColor {
-        return UIColor(hex: "#88B0BFff") ?? UIColor.white
+        return UIColor(hex: "#47A1F7ff") ?? UIColor.white
     }
     class var theme8_3: UIColor {
-        return UIColor(hex: "#BFD1D9ff") ?? UIColor.white
+        return UIColor(hex: "#0066CDff") ?? UIColor.white
     }
     class var theme8_4: UIColor {
         return UIColor(hex: "#025E73ff") ?? UIColor.white
@@ -191,19 +191,22 @@ extension UIColor {
 // Theme 9
 extension UIColor {
     class var theme9_1: UIColor {
-        return UIColor(hex: "#FFAA0Dff") ?? UIColor.white
+        return UIColor(hex: "#8CD3FFff") ?? UIColor.white
     }
     class var theme9_2: UIColor {
-        return UIColor(hex: "#007BFFff") ?? UIColor.white
+        return UIColor(hex: "#47A1F7ff") ?? UIColor.white
     }
     class var theme9_3: UIColor {
-        return UIColor(hex: "#EFEEEEff") ?? UIColor.white
+        return UIColor(hex: "#0066CBff") ?? UIColor.white
     }
     class var theme9_4: UIColor {
-        return UIColor(hex: "#9BD7D1ff") ?? UIColor.white
+        return UIColor(hex: "#01326Cff") ?? UIColor.white
     }
     class var theme9_5: UIColor {
-        return UIColor(hex: "#325D79ff") ?? UIColor.white
+        return UIColor(hex: "#EFEEEEff") ?? UIColor.white
+    }
+    class var theme9_6: UIColor {
+        return UIColor(hex: "#F9A26Cff") ?? UIColor.white
     }
 }
 
@@ -232,7 +235,7 @@ extension UIColor {
         case .t8:
             return UIColor.theme8_3
         case .t9:
-            return UIColor.theme9_1
+            return UIColor.theme9_2
         }
     }
     class func sortingButtonsTitle(theme: Themes) -> UIColor{
@@ -304,7 +307,7 @@ extension UIColor {
         case .t8:
             return UIColor.theme8_1
         case .t9:
-            return UIColor.theme9_2
+            return UIColor.theme9_4
             
         }
     }
@@ -377,7 +380,7 @@ extension UIColor {
         case .t8:
             return UIColor.theme8_3
         case .t9:
-            return UIColor.theme9_3
+            return UIColor.theme9_5
         }
     }
     class func careerListView(theme: Themes) -> UIColor {
@@ -401,7 +404,7 @@ extension UIColor {
         case .t8:
             return UIColor.theme8_1
         case .t9:
-            return UIColor.theme9_3
+            return UIColor.theme9_5
         }
     }
     class func navigationBar(theme: Themes) -> UIColor {
@@ -449,7 +452,7 @@ extension UIColor {
         case .t8:
             return UIColor.theme8_4
         case .t9:
-            return UIColor.theme9_3
+            return UIColor.theme9_5
         }
     }
     class func careerListHeaderBackground(theme: Themes) -> UIColor {
@@ -475,6 +478,106 @@ extension UIColor {
         case .t9:
             return UIColor.careerListBackground(theme: theme)
         }
+    }
+    
+    class func testButtonsBackground(theme: Themes) -> UIColor {
+        switch theme {
+        case .t0:
+            return UIColor.deepSpaceSparkle
+        case .t1:
+            return UIColor.white
+        case .t2:
+            return UIColor.white
+        case .t3:
+            return UIColor.white
+        case .t4:
+            return UIColor.white
+        case .t5:
+            return UIColor.white
+        case .t6:
+            return UIColor.white
+        case .t7:
+            return UIColor.theme7_3
+        case .t8:
+            return UIColor.theme8_4
+        case .t9:
+            return UIColor.theme9_2
+        }
+    }
+    
+    class func testButtonsTitle(theme: Themes) -> UIColor {
+        switch theme {
+        case .t0:
+            return UIColor.deepSpaceSparkle
+        case .t1:
+            return UIColor.theme1_5
+        case .t2:
+            return UIColor.theme2_5
+        case .t3:
+            return UIColor.theme3_4
+        case .t4:
+            return UIColor.theme4_4
+        case .t5:
+            return UIColor.white
+        case .t6:
+            return UIColor.theme6_3
+        case .t7:
+            return UIColor.theme7_5
+        case .t8:
+            return UIColor.theme8_4
+        case .t9:
+            return UIColor.white
+        }
+    }
+    
+    class func viewBackground(theme: Themes) -> UIColor {
+        switch theme {
+        case .t0:
+            return UIColor.deepSpaceSparkle
+        case .t1:
+            return UIColor.white
+        case .t2:
+            return UIColor.white
+        case .t3:
+            return UIColor.white
+        case .t4:
+            return UIColor.white
+        case .t5:
+            return UIColor.white
+        case .t6:
+            return UIColor.white
+        case .t7:
+            return UIColor.theme7_3
+        case .t8:
+            return UIColor.theme8_4
+        case .t9:
+            return UIColor.theme9_5
+        }
+         }
+        
+        class func testHeaderAndQuestion(theme: Themes) -> UIColor {
+            switch theme {
+            case .t0:
+                return UIColor.deepSpaceSparkle
+            case .t1:
+                return UIColor.theme1_5
+            case .t2:
+                return UIColor.theme2_5
+            case .t3:
+                return UIColor.theme3_4
+            case .t4:
+                return UIColor.theme4_4
+            case .t5:
+                return UIColor.white
+            case .t6:
+                return UIColor.theme6_3
+            case .t7:
+                return UIColor.theme7_5
+            case .t8:
+                return UIColor.theme8_4
+            case .t9:
+                return UIColor.theme9_4
+            }
     }
 }
 

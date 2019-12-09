@@ -14,7 +14,7 @@ class CareerResultsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Your Results"
         performSegue(withIdentifier: "ShowResults", sender: self)
     }
     

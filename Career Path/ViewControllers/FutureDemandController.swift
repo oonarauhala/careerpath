@@ -17,6 +17,7 @@ class FutureDemandController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         performSegue(withIdentifier: "FutureDemand", sender: self)
+        self.title = "Future Demand"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

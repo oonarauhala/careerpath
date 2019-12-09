@@ -102,6 +102,8 @@ class CareerListHeader: UITableViewHeaderFooterView {
         button.layer.shadowOffset = CGSize(width: 1, height: 1)
         button.layer.shadowRadius = 1.5
         button.layer.shadowOpacity = 0.8
+        
+       
         setButtonColors(button: button, theme: theme)
     }
     

@@ -12,6 +12,7 @@ class QuestionsViewController: BaseViewController {
     
     
     //MARK:variables
+    let colorTheme: Themes = .t9
     var personalityTest = PersonalityTest()
     var questionIndex = 0
     var responses: [Answer]!
@@ -27,8 +28,12 @@ class QuestionsViewController: BaseViewController {
     //MARK: views (progress view)
     @IBOutlet weak var questionProgressView: UIProgressView!
     
+    @IBOutlet weak var background_image: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorSetup(theme: .t9)
         addSlideMenuButton()
         self.title = "Personality Test"
         updateUI()
@@ -61,14 +66,15 @@ class QuestionsViewController: BaseViewController {
         case buttonText1:
                 buttonText1Pressed = true
                 buttonText2Pressed = false
-                buttonText1.backgroundColor = UIColor.lightGray
-                buttonText2.backgroundColor = UIColor.white
+                buttonText1.backgroundColor = UIColor(hex:"#0066CBff")
+                buttonText2.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
         case buttonText2:
                 buttonText1Pressed = false
                 buttonText2Pressed = true
                 //answersChosen.append(currentAnswers[1])
-                buttonText2.backgroundColor = UIColor.lightGray
-                buttonText1.backgroundColor = UIColor.white
+                buttonText2.backgroundColor = UIColor(hex:"#0066CBff")
+
+                buttonText1.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
         case buttonNext:
                if (buttonText1Pressed == true){
                answersChosen.append(currentAnswers[0])
@@ -101,8 +107,8 @@ class QuestionsViewController: BaseViewController {
         else {
         performSegue(withIdentifier:"ResultSegue", sender: nil)
         }
-        buttonText1.backgroundColor = UIColor.white
-        buttonText2.backgroundColor = UIColor.white
+        buttonText1.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+        buttonText2.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
@@ -110,6 +116,16 @@ class QuestionsViewController: BaseViewController {
             let resultViewController = segue.destination as! ResultViewController
             resultViewController.responses = answersChosen
         }
+    }
+    
+    fileprivate func colorSetup(theme: Themes) {
+        view.backgroundColor = UIColor.viewBackground(theme: colorTheme)
+        buttonText1.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+        buttonText2.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+        buttonText1.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
+        buttonText2.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
+        questionLabel.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+        questionNumber.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
     }
     
 }
