@@ -82,6 +82,16 @@
                                     <constraint firstItem="dXU-CW-zT4" firstAttribute="width" secondItem="aME-oN-wia" secondAttribute="width" id="Sjo-s3-Gxx"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZj-EZ-Ept">
+                                <rect key="frame" x="146" y="473" width="122" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Have an account?">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Hpj-Kg-L2O" kind="show" id="lYb-lq-TMv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84289239414477835" green="1" blue="0.47844103209187661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -150,6 +160,16 @@
                                     <constraint firstItem="Skb-BN-vIT" firstAttribute="width" secondItem="Y3Y-1V-SeL" secondAttribute="width" id="C37-Oy-fbe"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnK-ch-SDU">
+                                <rect key="frame" x="127" y="465" width="161" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Don't have an account?">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="RNG-Uw-53a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84289239410000005" green="1" blue="0.4784410321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
