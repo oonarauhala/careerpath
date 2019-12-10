@@ -15,12 +15,13 @@ class CareerResultsController: UIViewController {
 //MARK: Properties
     
     var testCareers = [Career]()
+    var isFromResults = false
     
     // This data needs to be passed down again. Or could it be accesed with CareerResultsController.displayState..?
     var displayState: DisplayState? {
         didSet {
             if displayState != nil {
-                print("displaySet passed down. displayState:", displayState!)
+                print("displayState passed down. displayState:", displayState!)
             }
         }
     }
@@ -28,7 +29,7 @@ class CareerResultsController: UIViewController {
     var results: TestResults? {
         didSet {
             if results != nil {
-                print("displaySet passed down. displayState:", results!)
+                print("displayState passed down. displayState:", results!)
             }
         }
     }

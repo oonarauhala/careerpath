@@ -222,12 +222,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="LQS-2N-84L">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Register or Login to save results" id="fjt-og-oUO">
+                                        <connections>
+                                            <action selector="registerLogin:" destination="p8e-X6-y6p" id="fmf-Do-Xk9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="LQS-2N-84L" firstAttribute="trailing" secondItem="hKo-7f-5q6" secondAttribute="trailing" id="5jB-22-HZA"/>
+                            <constraint firstItem="hKo-7f-5q6" firstAttribute="bottom" secondItem="LQS-2N-84L" secondAttribute="bottom" id="AGf-R3-bPq"/>
                             <constraint firstItem="eLW-Jl-Jj0" firstAttribute="leading" secondItem="hKo-7f-5q6" secondAttribute="leading" id="G5m-oO-ztx"/>
                             <constraint firstItem="hKo-7f-5q6" firstAttribute="bottom" secondItem="eLW-Jl-Jj0" secondAttribute="bottom" id="IJX-hM-Tjd"/>
                             <constraint firstItem="eLW-Jl-Jj0" firstAttribute="trailing" secondItem="hKo-7f-5q6" secondAttribute="trailing" id="Yz0-bA-3ac"/>
                             <constraint firstItem="eLW-Jl-Jj0" firstAttribute="top" secondItem="hKo-7f-5q6" secondAttribute="top" id="c4P-rT-Mue"/>
+                            <constraint firstItem="LQS-2N-84L" firstAttribute="leading" secondItem="hKo-7f-5q6" secondAttribute="leading" id="eVM-FW-b3l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hKo-7f-5q6"/>
                     </view>
@@ -235,12 +248,22 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="d17-H1-J7s"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomToolBar" destination="LQS-2N-84L" id="UAj-8Y-RKt"/>
                         <outlet property="tableView" destination="eLW-Jl-Jj0" id="Kte-lT-5UQ"/>
+                        <segue destination="XwM-X2-zrV" kind="show" identifier="ResultsRegisterLogin" id="1bp-Om-Tpg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki6-BQ-Fl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1340" y="-80"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="ufu-5f-CwM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyStoryboard" referencedIdentifier="Register" id="XwM-X2-zrV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DIH-19-J1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AKU-uy-E49">

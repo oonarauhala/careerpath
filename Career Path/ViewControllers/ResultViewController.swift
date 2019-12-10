@@ -19,11 +19,13 @@ class ResultViewController: BaseViewController {
     @IBOutlet weak var result_button: UIButton!
     @IBOutlet weak var personality_label: UILabel!
     
+    
     //MARK: class Personality test instance
     var personalityTest1 = PersonalityTest()
     //MARK: functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorSetup(theme: .t9)
         navigationItem.hidesBackButton = true
         self.title = "Test Results"
         addSlideMenuButton()
@@ -54,4 +56,16 @@ class ResultViewController: BaseViewController {
             PersistenceService.saveTestResults(type: personalityTest1.definePersonalityType(responses: responses))
         }
     }
+    
+    // better to change names of functions in UIColor extension
+    fileprivate func colorSetup(theme: Themes) {
+        view.backgroundColor = UIColor.viewBackground(theme: colorTheme)
+        result_button.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+        result_button.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
+        resultLabel.textColor = UIColor(hex:"#0066CBff")
+        descriptionText.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+        personality_label.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+    }
+    
+   
 }

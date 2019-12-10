@@ -24,7 +24,8 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var recommendedJobsHeader: UILabel!
     @IBOutlet weak var selectPhotoButton: UIButton!
     @IBOutlet weak var viewInScrollView: UIView!
-   
+    @IBOutlet weak var logoutButton: UIButton!
+    
     //Placeholder user information
     private var user: User = User("Firstname ", "Lastname", "password")
     
@@ -104,6 +105,10 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
+    }
+    @IBAction func logout(_ sender: Any) {
+        // logs out and clears the results from UserDefaults (sets nil)
+        PersistenceService.clearUserDefaults()
     }
     
     //styling

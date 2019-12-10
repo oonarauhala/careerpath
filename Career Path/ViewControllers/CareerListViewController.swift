@@ -29,7 +29,6 @@ class CareerListViewController: BaseViewController {
     // displayState defines what kind of Careers to display
     // -> set this in prepare for segue
     var displayState: DisplayState = .Default
-    var isLoggedIn = true
     var results: TestResults?
     // data is the tableView's data source. The same data as in fethcedResultsController
     // but for sorting purposes, it needs to be in a mutable form.
@@ -48,6 +47,7 @@ class CareerListViewController: BaseViewController {
 // MARK: Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottomToolBar: UIToolbar!
     
 // MARK: Lifecycle methods
     
@@ -62,9 +62,11 @@ class CareerListViewController: BaseViewController {
         if displayState == .Default {
             defaultSetup()
         }
+            
         else if displayState == .FutureDemand {
             futureDemandSetup()
         }
+            
         else if displayState == .Results {
             testResultsSetup()
         }
@@ -79,6 +81,15 @@ class CareerListViewController: BaseViewController {
         if let index = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRow(at: index, animated: true)
         }
+    }
+    
+//MARK: Navigation
+    
+    
+//MARK: Actions
+    
+    @IBAction func registerLogin(_ sender: Any) {
+        performSegue(withIdentifier: "ResultsRegisterLogin", sender: self)
     }
     
 // MARK: Initializer methods
@@ -146,6 +157,10 @@ class CareerListViewController: BaseViewController {
         suitabilityNeedsSorting = true
         sortedBySuitabilityAscending = true
         initFectchedResultsController(sortingKey: "personalityType", ascending: true, state: displayState)
+        
+        if !PersistenceService.checkUserLoggedIn() {
+            bottomToolBar.isHidden = false
+        }
     }
     
     //--> The main initializer that sets up the fetchedResultsController
@@ -204,6 +219,11 @@ class CareerListViewController: BaseViewController {
                 fatalError("Segue sender not a Career, aborting mission!")
             }
         }
+        else if segue.identifier == "ResultsRegisterLogin",let destination = segue.destination as? RegisterViewController {
+            destination.isFromResults = true
+            destination.resultsPersonalityType = results?.personalityType
+            print("results personalitytype: ", results?.personalityType)
+        }
     }
     
 // MARK: Private functions
@@ -211,20 +231,33 @@ class CareerListViewController: BaseViewController {
     // Saves the test results when the user is logged in
     private func saveData() {
         if displayState == .Results {
-            if isLoggedIn {
-                guard let res = results else { fatalError("no results found") }
-                PersistenceService.saveTestResults(type: res.personalityType)
-            }
+            guard let res = results else { fatalError("no results found") }
+            PersistenceService.saveTestResults(type: res.personalityType)
         }
     }
     
     private func checkIsLoggedIn() {
-        if isLoggedIn {
+        if PersistenceService.checkUserLoggedIn() {
             saveData()
-        } else {
-            // saveButton.isHidden = false
         }
     }
+
+//    private func saveData() {
+//        if displayState == .Results {
+//            if isLoggedIn {
+//                guard let res = results else { fatalError("no results found") }
+//                PersistenceService.saveTestResults(type: res.personalityType)
+//            }
+//        }
+//    }
+//
+//    private func checkIsLoggedIn() {
+//        if isLoggedIn {
+//            saveData()
+//        } else {
+//            // saveButton.isHidden = false
+//        }
+//    }
     
     // -> Loads all the careers from a backend API
     private func fetchData() {

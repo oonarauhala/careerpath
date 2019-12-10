@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var my_results: UIButton!
     @IBOutlet weak var future_jobs: UIButton!
     
-    // checkIfHasResults() checks UserDefaults and sets this true if previous results exist
-    var hasPreviousResults = false
     var resultsPersonalityType: PersonalityType?
     
     //MARK: Actions
@@ -31,7 +29,6 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        checkIfHasResults()
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -49,7 +46,6 @@ class ViewController: UIViewController {
             guard let personalityType = PersistenceService.getTestResults() else { fatalError("Error defining personality type - HomeViewController") }
             destination.displayState = .Results
             destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: personalityType)
-            print("User logged in")
         }
         if segue.identifier == "NotLogged" {
             print("User not logged in")
@@ -58,22 +54,13 @@ class ViewController: UIViewController {
     
     @IBAction func showMyResults(_ sender: Any) {
         if PersistenceService.checkUserLoggedIn() {
-            if hasPreviousResults {
+            if PersistenceService.checkIfResultsExist() {
                 performSegue(withIdentifier: "IsLogged", sender: self)
             } else {
                 performSegue(withIdentifier: "NoResults", sender: self)
             }
         } else {
             performSegue(withIdentifier: "NotLogged", sender: self)
-        }
-    }
-    
-    private func checkIfHasResults() {
-        let resultsExist = PersistenceService.checkIfResultsExist()
-        if resultsExist {
-            guard let personalityType = PersistenceService.getTestResults() else { fatalError("Pers. type not Int") }
-            print("Personality type from UserDefaults: ", personalityType)
-            hasPreviousResults = true
         }
     }
     

@@ -179,8 +179,15 @@ class PersistenceService {
         }
     }
     
+    static func clearTestResults() {
+        UserDefaults.standard.set(nil, forKey: "MyResults")
+    }
+    
     static func clearUserDefaults() {
+        print("cleared user defaults")
         setUserLoggedOut()
+        clearTestResults()
+        
     }
 
 }

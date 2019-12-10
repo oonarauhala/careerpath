@@ -720,4 +720,7 @@
         <image name="test done" width="728" height="718"/>
         <image name="test_image" width="900" height="800"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vCK-9d-Z5i"/>
+    </inferredMetricsTieBreakers>
 </document>

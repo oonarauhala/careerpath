@@ -112,26 +112,26 @@
         <!--Career Results Controller-->
         <scene sceneID="VN8-q7-ls6">
             <objects>
-                <viewController id="QqX-pk-Mpq" customClass="CareerResultsController" customModule="Career_Path" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QqX-pk-Mpq" customClass="CareerResultsController" customModule="Career_Path" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6KC-vr-AnW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-Je-AvS">
-                                <rect key="frame" x="32" y="197" width="311" height="273"/>
+                                <rect key="frame" x="32" y="270.5" width="311" height="126"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3iW-Qb-cgV">
-                                        <rect key="frame" x="25" y="0.0" width="261" height="273"/>
+                                        <rect key="frame" x="25" y="0.0" width="261" height="126"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjh-4F-L61">
-                                                <rect key="frame" x="0.0" y="0.0" width="261" height="177"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="261" height="30"/>
                                                 <string key="text">You must register or log in to see your past results.Your personal information will not be used for anything other than the functionality of this app.</string>
                                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMz-xC-zUf">
-                                                <rect key="frame" x="0.0" y="185" width="261" height="40"/>
+                                                <rect key="frame" x="0.0" y="38" width="261" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="bij-Mw-X2w"/>
                                                 </constraints>
@@ -141,7 +141,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gg-lX-lYD">
-                                                <rect key="frame" x="0.0" y="233" width="261" height="40"/>
+                                                <rect key="frame" x="0.0" y="86" width="261" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="wxx-eY-QLG"/>
                                                 </constraints>

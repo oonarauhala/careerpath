@@ -224,16 +224,17 @@ class RegisterViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "RegisterResults", let destination = segue.destination as? CareerListViewController {
             
-            guard let type = UserDefaults.standard.object(forKey: "MyResults") as? Int else { fatalError("Pers. type not Int") }
-            guard let personalityType = PersistenceService.getTestResults() else {
-                fatalError("No personality type found from results - RegistrationViewController") }
+            guard let type = resultsPersonalityType else { fatalError("Pers. type not given from CareerListVC") }
             
-            print("Personality type from UserDefaults: ", PersistenceService.convertToPersonalityType(intValue: type))
+            print("Personality type from UserDefaults: ", type)
 
-            guard let u = user else { fatalError("Saving user with register fields failed") }
+            let testUser = User("asd1234", "asd@asd.asd", "asdasd")
+            //guard let u = user else { fatalError("Saving user with register fields failed") }
+            print("user object constructed from register fields", user)
             
+            PersistenceService.setUserLoggedIn()
             destination.displayState = .Results
-            destination.results = TestResults(user: u, personalityType: personalityType)
+            destination.results = TestResults(user: testUser, personalityType: type)
         }
         else if segue.identifier == "RegisterHome" {
             PersistenceService.setUserLoggedIn()
@@ -242,6 +243,8 @@ class RegisterViewController: UIViewController {
             if isFromResults {
                 print("Is from results: ", isFromResults)
                 destination.isFromResults = true
+                guard let personalityType = resultsPersonalityType else { fatalError("trying to leave without passing down personality type") }
+                destination.resultsPersonalityType = personalityType
             }
         }
     }

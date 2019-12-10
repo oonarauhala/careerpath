@@ -22,6 +22,7 @@ class LoginViewConroller: UIViewController {
     var username: String = ""
     var password: String = ""
     var isFromResults = false
+    var resultsPersonalityType: PersonalityType?
 
     
     override func viewDidLoad() {
@@ -34,11 +35,12 @@ class LoginViewConroller: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginResults", let destination = segue.destination as? CareerListViewController {
         
-            guard let personalityType = PersistenceService.getTestResults() else {
+            guard let personalityType = resultsPersonalityType else {
                 fatalError("No personality type found from results - LoginViewController") }
             
             let user = User("asdasd", "asdasd@asd.asd", "asdasd")
             
+            PersistenceService.setUserLoggedIn()
             destination.displayState = .Results
             destination.results = TestResults(user: user, personalityType: personalityType)
         }
@@ -49,6 +51,8 @@ class LoginViewConroller: UIViewController {
             if isFromResults {
                 print("is from results: ", isFromResults)
                 destination.isFromResults = true
+                guard let personalityType = resultsPersonalityType else { fatalError("trying to leave login without passing down a proper personality type") }
+                destination.resultsPersonalityType = personalityType
             }
         }
     }
