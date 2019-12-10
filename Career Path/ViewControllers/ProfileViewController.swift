@@ -10,13 +10,23 @@ import UIKit
 
 class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK:Properties
+    let colorTheme: Themes = .t9
+    
     //MARK: labels
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var profileTableView: UITableView!
-
+    @IBOutlet weak var personalityTypeHeader: UILabel!
+    @IBOutlet weak var personalityType: UILabel!
+    @IBOutlet weak var recommendedJobsHeader: UILabel!
+    @IBOutlet weak var selectPhotoButton: UIButton!
+    @IBOutlet weak var viewInScrollView: UIView!
+   
+    
+    
     //Placeholder user information
     private var user: User = User("Firstname ", "Lastname", 20)
     
@@ -25,6 +35,7 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         //button "menu"
         addSlideMenuButton()
         self.title = "Profile"
+        colorSetup(theme: .t9)
         self.nameLabel.text = user.firstName + user.lastName
         self.ageLabel.text = String(user.age)
         profileTableView.delegate = self as UITableViewDelegate
@@ -34,7 +45,6 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     }
     
     //MARK: Actions
-
     @IBAction func locationButtonAction(_ sender: Any) {
         NetworkRequest().fetchGetUsers{data in print(data)}
     }
@@ -54,7 +64,10 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         // Fetches the appropriate menu_item for the data source layout.
        
         cell.img.image = UIImage(named:"profession_image")
-        cell.name.text = "Manager"
+        cell.careerNameLabel.text = "Career_name"
+        cell.salaryLabel.text = "Salary"
+        cell.degreeLabel.text = "Degree"
+        cell.setStyles(theme: colorTheme, cell: cell)
         /*
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 3
@@ -65,7 +78,6 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let careerListViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "CareerList")
-        
         self.navigationController?.pushViewController(careerListViewController, animated: true)
       
     }
@@ -104,8 +116,20 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         
     }
     
-    //location - is it necessary?
+    //styling
+    fileprivate func colorSetup(theme: Themes) {
+        
+        profileTableView.backgroundColor = UIColor.viewBackground(theme: colorTheme)
+        viewInScrollView.backgroundColor = UIColor.viewBackground(theme: colorTheme)
+        personalityTypeHeader.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+        recommendedJobsHeader.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
+        selectPhotoButton.setTitleColor(UIColor(hex:"#47A1F7ff"), for: .normal)
+        
+    }
     
+    
+    
+    //location - is it necessary?
     
     func loadUserInfo() {
         

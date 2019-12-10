@@ -13,36 +13,44 @@ import XCTest
 
 class Career_PathTests: XCTestCase {
     
+    func testCareerSeparate1() {
+        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
+        print(test.salaryToString)
+        XCTAssert(test.salaryToString == "$5")
+        
+    }
+    
     func testCareerSeparate2() {
-        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5000, education: Degree.Master, personalityType: PersonalityType.ENTJ, demand: Demand.Medium)
+        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5000, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
         print(test.salaryToString)
         XCTAssert(test.salaryToString == "$5,000")
+       
         
     }
     
     func testCareerSeparate3() {
-        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 50000, education: Degree.Master, personalityType: PersonalityType.ENTJ, demand: Demand.Medium)
+        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 50000, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
         print(test.salaryToString)
         XCTAssert(test.salaryToString == "$50,000")
         
     }
     
     func testCareerSeparate4() {
-        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 500000, education: Degree.Master, personalityType: PersonalityType.ENTJ, demand: Demand.Medium)
+        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 500000, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
         print(test.salaryToString)
         XCTAssert(test.salaryToString == "$500,000")
         
     }
     
     func testCareerSeparate5() {
-        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5000000, education: Degree.Master, personalityType: PersonalityType.ENTJ, demand: Demand.Medium)
+        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5000000, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
         print(test.salaryToString)
         XCTAssert(test.salaryToString == "$5,000,000")
         
     }
     
     func testCareerSeparate6() {
-        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5000000000, education: Degree.Master, personalityType: PersonalityType.ENTJ, demand: Demand.Medium)
+        let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5000000000, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
         print(test.salaryToString)
         XCTAssert(test.salaryToString == "A ridiculous amount")
         
@@ -66,5 +74,5 @@ class Career_PathTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
+ 
 }
