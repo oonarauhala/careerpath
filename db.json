@@ -394,6 +394,13 @@
         "ISTJ"
       ],
       "id": 8
+    },
+    {
+      "storedUsername": "asdasd",
+      "storedPassword": "asdasd",
+      "storedEmail": "ad@asd.com",
+      "testResults": [],
+      "id": 9
     }
   ]
 }

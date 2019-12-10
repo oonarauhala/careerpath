@@ -29,6 +29,7 @@ class CareerListViewController: BaseViewController {
     // displayState defines what kind of Careers to display
     // -> set this in prepare for segue
     var displayState: DisplayState = .Default
+    var isLoggedIn = true
     var results: TestResults?
     // data is the tableView's data source. The same data as in fethcedResultsController
     // but for sorting purposes, it needs to be in a mutable form.
@@ -141,12 +142,13 @@ class CareerListViewController: BaseViewController {
     
     // Display careers based on test results (defined in prepare for segue)
     func testResultsSetup() {
+        checkIsLoggedIn()
         suitabilityNeedsSorting = true
         sortedBySuitabilityAscending = true
         initFectchedResultsController(sortingKey: "personalityType", ascending: true, state: displayState)
     }
     
-//--> The main initializer that sets up the fetchedResultsController
+    //--> The main initializer that sets up the fetchedResultsController
     private func initFectchedResultsController(sortingKey: String, ascending: Bool, state: DisplayState) {
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortingKey, ascending: ascending)]
         
@@ -205,6 +207,24 @@ class CareerListViewController: BaseViewController {
     }
     
 // MARK: Private functions
+    
+    // Saves the test results when the user is logged in
+    private func saveData() {
+        if displayState == .Results {
+            if isLoggedIn {
+                guard let res = results else { fatalError("no results found") }
+                PersistenceService.saveTestResults(type: res.personalityType)
+            }
+        }
+    }
+    
+    private func checkIsLoggedIn() {
+        if isLoggedIn {
+            saveData()
+        } else {
+            // saveButton.isHidden = false
+        }
+    }
     
     // -> Loads all the careers from a backend API
     private func fetchData() {

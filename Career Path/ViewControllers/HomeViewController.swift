@@ -15,10 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var my_results: UIButton!
     @IBOutlet weak var future_jobs: UIButton!
     
-    // this should be replaced with some logic that checks the UserDefaults
-    var isLoggedIn = true
-    // should probably be in UserDefaults too
+    // checkIfHasResults() checks UserDefaults and sets this true if previous results exist
     var hasPreviousResults = false
+    var resultsPersonalityType: PersonalityType?
     
     //MARK: Actions
     override func viewDidLoad() {
@@ -32,6 +31,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        checkIfHasResults()
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -46,25 +46,18 @@ class ViewController: UIViewController {
             destination.displayState = .FutureDemand
         }
         if segue.identifier == "IsLogged", let destination = segue.destination as? CareerListViewController {
+            guard let personalityType = PersistenceService.getTestResults() else { fatalError("Error defining personality type - HomeViewController") }
             destination.displayState = .Results
-            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: PersonalityType.INTP)
+            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: personalityType)
             print("User logged in")
-            // set the results object and displaystate of CareerListViewController here
-            // and save the results to user history
         }
-        if segue.identifier == "NotLogged", let destination = segue.destination as? CareerResultsController {
-            // pass down the results to destination, so they can be used after registration
-            destination.displayState = .Results
-            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: PersonalityType.INFP)
+        if segue.identifier == "NotLogged" {
             print("User not logged in")
         }
-//        if segue.identifier == "NoResults", let destination = segue.destination as? CareerResultsController {
-//            print("User logged in but has no previous results")
-//        }
     }
     
     @IBAction func showMyResults(_ sender: Any) {
-        if isLoggedIn {
+        if PersistenceService.checkUserLoggedIn() {
             if hasPreviousResults {
                 performSegue(withIdentifier: "IsLogged", sender: self)
             } else {
@@ -72,6 +65,15 @@ class ViewController: UIViewController {
             }
         } else {
             performSegue(withIdentifier: "NotLogged", sender: self)
+        }
+    }
+    
+    private func checkIfHasResults() {
+        let resultsExist = PersistenceService.checkIfResultsExist()
+        if resultsExist {
+            guard let personalityType = PersistenceService.getTestResults() else { fatalError("Pers. type not Int") }
+            print("Personality type from UserDefaults: ", personalityType)
+            hasPreviousResults = true
         }
     }
     

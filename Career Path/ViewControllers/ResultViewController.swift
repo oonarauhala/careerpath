@@ -40,6 +40,18 @@ class ResultViewController: BaseViewController {
         if segue.identifier == "ShowResults", let destination = segue.destination as? CareerListViewController {
             destination.displayState = .Results
             destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: personalityTest1.definePersonalityType(responses: responses))
+            
+            saveResultsIfLogged()
+        }
+        else if segue.identifier == "ResultsRegister", let destination = segue.destination as? RegisterViewController {
+            destination.isFromResults = true
+            destination.resultsPersonalityType = personalityTest1.definePersonalityType(responses: responses)
+        }
+    }
+    
+    private func saveResultsIfLogged() {
+        if PersistenceService.checkUserLoggedIn() {
+            PersistenceService.saveTestResults(type: personalityTest1.definePersonalityType(responses: responses))
         }
     }
 }

@@ -22,13 +22,16 @@ class RegisterViewController: UIViewController {
     //MARK:Properties
     let colorTheme: Themes = .t9
     
+    var isFromResults = false
+    var resultsPersonalityType: PersonalityType?
+    var user: User?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         colorSetup(theme: .t9)
         // Disable register button
         registerButton.isEnabled = false
-        
         
     }
     
@@ -199,11 +202,50 @@ class RegisterViewController: UIViewController {
                 return
             }
             
+            // should not be allowed to come back after this.
+            // how to disable viewcontroller / remove from navigation stack..?
+            if isFromResults {
+                performSegue(withIdentifier: "RegisterResults", sender: self)
+            } else {
+                performSegue(withIdentifier: "RegisterHome", sender: self)
+            }
+            
+            user = User(username1, email1, password1)
+            
             NetworkRequest().fetchPostUser(username: username1, email: email1, password: password1)
         }
         
         // Send/save data here
     }
+    @IBAction func goToLogin(_ sender: Any) {
+        performSegue(withIdentifier: "RegisterLogin", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RegisterResults", let destination = segue.destination as? CareerListViewController {
+            
+            guard let type = UserDefaults.standard.object(forKey: "MyResults") as? Int else { fatalError("Pers. type not Int") }
+            guard let personalityType = PersistenceService.getTestResults() else {
+                fatalError("No personality type found from results - RegistrationViewController") }
+            
+            print("Personality type from UserDefaults: ", PersistenceService.convertToPersonalityType(intValue: type))
+
+            guard let u = user else { fatalError("Saving user with register fields failed") }
+            
+            destination.displayState = .Results
+            destination.results = TestResults(user: u, personalityType: personalityType)
+        }
+        else if segue.identifier == "RegisterHome" {
+            PersistenceService.setUserLoggedIn()
+        }
+        else if segue.identifier == "RegisterLogin", let destination = segue.destination as? LoginViewConroller {
+            if isFromResults {
+                print("Is from results: ", isFromResults)
+                destination.isFromResults = true
+            }
+        }
+    }
+    
     
     
     

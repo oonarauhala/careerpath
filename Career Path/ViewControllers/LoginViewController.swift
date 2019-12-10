@@ -21,6 +21,7 @@ class LoginViewConroller: UIViewController {
 
     var username: String = ""
     var password: String = ""
+    var isFromResults = false
 
     
     override func viewDidLoad() {
@@ -28,6 +29,28 @@ class LoginViewConroller: UIViewController {
        colorSetup(theme: .t9)
         
         // Disable login button        loginButton.isEnabled = false
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LoginResults", let destination = segue.destination as? CareerListViewController {
+        
+            guard let personalityType = PersistenceService.getTestResults() else {
+                fatalError("No personality type found from results - LoginViewController") }
+            
+            let user = User("asdasd", "asdasd@asd.asd", "asdasd")
+            
+            destination.displayState = .Results
+            destination.results = TestResults(user: user, personalityType: personalityType)
+        }
+        else if segue.identifier == "RegisterHome" {
+            PersistenceService.setUserLoggedIn()
+        }
+        else if segue.identifier == "LoginRegister", let destination = segue.destination as? RegisterViewController {
+            if isFromResults {
+                print("is from results: ", isFromResults)
+                destination.isFromResults = true
+            }
+        }
     }
     
     // Enables button
@@ -74,6 +97,12 @@ class LoginViewConroller: UIViewController {
             UserDefaults.standard.set(true, forKey: "userLoggedIn")
             //prints 0 for false and 1 for true
             print("is user logged in: " + (UserDefaults.standard.string(forKey: "userLoggedIn") ?? ""))
+            
+            if isFromResults {
+                performSegue(withIdentifier: "LoginResults", sender: self)
+            } else {
+                performSegue(withIdentifier: "LoginHome", sender: self)
+            }
         }
     }
     
@@ -120,5 +149,9 @@ class LoginViewConroller: UIViewController {
         view.backgroundColor = UIColor.viewBackground(theme: colorTheme)
         loginButton.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
         loginButton.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
+    }
+    
+    @IBAction func goToRegister(_ sender: Any) {
+        performSegue(withIdentifier: "LoginRegister", sender: self)
     }
 }

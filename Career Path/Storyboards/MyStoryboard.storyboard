@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Home-->
+        <scene sceneID="ZLH-uS-fvb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="gcn-Nc-uNG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t44-LM-2YC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="804"/>
+        </scene>
+        <!--CareerList-->
+        <scene sceneID="B2e-6n-n8T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CareerInfo" referencedIdentifier="CareerList" id="1fL-KB-NId" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T4v-rI-NaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="739"/>
+        </scene>
         <!--Register View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -130,7 +146,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Hpj-Kg-L2O" kind="show" id="lYb-lq-TMv"/>
+                                    <action selector="goToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wgy-6p-CvF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,11 +168,30 @@
                         <outlet property="passwordField" destination="zlQ-lw-HkZ" id="yYa-HU-3au"/>
                         <outlet property="registerButton" destination="dXU-CW-zT4" id="VgS-iX-7Ii"/>
                         <outlet property="usernameField" destination="bis-sr-fJg" id="p6c-9l-3GL"/>
+                        <segue destination="1fL-KB-NId" kind="show" identifier="RegisterResults" id="9nD-pV-tMr"/>
+                        <segue destination="gcn-Nc-uNG" kind="show" identifier="RegisterHome" id="7v7-5A-ulK"/>
+                        <segue destination="Hpj-Kg-L2O" kind="show" identifier="RegisterLogin" id="vCK-9d-Z5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.33333333333334" y="133.25892857142856"/>
+            <point key="canvasLocation" x="52" y="220"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="4hK-S5-Yvm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="Cay-k5-41E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yax-2P-xrp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="532"/>
+        </scene>
+        <!--CareerList-->
+        <scene sceneID="XwM-g7-GIq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CareerInfo" referencedIdentifier="CareerList" id="dPn-LD-ivo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXO-LV-OBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482" y="-277"/>
         </scene>
         <!--Login View Conroller-->
         <scene sceneID="veL-pM-rCX">
@@ -247,7 +282,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="RNG-Uw-53a"/>
+                                    <action selector="goToRegister:" destination="Hpj-Kg-L2O" eventType="touchUpInside" id="aKL-sC-Bnd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -267,11 +302,14 @@
                         <outlet property="loginButton" destination="Skb-BN-vIT" id="M7i-Mh-SsD"/>
                         <outlet property="passwordField" destination="0eE-GP-X1K" id="5BK-dW-b0v"/>
                         <outlet property="usernameField" destination="Xi4-Ux-uba" id="5Fp-Jr-X4y"/>
+                        <segue destination="dPn-LD-ivo" kind="show" identifier="LoginResults" id="QeY-sZ-ltI"/>
+                        <segue destination="Cay-k5-41E" kind="show" identifier="LoginHome" id="EBQ-as-tSB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginRegister" id="9Es-ZL-zQg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18Y-Du-doJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963.76811594202911" y="132.58928571428572"/>
+            <point key="canvasLocation" x="945" y="124"/>
         </scene>
         <!--Home-->
         <scene sceneID="chJ-Lz-nLf">

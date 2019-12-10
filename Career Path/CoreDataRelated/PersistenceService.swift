@@ -112,5 +112,75 @@ class PersistenceService {
             saveContext()
         }
     }
+    static func convertToPersonalityType(intValue: Int) -> PersonalityType {
+        switch intValue {
+        case 0:
+            return PersonalityType.ISTJ
+        case 1:
+            return PersonalityType.ISFJ
+        case 2:
+            return PersonalityType.INFJ
+        case 3:
+            return PersonalityType.INTJ
+        case 4:
+            return PersonalityType.ISTP
+        case 5:
+            return PersonalityType.ISFP
+        case 6:
+            return PersonalityType.INFP
+        case 7:
+            return PersonalityType.INTP
+        case 8:
+            return PersonalityType.ESTP
+        case 9:
+            return PersonalityType.ESFP
+        case 10:
+            return PersonalityType.ENFP
+        case 11:
+            return PersonalityType.ENTP
+        case 12:
+            return PersonalityType.ESTJ
+        case 13:
+            return PersonalityType.ESFJ
+        case 14:
+            return PersonalityType.ENFJ
+        case 15:
+            return PersonalityType.ENTJ
+        default:
+            fatalError("PersonalityType value needs to be in range 0..16")
+        }
+    }
+    
+    static func saveTestResults(type: PersonalityType) {
+        UserDefaults.standard.set(type.convertToInt(), forKey: "MyResults")
+    }
+    
+    static func setUserLoggedIn() {
+        UserDefaults.standard.set(true, forKey: "userLoggedIn")
+    }
+    
+    static func setUserLoggedOut() {
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
+    }
+    
+    static func checkUserLoggedIn() -> Bool {
+        return UserDefaults.standard.bool(forKey: "userLoggedIn")
+    }
+    
+    static func checkIfResultsExist() -> Bool {
+        return UserDefaults.standard.bool(forKey: "MyResults")
+    }
+    
+    static func getTestResults() -> PersonalityType? {
+        if let int = UserDefaults.standard.object(forKey: "MyResults") as? Int {
+            return convertToPersonalityType(intValue: int)
+        } else {
+            return nil
+        }
+    }
+    
+    static func clearUserDefaults() {
+        setUserLoggedOut()
+    }
 
 }
