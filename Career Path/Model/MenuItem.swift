@@ -6,6 +6,7 @@
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 
@@ -17,8 +18,14 @@ class Item {
     var icon: UIImage?
     
     //MARK: Initialization
+    //failable_initializer
     
-    init(name_item: String, icon: UIImage?) {
+    init?(name_item: String, icon: UIImage?) {
+        
+        // The name_item must not be empty
+        guard !name_item.isEmpty else {
+            return nil
+        }
         
         // Initialize stored properties.
         self.name_item = name_item

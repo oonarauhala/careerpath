@@ -1,14 +1,14 @@
 //
-//  PersonalityTest_Tests.swift
+//  PersonalityTypeTests.swift
 //  Career PathTests
 //
-//  Created by iosdev on 24/11/2019.
+//  Created by iosdev on 09/12/2019.
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
 import XCTest
 
-class PersonalityTest_Tests: XCTestCase {
+class PersonalityTypeTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -30,4 +30,18 @@ class PersonalityTest_Tests: XCTestCase {
         }
     }
     
+    //here I want to ensure that all enum types really exist
+    
+    
+    
+    func testEnumPersonlityTypeExistence(){
+        
+        //XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
+    
+        
+        
+    }
+    
+    
+
 }

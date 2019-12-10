@@ -94,10 +94,18 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     let icon3 = UIImage(named: "icon3")
     let icon4 = UIImage(named: "icon4")
         
-    let menuItem1 = Item(name_item: "Home", icon: icon1)
-    let menuItem2 = Item(name_item: "Profile", icon: icon2)
-    let menuItem3 = Item(name_item: "Browse jobs", icon: icon3)
-    let menuItem4 = Item(name_item: "Take the test", icon: icon4)
+        guard let menuItem1 = Item(name_item: "Home", icon: icon1) else {
+            fatalError("Unable to instantiate menuItem1")
+        }
+        guard let menuItem2 = Item(name_item: "Profile", icon: icon2) else {
+            fatalError("Unable to instantiate menuItem2")
+        }
+        guard let menuItem3 = Item(name_item: "Browse jobs", icon: icon3) else {
+            fatalError("Unable to instantiate menuItem3")
+        }
+        guard let menuItem4 = Item(name_item: "Take the test", icon: icon4) else {
+            fatalError("Unable to instantiate menuItem4")
+        }
     
     menuItems += [menuItem1, menuItem2, menuItem3, menuItem4]
         
