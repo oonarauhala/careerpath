@@ -35,8 +35,6 @@ class CareerResultsController: UIViewController {
     
 //MARK: Outlets
     
-    @IBOutlet weak var noResultsButton: UIButton!
-    @IBOutlet weak var noResultsTitle: UILabel!
     @IBOutlet weak var resultsRegisterButton: UIButton!
     @IBOutlet weak var resultsLoginButton: UIButton!
 
