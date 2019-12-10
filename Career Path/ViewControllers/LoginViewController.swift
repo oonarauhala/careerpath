@@ -15,15 +15,19 @@ class LoginViewConroller: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+
     //MARK:Properties
     let colorTheme: Themes = .t9
+
+    var username: String = ""
+    var password: String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
        colorSetup(theme: .t9)
         
-        // Disable login button
-        loginButton.isEnabled = false
+        // Disable login button        loginButton.isEnabled = false
     }
     
     // Enables button
@@ -38,32 +42,77 @@ class LoginViewConroller: UIViewController {
     
     
     // Field actions
+    
     @IBAction func usernameEditingChanged(_ sender: UITextField) {
         enableLoginButton()
-        guard let username = usernameField.text else {
+        if let value = usernameField.text {
+            self.username = value
+            print(self.username)
+        }
+
+        guard let username1 = usernameField.text else {
             return
         }
     }
     
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
         enableLoginButton()
-        guard let password = passwordField.text else {
+        if let value = passwordField.text {
+            self.password = value
+            print(self.password)
+        }
+        
+        guard let password1 = passwordField.text else {
             return
         }
     }
     
     // Button action
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        userExists()
+        
+        if userExists() == true {
+            UserDefaults.standard.set(true, forKey: "userLoggedIn")
+            //prints 0 for false and 1 for true
+            print("is user logged in: " + (UserDefaults.standard.string(forKey: "userLoggedIn") ?? ""))
+        }
     }
     
     func userExists() -> Bool {
+        var isUser = false
+        let group = DispatchGroup()
+        //group is used to control flow so that final return waits for fetchGetUsers loop to complete
+        group.enter()
         NetworkRequest().fetchGetUsers{data in
-            print(data)
-            
+            //Iterate through json user objects
+            for object in data {
+                //Check if valid and remove optional
+                if let username = object["storedUsername"] {
+                    print("fetched username: " + String(describing: username))
+                    print("entered username: " + self.username)
+                    //Check if entered username matches a username in json.db
+                    if String(describing: username) == self.username{
+                        if let password = object["storedPassword"] {
+                            //Check if entered password matches users password
+                            print("fetched password: " + String(describing: password))
+                            print("entered password: " + self.password)
+
+                            if String(describing: password) == self.password
+                            {
+                                //If username and password match, return true
+                                isUser = true
+                                UserDefaults.standard.set(self.username, forKey: "Username")
+                                    print("saved username: " + (UserDefaults.standard.string(forKey: "Username") ?? ""))
+                            }
+                        }
+                    }
+                }
+            }
+            group.leave()
         }
+        group.wait()
+        print(isUser)
         
-        return false
+        return isUser
     }
     
     //styling

@@ -77,10 +77,38 @@ class RegisterViewController: UIViewController {
             return
         }
         if username.isValid(.username) {
-            black(field: usernameField)
-            print("Username is valid")
-            usernameValidity = true
-            checkFields()
+
+            var usernameTaken = false
+            let group = DispatchGroup()
+            //group is used to control flow so that final return waits for fetchGetUsers loop to complete
+            group.enter()
+            NetworkRequest().fetchGetUsers{data in
+                //Iterate through json user objects
+                for object in data {
+                    //Check if valid and remove optional
+                    if let testUsername = object["storedUsername"] {
+                        print("fetched username: " + String(describing: testUsername))
+                        print("entered username: " + username)
+                        //Check if entered username matches a username in json.db
+                        if String(describing: testUsername) == username {
+                            usernameTaken = true
+                            print("Username taken, try another one")
+                            break
+                        }
+                    }
+                }
+                group.leave()
+            }
+            
+            group.wait()
+            if usernameTaken == true {
+                usernameValidity = false
+            }
+            else {
+                print("Username is valid")
+                usernameValidity = true
+                checkFields()
+            }
         }
         else {
             usernameValidity = false
@@ -161,6 +189,17 @@ class RegisterViewController: UIViewController {
         
         if registerButton.isEnabled == true {
             print("Button enabled")
+            guard let username1 = usernameField.text else {
+                return
+            }
+            guard let password1 = passwordField.text else {
+                return
+            }
+            guard let email1 = emailField.text else {
+                return
+            }
+            
+            NetworkRequest().fetchPostUser(username: username1, email: email1, password: password1)
         }
         
         // Send/save data here

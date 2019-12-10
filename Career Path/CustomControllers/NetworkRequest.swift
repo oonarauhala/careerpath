@@ -33,7 +33,7 @@ struct NetworkRequest {
             .resume()
     }
     
-    func fetchGetUsers(completion: @escaping ((AnyObject) -> Void)){
+    func fetchGetUsers(completion: @escaping (([[String: Any]]) -> Void)){
         
         let urlString: String = "http://localhost:3000/users"
         
@@ -55,14 +55,7 @@ struct NetworkRequest {
                         return
                 }
                 print("json is: " + json.description)
-                for obj in json {
-                    //let value2 = String(describing: value)
-                    if let a = obj["username"] {
-                        print(String(describing: a) + "  ")
-                    }
-                    
-                    // access all key / value pairs in dictionary
-                }
+                completion(json)
             }
             catch {
                 print("catch in fetchgetuser")
@@ -73,9 +66,9 @@ struct NetworkRequest {
         
     }
     
-    func fetchPostUser(userID: String, firstname: String, lastname: String, age: Int) -> Void {
+    func fetchPostUser(username: String, email: String, password: String) -> Void {
         
-        let urlString: String = "http://localhost:3000/users/" + userID
+        let urlString: String = "http://localhost:3000/users/"
         
         guard let url = URL(string: urlString) else {
             print("Error: URL not created")
@@ -85,7 +78,7 @@ struct NetworkRequest {
         var request = URLRequest(url: url)
         
         
-        let user = User(firstname, lastname, age)
+        let user = User(username, email, password)
         
         guard let uploadData = try? JSONEncoder().encode(user) else {
             print("could not encode user")
@@ -108,6 +101,43 @@ struct NetworkRequest {
                 print ("got data: \(dataString)")
             }
         }
+            .resume()
+        
+    }
+    
+    func fetchUpdateUser(user: User, userID: String) -> Void {
+        
+        let urlString: String = "http://localhost:3000/users/" + userID
+        
+        guard let url = URL(string: urlString) else {
+            print("Error: URL not created")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+
+        
+        guard let uploadData = try? JSONEncoder().encode(user) else {
+            print("could not encode user")
+            return
+        }
+        
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else {
+                    print ("server error")
+                    return
+            }
+            if let mimeType = response.mimeType,
+                mimeType == "application/json",
+                let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+            }
+            }
             .resume()
         
     }

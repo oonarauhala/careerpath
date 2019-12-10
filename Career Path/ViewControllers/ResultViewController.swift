@@ -29,14 +29,20 @@ class ResultViewController: BaseViewController {
         self.title = "Test Results"
         addSlideMenuButton()
         //"personal type" result and description based on "personal type" test
+        let personality = personalityTest1.definePersonalityType(responses: responses).rawValue
         resultLabel.text = personalityTest1.definePersonalityType(responses: responses).rawValue
         descriptionText.text = personalityTest1.definePersonalityType(responses: responses).description
+<<<<<<< HEAD
         
+=======
+        UserDefaults.standard.set(personality, forKey: "lastResult")
+>>>>>>> a9c8d3b3cdb58e6cb998d3464d413fdb8357a059
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowResults", let destination = segue.destination as? CareerListViewController {
             destination.displayState = .Results
+<<<<<<< HEAD
             destination.results = TestResults(user: User("asd", "sfsdfasdasd", 50), personalityType: personalityTest1.definePersonalityType(responses: responses), keywords: [TypeAndFrequency]())
         }
     }
@@ -50,4 +56,9 @@ class ResultViewController: BaseViewController {
         personality_label.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
     }
     
+=======
+            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: personalityTest1.definePersonalityType(responses: responses))
+        }
+    }
+>>>>>>> a9c8d3b3cdb58e6cb998d3464d413fdb8357a059
 }

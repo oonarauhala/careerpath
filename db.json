@@ -1,403 +1,399 @@
 {
-    "careers": [
-        {
-            "name":"Chef",
-            "description": "A chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation, often focusing on a particular cuisine. The word \"chef\" is derived from the term chef de cuisine (French pronunciation: [ʃɛf.də.kɥi.zin]), the director or head of a kitchen. Chefs can receive formal training from an institution, as well as by apprenticing with an experienced chef.\n\nThere are different terms that use the word chef in their titles, and deal with specific areas of food preparation, such as the sous-chef, who acts as the second-in-command in a kitchen, or the chef de partie, who handles a specific area of production, or “Television chef”, such as Alison Holst. The kitchen brigade system is a hierarchy found in restaurants and hotels employing extensive staff, many of which use the word \"chef\" in their titles. Underneath the chefs are the kitchen assistants. A chef's standard uniform includes a hat (called a toque), neckerchief, double-breasted jacket, apron and sturdy shoes (that may include steel or plastic toe-caps).",
-            "salary": 43180,
-            "degree": 0,
-            "personality": 12,
-            "futureDemand": 1
-        },
-        {
-            "name":"Chief information officer",
-            "description": "Chief information officer (CIO), chief digital information officer (CDIO) or information technology (IT) director, is a job title commonly given to the most senior executive in an enterprise who works with information technology and computer systems, in order to support enterprise goals.\n\nTypically, the CIO reports directly to the chief executive officer, but may also report to the chief operating officer or chief financial officer. In military organisations, the CIO reports to the commanding officer. The role of chief information officer was first defined in 1981 by William R. Synnott, former senior vice president of the Bank of Boston, and William H. Gruber, a former professor at the Massachusetts Institute of Technology Sloan School of Management. A CIO will sometimes serve as a member of the board of directors.",
-            "salary": 142609,
-            "degree": 1,
-            "personality": 12,
-            "futureDemand": 2
-        },
-        {
-            "name":"Industrial engineer",
-            "description": "Industrial engineering is an engineering profession that is concerned with the optimization of complex processes, systems, or organizations by developing, improving and implementing integrated systems of people, money, knowledge, information, equipment, energy and materials.\n\nIndustrial engineers use specialized knowledge and skills in the mathematical, physical and social sciences, together with the principles and methods of engineering analysis and design, to specify, predict, and evaluate the results obtained from systems and processes. From these results, they are able to create new systems, processes or situations for the useful coordination of labour, materials and machines and also improve the quality and productivity of systems, physical or social. Depending on the sub-specialties involved, industrial engineering may also overlap with, operations research, systems engineering, manufacturing engineering, production engineering, supply chain engineering, management science, management engineering, financial engineering, ergonomics or human factors engineering, safety engineering, or others, depending on the viewpoint or motives of the user.",
-            "salary": 87040,
-            "degree": 1,
-            "personality": 12,
-            "futureDemand": 2
-        },
-        {
-            "name":"Systems administrator",
-            "description": "A system administrator, or sysadmin, is a person who is responsible for the upkeep, configuration, and reliable operation of computer systems; especially multi-user computers, such as servers. The system administrator seeks to ensure that the uptime, performance, resources, and security of the computers they manage meet the needs of the users, without exceeding a set budget when doing so.\n\nTo meet these needs, a system administrator may acquire, install, or upgrade computer components and software; provide routine automation; maintain security policies; troubleshoot; train or supervise staff; or offer technical support for projects.",
-            "salary": 84224,
-            "degree": 1,
-            "personality": 0,
-            "futureDemand": 2
-        },
-        {
-            "name":"Actuary",
-            "description": "An actuary is a business professional who deals with the measurement and management of risk and uncertainty (BeAnActuary 2011a). The name of the corresponding field is actuarial science. These risks can affect both sides of the balance sheet and require asset management, liability management, and valuation skills (BeAnActuary 2011b). Actuaries provide assessments of financial security systems, with a focus on their complexity, their mathematics, and their mechanisms (Trowbridge 1989, p. 7).\n\nWhile the concept of insurance dates to antiquity (Johnston 1903, §475–§476, Loan 1992, Lewin 2007, pp. 3–4), the concepts needed to scientifically measure and mitigate risks have their origins in the 17th century studies of probability and annuities (Heywood 1985). Actuaries of the 21st century require analytical skills, business knowledge, and an understanding of human behavior and information systems to design and manage programs that control risk (BeAnActuary 2011c). The actual steps needed to become an actuary are usually country-specific; however, almost all processes share a rigorous schooling or examination structure and take many years to complete (Feldblum 2001, p. 6, Institute and Faculty of Actuaries 2014).\n\nThe profession has consistently been ranked as one of the most desirable (Riley 2013). In various studies, being an actuary was ranked number one or two multiple times since 2010 (Thomas 2012, Weber 2013, CareerCast 2015).",
-            "salary": 102880,
-            "degree": 1,
-            "personality": 0,
-            "futureDemand": 2
-        },
-        {
-            "name":"Accountant",
-            "description": "An accountant is a practitioner of accounting or accountancy, which is the measurement, disclosure or provision of assurance about financial information that helps managers, investors, tax authorities and others make decisions about allocating resource(s).\n\nAccountants who have demonstrated competency through their professional associations' certification exams are certified to use titles such as Chartered Accountant, Chartered Certified Accountant or Certified Public Accountant. Such professionals are granted certain responsibilities by statute, such as the ability to certify an organization's financial statements, and may be held liable for professional misconduct. Non-qualified accountants may be employed by a qualified accountant, or may work independently without statutory privileges and obligations.\n\nCahan & Sun (2015) used archival study to find out that accountants’ personal characteristics may exert a very significant impact during the audit process and further influence audit fees and audit quality.\n\nThe Big Four auditors are the largest employers of accountants worldwide. However, most accountants are employed in commerce, industry, and the public sector.",
-            "salary": 69350,
-            "degree": 1,
-            "personality": 0,
-            "futureDemand": 2
-        },
-        {
-            "name":"Preschool teacher",
-            "description": "A preschool teacher is a type of early childhood educator who instructs children from 2 to age 4, which stands as the youngest stretch of early childhood education. Early childhood education teachers need to span the continuum of children from birth to age 8.\n\nPreschool teachers are encouraged to hold credentials in early childhood education in the form of a Child Development Accreditation (CDA) or formal college education in early childhood or a related subject.\n\nThe term \"preschool\" refers to instruction in non-public arenas such as licensed preschools, childcare centers, family day care centers, home day care centers, center-based programs, federal programs like Head Start, and full or part-day private child centers or day care centers sponsored by religious bodies. The term \"pre-kindergarten\" refers to those lead teachers who offer instruction in a program for four-year-olds funded as part of the state public school system.\n\nPreschool teachers must be able to work well and interact with young children, sometimes as young as 2 years 9 months. Preschool children have a short attention span and their worries are usually fairly simple. Most preschoolers are loving, affectionate, and playful, and like to play games, be read to, or play with toys.",
-            "salary": 28990,
-            "degree": 1,
-            "personality": 1,
-            "futureDemand": 1
-        },
-        {
-            "name":"Secretary",
-            "description": "A secretary, administrative professional, or personal assistant is a person whose work consists of supporting management, including executives, using a variety of project management, communication, or organizational skills. However this role should not be confused with the role of an executive secretary, who differs from a personal assistant. In many countries, an executive secretary is a high-ranking position in the administrative hierarchy. In fact in Pakistan, federal secretaries are dubbed as the most influential people in the country.\n\nThe functions of a personal assistant may be entirely carried out to assist one other employee or may be for the benefit of more than one. In other situations a secretary is an officer of a society or organization who deals with correspondence, admits new members, and organizes official meetings and events.",
-            "salary": 38880,
-            "degree": 0,
-            "personality": 1,
-            "futureDemand": 1
-        },
-        {
-            "name":"Nurse",
-            "description": "A registered nurse (RN) is a nurse who has graduated from a nursing program and met the requirements outlined by a country, state, province or similar licensing body to obtain a nursing license. An RN's scope of practice is determined by legislation, and is regulated by a professional body or council.\n\nRegistered nurses are employed in a wide variety of professional settings, and often specialize in a field of practice. They may be responsible for supervising care delivered by other healthcare workers, including student nurses, licensed practical nurses (except in Canada), unlicensed assistive personnel, and less-experienced RNs.\n\nRegistered nurses must usually meet a minimum practice hours requirement and undertake continuing education to maintain their license. Furthermore, there is often a requirement that an RN remain free from serious criminal convictions.",
-            "salary": 68450,
-            "degree": 1,
-            "personality": 1,
-            "futureDemand": 1
-        },
-        {
-            "name":"Military officer",
-            "description": "An officer is a member of an armed forces or uniformed service who holds a position of authority.\n\nIn its broadest sense, the term \"officer\" refers to commissioned officers, non-commissioned officers, and warrant officers. However, when used without further detail, the term almost always refers to only commissioned officers, the more senior portion of a force who derive their authority from a commission from the head of state.",
-            "salary": 38250,
-            "degree": 1,
-            "personality": 8,
-            "futureDemand": 1
-        },
-        {
-            "name":"Film producer",
-            "description": "A film producer is a person who oversees film production. Either employed by a production company or working independently, producers plan and coordinate various aspects of film production, such as selecting the script; coordinating writing, directing, and editing; and arranging financing.\n\nDuring the \"discovery stage,\" the producer finds and selects promising material for development. Then, unless the film is based on an existing script, the producer has to hire a screenwriter and oversee the development of the script. Once a script is completed, the producer will lead a pitch to secure the financial backing (a \"green light\") to allow production to begin.\n\nThe producer also supervises the pre-production, production, and post-production stages of filmmaking. One of the most important tasks is to hire the director and other key crew members. Whereas the director makes the creative decisions during the production, the producer typically manages the logistics and business operations, though some directors also produce their own films. The producer is tasked with making sure the film is delivered on time and within budget, and has the final say on creative decisions. Finally, the producer will oversee the marketing and distribution.\n\nFor various reasons, producers cannot always supervise all of the production. In this case, the main producer or executive producer may hire and delegate work to associate producers, assistant producers, line producers or unit production managers.",
-            "salary": 66121,
-            "degree": 1,
-            "personality": 8,
-            "futureDemand": 1
-        },
-        {
-            "name":"Actor",
-            "description": "An actor is a person who portrays a character in a performance (also actress; see below). The actor performs \"in the flesh\" in the traditional medium of the theatre or in modern media such as film, radio, and television. The analogous Greek term is ὑποκριτής (hupokritḗs), literally \"one who answers\". The actor's interpretation of their role—the art of acting—pertains to the role played, whether based on a real person or fictional character. Interpretation occurs even when the actor is \"playing themselves\", as in some forms of experimental performance art.\n\nFormerly, in ancient Greece and Rome, the medieval world, and the time of William Shakespeare, only men could become actors, and women's roles were generally played by men or boys. After the English Restoration of 1660, women began to appear on stage in England. In modern times, particularly in pantomime and some operas, women occasionally play the roles of boys or young men.",
-            "salary": 34980,
-            "degree": 0,
-            "personality": 8,
-            "futureDemand": 1
-        },
-        {
-            "name":"Police officer",
-            "description": "A police officer, also known as an officer, policeman, or a policewoman is a warranted law employee of a police force. In most countries, \"police officer\" is a generic term not specifying a particular rank. In some, the use of the rank \"officer\" is legally reserved for military personnel.\n\nPolice officers are generally charged with the apprehension of criminals and the prevention and detection of crime, protection and assistance of the general public, and the maintenance of public order. Police officers may be sworn to an oath, and have the power to arrest people and detain them for a limited time, along with other duties and powers. Some officers are trained in special duties, such as counter-terrorism, surveillance, child protection, VIP protection, civil law enforcement, and investigation techniques into major crime including fraud, rape, murder, and drug trafficking. Although many police officers wear a corresponding uniform, some police officers are plain-clothed in order to pass themselves off as civilians. In most countries police officers are given exemptions from certain laws to perform their duties. For example an officer may use force if necessary to arrest or detain a person when it would ordinarily be assault. Officers can also break road rules to perform their duties.",
-            "salary": 65400,
-            "degree": 0,
-            "personality": 4,
-            "futureDemand": 1
-        },
-        {
-            "name":"Electrical engineer",
-            "description": "Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use electricity, electronics, and electromagnetism. It emerged as an identifiable occupation in the latter half of the 19th century after commercialization of the electric telegraph, the telephone, and electrical power generation, distribution and use.\n\nElectrical engineering is now divided into a wide range of fields including, computer engineering, power engineering, telecommunications, radio-frequency engineering, signal processing, instrumentation, and electronics. Many of these disciplines overlap with other engineering branches, spanning a huge number of specializations including hardware engineering, power electronics, electromagnetics and waves, microwave engineering, nanotechnology, electrochemistry, renewable energies, mechatronics, and electrical materials science. See glossary of electrical and electronics engineering.\n\nElectrical engineers typically hold a degree in electrical engineering or electronic engineering. Practising engineers may have professional certification and be members of a professional body or an international standards organization. These include the International Electrotechnical Commission (IEC), the Institute of Electrical and Electronics Engineers (IEEE) and the Institution of Engineering and Technology (IET) (formerly the IEE). The IEC prepares international standards for electrical engineering, developed through consensus, thanks to the work of 20,000 electrotechnical experts, coming from 172 countries worldwide.\n\nElectrical engineers work in a very wide range of industries and the skills required are likewise variable. These range from circuit theory to the management skills of a project manager. The tools and equipment that an individual engineer may need are similarly variable, ranging from a simple voltmeter to a top end analyzer to sophisticated design and manufacturing software.",
-            "salary": 96640,
-            "degree": 1,
-            "personality": 4,
-            "futureDemand": 1
-        },
-        {
-            "name":"Mechanical engineer",
-            "description": "Mechanical engineering is the discipline that applies engineering physics, engineering mathematics, and materials science principles to design, analyze, manufacture, and maintain mechanical systems. It is one of the oldest and broadest of the engineering disciplines.\n\nThe mechanical engineering field requires an understanding of core areas including mechanics, dynamics, thermodynamics, materials science, structural analysis, and electricity. In addition to these core principles, mechanical engineers use tools such as computer-aided design (CAD), computer-aided manufacturing (CAM), and product life cycle management to design and analyze manufacturing plants, industrial equipment and machinery, heating and cooling systems, transport systems, aircraft, watercraft, robotics, medical devices, weapons, and others. It is the branch of engineering that involves the design, production, and operation of machinery.\n\nMechanical engineering emerged as a field during the Industrial Revolution in Europe in the 18th century; however, its development can be traced back several thousand years around the world. In the 19th century, developments in physics led to the development of mechanical engineering science. The field has continually evolved to incorporate advancements; today mechanical engineers are pursuing developments in such areas as composites, mechatronics, and nanotechnology. It also overlaps with aerospace engineering, metallurgical engineering, civil engineering, electrical engineering, manufacturing engineering, chemical engineering, industrial engineering, and other engineering disciplines to varying amounts. Mechanical engineers may also work in the field of biomedical engineering, specifically with biomechanics, transport phenomena, biomechatronics, bionanotechnology, and modelling of biological systems.",
-            "salary": 85880,
-            "degree": 1,
-            "personality": 4,
-            "futureDemand": 1
-        },
-        {
-            "name":"Flight attendant",
-            "description": "Flight attendant or (also known as steward/stewardess or air host/air hostess) is a member of an aircrew employed by airlines aboard commercial flights, primarily to ensure the safety and comfort of passengers. Collectively called the cabin crew, flight attendants are deployed in the cabins of all commercial flights and additionally may also be present on some private or business jets and government or military aircraft.",
-            "salary": 48500,
-            "degree": 0,
-            "personality": 9,
-            "futureDemand": 1
-        },
-        {
-            "name":"Interior designer",
-            "description": "Interior design is the art and science of enhancing the interior of a building to achieve a healthier and more aesthetically pleasing environment for the people using the space. An interior designer is someone who plans, researches, coordinates, and manages such projects. Interior design is a multifaceted profession that includes conceptual development, space planning, site inspections, programming, research, communicating with the stakeholders of a project, construction management, and execution of the design.",
-            "salary": 51588,
-            "degree": 1,
-            "personality": 9,
-            "futureDemand": 1
-        },
-        {
-            "name":"News anchor",
-            "description": "A news presenter – also known as a newsreader, newscaster (short for \"news broadcaster\"), anchorman or anchorwoman, news anchor or simply an anchor – is a person who presents news during a news program on the television, on the radio or on the Internet. They may also be a working journalist, assisting in the collection of news material and may, in addition, provide commentary during the program. News presenters most often work from a television studio or radio studio, but may also present the news from remote locations in the field related to a particular major news event.",
-            "salary": 83300,
-            "degree": 1,
-            "personality": 9,
-            "futureDemand": 1
-        },
-        {
-            "name":"Occupational therapist",
-            "description": "Occupational Therapists (OTs) are health care professionals who utilize evidence-based practice, research, scientific evidence, and a holistic perspective to promote independence, meaningful occupations, and patients' functional ability to fulfill their daily routines and roles. OTs ensure their patient-oriented interventions are effective. They have background training on the psychological, physical, emotional, and social makeup. OTs also have immense training in treating the whole body with the incorporation of neurological principles, anatomical or physiological concepts, and psychological perspectives. They support individuals across their lifespan to fulfill meaningful activities, known as occupations, individually by using therapeutic interventions.\n\nOccupational therapists work in a variety of fields, including pediatrics, orthopedics, neurology, and geriatrics. The main approach of occupational therapy is to assist individuals in regaining skills as well as in increasing their abilities and decreasing limitations or disabilities of any kind. OTs evaluate the individual as well as their home and other immediate environments. Upon evaluating, they recommend, as needed, adaptive equipment and training in its use, guidance, and education for family members and caregivers. OTs determine a patient's individualized goals with the help of the person's family, caregiver, and doctor.\n\nOTs customize each intervention to improve a person's ability to perform daily life activities and to reach his or her goals. OTs perform outcomes measures to evaluate the person's abilities and to ensure there is progress toward the goals. This outcome evaluation also helps the therapist to understand if an intervention plan must be changed.",
-            "salary": 83200,
-            "degree": 2,
-            "personality": 5,
-            "futureDemand": 1
-        },
-        {
-            "name":"Dietitian",
-            "description": "A dietitian (or dietician) is an expert in dietetics; that is, human nutrition and the regulation of diet. A dietitian alters their patient's nutrition based upon their medical condition and individual needs. Dietitians are regulated healthcare professionals licensed to assess, diagnose, and treat nutritional problems.\n\nA registered dietitian (RD) or registered dietitian nutritionist (RDN) is a dietitian who meets all of a set of special academic and professional requirements, including the completion of a bachelor's degree with an accredited nutrition curriculum, an internship at an approved health-care facility, foodservice organization, or community agency, and satisfactory performance on a registration exam.\n\nRoughly half of all RDNs hold graduate degrees[4] and many have certifications in specialized fields such as sports, pediatrics, renal, oncological, food-allergy, or gerontological nutrition. After learning about a patient's health history, favorite foods, eating and exercise habits, the RD helps the person to set goals and to prioritize. Follow-up visits often focus on maintenance and monitoring progress.\n\nMost RDs work in the treatment and prevention of disease (administering medical nutrition therapy, as part of medical teams), often in hospitals, health-maintenance organizations, private practices, or other health-care facilities. In addition, many registered dietitians work in community and public-health settings, and/or in academia and research. A growing number of dietitians work in the food industry, journalism, sports nutrition, corporate wellness programs, and other non-traditional dietetics settings.",
-            "salary": 59410,
-            "degree": 1,
-            "personality": 5,
-            "futureDemand": 1
-        },{
-            "name":"Geologist",
-            "description": "A geologist is a scientist who studies the solid, liquid, and gaseous matter that constitutes the Earth and other terrestrial planets, as well as the processes that shape them. Geologists usually study geology, although backgrounds in physics, chemistry, biology, and other sciences are also useful. Field work is an important component of geology, although many subdisciplines incorporate laboratory work.\n\nGeologists work in the energy and mining sectors searching for natural resources such as petroleum, natural gas, precious and base metals. They are also in the forefront of preventing and mitigating damage from natural hazards and disasters such as earthquakes, volcanoes, tsunamis and landslides. Their studies are used to warn the general public of the occurrence of these events. Geologists are also important contributors to climate change discussions.",
-            "salary": 91130,
-            "degree": 1,
-            "personality": 5,
-            "futureDemand": 1
-        },
-
-        {
-            "name":"Project manager",
-            "description": "A project manager is a professional in the field of project management. Project managers have the responsibility of the planning, procurement and execution of a project, in any undertaking that has a defined scope, defined start and a defined finish; regardless of industry. Project managers are first point of contact for any issues or discrepancies arising from within the heads of various departments in an organization before the problem escalates to higher authorities.\n\nProject management is the responsibility of a project manager. This individual seldom participates directly in the activities that produce the end result, but rather strives to maintain the progress, mutual interaction and tasks of various parties in such a way that reduces the risk of overall failure, maximizes benefits, and minimizes costs.",
-            "salary": 54824,
-            "degree": 1,
-            "personality": 15,
-            "futureDemand": 1
-        },
-        {
-            "name":"Chemical engineer",
-            "description": "Chemical engineering is a branch of engineering that uses principles of chemistry, physics, mathematics, biology, and economics to efficiently use, produce, design, transport and transform energy and materials. The work of chemical engineers can range from the utilisation of nano-technology and nano-materials in the laboratory to large-scale industrial processes that convert chemicals, raw materials, living cells, microorganisms, and energy into useful forms and products.\n\nChemical engineers are involved in many aspects of plant design and operation, including safety and hazard assessments, process design and analysis, modeling, control engineering, chemical reaction engineering, nuclear engineering, biological engineering, construction specification, and operating instructions.\n\nChemical engineers typically hold a degree in Chemical Engineering or Process Engineering. Practising engineers may have professional certification and be accredited members of a professional body. Such bodies include the Institution of Chemical Engineers (IChemE) or the American Institute of Chemical Engineers (AIChE). A degree in chemical engineering is directly linked with all of the other engineering disciplines, to various extents.",
-            "salary": 104910,
-            "degree": 1,
-            "personality": 15,
-            "futureDemand": 1
-        },
-        {
-            "name":"Hydrologist",
-            "description": "Hydrology (from Greek: ὕδωρ, \"hýdōr\" meaning \"water\" and λόγος, \"lógos\" meaning \"study\") is the scientific study of the movement, distribution and management of water on Earth and other planets, including the water cycle, water resources and environmental watershed sustainability. A practitioner of hydrology is called a \"hydrologic engineer\", working within the fields of civil and environmental engineering. Hydrologists can also be scientists studying earth or environmental science and physical geography. Using various analytical methods and scientific techniques, they collect and analyze data to help solve water related problems such as environmental preservation, natural disasters, and water management.\n\nHydrology subdivides into surface water hydrology, groundwater hydrology (hydrogeology), and marine hydrology. Domains of hydrology include hydrometeorology, surface hydrology, hydrogeology, drainage-basin management and water quality, where water plays the central role.\n\nOceanography and meteorology are not included because water is only one of many important aspects within those fields.\n\nHydrological research can inform environmental engineering, policy and planning.",
-            "salary": 75530,
-            "degree": 1,
-            "personality": 15,
-            "futureDemand": 1
-        },
-        {
-            "name":"Microbiologist",
-            "description": "A microbiologist (from Greek μῑκρος) is a scientist who studies microscopic life forms and processes. This includes study of the growth, interactions and characteristics of microscopic organisms such as bacteria, algae, fungi, and some types of parasites and their vectors. Most microbiologists work in offices and/or research facilities, both in private biotechnology companies as well as in academia. Most microbiologists specialize in a given topic within microbiology such as bacteriology, parasitology, virology, or immunology.",
-            "salary": 71650,
-            "degree": 1,
-            "personality": 3,
-            "futureDemand": 1
-        },
-        {
-            "name":"Architect",
-            "description": "An architect is a person who plans, designs and reviews the construction of buildings. To practice architecture means to provide services in connection with the design of buildings and the space within the site surrounding the buildings that have human occupancy or use as their principal purpose. Etymologically, architect derives from the Latin architectus, which derives from the Greek (arkhi-, chief + tekton, builder), i.e., chief builder.\n\nProfessionally, an architect's decisions affect public safety, and thus an architect must undergo specialized training consisting of advanced education and a practicum (or internship) for practical experience to earn a license to practice architecture. Practical, technical, and academic requirements for becoming an architect vary by jurisdiction.",
-            "salary": 78470,
-            "degree": 1,
-            "personality": 3,
-            "futureDemand": 1
-        },
-        {
-            "name":"Programmer",
-            "description": "A computer programmer, sometimes called more recently a coder (especially in more informal contexts), is a person who creates computer software. The term computer programmer can refer to a specialist in one area of computers, or to a generalist who writes code for many kinds of software.\n\nA programmer's most oft-used computer language (e.g., Assembly, COBOL, C, C++, C#, Java, Lisp, Python) may be prefixed to the term programmer. Some who work with web programming languages also prefix their titles with web.\n\nA range of occupations that involve programming also often require a range of other, similar skills, for example: (software) developer, web developer, mobile applications developer, embedded firmware developer, software engineer, computer scientist, game programmer, game developer and software analyst. The use of the term programmer as applied to these positions is sometimes considered an insulting simplification or even derogatory.",
-            "salary": 82240,
-            "degree": 1,
-            "personality": 3,
-            "futureDemand": 1
-        },
-        {
-            "name":"Social worker",
-            "description": "Social work is an academic discipline and profession that concerns itself with individuals, families, groups and communities in an effort to enhance social functioning and overall well-being. Social functioning is the way in which people perform their social roles, and the structural institutions that are provided[by whom?] to sustain them. Social work applies social sciences, such as sociology, psychology, political science, public health, community development, law, and economics, to engage with client systems, conduct assessments, and develop interventions to solve social and personal problems; and to bring about social change. Social work practice is often divided into micro-work, which involves working directly with individuals or small groups; and macro-work, which involves working with communities, and - within social policy - fostering change on a larger scale.\n\nThe social work industry developed in the 19th century, with some of its roots in voluntary philanthropy and in grassroots organizing. However, responses to social needs had existed long before then, primarily from private charities and from religious organizations. The effects of the Industrial Revolution and of the Great Depression of the 1930s placed pressure on social work to become a more defined discipline.",
-            "salary": 49470,
-            "degree": 1,
-            "personality": 14,
-            "futureDemand": 1
-        },
-        {
-            "name":"Cosmetologist",
-            "description": "Cosmetology (from Greek κοσμητικός, kosmētikos, \"beautifying\"; and -λογία, -logia) is the study and application of beauty treatment. Branches of specialty include hairstyling, skin care, cosmetics, manicures/pedicures, non-permanent hair removal such as waxing and sugaring, and permanent hair removal processes such as electrology and intense pulsed light (IPL).\n\nCosmetologists are trained and licensed to perform cosmetic treatments to the hair, skin, and nails. This can be expanded into multiple parts including cutting and chemically treating hair, chemical hair removal, fashion trends, wigs, nails and skin care, skin and hair analysis; relaxation techniques including head, neck, scalp, hand and feet basic massage and aroma therapies; plus ability to expertly apply makeup applications to cover or promote and can expand into further specialties such as reflexology; theatrical applications; cosmetics and others as listed below.",
-            "salary": 26460,
-            "degree": 0,
-            "personality": 14,
-            "futureDemand": 1
-        },
-        {
-            "name":"Teacher",
-            "description": "A teacher (also called a school teacher or, in some contexts, an educator) is a person who helps students to acquire knowledge, competence or virtue.\n\nInformally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries, teaching young people of school age may be carried out in an informal setting, such as within the family (homeschooling), rather than in a formal setting such as a school or college. Some other professions may involve a significant amount of teaching (e.g. youth worker, pastor).\n\nIn most countries, formal teaching of students is usually carried out by paid professional teachers. This article focuses on those who are employed, as their main role, to teach others in a formal education context, such as at a school or other place of initial formal education or training.",
-            "salary": 57160,
-            "degree": 1,
-            "personality": 14,
-            "futureDemand": 1
-        },
-        {
-            "name":"Veterinarian",
-            "description": "A veterinarian (vet), also known as a veterinary surgeon or veterinary physician, is a professional who practices veterinary medicine by treating diseases, disorders, and injuries in non-human animals.\n\nIn many countries, the local nomenclature for a veterinarian is a regulated and protected term, meaning that members of the public without the prerequisite qualifications and/or licensure are not able to use the title. In many cases, the activities that may be undertaken by a veterinarian (such as treatment of illness or surgery in animals) are restricted only to those professionals who are registered as a veterinarian. For instance, in the United Kingdom, as in other jurisdictions, animal treatment may only be performed by registered veterinary physicians (with a few designated exceptions, such as paraveterinary workers), and it is illegal for any person who is not registered to call themselves a veterinarian, prescribe any drugs, or perform treatment.\n\nMost veterinary physicians work in clinical settings, treating animals directly. These veterinarians may be involved in a general practice, treating animals of all types; they may be specialized in a specific group of animals such as companion animals, livestock, zoo animals or equines; or may specialize in a narrow medical discipline such as surgery, dermatology or internal medicine . As with other healthcare professionals, veterinarians face ethical decisions about the care of their patients. Current debates within the profession include the ethics of certain procedures believed to be purely cosmetic or unnecessary for behavioral issues, such as declawing of cats, docking of tails, cropping of ears and debarking on dogs.",
-            "salary": 90420,
-            "degree": 3,
-            "personality": 2,
-            "futureDemand": 1
-        },
-        {
-            "name":"Graphic designer",
-            "description": "A graphic designer is a professional within the graphic design and graphic arts industry who assembles together images, typography, or motion graphics to create a piece of design. A graphic designer creates the graphics primarily for published, printed or electronic media, such as brochures (sometimes) and advertising. They are also sometimes responsible for typesetting, illustration, user interfaces, and web design. A core responsibility of the designer's job is to present information in a way that is both accessible and memorable.",
-            "salary": 45703,
-            "degree": 1,
-            "personality": 2,
-            "futureDemand": 1
-        },
-        {
-            "name":"Librarian",
-            "description": "A librarian is a person who works professionally in a library, providing access to information and sometimes social or technical programming to users. In addition, librarians provide instruction on information literacy.\n\nTraditionally, a librarian is associated with collections of books, as demonstrated by the etymology of the word \"librarian\" (from the Latin liber, \"book\"). The role of a librarian is continually evolving to meet social and technological needs. A modern librarian may deal with provision and maintenance of information in many formats, including: books; electronic resources; magazines; newspapers; audio and video recordings; maps; manuscripts; photographs and other graphic material; bibliographic databases; and web-based and digital resources. A librarian may also provide other information services, including: information literacy instruction; computer provision and training; coordination with community groups to host public programs; assistive technology for people with disabilities; and assistance locating community resources. Appreciation for librarians is often included by authors and scholars in the acknowledgment sections of books.",
-            "salary": 57680,
-            "degree": 1,
-            "personality": 2,
-            "futureDemand": 1
-        },
-        {
-            "name":"Reporter",
-            "description": "A journalist is a person who collects, writes, or distributes news or other current information to the public. A journalist's work is called journalism. A journalist can work with general issues or specialize in certain issues. However, most journalists tend to specialize, and by cooperating with other journalists, produce journals that span many topics. For example, a sports journalist covers news within the world of sports, but this journalist may be a part of a newspaper that covers many different topics.\n\nA reporter is a type of journalist who researches, writes, and reports on information in order to present in sources, conduct interviews, engage in research, and make reports. The information-gathering part of a journalist's job is sometimes called reporting, in contrast to the production part of the job such as writing articles. Reporters may split their time between working in a newsroom and going out to witness events or interviewing people. Reporters may be assigned a specific beat or area of coverage.",
-            "salary": 39370,
-            "degree": 1,
-            "personality": 11,
-            "futureDemand": 1
-        },
-        {
-            "name":"Technical analyst",
-            "description": "In finance, technical analysis is an analysis methodology for forecasting the direction of prices through the study of past market data, primarily price and volume. Behavioral economics and quantitative analysis use many of the same tools of technical analysis, which, being an aspect of active management, stands in contradiction to much of modern portfolio theory. The efficacy of both technical and fundamental analysis is disputed by the efficient-market hypothesis, which states that stock market prices are essentially unpredictable.",
-            "salary": 80863,
-            "degree": 1,
-            "personality": 11,
-            "futureDemand": 1
-        },
-        {
-            "name":"Construction worker",
-            "description": "A construction worker is a manual laborer employed in the physical construction of the built environment and its infrastructure.\n\nThe term construction worker is a broad and generic term and most construction workers are primarily described by the level and type of work they perform. Labourers carry out a wide range of practical tasks to help tradespersons on construction sites. Labourers clean the construction site on a regular basis. They use tools such as rakes, shovels, and wheelbarrows to remove rubble, scraps of metal, and wood or they might also need to sweep out certain areas, and get building supplies in order.\n\nConstruction workers may also colloquially be referred to as \"hard hat workers\" or \"hard hats\", as they often wear hardhats for safety.",
-            "salary": 34530,
-            "degree": 0,
-            "personality": 11,
-            "futureDemand": 1
-        },
-        {
-            "name":"College professor",
-            "description": "Professor (commonly abbreviated as Prof.) is an academic rank at universities and other post-secondary education and research institutions in most countries. Literally, professor derives from Latin as a 'person who professes' being usually an expert in arts or sciences, a teacher of the highest rank.\n\nIn most systems of academic ranks the word 'professor' only refers to the most senior academic position, sometimes informally known as 'full professor'. In some countries or institutions, the word 'professor' is also used in titles of lower ranks such as associate professor and assistant professor; this is particularly the case in the United States, where the word professor is sometimes used colloquially to refer to anyone in an academic post. This colloquial usage would be considered incorrect among most other academic communities. However, the unqualified title Professor designated with a capital letter usually refers to a full professor also in English language usage.\n\nProfessors often conduct original research and commonly teach undergraduate, professional or postgraduate courses in their fields of expertise. In universities with graduate schools, professors may mentor and supervise graduate students conducting research for a thesis or dissertation. In many universities, 'full professors' take on senior managerial roles, leading departments, research teams and institutes, and filling roles such as president, principal or vice-chancellor. The role of professor may be more public facing than that of more junior staff, and professors are expected to be national or international leaders in their field of expertise.",
-            "salary": 67536,
-            "degree": 2,
-            "personality": 7,
-            "futureDemand": 1
-        },
-        {
-            "name":"Technical writer",
-            "description": "A technical writer is a professional information communicator whose task is to transfer information (knowledge) between two or more parties, through any medium that best facilitates the transfer and comprehension of the information. Technical writers research and create information through a variety of delivery media (electronic, printed, audio-visual and even touch). Example types of information include online help, manuals, white papers, design specifications, project plans and software test plans. With the rise of e-learning, technical writers are increasingly becoming involved with creating online training material.\n\nAccording to the Society for Technical Communication (STC):\nTechnical writing is sometimes defined as simplifying the complex. Inherent in such a concise and deceptively simple definition is a whole range of skills and characteristics that address nearly every field of human endeavor at some level. A significant subset of the broader field of technical communication, technical writing involves communicating complex information to those who need it to accomplish some task or goal.\n\nIn other words, technical writers take advanced technical concepts and communicate them as clearly, accurately, and comprehensively as possible to their intended audience, ensuring that the work is accessible to its users.\n\nKurt Vonnegut described technical writers as:\n\n...trained to reveal almost nothing about themselves in their writing. This makes them freaks in the world of writers, since almost all of the other ink-stained wretches in that world reveal a lot about themselves to the reader.\n\nEngineers, scientists, and other professionals may also be involved in technical writing (developmental editing, proofreading, etc), but are more likely to employ professional technical writers to develop, edit and format material, and advise the best means of information delivery to their audiences.",
-            "salary": 70930,
-            "degree": 1,
-            "personality": 7,
-            "futureDemand": 1
-        },
-        {
-            "name":"Photographer",
-            "description": "A photographer (the Greek φῶς (phos), meaning \"light\", and γραφή (graphê), meaning \"drawing, writing\", together meaning \"drawing with light\") is a person who makes photographs.\n\nAs in other arts, the definitions of amateur and professional are not entirely categorical.\n\nAn amateur photographer takes snapshots for pleasure to remember events, places or friends with no intention of selling the images to others.\n\nA professional photographer is likely to take photographs for a session and image purchase fee, by salary or through the display, resale or use of those photographs.[2]\n\nA professional photographer may be an employee, for example of a newspaper, or may contract to cover a particular planned event such as a wedding or graduation, or to illustrate an advertisement. Others, like fine art photographers, are freelancers, first making an image and then licensing or making printed copies of it for sale or display. Some workers, such as crime scene photographers, estate agents, journalists and scientists, make photographs as part of other work. Photographers who produce moving rather than still pictures are often called cinematographers, videographers or camera operators, depending on the commercial context.\n\nThe term professional may also imply preparation, for example, by academic study or apprenticeship by the photographer in pursuit of photographic skills. A hallmark of a professional is often that they invest in continuing education through associations. Many associations offer the opportunity to test and exhibit acumen in order to attain credentials such as Certified Professional Photographer (CPP) or Master Photographer. While there is no compulsory registration requirement for professional photographer status, operating a business requires having a business license in most cities and counties. Similarly, having commercial insurance is required by most venues if photographing a wedding or a public event. Photographers who operate a legitimate business can provide these items.\n\nPhotographers can be categorized based on the subjects they photograph.\n\nSome photographers explore subjects typical of paintings such as landscape, still life, and portraiture. Other photographers specialize in subjects unique to photography, including sports photography, street photography, documentary photography, fashion photography, wedding photography, war photography, photojournalism, aviation photography and commercial photography. It is worth noting that the type of work commissioned will have pricing associated with the image's usage.",
-            "salary": 32204,
-            "degree": 0,
-            "personality": 7,
-            "futureDemand": 1
-        },
-        {
-            "name":"Landscape architect",
-            "description": "A landscape architect is a person who is educated in the field of landscape architecture. The practice of landscape architecture includes: site analysis, site inventory, land planning, planting design, grading, storm water management, sustainable design, construction specification and ensuring that all plans meet the current building codes and local and federal ordinances. The title landscape architect was first used by Frederick Law Olmsted, the designer of New York City's Central Park.",
-            "salary": 68820,
-            "degree": 1,
-            "personality": 10,
-            "futureDemand": 1
-        },
-        {
-            "name":"Web designer",
-            "description": "Web design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design; interface design; authoring, including standardised code and proprietary software; user experience design; and search engine optimization. Often many individuals will work in teams covering different aspects of the design process, although some designers will cover them all. The term web design is normally used to describe the design process relating to the front-end (client side) design of a website including writing markup. Web design partially overlaps web engineering in the broader scope of web development. Web designers are expected to have an awareness of usability and if their role involves creating markup then they are also expected to be up to date with web accessibility guidelines.",
-            "salary": 67990,
-            "degree": 1,
-            "personality": 10,
-            "futureDemand": 1
-        },
-        {
-            "name":"Archaeologist",
-            "description": "Archaeology, or archeology, is the study of human activity through the recovery and analysis of material culture. The archaeological record consists of artifacts, architecture, biofacts or ecofacts and cultural landscapes. Archaeology can be considered both a social science and a branch of the humanities. In Europe it is often viewed as either a discipline in its own right or a sub-field of other disciplines, while in North America archaeology is a sub-field of anthropology.\n\nArchaeologists study human prehistory and history, from the development of the first stone tools at Lomekwi in East Africa 3.3 million years ago up until recent decades. Archaeology is distinct from palaeontology, which is the study of fossil remains. It is particularly important for learning about prehistoric societies, for whom there may be no written records to study. Prehistory includes over 99% of the human past, from the Paleolithic until the advent of literacy in societies across the world. Archaeology has various goals, which range from understanding culture history to reconstructing past lifeways to documenting and explaining changes in human societies through time.\n\nThe discipline involves surveying, excavation and eventually analysis of data collected to learn more about the past. In broad scope, archaeology relies on cross-disciplinary research. It draws upon anthropology, history, art history, classics, ethnology, geography, geology, literary history, linguistics, semiology, sociology, textual criticism, physics, information sciences, chemistry, statistics, paleoecology, paleography, paleontology, paleozoology, and paleobotany.\n\nArchaeology developed out of antiquarianism in Europe during the 19th century, and has since become a discipline practiced across the world. Archaeology has been used by nation-states to create particular visions of the past. Since its early development, various specific sub-disciplines of archaeology have developed, including maritime archaeology, feminist archaeology and archaeoastronomy, and numerous different scientific techniques have been developed to aid archaeological investigation. Nonetheless, today, archaeologists face many problems, such as dealing with pseudoarchaeology, the looting of artifacts, a lack of public interest, and opposition to the excavation of human remains.",
-            "salary": 62280,
-            "degree": 1,
-            "personality": 10,
-            "futureDemand": 1
-        },
-        {
-            "name":"Fine artist",
-            "description": "Creates original artistic work in a variety of mediums, such as painting, drawing, sculpture, video, film or performance.\n\nFine Art is the traditional term used to embrace painting, sculpture and printmaking, produced for its own sake and not concerned with whether it is functional or practical. Recently the term has come to include photography, video and the modern technologies that generate visual imagery.\n\nFine artists create original artwork using a variety of mediums. Their work is best described according to their area of specialisation which can be two-dimensional (such as painting), three-dimensional (sculpture) or even four-dimensional (moving images). In addition, many artists choose to also specialise in a subject such as landscapes or portraits.\n\nFine artists can be hired or commissioned to produce pieces of artwork or create their own pieces to be sold at a later date.",
-            "salary": 48605,
-            "degree": 0,
-            "personality": 6,
-            "futureDemand": 1
-        },
-        {
-            "name":"Sociologist",
-            "description": "Sociology is a study of society, patterns of social relationships, social interaction and culture of everyday life. It is a social science that uses various methods of empirical investigation and critical analysis to develop a body of knowledge about social order, acceptance, and change or social evolution. Sociology is also defined as the general science of society. While some sociologists conduct research that may be applied directly to social policy and welfare, others focus primarily on refining the theoretical understanding of social processes. Subject matter ranges from the micro-sociology level of individual agency and interaction to the macro level of systems and the social structure.\n\nThe different traditional focuses of sociology include social stratification, social class, social mobility, religion, secularization, law, sexuality, gender, and deviance. As all spheres of human activity are affected by the interplay between social structure and individual agency, sociology has gradually expanded its focus to other subjects, such as health, medical, economy, military and penal institutions, the Internet, education, social capital, and the role of social activity in the development of scientific knowledge.\n\nThe range of social scientific methods has also expanded. Social researchers draw upon a variety of qualitative and quantitative techniques. The linguistic and cultural turns of the mid-20th century led to increasingly interpretative, hermeneutic, and philosophic approaches towards the analysis of society. Conversely, the end of the 1990s and the beginning of the 2000s have seen the rise of new analytically, mathematically, and computationally rigorous techniques, such as agent-based modelling and social network analysis.\n\nSocial research informs politicians and policy makers, educators, planners, legislators, administrators, developers, business magnates, managers, social workers, non-governmental organizations, non-profit organizations, and people interested in resolving social issues in general. There is often a great deal of crossover between social research, market research, and other statistical fields.",
-            "salary": 82050,
-            "degree": 1,
-            "personality": 6,
-            "futureDemand": 1
-        },
-        {
-            "name":"Marketer",
-            "description": "Marketing is the study and management of exchange relationships. Marketing is the business process of creating relationships with and satisfying customers. Because marketing is used to attract customers, it is one of the primary components of business management and commerce. Marketers can direct product to other businesses (B2B marketing) or directly to consumers (B2C marketing). \n\nRegardless of who is being marketed to, several factors, including the perspective the marketers will use. These market orientations determine how marketers will approach the planning stage of marketing. This leads into the marketing mix, which outlines the specifics of the product and how it will be sold. This can in turn, be affected by the environment surrounding the product, the results of marketing research and market research, and the characteristics of the product's target market. \n\nOnce these factors are determined, marketers must then decide what methods will be used to market the product. This decision is based on the factors analyzed in the planning stage as well as where the product is in the product life cycle.",
-            "salary": 36612,
-            "degree": 0,
-            "personality": 6,
-            "futureDemand": 1
-        },
-        {
-            "name":"Human resource",
-            "description": "Human resources are the people who make up the workforce of an organization, business sector, or economy. \"Human capital\" is sometimes used synonymously with \"human resources\", although human capital typically refers to a narrower effect (i.e., the knowledge the individuals embody and economic growth). Likewise, other terms sometimes used include manpower, talent, labour, personnel, or simply people.\n\nA human-resources department (HR department) of an organization performs human resource management, overseeing various aspects of employment, such as compliance with labor law and employment standards, administration of employee benefits, organizing of employees files with the required documents for future reference, some aspects of recruitment.",
-            "salary": 60880,
-            "degree": 1,
-            "personality": 13,
-            "futureDemand": 1
-        },
-        {
-            "name":"Speech pathologist",
-            "description": "Speech-language pathology is a field of expertise practiced by a clinician known as a speech-language pathologist (SLP) or a speech therapist. SLP is considered a \"related health profession\" or \"allied health profession\" along with audiology, behavior analysis, optometry, occupational therapy, rehabilitation psychology, physical therapy, and others.\n\nSLPs specialize in the evaluation, diagnosis, and treatment of communication disorders (speech disorders and language disorders), cognitive-communication disorders, voice disorders, and swallowing disorders. SLPs also play an important role in the diagnosis and treatment of autism spectrum disorder (often in a team with pediatricians and psychologists).\n\nA common misconception is that speech-language pathology is restricted treatment of articulation disorders (e.g. helping English speaking individuals enunciate the traditionally difficult \"r\") and/or the treatment of individuals who stutter. In fact, speech-language pathology is concerned with a broad scope of speech, language, swallowing, and voice issues involved in communication, some of which include:",
-            "salary": 76610,
-            "degree": 2,
-            "personality": 13,
-            "futureDemand": 1
-        },
-        {
-            "name":"Physical therapist",
-            "description": "Physical therapy (PT), also known as physiotherapy, is one of the allied health professions that, by using evidence-based kinesiology, electrotherapy, shockwave modality, exercise prescription, joint mobilization and health education, treats conditions such as chronic or acute pain, soft tissue injuries, cartilage damage, arthritis, gait disorders and physical impairments typically of musculoskeletal, cardiopulmonary, neurological and endocrinological origins. Physical therapy is used to improve a patient's physical functions through physical examination, diagnosis, prognosis, physical intervention, rehabilitation and patient education. It is practiced by physical therapists (known as physiotherapists in many countries).\n\nIn addition to clinical practice, other activities encompassed in the physical therapy profession include research, education, consultation and administration. Physical therapy is provided as a primary care treatment or alongside, or in conjunction with, other medical services. In some jurisdictions, such as the United Kingdom, physical therapists have the power to prescribe medication.",
-            "salary": 86520,
-            "degree": 1,
-            "personality": 13,
-            "futureDemand": 1
-        }
-    ],
-
-      "users": [
-	{	
-	     "id": 1,
-             "username": "jsmith",
-		"email": "jsmith@email.com",
-		"password": "password1"
-	},
-	{
-		"id": 2,
-		"username": "Doe",
-		"email": "doe@email.com",
-		"password": "password2"
-	}
-      ]
+  "careers": [
+    {
+      "name": "Chef",
+      "description": "A chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation, often focusing on a particular cuisine. The word \"chef\" is derived from the term chef de cuisine (French pronunciation: [ʃɛf.də.kɥi.zin]), the director or head of a kitchen. Chefs can receive formal training from an institution, as well as by apprenticing with an experienced chef.\n\nThere are different terms that use the word chef in their titles, and deal with specific areas of food preparation, such as the sous-chef, who acts as the second-in-command in a kitchen, or the chef de partie, who handles a specific area of production, or “Television chef”, such as Alison Holst. The kitchen brigade system is a hierarchy found in restaurants and hotels employing extensive staff, many of which use the word \"chef\" in their titles. Underneath the chefs are the kitchen assistants. A chef's standard uniform includes a hat (called a toque), neckerchief, double-breasted jacket, apron and sturdy shoes (that may include steel or plastic toe-caps).",
+      "salary": 43180,
+      "degree": 3,
+      "personality": 12,
+      "futureDemand": 1
+    },
+    {
+      "name": "Chief information officer",
+      "description": "Chief information officer (CIO), chief digital information officer (CDIO) or information technology (IT) director, is a job title commonly given to the most senior executive in an enterprise who works with information technology and computer systems, in order to support enterprise goals.\n\nTypically, the CIO reports directly to the chief executive officer, but may also report to the chief operating officer or chief financial officer. In military organisations, the CIO reports to the commanding officer. The role of chief information officer was first defined in 1981 by William R. Synnott, former senior vice president of the Bank of Boston, and William H. Gruber, a former professor at the Massachusetts Institute of Technology Sloan School of Management. A CIO will sometimes serve as a member of the board of directors.",
+      "salary": 142609,
+      "degree": 2,
+      "personality": 12,
+      "futureDemand": 2
+    },
+    {
+      "name": "Industrial engineer",
+      "description": "Industrial engineering is an engineering profession that is concerned with the optimization of complex processes, systems, or organizations by developing, improving and implementing integrated systems of people, money, knowledge, information, equipment, energy and materials.\n\nIndustrial engineers use specialized knowledge and skills in the mathematical, physical and social sciences, together with the principles and methods of engineering analysis and design, to specify, predict, and evaluate the results obtained from systems and processes. From these results, they are able to create new systems, processes or situations for the useful coordination of labour, materials and machines and also improve the quality and productivity of systems, physical or social. Depending on the sub-specialties involved, industrial engineering may also overlap with, operations research, systems engineering, manufacturing engineering, production engineering, supply chain engineering, management science, management engineering, financial engineering, ergonomics or human factors engineering, safety engineering, or others, depending on the viewpoint or motives of the user.",
+      "salary": 87040,
+      "degree": 2,
+      "personality": 12,
+      "futureDemand": 2
+    },
+    {
+      "name": "Systems administrator",
+      "description": "A system administrator, or sysadmin, is a person who is responsible for the upkeep, configuration, and reliable operation of computer systems; especially multi-user computers, such as servers. The system administrator seeks to ensure that the uptime, performance, resources, and security of the computers they manage meet the needs of the users, without exceeding a set budget when doing so.\n\nTo meet these needs, a system administrator may acquire, install, or upgrade computer components and software; provide routine automation; maintain security policies; troubleshoot; train or supervise staff; or offer technical support for projects.",
+      "salary": 84224,
+      "degree": 2,
+      "personality": 0,
+      "futureDemand": 2
+    },
+    {
+      "name": "Actuary",
+      "description": "An actuary is a business professional who deals with the measurement and management of risk and uncertainty (BeAnActuary 2011a). The name of the corresponding field is actuarial science. These risks can affect both sides of the balance sheet and require asset management, liability management, and valuation skills (BeAnActuary 2011b). Actuaries provide assessments of financial security systems, with a focus on their complexity, their mathematics, and their mechanisms (Trowbridge 1989, p. 7).\n\nWhile the concept of insurance dates to antiquity (Johnston 1903, §475–§476, Loan 1992, Lewin 2007, pp. 3–4), the concepts needed to scientifically measure and mitigate risks have their origins in the 17th century studies of probability and annuities (Heywood 1985). Actuaries of the 21st century require analytical skills, business knowledge, and an understanding of human behavior and information systems to design and manage programs that control risk (BeAnActuary 2011c). The actual steps needed to become an actuary are usually country-specific; however, almost all processes share a rigorous schooling or examination structure and take many years to complete (Feldblum 2001, p. 6, Institute and Faculty of Actuaries 2014).\n\nThe profession has consistently been ranked as one of the most desirable (Riley 2013). In various studies, being an actuary was ranked number one or two multiple times since 2010 (Thomas 2012, Weber 2013, CareerCast 2015).",
+      "salary": 102880,
+      "degree": 2,
+      "personality": 0,
+      "futureDemand": 2
+    },
+    {
+      "name": "Accountant",
+      "description": "An accountant is a practitioner of accounting or accountancy, which is the measurement, disclosure or provision of assurance about financial information that helps managers, investors, tax authorities and others make decisions about allocating resource(s).\n\nAccountants who have demonstrated competency through their professional associations' certification exams are certified to use titles such as Chartered Accountant, Chartered Certified Accountant or Certified Public Accountant. Such professionals are granted certain responsibilities by statute, such as the ability to certify an organization's financial statements, and may be held liable for professional misconduct. Non-qualified accountants may be employed by a qualified accountant, or may work independently without statutory privileges and obligations.\n\nCahan & Sun (2015) used archival study to find out that accountants’ personal characteristics may exert a very significant impact during the audit process and further influence audit fees and audit quality.\n\nThe Big Four auditors are the largest employers of accountants worldwide. However, most accountants are employed in commerce, industry, and the public sector.",
+      "salary": 69350,
+      "degree": 2,
+      "personality": 0,
+      "futureDemand": 2
+    },
+    {
+      "name": "Preschool teacher",
+      "description": "A preschool teacher is a type of early childhood educator who instructs children from 2 to age 4, which stands as the youngest stretch of early childhood education. Early childhood education teachers need to span the continuum of children from birth to age 8.\n\nPreschool teachers are encouraged to hold credentials in early childhood education in the form of a Child Development Accreditation (CDA) or formal college education in early childhood or a related subject.\n\nThe term \"preschool\" refers to instruction in non-public arenas such as licensed preschools, childcare centers, family day care centers, home day care centers, center-based programs, federal programs like Head Start, and full or part-day private child centers or day care centers sponsored by religious bodies. The term \"pre-kindergarten\" refers to those lead teachers who offer instruction in a program for four-year-olds funded as part of the state public school system.\n\nPreschool teachers must be able to work well and interact with young children, sometimes as young as 2 years 9 months. Preschool children have a short attention span and their worries are usually fairly simple. Most preschoolers are loving, affectionate, and playful, and like to play games, be read to, or play with toys.",
+      "salary": 28990,
+      "degree": 2,
+      "personality": 1,
+      "futureDemand": 1
+    },
+    {
+      "name": "Secretary",
+      "description": "A secretary, administrative professional, or personal assistant is a person whose work consists of supporting management, including executives, using a variety of project management, communication, or organizational skills. However this role should not be confused with the role of an executive secretary, who differs from a personal assistant. In many countries, an executive secretary is a high-ranking position in the administrative hierarchy. In fact in Pakistan, federal secretaries are dubbed as the most influential people in the country.\n\nThe functions of a personal assistant may be entirely carried out to assist one other employee or may be for the benefit of more than one. In other situations a secretary is an officer of a society or organization who deals with correspondence, admits new members, and organizes official meetings and events.",
+      "salary": 38880,
+      "degree": 3,
+      "personality": 1,
+      "futureDemand": 1
+    },
+    {
+      "name": "Nurse",
+      "description": "A registered nurse (RN) is a nurse who has graduated from a nursing program and met the requirements outlined by a country, state, province or similar licensing body to obtain a nursing license. An RN's scope of practice is determined by legislation, and is regulated by a professional body or council.\n\nRegistered nurses are employed in a wide variety of professional settings, and often specialize in a field of practice. They may be responsible for supervising care delivered by other healthcare workers, including student nurses, licensed practical nurses (except in Canada), unlicensed assistive personnel, and less-experienced RNs.\n\nRegistered nurses must usually meet a minimum practice hours requirement and undertake continuing education to maintain their license. Furthermore, there is often a requirement that an RN remain free from serious criminal convictions.",
+      "salary": 68450,
+      "degree": 2,
+      "personality": 1,
+      "futureDemand": 1
+    },
+    {
+      "name": "Military officer",
+      "description": "An officer is a member of an armed forces or uniformed service who holds a position of authority.\n\nIn its broadest sense, the term \"officer\" refers to commissioned officers, non-commissioned officers, and warrant officers. However, when used without further detail, the term almost always refers to only commissioned officers, the more senior portion of a force who derive their authority from a commission from the head of state.",
+      "salary": 38250,
+      "degree": 2,
+      "personality": 8,
+      "futureDemand": 1
+    },
+    {
+      "name": "Film producer",
+      "description": "A film producer is a person who oversees film production. Either employed by a production company or working independently, producers plan and coordinate various aspects of film production, such as selecting the script; coordinating writing, directing, and editing; and arranging financing.\n\nDuring the \"discovery stage,\" the producer finds and selects promising material for development. Then, unless the film is based on an existing script, the producer has to hire a screenwriter and oversee the development of the script. Once a script is completed, the producer will lead a pitch to secure the financial backing (a \"green light\") to allow production to begin.\n\nThe producer also supervises the pre-production, production, and post-production stages of filmmaking. One of the most important tasks is to hire the director and other key crew members. Whereas the director makes the creative decisions during the production, the producer typically manages the logistics and business operations, though some directors also produce their own films. The producer is tasked with making sure the film is delivered on time and within budget, and has the final say on creative decisions. Finally, the producer will oversee the marketing and distribution.\n\nFor various reasons, producers cannot always supervise all of the production. In this case, the main producer or executive producer may hire and delegate work to associate producers, assistant producers, line producers or unit production managers.",
+      "salary": 66121,
+      "degree": 2,
+      "personality": 8,
+      "futureDemand": 1
+    },
+    {
+      "name": "Actor",
+      "description": "An actor is a person who portrays a character in a performance (also actress; see below). The actor performs \"in the flesh\" in the traditional medium of the theatre or in modern media such as film, radio, and television. The analogous Greek term is ὑποκριτής (hupokritḗs), literally \"one who answers\". The actor's interpretation of their role—the art of acting—pertains to the role played, whether based on a real person or fictional character. Interpretation occurs even when the actor is \"playing themselves\", as in some forms of experimental performance art.\n\nFormerly, in ancient Greece and Rome, the medieval world, and the time of William Shakespeare, only men could become actors, and women's roles were generally played by men or boys. After the English Restoration of 1660, women began to appear on stage in England. In modern times, particularly in pantomime and some operas, women occasionally play the roles of boys or young men.",
+      "salary": 34980,
+      "degree": 3,
+      "personality": 8,
+      "futureDemand": 1
+    },
+    {
+      "name": "Police officer",
+      "description": "A police officer, also known as an officer, policeman, or a policewoman is a warranted law employee of a police force. In most countries, \"police officer\" is a generic term not specifying a particular rank. In some, the use of the rank \"officer\" is legally reserved for military personnel.\n\nPolice officers are generally charged with the apprehension of criminals and the prevention and detection of crime, protection and assistance of the general public, and the maintenance of public order. Police officers may be sworn to an oath, and have the power to arrest people and detain them for a limited time, along with other duties and powers. Some officers are trained in special duties, such as counter-terrorism, surveillance, child protection, VIP protection, civil law enforcement, and investigation techniques into major crime including fraud, rape, murder, and drug trafficking. Although many police officers wear a corresponding uniform, some police officers are plain-clothed in order to pass themselves off as civilians. In most countries police officers are given exemptions from certain laws to perform their duties. For example an officer may use force if necessary to arrest or detain a person when it would ordinarily be assault. Officers can also break road rules to perform their duties.",
+      "salary": 65400,
+      "degree": 3,
+      "personality": 4,
+      "futureDemand": 1
+    },
+    {
+      "name": "Electrical engineer",
+      "description": "Electrical engineering is an engineering discipline concerned with the study, design and application of equipment, devices and systems which use electricity, electronics, and electromagnetism. It emerged as an identifiable occupation in the latter half of the 19th century after commercialization of the electric telegraph, the telephone, and electrical power generation, distribution and use.\n\nElectrical engineering is now divided into a wide range of fields including, computer engineering, power engineering, telecommunications, radio-frequency engineering, signal processing, instrumentation, and electronics. Many of these disciplines overlap with other engineering branches, spanning a huge number of specializations including hardware engineering, power electronics, electromagnetics and waves, microwave engineering, nanotechnology, electrochemistry, renewable energies, mechatronics, and electrical materials science. See glossary of electrical and electronics engineering.\n\nElectrical engineers typically hold a degree in electrical engineering or electronic engineering. Practising engineers may have professional certification and be members of a professional body or an international standards organization. These include the International Electrotechnical Commission (IEC), the Institute of Electrical and Electronics Engineers (IEEE) and the Institution of Engineering and Technology (IET) (formerly the IEE). The IEC prepares international standards for electrical engineering, developed through consensus, thanks to the work of 20,000 electrotechnical experts, coming from 172 countries worldwide.\n\nElectrical engineers work in a very wide range of industries and the skills required are likewise variable. These range from circuit theory to the management skills of a project manager. The tools and equipment that an individual engineer may need are similarly variable, ranging from a simple voltmeter to a top end analyzer to sophisticated design and manufacturing software.",
+      "salary": 96640,
+      "degree": 2,
+      "personality": 4,
+      "futureDemand": 1
+    },
+    {
+      "name": "Mechanical engineer",
+      "description": "Mechanical engineering is the discipline that applies engineering physics, engineering mathematics, and materials science principles to design, analyze, manufacture, and maintain mechanical systems. It is one of the oldest and broadest of the engineering disciplines.\n\nThe mechanical engineering field requires an understanding of core areas including mechanics, dynamics, thermodynamics, materials science, structural analysis, and electricity. In addition to these core principles, mechanical engineers use tools such as computer-aided design (CAD), computer-aided manufacturing (CAM), and product life cycle management to design and analyze manufacturing plants, industrial equipment and machinery, heating and cooling systems, transport systems, aircraft, watercraft, robotics, medical devices, weapons, and others. It is the branch of engineering that involves the design, production, and operation of machinery.\n\nMechanical engineering emerged as a field during the Industrial Revolution in Europe in the 18th century; however, its development can be traced back several thousand years around the world. In the 19th century, developments in physics led to the development of mechanical engineering science. The field has continually evolved to incorporate advancements; today mechanical engineers are pursuing developments in such areas as composites, mechatronics, and nanotechnology. It also overlaps with aerospace engineering, metallurgical engineering, civil engineering, electrical engineering, manufacturing engineering, chemical engineering, industrial engineering, and other engineering disciplines to varying amounts. Mechanical engineers may also work in the field of biomedical engineering, specifically with biomechanics, transport phenomena, biomechatronics, bionanotechnology, and modelling of biological systems.",
+      "salary": 85880,
+      "degree": 2,
+      "personality": 4,
+      "futureDemand": 1
+    },
+    {
+      "name": "Flight attendant",
+      "description": "Flight attendant or (also known as steward/stewardess or air host/air hostess) is a member of an aircrew employed by airlines aboard commercial flights, primarily to ensure the safety and comfort of passengers. Collectively called the cabin crew, flight attendants are deployed in the cabins of all commercial flights and additionally may also be present on some private or business jets and government or military aircraft.",
+      "salary": 48500,
+      "degree": 3,
+      "personality": 9,
+      "futureDemand": 1
+    },
+    {
+      "name": "Interior designer",
+      "description": "Interior design is the art and science of enhancing the interior of a building to achieve a healthier and more aesthetically pleasing environment for the people using the space. An interior designer is someone who plans, researches, coordinates, and manages such projects. Interior design is a multifaceted profession that includes conceptual development, space planning, site inspections, programming, research, communicating with the stakeholders of a project, construction management, and execution of the design.",
+      "salary": 51588,
+      "degree": 2,
+      "personality": 9,
+      "futureDemand": 1
+    },
+    {
+      "name": "News anchor",
+      "description": "A news presenter – also known as a newsreader, newscaster (short for \"news broadcaster\"), anchorman or anchorwoman, news anchor or simply an anchor – is a person who presents news during a news program on the television, on the radio or on the Internet. They may also be a working journalist, assisting in the collection of news material and may, in addition, provide commentary during the program. News presenters most often work from a television studio or radio studio, but may also present the news from remote locations in the field related to a particular major news event.",
+      "salary": 83300,
+      "degree": 2,
+      "personality": 9,
+      "futureDemand": 1
+    },
+    {
+      "name": "Occupational therapist",
+      "description": "Occupational Therapists (OTs) are health care professionals who utilize evidence-based practice, research, scientific evidence, and a holistic perspective to promote independence, meaningful occupations, and patients' functional ability to fulfill their daily routines and roles. OTs ensure their patient-oriented interventions are effective. They have background training on the psychological, physical, emotional, and social makeup. OTs also have immense training in treating the whole body with the incorporation of neurological principles, anatomical or physiological concepts, and psychological perspectives. They support individuals across their lifespan to fulfill meaningful activities, known as occupations, individually by using therapeutic interventions.\n\nOccupational therapists work in a variety of fields, including pediatrics, orthopedics, neurology, and geriatrics. The main approach of occupational therapy is to assist individuals in regaining skills as well as in increasing their abilities and decreasing limitations or disabilities of any kind. OTs evaluate the individual as well as their home and other immediate environments. Upon evaluating, they recommend, as needed, adaptive equipment and training in its use, guidance, and education for family members and caregivers. OTs determine a patient's individualized goals with the help of the person's family, caregiver, and doctor.\n\nOTs customize each intervention to improve a person's ability to perform daily life activities and to reach his or her goals. OTs perform outcomes measures to evaluate the person's abilities and to ensure there is progress toward the goals. This outcome evaluation also helps the therapist to understand if an intervention plan must be changed.",
+      "salary": 83200,
+      "degree": 1,
+      "personality": 5,
+      "futureDemand": 1
+    },
+    {
+      "name": "Dietitian",
+      "description": "A dietitian (or dietician) is an expert in dietetics; that is, human nutrition and the regulation of diet. A dietitian alters their patient's nutrition based upon their medical condition and individual needs. Dietitians are regulated healthcare professionals licensed to assess, diagnose, and treat nutritional problems.\n\nA registered dietitian (RD) or registered dietitian nutritionist (RDN) is a dietitian who meets all of a set of special academic and professional requirements, including the completion of a bachelor's degree with an accredited nutrition curriculum, an internship at an approved health-care facility, foodservice organization, or community agency, and satisfactory performance on a registration exam.\n\nRoughly half of all RDNs hold graduate degrees[4] and many have certifications in specialized fields such as sports, pediatrics, renal, oncological, food-allergy, or gerontological nutrition. After learning about a patient's health history, favorite foods, eating and exercise habits, the RD helps the person to set goals and to prioritize. Follow-up visits often focus on maintenance and monitoring progress.\n\nMost RDs work in the treatment and prevention of disease (administering medical nutrition therapy, as part of medical teams), often in hospitals, health-maintenance organizations, private practices, or other health-care facilities. In addition, many registered dietitians work in community and public-health settings, and/or in academia and research. A growing number of dietitians work in the food industry, journalism, sports nutrition, corporate wellness programs, and other non-traditional dietetics settings.",
+      "salary": 59410,
+      "degree": 2,
+      "personality": 5,
+      "futureDemand": 1
+    },
+    {
+      "name": "Geologist",
+      "description": "A geologist is a scientist who studies the solid, liquid, and gaseous matter that constitutes the Earth and other terrestrial planets, as well as the processes that shape them. Geologists usually study geology, although backgrounds in physics, chemistry, biology, and other sciences are also useful. Field work is an important component of geology, although many subdisciplines incorporate laboratory work.\n\nGeologists work in the energy and mining sectors searching for natural resources such as petroleum, natural gas, precious and base metals. They are also in the forefront of preventing and mitigating damage from natural hazards and disasters such as earthquakes, volcanoes, tsunamis and landslides. Their studies are used to warn the general public of the occurrence of these events. Geologists are also important contributors to climate change discussions.",
+      "salary": 91130,
+      "degree": 2,
+      "personality": 5,
+      "futureDemand": 1
+    },
+    {
+      "name": "Project manager",
+      "description": "A project manager is a professional in the field of project management. Project managers have the responsibility of the planning, procurement and execution of a project, in any undertaking that has a defined scope, defined start and a defined finish; regardless of industry. Project managers are first point of contact for any issues or discrepancies arising from within the heads of various departments in an organization before the problem escalates to higher authorities.\n\nProject management is the responsibility of a project manager. This individual seldom participates directly in the activities that produce the end result, but rather strives to maintain the progress, mutual interaction and tasks of various parties in such a way that reduces the risk of overall failure, maximizes benefits, and minimizes costs.",
+      "salary": 54824,
+      "degree": 2,
+      "personality": 15,
+      "futureDemand": 1
+    },
+    {
+      "name": "Chemical engineer",
+      "description": "Chemical engineering is a branch of engineering that uses principles of chemistry, physics, mathematics, biology, and economics to efficiently use, produce, design, transport and transform energy and materials. The work of chemical engineers can range from the utilisation of nano-technology and nano-materials in the laboratory to large-scale industrial processes that convert chemicals, raw materials, living cells, microorganisms, and energy into useful forms and products.\n\nChemical engineers are involved in many aspects of plant design and operation, including safety and hazard assessments, process design and analysis, modeling, control engineering, chemical reaction engineering, nuclear engineering, biological engineering, construction specification, and operating instructions.\n\nChemical engineers typically hold a degree in Chemical Engineering or Process Engineering. Practising engineers may have professional certification and be accredited members of a professional body. Such bodies include the Institution of Chemical Engineers (IChemE) or the American Institute of Chemical Engineers (AIChE). A degree in chemical engineering is directly linked with all of the other engineering disciplines, to various extents.",
+      "salary": 104910,
+      "degree": 2,
+      "personality": 15,
+      "futureDemand": 1
+    },
+    {
+      "name": "Hydrologist",
+      "description": "Hydrology (from Greek: ὕδωρ, \"hýdōr\" meaning \"water\" and λόγος, \"lógos\" meaning \"study\") is the scientific study of the movement, distribution and management of water on Earth and other planets, including the water cycle, water resources and environmental watershed sustainability. A practitioner of hydrology is called a \"hydrologic engineer\", working within the fields of civil and environmental engineering. Hydrologists can also be scientists studying earth or environmental science and physical geography. Using various analytical methods and scientific techniques, they collect and analyze data to help solve water related problems such as environmental preservation, natural disasters, and water management.\n\nHydrology subdivides into surface water hydrology, groundwater hydrology (hydrogeology), and marine hydrology. Domains of hydrology include hydrometeorology, surface hydrology, hydrogeology, drainage-basin management and water quality, where water plays the central role.\n\nOceanography and meteorology are not included because water is only one of many important aspects within those fields.\n\nHydrological research can inform environmental engineering, policy and planning.",
+      "salary": 75530,
+      "degree": 2,
+      "personality": 15,
+      "futureDemand": 1
+    },
+    {
+      "name": "Microbiologist",
+      "description": "A microbiologist (from Greek μῑκρος) is a scientist who studies microscopic life forms and processes. This includes study of the growth, interactions and characteristics of microscopic organisms such as bacteria, algae, fungi, and some types of parasites and their vectors. Most microbiologists work in offices and/or research facilities, both in private biotechnology companies as well as in academia. Most microbiologists specialize in a given topic within microbiology such as bacteriology, parasitology, virology, or immunology.",
+      "salary": 71650,
+      "degree": 2,
+      "personality": 3,
+      "futureDemand": 1
+    },
+    {
+      "name": "Architect",
+      "description": "An architect is a person who plans, designs and reviews the construction of buildings. To practice architecture means to provide services in connection with the design of buildings and the space within the site surrounding the buildings that have human occupancy or use as their principal purpose. Etymologically, architect derives from the Latin architectus, which derives from the Greek (arkhi-, chief + tekton, builder), i.e., chief builder.\n\nProfessionally, an architect's decisions affect public safety, and thus an architect must undergo specialized training consisting of advanced education and a practicum (or internship) for practical experience to earn a license to practice architecture. Practical, technical, and academic requirements for becoming an architect vary by jurisdiction.",
+      "salary": 78470,
+      "degree": 2,
+      "personality": 3,
+      "futureDemand": 1
+    },
+    {
+      "name": "Programmer",
+      "description": "A computer programmer, sometimes called more recently a coder (especially in more informal contexts), is a person who creates computer software. The term computer programmer can refer to a specialist in one area of computers, or to a generalist who writes code for many kinds of software.\n\nA programmer's most oft-used computer language (e.g., Assembly, COBOL, C, C++, C#, Java, Lisp, Python) may be prefixed to the term programmer. Some who work with web programming languages also prefix their titles with web.\n\nA range of occupations that involve programming also often require a range of other, similar skills, for example: (software) developer, web developer, mobile applications developer, embedded firmware developer, software engineer, computer scientist, game programmer, game developer and software analyst. The use of the term programmer as applied to these positions is sometimes considered an insulting simplification or even derogatory.",
+      "salary": 82240,
+      "degree": 2,
+      "personality": 3,
+      "futureDemand": 1
+    },
+    {
+      "name": "Social worker",
+      "description": "Social work is an academic discipline and profession that concerns itself with individuals, families, groups and communities in an effort to enhance social functioning and overall well-being. Social functioning is the way in which people perform their social roles, and the structural institutions that are provided[by whom?] to sustain them. Social work applies social sciences, such as sociology, psychology, political science, public health, community development, law, and economics, to engage with client systems, conduct assessments, and develop interventions to solve social and personal problems; and to bring about social change. Social work practice is often divided into micro-work, which involves working directly with individuals or small groups; and macro-work, which involves working with communities, and - within social policy - fostering change on a larger scale.\n\nThe social work industry developed in the 19th century, with some of its roots in voluntary philanthropy and in grassroots organizing. However, responses to social needs had existed long before then, primarily from private charities and from religious organizations. The effects of the Industrial Revolution and of the Great Depression of the 1930s placed pressure on social work to become a more defined discipline.",
+      "salary": 49470,
+      "degree": 2,
+      "personality": 14,
+      "futureDemand": 1
+    },
+    {
+      "name": "Cosmetologist",
+      "description": "Cosmetology (from Greek κοσμητικός, kosmētikos, \"beautifying\"; and -λογία, -logia) is the study and application of beauty treatment. Branches of specialty include hairstyling, skin care, cosmetics, manicures/pedicures, non-permanent hair removal such as waxing and sugaring, and permanent hair removal processes such as electrology and intense pulsed light (IPL).\n\nCosmetologists are trained and licensed to perform cosmetic treatments to the hair, skin, and nails. This can be expanded into multiple parts including cutting and chemically treating hair, chemical hair removal, fashion trends, wigs, nails and skin care, skin and hair analysis; relaxation techniques including head, neck, scalp, hand and feet basic massage and aroma therapies; plus ability to expertly apply makeup applications to cover or promote and can expand into further specialties such as reflexology; theatrical applications; cosmetics and others as listed below.",
+      "salary": 26460,
+      "degree": 3,
+      "personality": 14,
+      "futureDemand": 1
+    },
+    {
+      "name": "Teacher",
+      "description": "A teacher (also called a school teacher or, in some contexts, an educator) is a person who helps students to acquire knowledge, competence or virtue.\n\nInformally the role of teacher may be taken on by anyone (e.g. when showing a colleague how to perform a specific task). In some countries, teaching young people of school age may be carried out in an informal setting, such as within the family (homeschooling), rather than in a formal setting such as a school or college. Some other professions may involve a significant amount of teaching (e.g. youth worker, pastor).\n\nIn most countries, formal teaching of students is usually carried out by paid professional teachers. This article focuses on those who are employed, as their main role, to teach others in a formal education context, such as at a school or other place of initial formal education or training.",
+      "salary": 57160,
+      "degree": 2,
+      "personality": 14,
+      "futureDemand": 1
+    },
+    {
+      "name": "Veterinarian",
+      "description": "A veterinarian (vet), also known as a veterinary surgeon or veterinary physician, is a professional who practices veterinary medicine by treating diseases, disorders, and injuries in non-human animals.\n\nIn many countries, the local nomenclature for a veterinarian is a regulated and protected term, meaning that members of the public without the prerequisite qualifications and/or licensure are not able to use the title. In many cases, the activities that may be undertaken by a veterinarian (such as treatment of illness or surgery in animals) are restricted only to those professionals who are registered as a veterinarian. For instance, in the United Kingdom, as in other jurisdictions, animal treatment may only be performed by registered veterinary physicians (with a few designated exceptions, such as paraveterinary workers), and it is illegal for any person who is not registered to call themselves a veterinarian, prescribe any drugs, or perform treatment.\n\nMost veterinary physicians work in clinical settings, treating animals directly. These veterinarians may be involved in a general practice, treating animals of all types; they may be specialized in a specific group of animals such as companion animals, livestock, zoo animals or equines; or may specialize in a narrow medical discipline such as surgery, dermatology or internal medicine . As with other healthcare professionals, veterinarians face ethical decisions about the care of their patients. Current debates within the profession include the ethics of certain procedures believed to be purely cosmetic or unnecessary for behavioral issues, such as declawing of cats, docking of tails, cropping of ears and debarking on dogs.",
+      "salary": 90420,
+      "degree": 4,
+      "personality": 2,
+      "futureDemand": 1
+    },
+    {
+      "name": "Graphic designer",
+      "description": "A graphic designer is a professional within the graphic design and graphic arts industry who assembles together images, typography, or motion graphics to create a piece of design. A graphic designer creates the graphics primarily for published, printed or electronic media, such as brochures (sometimes) and advertising. They are also sometimes responsible for typesetting, illustration, user interfaces, and web design. A core responsibility of the designer's job is to present information in a way that is both accessible and memorable.",
+      "salary": 45703,
+      "degree": 2,
+      "personality": 2,
+      "futureDemand": 1
+    },
+    {
+      "name": "Librarian",
+      "description": "A librarian is a person who works professionally in a library, providing access to information and sometimes social or technical programming to users. In addition, librarians provide instruction on information literacy.\n\nTraditionally, a librarian is associated with collections of books, as demonstrated by the etymology of the word \"librarian\" (from the Latin liber, \"book\"). The role of a librarian is continually evolving to meet social and technological needs. A modern librarian may deal with provision and maintenance of information in many formats, including: books; electronic resources; magazines; newspapers; audio and video recordings; maps; manuscripts; photographs and other graphic material; bibliographic databases; and web-based and digital resources. A librarian may also provide other information services, including: information literacy instruction; computer provision and training; coordination with community groups to host public programs; assistive technology for people with disabilities; and assistance locating community resources. Appreciation for librarians is often included by authors and scholars in the acknowledgment sections of books.",
+      "salary": 57680,
+      "degree": 2,
+      "personality": 2,
+      "futureDemand": 1
+    },
+    {
+      "name": "Reporter",
+      "description": "A journalist is a person who collects, writes, or distributes news or other current information to the public. A journalist's work is called journalism. A journalist can work with general issues or specialize in certain issues. However, most journalists tend to specialize, and by cooperating with other journalists, produce journals that span many topics. For example, a sports journalist covers news within the world of sports, but this journalist may be a part of a newspaper that covers many different topics.\n\nA reporter is a type of journalist who researches, writes, and reports on information in order to present in sources, conduct interviews, engage in research, and make reports. The information-gathering part of a journalist's job is sometimes called reporting, in contrast to the production part of the job such as writing articles. Reporters may split their time between working in a newsroom and going out to witness events or interviewing people. Reporters may be assigned a specific beat or area of coverage.",
+      "salary": 39370,
+      "degree": 2,
+      "personality": 11,
+      "futureDemand": 1
+    },
+    {
+      "name": "Technical analyst",
+      "description": "In finance, technical analysis is an analysis methodology for forecasting the direction of prices through the study of past market data, primarily price and volume. Behavioral economics and quantitative analysis use many of the same tools of technical analysis, which, being an aspect of active management, stands in contradiction to much of modern portfolio theory. The efficacy of both technical and fundamental analysis is disputed by the efficient-market hypothesis, which states that stock market prices are essentially unpredictable.",
+      "salary": 80863,
+      "degree": 2,
+      "personality": 11,
+      "futureDemand": 1
+    },
+    {
+      "name": "Construction worker",
+      "description": "A construction worker is a manual laborer employed in the physical construction of the built environment and its infrastructure.\n\nThe term construction worker is a broad and generic term and most construction workers are primarily described by the level and type of work they perform. Labourers carry out a wide range of practical tasks to help tradespersons on construction sites. Labourers clean the construction site on a regular basis. They use tools such as rakes, shovels, and wheelbarrows to remove rubble, scraps of metal, and wood or they might also need to sweep out certain areas, and get building supplies in order.\n\nConstruction workers may also colloquially be referred to as \"hard hat workers\" or \"hard hats\", as they often wear hardhats for safety.",
+      "salary": 34530,
+      "degree": 3,
+      "personality": 11,
+      "futureDemand": 1
+    },
+    {
+      "name": "College professor",
+      "description": "Professor (commonly abbreviated as Prof.) is an academic rank at universities and other post-secondary education and research institutions in most countries. Literally, professor derives from Latin as a 'person who professes' being usually an expert in arts or sciences, a teacher of the highest rank.\n\nIn most systems of academic ranks the word 'professor' only refers to the most senior academic position, sometimes informally known as 'full professor'. In some countries or institutions, the word 'professor' is also used in titles of lower ranks such as associate professor and assistant professor; this is particularly the case in the United States, where the word professor is sometimes used colloquially to refer to anyone in an academic post. This colloquial usage would be considered incorrect among most other academic communities. However, the unqualified title Professor designated with a capital letter usually refers to a full professor also in English language usage.\n\nProfessors often conduct original research and commonly teach undergraduate, professional or postgraduate courses in their fields of expertise. In universities with graduate schools, professors may mentor and supervise graduate students conducting research for a thesis or dissertation. In many universities, 'full professors' take on senior managerial roles, leading departments, research teams and institutes, and filling roles such as president, principal or vice-chancellor. The role of professor may be more public facing than that of more junior staff, and professors are expected to be national or international leaders in their field of expertise.",
+      "salary": 67536,
+      "degree": 1,
+      "personality": 7,
+      "futureDemand": 1
+    },
+    {
+      "name": "Technical writer",
+      "description": "A technical writer is a professional information communicator whose task is to transfer information (knowledge) between two or more parties, through any medium that best facilitates the transfer and comprehension of the information. Technical writers research and create information through a variety of delivery media (electronic, printed, audio-visual and even touch). Example types of information include online help, manuals, white papers, design specifications, project plans and software test plans. With the rise of e-learning, technical writers are increasingly becoming involved with creating online training material.\n\nAccording to the Society for Technical Communication (STC):\nTechnical writing is sometimes defined as simplifying the complex. Inherent in such a concise and deceptively simple definition is a whole range of skills and characteristics that address nearly every field of human endeavor at some level. A significant subset of the broader field of technical communication, technical writing involves communicating complex information to those who need it to accomplish some task or goal.\n\nIn other words, technical writers take advanced technical concepts and communicate them as clearly, accurately, and comprehensively as possible to their intended audience, ensuring that the work is accessible to its users.\n\nKurt Vonnegut described technical writers as:\n\n...trained to reveal almost nothing about themselves in their writing. This makes them freaks in the world of writers, since almost all of the other ink-stained wretches in that world reveal a lot about themselves to the reader.\n\nEngineers, scientists, and other professionals may also be involved in technical writing (developmental editing, proofreading, etc), but are more likely to employ professional technical writers to develop, edit and format material, and advise the best means of information delivery to their audiences.",
+      "salary": 70930,
+      "degree": 2,
+      "personality": 7,
+      "futureDemand": 1
+    },
+    {
+      "name": "Photographer",
+      "description": "A photographer (the Greek φῶς (phos), meaning \"light\", and γραφή (graphê), meaning \"drawing, writing\", together meaning \"drawing with light\") is a person who makes photographs.\n\nAs in other arts, the definitions of amateur and professional are not entirely categorical.\n\nAn amateur photographer takes snapshots for pleasure to remember events, places or friends with no intention of selling the images to others.\n\nA professional photographer is likely to take photographs for a session and image purchase fee, by salary or through the display, resale or use of those photographs.[2]\n\nA professional photographer may be an employee, for example of a newspaper, or may contract to cover a particular planned event such as a wedding or graduation, or to illustrate an advertisement. Others, like fine art photographers, are freelancers, first making an image and then licensing or making printed copies of it for sale or display. Some workers, such as crime scene photographers, estate agents, journalists and scientists, make photographs as part of other work. Photographers who produce moving rather than still pictures are often called cinematographers, videographers or camera operators, depending on the commercial context.\n\nThe term professional may also imply preparation, for example, by academic study or apprenticeship by the photographer in pursuit of photographic skills. A hallmark of a professional is often that they invest in continuing education through associations. Many associations offer the opportunity to test and exhibit acumen in order to attain credentials such as Certified Professional Photographer (CPP) or Master Photographer. While there is no compulsory registration requirement for professional photographer status, operating a business requires having a business license in most cities and counties. Similarly, having commercial insurance is required by most venues if photographing a wedding or a public event. Photographers who operate a legitimate business can provide these items.\n\nPhotographers can be categorized based on the subjects they photograph.\n\nSome photographers explore subjects typical of paintings such as landscape, still life, and portraiture. Other photographers specialize in subjects unique to photography, including sports photography, street photography, documentary photography, fashion photography, wedding photography, war photography, photojournalism, aviation photography and commercial photography. It is worth noting that the type of work commissioned will have pricing associated with the image's usage.",
+      "salary": 32204,
+      "degree": 3,
+      "personality": 7,
+      "futureDemand": 1
+    },
+    {
+      "name": "Landscape architect",
+      "description": "A landscape architect is a person who is educated in the field of landscape architecture. The practice of landscape architecture includes: site analysis, site inventory, land planning, planting design, grading, storm water management, sustainable design, construction specification and ensuring that all plans meet the current building codes and local and federal ordinances. The title landscape architect was first used by Frederick Law Olmsted, the designer of New York City's Central Park.",
+      "salary": 68820,
+      "degree": 2,
+      "personality": 10,
+      "futureDemand": 1
+    },
+    {
+      "name": "Web designer",
+      "description": "Web design encompasses many different skills and disciplines in the production and maintenance of websites. The different areas of web design include web graphic design; interface design; authoring, including standardised code and proprietary software; user experience design; and search engine optimization. Often many individuals will work in teams covering different aspects of the design process, although some designers will cover them all. The term web design is normally used to describe the design process relating to the front-end (client side) design of a website including writing markup. Web design partially overlaps web engineering in the broader scope of web development. Web designers are expected to have an awareness of usability and if their role involves creating markup then they are also expected to be up to date with web accessibility guidelines.",
+      "salary": 67990,
+      "degree": 2,
+      "personality": 10,
+      "futureDemand": 1
+    },
+    {
+      "name": "Archaeologist",
+      "description": "Archaeology, or archeology, is the study of human activity through the recovery and analysis of material culture. The archaeological record consists of artifacts, architecture, biofacts or ecofacts and cultural landscapes. Archaeology can be considered both a social science and a branch of the humanities. In Europe it is often viewed as either a discipline in its own right or a sub-field of other disciplines, while in North America archaeology is a sub-field of anthropology.\n\nArchaeologists study human prehistory and history, from the development of the first stone tools at Lomekwi in East Africa 3.3 million years ago up until recent decades. Archaeology is distinct from palaeontology, which is the study of fossil remains. It is particularly important for learning about prehistoric societies, for whom there may be no written records to study. Prehistory includes over 99% of the human past, from the Paleolithic until the advent of literacy in societies across the world. Archaeology has various goals, which range from understanding culture history to reconstructing past lifeways to documenting and explaining changes in human societies through time.\n\nThe discipline involves surveying, excavation and eventually analysis of data collected to learn more about the past. In broad scope, archaeology relies on cross-disciplinary research. It draws upon anthropology, history, art history, classics, ethnology, geography, geology, literary history, linguistics, semiology, sociology, textual criticism, physics, information sciences, chemistry, statistics, paleoecology, paleography, paleontology, paleozoology, and paleobotany.\n\nArchaeology developed out of antiquarianism in Europe during the 19th century, and has since become a discipline practiced across the world. Archaeology has been used by nation-states to create particular visions of the past. Since its early development, various specific sub-disciplines of archaeology have developed, including maritime archaeology, feminist archaeology and archaeoastronomy, and numerous different scientific techniques have been developed to aid archaeological investigation. Nonetheless, today, archaeologists face many problems, such as dealing with pseudoarchaeology, the looting of artifacts, a lack of public interest, and opposition to the excavation of human remains.",
+      "salary": 62280,
+      "degree": 2,
+      "personality": 10,
+      "futureDemand": 1
+    },
+    {
+      "name": "Fine artist",
+      "description": "Creates original artistic work in a variety of mediums, such as painting, drawing, sculpture, video, film or performance.\n\nFine Art is the traditional term used to embrace painting, sculpture and printmaking, produced for its own sake and not concerned with whether it is functional or practical. Recently the term has come to include photography, video and the modern technologies that generate visual imagery.\n\nFine artists create original artwork using a variety of mediums. Their work is best described according to their area of specialisation which can be two-dimensional (such as painting), three-dimensional (sculpture) or even four-dimensional (moving images). In addition, many artists choose to also specialise in a subject such as landscapes or portraits.\n\nFine artists can be hired or commissioned to produce pieces of artwork or create their own pieces to be sold at a later date.",
+      "salary": 48605,
+      "degree": 3,
+      "personality": 6,
+      "futureDemand": 1
+    },
+    {
+      "name": "Sociologist",
+      "description": "Sociology is a study of society, patterns of social relationships, social interaction and culture of everyday life. It is a social science that uses various methods of empirical investigation and critical analysis to develop a body of knowledge about social order, acceptance, and change or social evolution. Sociology is also defined as the general science of society. While some sociologists conduct research that may be applied directly to social policy and welfare, others focus primarily on refining the theoretical understanding of social processes. Subject matter ranges from the micro-sociology level of individual agency and interaction to the macro level of systems and the social structure.\n\nThe different traditional focuses of sociology include social stratification, social class, social mobility, religion, secularization, law, sexuality, gender, and deviance. As all spheres of human activity are affected by the interplay between social structure and individual agency, sociology has gradually expanded its focus to other subjects, such as health, medical, economy, military and penal institutions, the Internet, education, social capital, and the role of social activity in the development of scientific knowledge.\n\nThe range of social scientific methods has also expanded. Social researchers draw upon a variety of qualitative and quantitative techniques. The linguistic and cultural turns of the mid-20th century led to increasingly interpretative, hermeneutic, and philosophic approaches towards the analysis of society. Conversely, the end of the 1990s and the beginning of the 2000s have seen the rise of new analytically, mathematically, and computationally rigorous techniques, such as agent-based modelling and social network analysis.\n\nSocial research informs politicians and policy makers, educators, planners, legislators, administrators, developers, business magnates, managers, social workers, non-governmental organizations, non-profit organizations, and people interested in resolving social issues in general. There is often a great deal of crossover between social research, market research, and other statistical fields.",
+      "salary": 82050,
+      "degree": 2,
+      "personality": 6,
+      "futureDemand": 1
+    },
+    {
+      "name": "Marketer",
+      "description": "Marketing is the study and management of exchange relationships. Marketing is the business process of creating relationships with and satisfying customers. Because marketing is used to attract customers, it is one of the primary components of business management and commerce. Marketers can direct product to other businesses (B2B marketing) or directly to consumers (B2C marketing). \n\nRegardless of who is being marketed to, several factors, including the perspective the marketers will use. These market orientations determine how marketers will approach the planning stage of marketing. This leads into the marketing mix, which outlines the specifics of the product and how it will be sold. This can in turn, be affected by the environment surrounding the product, the results of marketing research and market research, and the characteristics of the product's target market. \n\nOnce these factors are determined, marketers must then decide what methods will be used to market the product. This decision is based on the factors analyzed in the planning stage as well as where the product is in the product life cycle.",
+      "salary": 36612,
+      "degree": 3,
+      "personality": 6,
+      "futureDemand": 1
+    },
+    {
+      "name": "Human resource",
+      "description": "Human resources are the people who make up the workforce of an organization, business sector, or economy. \"Human capital\" is sometimes used synonymously with \"human resources\", although human capital typically refers to a narrower effect (i.e., the knowledge the individuals embody and economic growth). Likewise, other terms sometimes used include manpower, talent, labour, personnel, or simply people.\n\nA human-resources department (HR department) of an organization performs human resource management, overseeing various aspects of employment, such as compliance with labor law and employment standards, administration of employee benefits, organizing of employees files with the required documents for future reference, some aspects of recruitment.",
+      "salary": 60880,
+      "degree": 2,
+      "personality": 13,
+      "futureDemand": 1
+    },
+    {
+      "name": "Speech pathologist",
+      "description": "Speech-language pathology is a field of expertise practiced by a clinician known as a speech-language pathologist (SLP) or a speech therapist. SLP is considered a \"related health profession\" or \"allied health profession\" along with audiology, behavior analysis, optometry, occupational therapy, rehabilitation psychology, physical therapy, and others.\n\nSLPs specialize in the evaluation, diagnosis, and treatment of communication disorders (speech disorders and language disorders), cognitive-communication disorders, voice disorders, and swallowing disorders. SLPs also play an important role in the diagnosis and treatment of autism spectrum disorder (often in a team with pediatricians and psychologists).\n\nA common misconception is that speech-language pathology is restricted treatment of articulation disorders (e.g. helping English speaking individuals enunciate the traditionally difficult \"r\") and/or the treatment of individuals who stutter. In fact, speech-language pathology is concerned with a broad scope of speech, language, swallowing, and voice issues involved in communication, some of which include:",
+      "salary": 76610,
+      "degree": 1,
+      "personality": 13,
+      "futureDemand": 1
+    },
+    {
+      "name": "Physical therapist",
+      "description": "Physical therapy (PT), also known as physiotherapy, is one of the allied health professions that, by using evidence-based kinesiology, electrotherapy, shockwave modality, exercise prescription, joint mobilization and health education, treats conditions such as chronic or acute pain, soft tissue injuries, cartilage damage, arthritis, gait disorders and physical impairments typically of musculoskeletal, cardiopulmonary, neurological and endocrinological origins. Physical therapy is used to improve a patient's physical functions through physical examination, diagnosis, prognosis, physical intervention, rehabilitation and patient education. It is practiced by physical therapists (known as physiotherapists in many countries).\n\nIn addition to clinical practice, other activities encompassed in the physical therapy profession include research, education, consultation and administration. Physical therapy is provided as a primary care treatment or alongside, or in conjunction with, other medical services. In some jurisdictions, such as the United Kingdom, physical therapists have the power to prescribe medication.",
+      "salary": 86520,
+      "degree": 2,
+      "personality": 13,
+      "futureDemand": 1
+    }
+  ],
+  "users": [
+    {
+      "storedUsername": "heyo",
+      "storedPassword": "password",
+      "storedEmail": "email@emailz.com",
+      "testResults": [
+        "ISTJ"
+      ],
+      "id": 8
+    }
+  ]
 }
