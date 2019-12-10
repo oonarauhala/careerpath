@@ -40,9 +40,8 @@ class ResultViewController: BaseViewController {
             destination.results = TestResults(user: User("asd", "sfsdfasdasd", 50), personalityType: personalityTest1.definePersonalityType(responses: responses), keywords: [TypeAndFrequency]())
         }
     }
-    
+    // better to change names of functions in UIColor extension
     fileprivate func colorSetup(theme: Themes) {
-        
         view.backgroundColor = UIColor.viewBackground(theme: colorTheme)
         result_button.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
         result_button.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
@@ -51,5 +50,4 @@ class ResultViewController: BaseViewController {
         personality_label.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
     }
     
-
 }

@@ -195,6 +195,7 @@ class CareerInfoViewController: UIViewController {
     }
     
     //styling
+    // better to change names of functions in UIColor extension
     fileprivate func colorSetup(theme: Themes) {
         
         view.backgroundColor = UIColor.viewBackground(theme: colorTheme)

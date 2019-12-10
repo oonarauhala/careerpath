@@ -18,12 +18,17 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password2Field: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     
+    //MARK:Properties
+    let colorTheme: Themes = .t9
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        colorSetup(theme: .t9)
         // Disable register button
         registerButton.isEnabled = false
+        
+        
     }
     
     // Keeps track of valid fiels to enable register button
@@ -157,4 +162,14 @@ class RegisterViewController: UIViewController {
         
         // Send/save data here
     }
+    
+    
+    
+    fileprivate func colorSetup(theme: Themes) {
+        view.backgroundColor = UIColor.viewBackground(theme: colorTheme)
+        registerButton.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+        registerButton.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
+    }
+    
+    
 }
