@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     // this should be replaced with some logic that checks the UserDefaults
     var isLoggedIn = true
+    // should probably be in UserDefaults too
+    var hasPreviousResults = false
     
     //MARK: Actions
     override func viewDidLoad() {
@@ -56,10 +58,18 @@ class ViewController: UIViewController {
             destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: PersonalityType.INFP)
             print("User not logged in")
         }
+//        if segue.identifier == "NoResults", let destination = segue.destination as? CareerResultsController {
+//            print("User logged in but has no previous results")
+//        }
     }
+    
     @IBAction func showMyResults(_ sender: Any) {
         if isLoggedIn {
-            performSegue(withIdentifier: "IsLogged", sender: self)
+            if hasPreviousResults {
+                performSegue(withIdentifier: "IsLogged", sender: self)
+            } else {
+                performSegue(withIdentifier: "NoResults", sender: self)
+            }
         } else {
             performSegue(withIdentifier: "NotLogged", sender: self)
         }

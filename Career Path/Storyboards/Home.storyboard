@@ -120,11 +120,20 @@
                         <outlet property="my_results" destination="1EO-Yg-U1W" id="Zbi-dM-9sd"/>
                         <segue destination="weM-cg-3KR" kind="show" identifier="NotLogged" id="hSY-iY-UsE"/>
                         <segue destination="7pw-3x-Gvq" kind="show" identifier="IsLogged" id="MGD-YP-mHg"/>
+                        <segue destination="Jq8-m3-x3x" kind="show" identifier="NoResults" id="QgR-bJ-fRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFb-TE-hRE" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1089" y="-443"/>
+        </scene>
+        <!--NoResults-->
+        <scene sceneID="RJf-e6-E4Q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Results" referencedIdentifier="NoResults" id="Jq8-m3-x3x" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycb-vb-U5Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="-474"/>
         </scene>
         <!--Results-->
         <scene sceneID="5pq-X4-oz0">

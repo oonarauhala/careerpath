@@ -11,6 +11,8 @@ import UIKit
 // test controller for displaying results
 
 class CareerResultsController: UIViewController {
+
+//MARK: Properties
     
     var testCareers = [Career]()
     
@@ -31,8 +33,14 @@ class CareerResultsController: UIViewController {
         }
     }
     
+//MARK: Outlets
+    
+    @IBOutlet weak var noResultsButton: UIButton!
+    @IBOutlet weak var noResultsTitle: UILabel!
     @IBOutlet weak var resultsRegisterButton: UIButton!
     @IBOutlet weak var resultsLoginButton: UIButton!
+
+//MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,10 +55,14 @@ class CareerResultsController: UIViewController {
 
         }
     }
-    func setupStyles() {
+    
+//MARK: Private functions
+    
+    private func setupStyles() {
         resultsLoginButton.backgroundColor = UIColor.sortingButtons(theme: .t9)
         resultsRegisterButton.backgroundColor = UIColor.sortingButtons(theme: .t9)
         resultsLoginButton.setTitleColor(UIColor.white, for: .normal)
         resultsRegisterButton.setTitleColor(UIColor.white, for: .normal)
+        
     }
 }
