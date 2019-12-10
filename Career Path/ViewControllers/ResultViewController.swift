@@ -37,7 +37,6 @@ class ResultViewController: BaseViewController {
         UserDefaults.standard.set(personality, forKey: "lastResult")
 
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowResults", let destination = segue.destination as? CareerListViewController {
             destination.displayState = .Results
