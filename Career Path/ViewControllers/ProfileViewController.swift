@@ -25,8 +25,6 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var selectPhotoButton: UIButton!
     @IBOutlet weak var viewInScrollView: UIView!
    
-    
-    
     //Placeholder user information
     private var user: User = User("Firstname ", "Lastname", 20)
     
@@ -41,7 +39,6 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         profileTableView.delegate = self as UITableViewDelegate
         profileTableView.dataSource = self as UITableViewDataSource
         profileTableView.tableFooterView = UIView()
-        
     }
     
     //MARK: Actions
@@ -52,11 +49,9 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cellIdentifier = "ProfileTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ProfileTableViewCell  else {
             fatalError("The dequeued cell is not an instance of ProfileTableViewCell.")
@@ -76,10 +71,8 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let careerListViewController : UIViewController = self.storyboard!.instantiateViewController(withIdentifier: "CareerList")
         self.navigationController?.pushViewController(careerListViewController, animated: true)
-      
     }
  
     
@@ -103,7 +96,6 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     
     // when user press button "Select image"
     @IBAction func selectImageFromLibrary(_ sender: UIButton) {
-       
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
         
@@ -113,18 +105,16 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         // Make sure ViewController is notified when the user picks an image.
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
-        
     }
     
     //styling
+    // better to change names of functions in UIColor extension
     fileprivate func colorSetup(theme: Themes) {
-        
         profileTableView.backgroundColor = UIColor.viewBackground(theme: colorTheme)
         viewInScrollView.backgroundColor = UIColor.viewBackground(theme: colorTheme)
         personalityTypeHeader.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
         recommendedJobsHeader.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
         selectPhotoButton.setTitleColor(UIColor(hex:"#47A1F7ff"), for: .normal)
-        
     }
     
     

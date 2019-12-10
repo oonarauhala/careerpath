@@ -15,8 +15,12 @@ class LoginViewConroller: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    //MARK:Properties
+    let colorTheme: Themes = .t9
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       colorSetup(theme: .t9)
         
         // Disable login button
         loginButton.isEnabled = false
@@ -60,5 +64,12 @@ class LoginViewConroller: UIViewController {
         }
         
         return false
+    }
+    
+    //styling
+    fileprivate func colorSetup(theme: Themes) {
+        view.backgroundColor = UIColor.viewBackground(theme: colorTheme)
+        loginButton.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+        loginButton.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
     }
 }
