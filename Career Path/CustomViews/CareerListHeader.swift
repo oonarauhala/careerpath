@@ -99,7 +99,12 @@ class CareerListHeader: UITableViewHeaderFooterView {
     private func setupViewStyles(theme: Themes) {
         backgroundView = UIView()
         backgroundView?.backgroundColor = UIColor.careerListHeaderBackground(theme: theme)
-        headerTitle.textColor = UIColor.careerListHeaderTitle(theme: theme)
+        headerTitle.textColor = UIColor.careerCellNameText(theme: theme)
+        headerTitle.layer.cornerRadius = 5
+        headerTitle.layer.masksToBounds = true;
+//        headerTitle.backgroundColor = UIColor.white
+//        headerTitle.layer.borderWidth = 2
+//        headerTitle.layer.borderColor = UIColor.careerListHeaderTitle(theme: theme).cgColor
     }
     
     private func setButtonColors(button: UIButton, theme: Themes) {
