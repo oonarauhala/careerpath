@@ -27,27 +27,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-Je-AvS">
-                                <rect key="frame" x="32" y="272.5" width="311" height="122"/>
+                                <rect key="frame" x="32" y="270.5" width="311" height="126"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3iW-Qb-cgV">
-                                        <rect key="frame" x="50" y="0.0" width="211" height="122"/>
+                                        <rect key="frame" x="25" y="0.0" width="261" height="126"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjh-4F-L61">
-                                                <rect key="frame" x="0.0" y="0.0" width="211" height="26"/>
-                                                <string key="text">You must register or log in to see your past results. Your personal information will not be used for anything other than the functionality of this app.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjh-4F-L61">
+                                                <rect key="frame" x="0.0" y="0.0" width="261" height="30"/>
+                                                <string key="text">You must register or log in to see your past results.Your personal information will not be used for anything other than the functionality of this app.</string>
+                                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMz-xC-zUf">
-                                                <rect key="frame" x="0.0" y="34" width="211" height="40"/>
+                                                <rect key="frame" x="0.0" y="38" width="261" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="bij-Mw-X2w"/>
                                                 </constraints>
                                                 <state key="normal" title="Login"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gg-lX-lYD">
-                                                <rect key="frame" x="0.0" y="82" width="211" height="40"/>
+                                                <rect key="frame" x="0.0" y="86" width="261" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="wxx-eY-QLG"/>
                                                 </constraints>
@@ -57,8 +57,8 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="3iW-Qb-cgV" firstAttribute="leading" secondItem="n8t-Je-AvS" secondAttribute="leading" constant="50" id="u6A-an-fKU"/>
-                                    <constraint firstAttribute="trailing" secondItem="3iW-Qb-cgV" secondAttribute="trailing" constant="50" id="yqB-KU-cwe"/>
+                                    <constraint firstItem="3iW-Qb-cgV" firstAttribute="leading" secondItem="n8t-Je-AvS" secondAttribute="leading" constant="25" id="u6A-an-fKU"/>
+                                    <constraint firstAttribute="trailing" secondItem="3iW-Qb-cgV" secondAttribute="trailing" constant="25" id="yqB-KU-cwe"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -73,6 +73,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tez-tq-JIM"/>
                     <connections>
+                        <outlet property="resultsLoginButton" destination="dMz-xC-zUf" id="6r0-AA-aEp"/>
+                        <outlet property="resultsRegisterButton" destination="4Gg-lX-lYD" id="6Rs-Eh-fpW"/>
                         <segue destination="miD-B5-EYc" kind="show" identifier="ShowResults" id="POx-2X-CN7"/>
                     </connections>
                 </viewController>
@@ -97,6 +99,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmG-qB-DJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-876" y="-88.605697151424295"/>
+        </scene>
+        <!--MyStoryboard-->
+        <scene sceneID="qlc-cW-xha">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyStoryboard" id="sct-cO-8bj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdR-Iz-FJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="777" y="-76"/>
+        </scene>
+        <!--MyStoryboard-->
+        <scene sceneID="FG8-bU-qJW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyStoryboard" id="Oar-eb-Le2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGG-Wa-swq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="97"/>
         </scene>
     </scenes>
 </document>

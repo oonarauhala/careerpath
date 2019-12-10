@@ -14,8 +14,12 @@ class CareerResultsController: UIViewController {
     
     var testCareers = [Career]()
     
+    @IBOutlet weak var resultsRegisterButton: UIButton!
+    @IBOutlet weak var resultsLoginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStyles()
         //performSegue(withIdentifier: "ShowResults", sender: self)
     }
     
@@ -32,5 +36,11 @@ class CareerResultsController: UIViewController {
             
             destination.results = TestResults(user: User("asd", "sfsdfasdasd", 50), personalityType: PersonalityType.INFP, keywords: testKeywords)
         }
+    }
+    func setupStyles() {
+        resultsLoginButton.backgroundColor = UIColor.sortingButtons(theme: .t9)
+        resultsRegisterButton.backgroundColor = UIColor.sortingButtons(theme: .t9)
+        resultsLoginButton.setTitleColor(UIColor.white, for: .normal)
+        resultsRegisterButton.setTitleColor(UIColor.white, for: .normal)
     }
 }
