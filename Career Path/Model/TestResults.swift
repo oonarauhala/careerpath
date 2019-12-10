@@ -24,3 +24,5 @@ struct TypeAndFrequency {
     let type: PersonalType
     let frequency: Int
 }
+
+

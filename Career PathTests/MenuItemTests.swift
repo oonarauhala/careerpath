@@ -27,6 +27,7 @@ class MenuItemsTest: XCTestCase {
         // Empty Menu_item string
         let emptyStringMenu = Item.init(name_item: "", icon: nil)
         XCTAssertNil(emptyStringMenu)
+    
     }
     
 }
