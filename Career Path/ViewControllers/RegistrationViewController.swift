@@ -82,6 +82,7 @@ class RegisterViewController: UIViewController {
                 }
                 group.leave()
             }
+            
             group.wait()
             if usernameTaken == true {
                 usernameValidity = false

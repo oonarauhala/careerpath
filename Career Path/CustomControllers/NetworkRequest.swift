@@ -104,4 +104,41 @@ struct NetworkRequest {
             .resume()
         
     }
+    
+    func fetchUpdateUser(user: User, userID: String) -> Void {
+        
+        let urlString: String = "http://localhost:3000/users/" + userID
+        
+        guard let url = URL(string: urlString) else {
+            print("Error: URL not created")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+
+        
+        guard let uploadData = try? JSONEncoder().encode(user) else {
+            print("could not encode user")
+            return
+        }
+        
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+            guard let response = response as? HTTPURLResponse,
+                (200...299).contains(response.statusCode) else {
+                    print ("server error")
+                    return
+            }
+            if let mimeType = response.mimeType,
+                mimeType == "application/json",
+                let data = data,
+                let dataString = String(data: data, encoding: .utf8) {
+                print ("got data: \(dataString)")
+            }
+            }
+            .resume()
+        
+    }
 }

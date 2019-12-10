@@ -387,22 +387,13 @@
   ],
   "users": [
     {
-      "storedEmail": "smith@email.com",
-      "storedUsername": "Jill",
-      "storedPassword": "password3",
-      "id": 3
-    },
-    {
-      "storedEmail": "test@email.com",
-      "storedUsername": "test",
-      "storedPassword": "testpass",
-      "id": 4
-    },
-    {
-      "storedEmail": "test@email.com",
-      "storedUsername": "Jilll",
+      "storedUsername": "heyo",
       "storedPassword": "password",
-      "id": 5
+      "storedEmail": "email@emailz.com",
+      "testResults": [
+        "ISTJ"
+      ],
+      "id": 8
     }
   ]
 }

@@ -94,6 +94,8 @@ class LoginViewConroller: UIViewController {
                             {
                                 //If username and password match, return true
                                 isUser = true
+                                UserDefaults.standard.set(self.username, forKey: "Username")
+                                    print("saved username: " + (UserDefaults.standard.string(forKey: "Username") ?? ""))
                             }
                         }
                     }
@@ -103,6 +105,7 @@ class LoginViewConroller: UIViewController {
         }
         group.wait()
         print(isUser)
+        
         return isUser
     }
 }

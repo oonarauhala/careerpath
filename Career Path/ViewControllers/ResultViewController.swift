@@ -23,8 +23,10 @@ class ResultViewController: BaseViewController {
         navigationItem.hidesBackButton = true
         addSlideMenuButton()
         //"personal type" result and description based on "personal type" test
+        let personality = personalityTest1.definePersonalityType(responses: responses).rawValue
         resultLabel.text = personalityTest1.definePersonalityType(responses: responses).rawValue
         descriptionText.text = personalityTest1.definePersonalityType(responses: responses).description
+        UserDefaults.standard.set(personality, forKey: "lastResult")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,6 +35,4 @@ class ResultViewController: BaseViewController {
             destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: personalityTest1.definePersonalityType(responses: responses))
         }
     }
-    
-
 }
