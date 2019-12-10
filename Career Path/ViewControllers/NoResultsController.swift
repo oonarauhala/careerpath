@@ -2,7 +2,7 @@
 //  NoResultsController.swift
 //  Career Path
 //
-//  Created by iosdev on 10/12/2019.
+//  Created by mikael on 10/12/2019.
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 

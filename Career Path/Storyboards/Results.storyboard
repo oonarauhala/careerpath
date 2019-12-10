@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BOF-Hv-6FB">
-                                <rect key="frame" x="40" y="225.5" width="295" height="216"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BOF-Hv-6FB">
+                                <rect key="frame" x="40" y="237.5" width="295" height="192"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No previous results found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKj-1E-3Cr">
                                         <rect key="frame" x="16" y="0.0" width="263" height="88"/>
@@ -28,7 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-eV-Suz">
-                                        <rect key="frame" x="40" y="128" width="215" height="88"/>
+                                        <rect key="frame" x="40" y="104" width="215" height="88"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pR2-gt-tns">
                                                 <rect key="frame" x="32" y="0.0" width="151" height="40"/>
@@ -47,7 +47,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Home"/>
                                                 <connections>
-                                                    <segue destination="4yf-ho-4Sn" kind="show" id="mJ3-Xb-TJY"/>
+                                                    <segue destination="4yf-ho-4Sn" kind="presentation" modalTransitionStyle="flipHorizontal" id="mJ3-Xb-TJY"/>
                                                 </connections>
                                             </button>
                                         </subviews>
