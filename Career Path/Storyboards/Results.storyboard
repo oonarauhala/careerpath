@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QwK-gO-kcg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QqX-pk-Mpq">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,7 +16,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="CareerList" storyboardName="CareerInfo" referencedIdentifier="CareerList" id="miD-B5-EYc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ren-0q-7Bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="-326"/>
+            <point key="canvasLocation" x="630" y="-329"/>
         </scene>
         <!--Career Results Controller-->
         <scene sceneID="VN8-q7-ls6">
@@ -27,31 +27,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-Je-AvS">
-                                <rect key="frame" x="32" y="270.5" width="311" height="126"/>
+                                <rect key="frame" x="32" y="197" width="311" height="273"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3iW-Qb-cgV">
-                                        <rect key="frame" x="25" y="0.0" width="261" height="126"/>
+                                        <rect key="frame" x="25" y="0.0" width="261" height="273"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjh-4F-L61">
-                                                <rect key="frame" x="0.0" y="0.0" width="261" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="261" height="177"/>
                                                 <string key="text">You must register or log in to see your past results.Your personal information will not be used for anything other than the functionality of this app.</string>
                                                 <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMz-xC-zUf">
-                                                <rect key="frame" x="0.0" y="38" width="261" height="40"/>
+                                                <rect key="frame" x="0.0" y="185" width="261" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="bij-Mw-X2w"/>
                                                 </constraints>
                                                 <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <segue destination="sct-cO-8bj" kind="show" id="Cwf-IS-CKY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gg-lX-lYD">
-                                                <rect key="frame" x="0.0" y="86" width="261" height="40"/>
+                                                <rect key="frame" x="0.0" y="233" width="261" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="wxx-eY-QLG"/>
                                                 </constraints>
                                                 <state key="normal" title="Register"/>
+                                                <connections>
+                                                    <segue destination="Oar-eb-Le2" kind="show" id="ALg-vN-Gi8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -100,21 +106,21 @@
             </objects>
             <point key="canvasLocation" x="-876" y="-88.605697151424295"/>
         </scene>
-        <!--MyStoryboard-->
+        <!--Login-->
         <scene sceneID="qlc-cW-xha">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyStoryboard" id="sct-cO-8bj" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Login" storyboardName="MyStoryboard" referencedIdentifier="Login" id="sct-cO-8bj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdR-Iz-FJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="-76"/>
+            <point key="canvasLocation" x="655" y="-89"/>
         </scene>
-        <!--MyStoryboard-->
+        <!--Register-->
         <scene sceneID="FG8-bU-qJW">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyStoryboard" id="Oar-eb-Le2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Register" storyboardName="MyStoryboard" referencedIdentifier="Register" id="Oar-eb-Le2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGG-Wa-swq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778" y="97"/>
+            <point key="canvasLocation" x="618" y="116"/>
         </scene>
     </scenes>
 </document>
