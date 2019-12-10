@@ -11,13 +11,17 @@ import UIKit
 class NoResultsController: UIViewController {
     
     
-    @IBOutlet weak var noResultsButton: UIButton!
+
+    @IBOutlet weak var noResultsTestButton: UIButton!
     @IBOutlet weak var noResultsTitle: UILabel!
+    @IBOutlet weak var noResultsHomeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        noResultsButton.backgroundColor = UIColor.sortingButtons(theme: .t9)
-        noResultsButton.setTitleColor(UIColor.white, for: .normal)
+        noResultsTestButton.backgroundColor = UIColor.sortingButtons(theme: .t9)
+        noResultsTestButton.setTitleColor(UIColor.white, for: .normal)
+        noResultsHomeButton.backgroundColor = UIColor.sortingButtons(theme: .t9)
+        noResultsHomeButton.setTitleColor(UIColor.white, for: .normal)
 
         // Do any additional setup after loading the view.
     }

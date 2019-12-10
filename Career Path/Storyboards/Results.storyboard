@@ -19,28 +19,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BOF-Hv-6FB">
-                                <rect key="frame" x="40" y="273.5" width="295" height="120"/>
+                                <rect key="frame" x="40" y="225.5" width="295" height="216"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No previous results found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKj-1E-3Cr">
-                                        <rect key="frame" x="16" y="0.0" width="263" height="40"/>
+                                        <rect key="frame" x="16" y="0.0" width="263" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pR2-gt-tns">
-                                        <rect key="frame" x="32" y="80" width="231" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-eV-Suz">
+                                        <rect key="frame" x="40" y="128" width="215" height="88"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pR2-gt-tns">
+                                                <rect key="frame" x="32" y="0.0" width="151" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="vp8-Y2-cKx"/>
+                                                </constraints>
+                                                <state key="normal" title="Take the test"/>
+                                                <connections>
+                                                    <segue destination="kFA-qb-GI3" kind="show" identifier="NoResults" id="TvJ-28-IVA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84q-8d-zZ7">
+                                                <rect key="frame" x="32" y="48" width="151" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Mfh-jm-XxK"/>
+                                                </constraints>
+                                                <state key="normal" title="Home"/>
+                                                <connections>
+                                                    <segue destination="4yf-ho-4Sn" kind="show" id="mJ3-Xb-TJY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="vp8-Y2-cKx"/>
+                                            <constraint firstAttribute="trailing" secondItem="84q-8d-zZ7" secondAttribute="trailing" constant="32" id="6tL-5n-SRW"/>
+                                            <constraint firstItem="pR2-gt-tns" firstAttribute="leading" secondItem="qOv-eV-Suz" secondAttribute="leading" constant="32" id="HZa-T8-WRv"/>
+                                            <constraint firstItem="84q-8d-zZ7" firstAttribute="leading" secondItem="qOv-eV-Suz" secondAttribute="leading" constant="32" id="OX0-d5-Uo3"/>
+                                            <constraint firstAttribute="trailing" secondItem="pR2-gt-tns" secondAttribute="trailing" constant="32" id="dXk-og-j7z"/>
                                         </constraints>
-                                        <state key="normal" title="Take the test"/>
-                                        <connections>
-                                            <segue destination="kFA-qb-GI3" kind="show" identifier="NoResults" id="TvJ-28-IVA"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pR2-gt-tns" secondAttribute="trailing" constant="32" id="3vt-Yo-8k0"/>
-                                    <constraint firstItem="pR2-gt-tns" firstAttribute="leading" secondItem="BOF-Hv-6FB" secondAttribute="leading" constant="32" id="QnX-03-ZYY"/>
+                                    <constraint firstItem="qOv-eV-Suz" firstAttribute="leading" secondItem="BOF-Hv-6FB" secondAttribute="leading" constant="40" id="9iU-o8-dQq"/>
+                                    <constraint firstAttribute="trailing" secondItem="qOv-eV-Suz" secondAttribute="trailing" constant="40" id="pr0-3K-lql"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -55,7 +76,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="h7F-xL-Uly"/>
                     <connections>
-                        <outlet property="noResultsButton" destination="pR2-gt-tns" id="mKB-e2-wpH"/>
+                        <outlet property="noResultsHomeButton" destination="84q-8d-zZ7" id="lUO-xc-0Nx"/>
+                        <outlet property="noResultsTestButton" destination="pR2-gt-tns" id="b4C-eV-6Qp"/>
                         <outlet property="noResultsTitle" destination="cKj-1E-3Cr" id="D9A-ip-cr3"/>
                     </connections>
                 </viewController>
@@ -70,6 +92,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ren-0q-7Bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="-89"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="exn-F1-ldx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="4yf-ho-4Sn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zw-xa-MEz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="-6"/>
         </scene>
         <!--Test-->
         <scene sceneID="Vaw-pn-HAS">
