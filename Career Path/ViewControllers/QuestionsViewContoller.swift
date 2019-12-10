@@ -21,7 +21,7 @@ class QuestionsViewController: BaseViewController {
     //MARK: buttons
     @IBOutlet weak var buttonText1: UIButton!
     @IBOutlet weak var buttonText2: UIButton!
-    @IBOutlet weak var buttonNext: UIButton!
+    //@IBOutlet weak var buttonNext: UIButton!
     //MARK:labels
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var questionNumber: UILabel!
@@ -64,18 +64,20 @@ class QuestionsViewController: BaseViewController {
         switch sender {
             
         case buttonText1:
-                buttonText1Pressed = true
-                buttonText2Pressed = false
+               // buttonText1Pressed = true
+               // buttonText2Pressed = false
+                answersChosen.append(currentAnswers[0])
                 buttonText1.backgroundColor = UIColor(hex:"#0066CBff")
                 buttonText2.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+            
         case buttonText2:
-                buttonText1Pressed = false
-                buttonText2Pressed = true
-                //answersChosen.append(currentAnswers[1])
+               // buttonText1Pressed = false
+               // buttonText2Pressed = true
+                answersChosen.append(currentAnswers[1])
                 buttonText2.backgroundColor = UIColor(hex:"#0066CBff")
-
                 buttonText1.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
-        case buttonNext:
+            
+       /* case buttonNext:
                if (buttonText1Pressed == true){
                answersChosen.append(currentAnswers[0])
                 nextQuestion()
@@ -87,10 +89,16 @@ class QuestionsViewController: BaseViewController {
                 let alert = UIAlertController(title: "Warning message", message: "You need to choose an answer", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in NSLog("The \"OK\" alert occured.")}))
                 self.present(alert, animated: true, completion: nil)
-               }
+               }*/
         default:
             break
         }
+        Timer.scheduledTimer(withTimeInterval: 0.80, repeats: false) { (timer) in
+            // do stuff 0.60 seconds later
+            self.nextQuestion()
+        }
+
+        
         
     }
     
