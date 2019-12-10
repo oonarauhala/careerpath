@@ -33,14 +33,8 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         //button "menu"
         addSlideMenuButton()
         self.title = "Profile"
-<<<<<<< HEAD
-        colorSetup(theme: .t9)
-        self.nameLabel.text = user.firstName + user.lastName
-        self.ageLabel.text = String(user.age)
-=======
         self.nameLabel.text = user.username
         self.ageLabel.text = String(user.email)
->>>>>>> a9c8d3b3cdb58e6cb998d3464d413fdb8357a059
         profileTableView.delegate = self as UITableViewDelegate
         profileTableView.dataSource = self as UITableViewDataSource
         profileTableView.tableFooterView = UIView()
