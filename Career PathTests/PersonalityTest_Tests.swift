@@ -7,16 +7,9 @@
 //
 
 import XCTest
+@testable import Career_Path
 
 class PersonalityTest_Tests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
     func testExample() {
         // This is an example of a functional test case.
@@ -28,6 +21,16 @@ class PersonalityTest_Tests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testQuestionEmptiString() {
+        let emptyStringQuestion = Question(text: "" , answers: [Answer(text: "Principles", type: .T), Answer(text: "Emotions", type: .F)])
+        XCTAssert(emptyStringQuestion.text == "", "Question can't be empty")
+    }
+    
+    func testAnswerEmptyString() {
+        let emptyStringAnswer = Answer(text: "", type: .T)
+        XCTAssert(emptyStringAnswer.text == "", "Answer can't be empty")
     }
     
 }

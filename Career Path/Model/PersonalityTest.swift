@@ -26,9 +26,7 @@ import Foundation
     }
 
     class PersonalityTest {
-   
         //now 40 questions (in oroginal MBTI test 70 questions)
-        
     var questions: [Question] = [
         
         //1
@@ -163,78 +161,77 @@ import Foundation
             ]),
         //27
         Question(text:"Should one usually let events occur:", answers: [
-            Answer(text: "by careful selection and choice", type: .J),
-            Answer(text: "randomly and by chance", type: .P)
+            Answer(text: "By careful selection and choice", type: .J),
+            Answer(text: "Randomly and by chance", type: .P)
             ]),
         //28
         Question(text:"Do you feel better about:", answers: [
-            Answer(text: "having purchased", type: .J),
-            Answer(text: "having the option to buy", type: .P)
+            Answer(text: "Having purchased", type: .J),
+            Answer(text: "Having the option to buy", type: .P)
             ]),
         //29
         Question(text:"In company do you:", answers: [
-            Answer(text: "initiate conversation", type: .E),
-            Answer(text: "wait to be approached", type: .I)
+            Answer(text: "Initiate conversation", type: .E),
+            Answer(text: "Wait to be approached", type: .I)
             ]),
         //30
         Question(text:"Common sense is:", answers: [
-            Answer(text: "rarely questionable", type: .S),
-            Answer(text: "frequently questionable", type: .N)
+            Answer(text: "Rarely questionable", type: .S),
+            Answer(text: "Frequently questionable", type: .N)
             ]),
         //31
         Question(text:"Children often do not:", answers: [
-            Answer(text: "make themselves useful enough", type: .S),
-            Answer(text: "exercise their fantasy enough", type: .N)
+            Answer(text: "Make themselves useful enough", type: .S),
+            Answer(text: "Exercise their fantasy enough", type: .N)
             ]),
         //32
         Question(text:"In making decisions do you feel more comfortable with:", answers: [
-            Answer(text: "standards", type: .T),
-            Answer(text: "feelings", type: .F)
+            Answer(text: "Standards", type: .T),
+            Answer(text: "Feelings", type: .F)
             ]),
         //33
         Question(text:"Are you more:", answers: [
-            Answer(text: "firm than gentle", type: .T),
-            Answer(text: "gentle than firm", type: .F)
+            Answer(text: "Firm than gentle", type: .T),
+            Answer(text: "Gentle than firm", type: .F)
             ]),
         //34
         Question(text:"Which is more admirable:", answers: [
-            Answer(text: "the ability to organize and be methodical", type: .J),
-            Answer(text: " the ability to adapt and make do", type: .P)
+            Answer(text: "The ability to organize and be methodical", type: .J),
+            Answer(text: " The ability to adapt and make do", type: .P)
             ]),
         //35
         Question(text:"Do you put more value on:", answers: [
-            Answer(text: "infinite", type: .J),
-            Answer(text: "open-minded", type: .P)
+            Answer(text: "Infinite", type: .J),
+            Answer(text: "Open-minded", type: .P)
             ]),
         //36
         Question(text:"Does new and non-routine interaction with others:", answers: [
-            Answer(text: "stimulate and energize you", type: .E),
-            Answer(text: "tax your reserves", type: .I)
+            Answer(text: "Stimulate and energize you", type: .E),
+            Answer(text: "Tax your reserves", type: .I)
             ]),
         //37
         Question(text:"Are you more frequently:", answers: [
-            Answer(text: "a practical sort of person", type: .S),
-            Answer(text: "a fanciful sort of person", type: .N)
+            Answer(text: "A practical sort of person", type: .S),
+            Answer(text: "A fanciful sort of person", type: .N)
             ]),
         //38
         Question(text:"Are you more likely to:", answers: [
-            Answer(text: "see how others are useful", type: .S),
-            Answer(text: "see how others see", type: .N)
+            Answer(text: "See how others are useful", type: .S),
+            Answer(text: "See how others see", type: .N)
             ]),
         //39
         Question(text:"Which is more satisfying:", answers: [
-            Answer(text: "to discuss an issue thoroughly", type: .T),
-            Answer(text: "to arrive at agreement on an issue", type: .F)
+            Answer(text: "To discuss an issue thoroughly", type: .T),
+            Answer(text: "To arrive at agreement on an issue", type: .F)
             ]),
         //40
         Question(text:"Which rules you more:", answers: [
-            Answer(text: "your head", type: .T),
-            Answer(text: "your heart", type: .F)
+            Answer(text: "Your head", type: .T),
+            Answer(text: "Your heart", type: .F)
             ]),
     ]
         
       //function for defining "personality type"
-        
         func definePersonalityType(responses: [Answer]!) -> PersonalityType  {
             
             var frequencyOfAnswers : [PersonalType:Int] = [:]
@@ -242,10 +239,10 @@ import Foundation
             
             for response in responseTypes {
                 
-                frequencyOfAnswers[response] = (frequencyOfAnswers[response] ?? 0)+1
+                frequencyOfAnswers[response] = (frequencyOfAnswers[response] ?? 0) + 1
                 
             }
-        
+            
             let e = (frequencyOfAnswers[PersonalType.E] ?? 0)
             let i = (frequencyOfAnswers[PersonalType.I] ?? 0)
             let s = (frequencyOfAnswers[PersonalType.S] ?? 0)
@@ -254,35 +251,60 @@ import Foundation
             let f = (frequencyOfAnswers[PersonalType.F] ?? 0)
             let j = (frequencyOfAnswers[PersonalType.J] ?? 0)
             let p = (frequencyOfAnswers[PersonalType.P] ?? 0)
-        /*
-            print("S =\(s)")
-            print("I =\(i)")
-            print("E =\(e)")
-            print("N =\(n)")
-            print("T =\(t)")
-            print("F =\(f)")
-            print("J =\(j)")
-            print("P =\(p)")
-          */
+            /*
+             print("S =\(s)")
+             print("I =\(i)")
+             print("E =\(e)")
+             print("N =\(n)")
+             print("T =\(t)")
+             print("F =\(f)")
+             print("J =\(j)")
+             print("P =\(p)")
+             */
             
-            if(i>=e && s>=n && t>=f && j>=p) {return PersonalityType.ISTJ}
-            else if (i>=e && s>=n && t>=f && j<=p){return PersonalityType.ISTP}
-            else if (i>=e && s>=n && t<=f && j>=p){return PersonalityType.ISFJ}
-            else if (i>=e && s>=n && t<=f && j<=p){return PersonalityType.ISFP}
-            else if (i>=e && s<=n && t>=f && j>=p){return PersonalityType.INTJ}
-            else if (i>=e && s<=n && t>=f && j<=p){return PersonalityType.INTP}
-            else if (i>=e && s<=n && t<=f && j>=p){return PersonalityType.INFJ}
-            else if (i>=e && s<=n && t<=f && j<=p){return PersonalityType.INFP}
-                
-            else if (i<e && s>=n && t>=f && j>=p){return PersonalityType.ESTJ}
-            else if (i<e && s>=n && t>=f && j<=p){return PersonalityType.ESTP}
-            else if (i<e && s>=n && t<=f && j>=p){return PersonalityType.ESFJ}
-            else if (i<e && s>=n && t<=f && j<=p){return PersonalityType.ESFP}
-            else if (i<e && s<=n && t>=f && j>=p){return PersonalityType.ENTJ}
-            else if (i<e && s<=n && t>=f && j<=p){return PersonalityType.ENTP}
-            else if (i<e && s<=n && t<=f && j>=p){return PersonalityType.ENFJ}
-                
-            else {return PersonalityType.ENFP}
+            var persType = ""
+            
+            if i>=e {persType += "I"} else {persType += "E"}
+            if s>=n {persType += "S"} else {persType += "N"}
+            if t>=f {persType += "T"} else {persType += "F"}
+            if j>=p {persType += "J"} else {persType += "P"}
+            
+            print("PersType \(persType)")
+            
+            switch persType{
+            case "ISTJ":
+                return PersonalityType.ISTJ
+            case "ISTP":
+                return PersonalityType.ISTP
+            case "ISFJ":
+                return PersonalityType.ISFJ
+            case "ISFP":
+                return PersonalityType.ISFP
+            case "INTJ":
+                return PersonalityType.INTJ
+            case "INTP":
+                return PersonalityType.INTP
+            case "INFJ":
+                return PersonalityType.INFJ
+            case "INFP":
+                return PersonalityType.INFP
+            case "ESTJ":
+                return PersonalityType.ESTJ
+            case "ESTP":
+                return PersonalityType.ESTP
+            case "ESFJ":
+                return PersonalityType.ESFJ
+            case "ESFP":
+                return PersonalityType.ESFP
+            case "ENTJ":
+                return PersonalityType.ENTJ
+            case "ENTP":
+                return PersonalityType.ENTP
+            case "ENFJ":
+                return PersonalityType.ENFJ
+            default:
+                return PersonalityType.ENFP
+            }
         }
 }
 

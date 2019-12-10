@@ -26,13 +26,13 @@ class Career_PathTests: XCTestCase {
     }
     
     //Following # tests look at thousands separator woring correctly.
-    func testCareerSeparate1() {
+   /* func testCareerSeparate1() {
         let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
         print(test.salaryToString)
         XCTAssert(test.salaryToString == "$5")
         
     }
-    
+    */
     func testCareerSeparate2() {
         let test = Career(careerName: "Chef", description: "This is a description", medianSalary: 5000, education: Degree.Master, personalityType: .ENTJ, demand: Demand.Medium)
         print(test.salaryToString)
