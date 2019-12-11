@@ -27,8 +27,9 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             break
         case 1:
             print("Profile\n", terminator: "")
+             if PersistenceService.checkUserLoggedIn() {
             openViewControllerBasedOnIdentifier("Profile")
-            
+             } else { openViewControllerBasedOnIdentifier("Login")}
             break
         case 2:
             print("Career list\n", terminator: "")

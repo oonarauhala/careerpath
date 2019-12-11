@@ -38,7 +38,8 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         self.ageLabel.text = String(user.email)
         profileTableView.delegate = self as UITableViewDelegate
         profileTableView.dataSource = self as UITableViewDataSource
-        profileTableView.tableFooterView = UIView()
+        profileTableView.tableFooterView = UIView(frame: CGRect.zero)
+        colorSetup(theme: .t9)
     }
     
     //MARK: Actions
@@ -119,6 +120,8 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         personalityTypeHeader.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
         recommendedJobsHeader.textColor = UIColor.testHeaderAndQuestion(theme: colorTheme)
         selectPhotoButton.setTitleColor(UIColor(hex:"#47A1F7ff"), for: .normal)
+        logoutButton.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+        logoutButton.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
     }
     
     

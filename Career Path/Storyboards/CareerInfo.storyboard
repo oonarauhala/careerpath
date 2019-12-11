@@ -196,6 +196,14 @@
             </objects>
             <point key="canvasLocation" x="2736" y="-193"/>
         </scene>
+        <!--Login-->
+        <scene sceneID="VZe-Fr-7fW">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Login" storyboardName="MyStoryboard" referencedIdentifier="Login" id="QSn-T2-L56" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKa-7O-GwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2734" y="-160"/>
+        </scene>
         <!-- -->
         <scene sceneID="ilN-2C-Mfd">
             <objects>
@@ -225,10 +233,34 @@
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="LQS-2N-84L">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Register or Login to save results" id="fjt-og-oUO">
-                                        <connections>
-                                            <action selector="registerLogin:" destination="p8e-X6-y6p" id="fmf-Do-Xk9"/>
-                                        </connections>
+                                    <barButtonItem style="plain" id="2ye-Cf-9eL">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lIR-kQ-XvI" customClass="RoundButton" customModule="Career_Path" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="2" width="343" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="275" id="3Op-gq-p1E"/>
+                                                <constraint firstAttribute="height" constant="40" id="dpV-HB-8Zh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                            <state key="normal" title="Register or Login to save results"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="1.5"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.80000000000000004"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                    <size key="value" width="1" height="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <segue destination="XwM-X2-zrV" kind="show" id="uDJ-bP-ma3"/>
+                                            </connections>
+                                        </button>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -249,18 +281,18 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomToolBar" destination="LQS-2N-84L" id="UAj-8Y-RKt"/>
+                        <outlet property="registerOrLoginButton" destination="lIR-kQ-XvI" id="7JC-OL-s9e"/>
                         <outlet property="tableView" destination="eLW-Jl-Jj0" id="Kte-lT-5UQ"/>
-                        <segue destination="XwM-X2-zrV" kind="show" identifier="ResultsRegisterLogin" id="1bp-Om-Tpg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki6-BQ-Fl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="-80"/>
+            <point key="canvasLocation" x="1340" y="-80.50974512743629"/>
         </scene>
         <!--Register-->
         <scene sceneID="ufu-5f-CwM">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyStoryboard" referencedIdentifier="Register" id="XwM-X2-zrV" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="Register" storyboardName="MyStoryboard" referencedIdentifier="Register" id="XwM-X2-zrV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIH-19-J1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1340" y="332"/>
