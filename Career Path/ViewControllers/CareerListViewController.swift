@@ -48,8 +48,8 @@ class CareerListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bottomToolBar: UIToolbar!
-    
-// MARK: Lifecycle methods
+    @IBOutlet weak var registerOrLoginButton: UIButton!
+    // MARK: Lifecycle methods
     
     //viewDidLoad
     override func viewDidLoad() {
@@ -100,6 +100,8 @@ class CareerListViewController: BaseViewController {
         navBar.isTranslucent = true
         view.backgroundColor = UIColor.careerListView(theme: colorTheme)
         tableView.backgroundColor = UIColor.careerListBackground(theme: colorTheme)
+       registerOrLoginButton.backgroundColor = UIColor.testButtonsBackground(theme: colorTheme)
+       registerOrLoginButton.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
     }
     
     fileprivate func tableViewSetup() {
