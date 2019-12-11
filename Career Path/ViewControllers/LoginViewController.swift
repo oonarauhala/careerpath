@@ -128,7 +128,7 @@ class LoginViewConroller: UIViewController {
                     print("entered username: " + self.username)
                     //Check if entered username matches a username in json.db
                     if String(describing: username) == self.username{
-                        if let password = object["storedPassword"] {
+                        if let password = object["storedPassword"] as? String {
                             //Check if entered password matches users password
                             print("fetched password: " + String(describing: password))
                             print("entered password: " + self.password)
@@ -137,9 +137,9 @@ class LoginViewConroller: UIViewController {
                             {
                                 if let email = object["storedEmail"] as? String, let testResults = object["testResults"] as? [Int] {
                                     if testResults.isEmpty {
-                                        PersistenceService.saveUserToDefaults(username: username, email: email, results: nil)
+                                        PersistenceService.saveUserToDefaults(username: username, email: email, results: nil, password: password)
                                     } else {
-                                        PersistenceService.saveUserToDefaults(username: username, email: email, results: testResults.last)
+                                        PersistenceService.saveUserToDefaults(username: username, email: email, results: testResults.last, password: password)
                                     }
                                     print("saved username: \(username), saved email: \(email), saved results: \(testResults) ")
                                 }

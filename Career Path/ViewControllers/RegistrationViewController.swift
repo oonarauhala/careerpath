@@ -92,8 +92,6 @@ class RegisterViewController: UIViewController {
                     for object in data {
                         //Check if valid and remove optional
                         if let testUsername = object["storedUsername"] {
-                            print("fetched username: " + String(describing: testUsername))
-                            print("entered username: " + username)
                             //Check if entered username matches a username in json.db
                             if String(describing: testUsername) == username {
                                 usernameTaken = true
@@ -220,10 +218,10 @@ class RegisterViewController: UIViewController {
                 guard let res = resultsPersonalityType else { fatalError("Is from results but personality type not found. (RegistrationViewController)") }
                 
                 NetworkRequest().fetchPostUser(username: username1, email: email1, password: password1, personalityTypeInt: res.convertToInt())
-                PersistenceService.saveUserToDefaults(username: username1, email: email1, results: res.convertToInt())
+                PersistenceService.saveUserToDefaults(username: username1, email: email1, results: res.convertToInt(), password: password1)
             } else {
                 NetworkRequest().fetchPostUser(username: username1, email: email1, password: password1)
-                PersistenceService.saveUserToDefaults(username: username1, email: email1, results: nil)
+                PersistenceService.saveUserToDefaults(username: username1, email: email1, results: nil, password: password1)
             }
         }
         
@@ -243,7 +241,7 @@ class RegisterViewController: UIViewController {
             
             print("Personality type from UserDefaults: ", type)
 
-            var user = User(username1, password1, email1)
+            var user = User(username1, email1, password1)
             user.testResults.append(type.convertToInt())
             
             PersistenceService.setUserLoggedIn()
@@ -256,6 +254,7 @@ class RegisterViewController: UIViewController {
         }
             
         else if segue.identifier == "RegisterLogin", let destination = segue.destination as? LoginViewConroller {
+            print(isFromResults)
             if isFromResults {
                 print("Is from results: ", isFromResults)
                 destination.isFromResults = true

@@ -235,7 +235,7 @@ class CareerListViewController: BaseViewController {
         if displayState == .Results {
             guard var res = results else { fatalError("no results found") }
             guard let user = res.user else { fatalError("No user set in CareerListViewController") }
-            PersistenceService.saveUserToDefaults(username: user.username, email: user.email, results: res.personalityType.convertToInt())
+            PersistenceService.saveUserToDefaults(username: user.username, email: user.email, results: res.personalityType.convertToInt(), password: user.password)
             res.user!.testResults.append(res.personalityType.convertToInt())
             // saves a new user or updates an existing one
             PersistenceService.saveUserToBackEnd(user: user)
@@ -247,23 +247,6 @@ class CareerListViewController: BaseViewController {
             saveData()
         }
     }
-
-//    private func saveData() {
-//        if displayState == .Results {
-//            if isLoggedIn {
-//                guard let res = results else { fatalError("no results found") }
-//                PersistenceService.saveTestResults(type: res.personalityType)
-//            }
-//        }
-//    }
-//
-//    private func checkIsLoggedIn() {
-//        if isLoggedIn {
-//            saveData()
-//        } else {
-//            // saveButton.isHidden = false
-//        }
-//    }
     
     // -> Loads all the careers from a backend API
     private func fetchData() {

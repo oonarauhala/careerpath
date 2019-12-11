@@ -50,7 +50,7 @@ class CareerResultsController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowResults", let destination = segue.destination as? CareerListViewController {
             destination.displayState = .Results
-            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: PersonalityType.INFP)
+            destination.results = TestResults(user: User("asd", "sfsdfasdasd", ""), personalityType: PersonalityType.INFP)
 
         }
     }

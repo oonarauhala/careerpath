@@ -181,8 +181,9 @@ class PersistenceService {
         if checkUserLoggedIn() {
             guard let name = UserDefaults.standard.string(forKey: "Username") else { fatalError("name not stored as string") }
             guard let email = UserDefaults.standard.string(forKey: "Email") else { fatalError("email not stored as string") }
+            guard let password = UserDefaults.standard.string(forKey: "Password") else { fatalError("password not found from UserDefaults")}
             let results = UserDefaults.standard.object(forKey: "MyResults") as? Int
-            var user = User(name, email, "password")
+            var user = User(name, email, password)
             if let res = results {
                 user.testResults.append(res)
             }
@@ -193,8 +194,9 @@ class PersistenceService {
         }
     }
     
-    static func saveUserToDefaults(username: String, email: String, results: Int?) {
+    static func saveUserToDefaults(username: String, email: String, results: Int?, password: String) {
         UserDefaults.standard.set(username, forKey: "Username")
+        UserDefaults.standard.set(password, forKey: "Password")
         UserDefaults.standard.set(email, forKey: "Email")
         UserDefaults.standard.set(results, forKey: "MyResults")
         print("saved to UserDefaults -> name: \(username), email: \(email), results: \(String(describing: results))")

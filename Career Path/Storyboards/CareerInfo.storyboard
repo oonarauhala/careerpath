@@ -258,7 +258,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <segue destination="XwM-X2-zrV" kind="show" id="uDJ-bP-ma3"/>
+                                                <action selector="registerLogin:" destination="p8e-X6-y6p" eventType="touchUpInside" id="aRt-1m-5p7"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -283,6 +283,7 @@
                         <outlet property="bottomToolBar" destination="LQS-2N-84L" id="UAj-8Y-RKt"/>
                         <outlet property="registerOrLoginButton" destination="lIR-kQ-XvI" id="7JC-OL-s9e"/>
                         <outlet property="tableView" destination="eLW-Jl-Jj0" id="Kte-lT-5UQ"/>
+                        <segue destination="XwM-X2-zrV" kind="show" identifier="ResultsRegisterLogin" id="MQU-AT-MRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki6-BQ-Fl3" userLabel="First Responder" sceneMemberID="firstResponder"/>
