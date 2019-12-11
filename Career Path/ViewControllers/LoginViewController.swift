@@ -98,9 +98,9 @@ class LoginViewConroller: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         if userExists() == true {
-            UserDefaults.standard.set(true, forKey: "userLoggedIn")
-            //prints 0 for false and 1 for true
-            print("is user logged in: " + (UserDefaults.standard.string(forKey: "userLoggedIn") ?? ""))
+            PersistenceService.setUserLoggedIn()
+
+            print("is user logged in: ", (PersistenceService.checkUserLoggedIn()))
             
             if isFromResults {
                 performSegue(withIdentifier: "LoginResults", sender: self)
@@ -119,7 +119,7 @@ class LoginViewConroller: UIViewController {
             //Iterate through json user objects
             for object in data {
                 //Check if valid and remove optional
-                if let username = object["storedUsername"] {
+                if let username = object["storedUsername"] as? String {
                     print("fetched username: " + String(describing: username))
                     print("entered username: " + self.username)
                     //Check if entered username matches a username in json.db
@@ -131,10 +131,16 @@ class LoginViewConroller: UIViewController {
 
                             if String(describing: password) == self.password
                             {
+                                if let email = object["storedEmail"] as? String, let testResults = object["testResults"] as? [Int] {
+                                    if testResults.isEmpty {
+                                        PersistenceService.saveUserToDefaults(username: username, email: email, results: nil)
+                                    } else {
+                                        PersistenceService.saveUserToDefaults(username: username, email: email, results: testResults.last)
+                                    }
+                                    print("saved username: \(username), saved email: \(email), saved results: \(testResults) ")
+                                }
                                 //If username and password match, return true
                                 isUser = true
-                                UserDefaults.standard.set(self.username, forKey: "Username")
-                                    print("saved username: " + (UserDefaults.standard.string(forKey: "Username") ?? ""))
                             }
                         }
                     }

@@ -93,7 +93,7 @@ class QuestionsViewController: BaseViewController {
         default:
             break
         }
-        Timer.scheduledTimer(withTimeInterval: 0.80, repeats: false) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0, repeats: false) { (timer) in
             // do stuff 0.60 seconds later
             self.nextQuestion()
         }

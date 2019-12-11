@@ -4,7 +4,7 @@
       "name": "Chef",
       "description": "A chef is a trained professional cook and tradesman who is proficient in all aspects of food preparation, often focusing on a particular cuisine. The word \"chef\" is derived from the term chef de cuisine (French pronunciation: [ʃɛf.də.kɥi.zin]), the director or head of a kitchen. Chefs can receive formal training from an institution, as well as by apprenticing with an experienced chef.\n\nThere are different terms that use the word chef in their titles, and deal with specific areas of food preparation, such as the sous-chef, who acts as the second-in-command in a kitchen, or the chef de partie, who handles a specific area of production, or “Television chef”, such as Alison Holst. The kitchen brigade system is a hierarchy found in restaurants and hotels employing extensive staff, many of which use the word \"chef\" in their titles. Underneath the chefs are the kitchen assistants. A chef's standard uniform includes a hat (called a toque), neckerchief, double-breasted jacket, apron and sturdy shoes (that may include steel or plastic toe-caps).",
       "salary": 43180,
-      "degree": 3,
+      "degree": 0,
       "personality": 12,
       "futureDemand": 1
     },
@@ -403,18 +403,11 @@
       "id": 9
     },
     {
-      "storedUsername": "asdasd22",
-      "storedPassword": "asd123",
-      "storedEmail": "asd@asd.asd",
+      "storedUsername": "asd",
+      "storedPassword": "password",
+      "storedEmail": "sfsdfasdasd",
       "testResults": [],
       "id": 10
-    },
-    {
-      "storedUsername": "asd1234",
-      "storedPassword": "asd123",
-      "storedEmail": "asd@asd.asd",
-      "testResults": [],
-      "id": 11
     }
   ]
 }

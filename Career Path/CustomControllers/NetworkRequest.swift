@@ -66,7 +66,7 @@ struct NetworkRequest {
         
     }
     
-    func fetchPostUser(username: String, email: String, password: String) -> Void {
+    func fetchPostUser(username: String, email: String, password: String, personalityTypeInt: Int? = nil) -> Void {
         
         let urlString: String = "http://localhost:3000/users/"
         
@@ -78,7 +78,11 @@ struct NetworkRequest {
         var request = URLRequest(url: url)
         
         
-        let user = User(username, email, password)
+        var user = User(username, email, password)
+        
+        if let type = personalityTypeInt {
+            user.testResults.append(type)
+        }
         
         guard let uploadData = try? JSONEncoder().encode(user) else {
             print("could not encode user")

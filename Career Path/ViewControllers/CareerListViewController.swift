@@ -222,7 +222,7 @@ class CareerListViewController: BaseViewController {
         else if segue.identifier == "ResultsRegisterLogin",let destination = segue.destination as? RegisterViewController {
             destination.isFromResults = true
             destination.resultsPersonalityType = results?.personalityType
-            print("results personalitytype: ", results?.personalityType)
+            print("results personalitytype: ", results?.personalityType ?? "not found")
         }
     }
     
@@ -232,7 +232,9 @@ class CareerListViewController: BaseViewController {
     private func saveData() {
         if displayState == .Results {
             guard let res = results else { fatalError("no results found") }
-            PersistenceService.saveTestResults(type: res.personalityType)
+            PersistenceService.saveUserToDefaults(username: res.user.username, email: res.user.email, results: res.personalityType.convertToInt())
+            // saves a new user or updates an existing one
+            PersistenceService.saveUserToBackEnd(user: res.user)
         }
     }
     

@@ -30,7 +30,7 @@ struct User: Codable {
             return storedPassword
         }
     }
-    var testResults: Array<String> = []
+    var testResults: Array<Int> = []
     
     init(_ username: String,_ email: String,_ password: String) {
         if (username).isEmpty || username == "" {

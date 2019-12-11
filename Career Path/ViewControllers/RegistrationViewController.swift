@@ -212,7 +212,16 @@ class RegisterViewController: UIViewController {
             
             user = User(username1, email1, password1)
             
-            NetworkRequest().fetchPostUser(username: username1, email: email1, password: password1)
+            if isFromResults {
+                // if isFromResults -> personality type should be defined too -> if it isn't -> crash app.
+                guard let res = resultsPersonalityType else { fatalError("Is from results but personality type not found. (RegistrationViewController)") }
+                
+                NetworkRequest().fetchPostUser(username: username1, email: email1, password: password1, personalityTypeInt: res.convertToInt())
+                PersistenceService.saveUserToDefaults(username: username1, email: email1, results: res.convertToInt())
+            } else {
+                NetworkRequest().fetchPostUser(username: username1, email: email1, password: password1)
+                PersistenceService.saveUserToDefaults(username: username1, email: email1, results: nil)
+            }
         }
         
         // Send/save data here
@@ -225,20 +234,24 @@ class RegisterViewController: UIViewController {
         if segue.identifier == "RegisterResults", let destination = segue.destination as? CareerListViewController {
             
             guard let type = resultsPersonalityType else { fatalError("Pers. type not given from CareerListVC") }
+            guard let username1 = usernameField.text else { fatalError("error with username") }
+            guard let password1 = passwordField.text else { fatalError("error with password") }
+            guard let email1 = emailField.text else { fatalError("error with email") }
             
             print("Personality type from UserDefaults: ", type)
 
-            let testUser = User("asd1234", "asd@asd.asd", "asdasd")
-            //guard let u = user else { fatalError("Saving user with register fields failed") }
-            print("user object constructed from register fields", user)
+            var user = User(username1, password1, email1)
+            user.testResults.append(type.convertToInt())
             
             PersistenceService.setUserLoggedIn()
             destination.displayState = .Results
-            destination.results = TestResults(user: testUser, personalityType: type)
+            destination.results = TestResults(user: user, personalityType: type)
         }
+            
         else if segue.identifier == "RegisterHome" {
             PersistenceService.setUserLoggedIn()
         }
+            
         else if segue.identifier == "RegisterLogin", let destination = segue.destination as? LoginViewConroller {
             if isFromResults {
                 print("Is from results: ", isFromResults)

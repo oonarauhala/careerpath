@@ -152,6 +152,7 @@ class PersistenceService {
     }
     
     static func saveTestResults(type: PersonalityType) {
+        
         UserDefaults.standard.set(type.convertToInt(), forKey: "MyResults")
     }
     
@@ -171,6 +172,69 @@ class PersistenceService {
         return UserDefaults.standard.bool(forKey: "MyResults")
     }
     
+    static func getUserFromDefaults() -> User? {
+        if checkUserLoggedIn() {
+            guard let name = UserDefaults.standard.string(forKey: "Username") else { fatalError("name not stored as string") }
+            guard let email = UserDefaults.standard.string(forKey: "Email") else { fatalError("email not stored as string") }
+            guard let results = UserDefaults.standard.object(forKey: "MyResults") as? [Int] else { fatalError("results not stored as [Int]") }
+            var user = User(name, email, "password")
+            user.testResults = results
+            return user
+        } else {
+            return nil
+        }
+    }
+    
+    static func saveUserToDefaults(username: String, email: String, results: Int?) {
+        UserDefaults.standard.set(username, forKey: "Username")
+        UserDefaults.standard.set(email, forKey: "Email")
+        UserDefaults.standard.set(results, forKey: "MyResults")
+        print("saved to UserDefaults -> name: \(username), email: \(email), results: \(String(describing: results))")
+    }
+    
+    static func saveUserToBackEnd(user: User) {
+        var userExists = false
+        var userID: Int?
+        let group = DispatchGroup()
+        let request = NetworkRequest()
+        //group is used to control flow so that final return waits for fetchGetUsers loop to complete
+        group.enter()
+        request.fetchGetUsers{data in
+            
+            //Iterate through json user objects
+            for object in data {
+                //Check if valid and remove optional
+                if let testUsername = object["storedUsername"] as? String {
+                    print("fetched username: " + String(describing: testUsername))
+                    print("entered username: " + user.username)
+                    //Check if entered username matches a username in json.db
+                    if testUsername == user.username {
+                        if let id = object["id"] as? Int {
+                            userID = id
+                        }
+                        userExists = true
+                        break
+                    }
+                }
+            }
+            group.leave()
+        }
+        
+        group.wait()
+        if userExists == true {
+            // update user results
+            print("User exists. Updating results")
+            guard let id = userID else { fatalError("error parsing user ID") }
+            request.fetchUpdateUser(user: user, userID: String(id))
+        }
+        else {
+            // save new user
+            print("User doesn't exist. Saving a new user")
+            request.fetchPostUser(username: user.username, email: user.email, password: user.password)
+     
+        }
+    }
+
     static func getTestResults() -> PersonalityType? {
         if let int = UserDefaults.standard.object(forKey: "MyResults") as? Int {
             return convertToPersonalityType(intValue: int)
@@ -179,14 +243,12 @@ class PersistenceService {
         }
     }
     
-    static func clearTestResults() {
-        UserDefaults.standard.set(nil, forKey: "MyResults")
-    }
-    
     static func clearUserDefaults() {
         print("cleared user defaults")
         setUserLoggedOut()
-        clearTestResults()
+        UserDefaults.standard.set(nil, forKey: "MyResults")
+        UserDefaults.standard.set(nil, forKey: "Username")
+        UserDefaults.standard.set(nil, forKey: "Email")
         
     }
 

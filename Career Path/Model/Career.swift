@@ -65,7 +65,7 @@ struct Career {
                 }
             }
         }
-        print("Career: \(self.careerName) Suitability: \(suitability) PersonalityType: \(self.personalityType)")
+//        print("Career: \(self.careerName) Suitability: \(suitability) PersonalityType: \(self.personalityType)")
         
         suitabilityBarValue = Float(suitability) / mostSuitable
         isResults = true
