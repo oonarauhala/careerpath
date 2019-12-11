@@ -43,12 +43,10 @@ class RegisterViewController: UIViewController {
     // Checks number of valid fields to enable register button
     func checkFields() {
         if (usernameValidity == true && emailValidity == true && passwordValidity == true) {
-            print("All fields are valid")
             enableRegisterButton()
         }
         else {
             disableButton()
-            print("All fields are not valid")
         }
     }
     
@@ -64,7 +62,9 @@ class RegisterViewController: UIViewController {
     
     // Changes text colour to red
     func red(field: UITextField) {
-        field.textColor = UIColor.red    }
+        field.textColor = UIColor.red
+        
+    }
     
     // Changes text colour to black
     func black(field: UITextField) {
@@ -130,15 +130,12 @@ class RegisterViewController: UIViewController {
         }
         if email.isValid(.email) {
             black(field: emailField)
-            print("Email is valid")
             emailValidity = true
             checkFields()
         }
         else {
             red(field: emailField)
             emailValidity = false
-            
-            print("Not a valid email")
         }
     }
     
@@ -150,11 +147,9 @@ class RegisterViewController: UIViewController {
         }
         if password1.isValid(.password) {
             black(field: passwordField)
-            print("Password is valid")
         }
         else {
             red(field: passwordField)
-            print("Password should be 4-8 characters, numbers or letters")
         }
     }
     
@@ -170,7 +165,6 @@ class RegisterViewController: UIViewController {
         
         if password2.isValid(.password) {
             black(field: password2Field)
-            print("Password2 is valid")
             
             if password1 == password2 {
                 passwordValidity = true
@@ -179,12 +173,10 @@ class RegisterViewController: UIViewController {
             else {
                 passwordValidity = false
                 red(field: password2Field)
-                print("Passwords don't match, sender:a field2")
             }
         }
         else {
             red(field: password2Field)
-            print("Password should be 4-8 characters, numbers or letters")
         }
     }
     
@@ -192,7 +184,6 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButtonTouchUpInside(_ sender: UIButton) {
         
         if registerButton.isEnabled == true {
-            print("Button enabled")
             guard let username1 = usernameField.text else {
                 return
             }

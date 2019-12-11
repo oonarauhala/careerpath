@@ -9,7 +9,6 @@
 import UIKit
 
 // Controller for alerts
-// Made with tutorial found here: https://www.youtube.com/watch?v=NP7H_LjTZGw
 
 class AlertViewController: UIViewController {
     

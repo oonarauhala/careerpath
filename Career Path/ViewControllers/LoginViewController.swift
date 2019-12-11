@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Controller for login view, includes checking for existing usernames
+
 class LoginViewConroller: UIViewController {
     
     // Outlets for fields and button
@@ -28,8 +30,6 @@ class LoginViewConroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        colorSetup(theme: .t9)
-        
-        // Disable login button        loginButton.isEnabled = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,33 +66,7 @@ class LoginViewConroller: UIViewController {
     func disableLoginButton() {
         loginButton.isEnabled = false
     }
-    
-    
-    // Field actions
-    
-    @IBAction func usernameEditingChanged(_ sender: UITextField) {
-        enableLoginButton()
-        if let value = usernameField.text {
-            self.username = value
-            print(self.username)
-        }
 
-        guard let username1 = usernameField.text else {
-            return
-        }
-    }
-    
-    @IBAction func passwordEditingChanged(_ sender: UITextField) {
-        enableLoginButton()
-        if let value = passwordField.text {
-            self.password = value
-            print(self.password)
-        }
-        
-        guard let password1 = passwordField.text else {
-            return
-        }
-    }
     
     // Button action
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -165,6 +139,7 @@ class LoginViewConroller: UIViewController {
         loginButton.setTitleColor(UIColor.testButtonsTitle(theme: colorTheme), for: .normal)
     }
     
+    // Segue to register view
     @IBAction func goToRegister(_ sender: Any) {
         performSegue(withIdentifier: "LoginRegister", sender: self)
     }
