@@ -54,7 +54,7 @@ struct NetworkRequest {
                         print("problem in json serialization")
                         return
                 }
-                print("json is: " + json.description)
+//                print("json is: " + json.description)
                 completion(json)
             }
             catch {

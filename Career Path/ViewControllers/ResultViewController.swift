@@ -40,7 +40,12 @@ class ResultViewController: BaseViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowResults", let destination = segue.destination as? CareerListViewController {
             destination.displayState = .Results
-            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: personalityTest1.definePersonalityType(responses: responses))
+            if PersistenceService.checkUserLoggedIn() {
+                guard let user = PersistenceService.getUserFromDefaults() else { fatalError("User not found from UserDefaults") }
+                destination.results = TestResults(user: user, personalityType: personalityTest1.definePersonalityType(responses: responses))
+            } else {
+                destination.results = TestResults(personalityType: personalityTest1.definePersonalityType(responses: responses))
+            }
             
             saveResultsIfLogged()
         }

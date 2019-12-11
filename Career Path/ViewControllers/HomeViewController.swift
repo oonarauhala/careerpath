@@ -44,8 +44,9 @@ class ViewController: UIViewController {
         }
         if segue.identifier == "IsLogged", let destination = segue.destination as? CareerListViewController {
             guard let personalityType = PersistenceService.getTestResults() else { fatalError("Error defining personality type - HomeViewController") }
+            guard let user = PersistenceService.getUserFromDefaults() else { fatalError("User is not in defaults") }
             destination.displayState = .Results
-            destination.results = TestResults(user: User("asd", "sfsdfasdasd", "password"), personalityType: personalityType)
+            destination.results = TestResults(user: user, personalityType: personalityType)
         }
         if segue.identifier == "NotLogged" {
             print("User not logged in")

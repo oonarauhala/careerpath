@@ -169,18 +169,26 @@ class PersistenceService {
     }
     
     static func checkIfResultsExist() -> Bool {
-        return UserDefaults.standard.bool(forKey: "MyResults")
+        if let results = UserDefaults.standard.object(forKey: "MyResults") as? Int{
+            print(results)
+            return true
+        } else {
+            return false
+        }
     }
     
-    static func getUserFromDefaults() -> User? {
+    static func getUserFromDefaults(needResults: Bool = false) -> User? {
         if checkUserLoggedIn() {
             guard let name = UserDefaults.standard.string(forKey: "Username") else { fatalError("name not stored as string") }
             guard let email = UserDefaults.standard.string(forKey: "Email") else { fatalError("email not stored as string") }
-            guard let results = UserDefaults.standard.object(forKey: "MyResults") as? [Int] else { fatalError("results not stored as [Int]") }
+            let results = UserDefaults.standard.object(forKey: "MyResults") as? Int
             var user = User(name, email, "password")
-            user.testResults = results
+            if let res = results {
+                user.testResults.append(res)
+            }
             return user
-        } else {
+        }
+        else {
             return nil
         }
     }
@@ -207,8 +215,6 @@ class PersistenceService {
                 for object in data {
                     //Check if valid and remove optional
                     if let testUsername = object["storedUsername"] as? String {
-                        print("fetched username: " + String(describing: testUsername))
-                        print("entered username: " + user.username)
                         //Check if entered username matches a username in json.db
                         if testUsername == user.username {
                             if let id = object["id"] as? Int {

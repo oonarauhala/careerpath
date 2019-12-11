@@ -98,14 +98,16 @@ class LoginViewConroller: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         DispatchQueue.global().async {
             if self.userExists() == true {
-                PersistenceService.setUserLoggedIn()
+                DispatchQueue.main.async {
+                    PersistenceService.setUserLoggedIn()
 
-                print("is user logged in: ", (PersistenceService.checkUserLoggedIn()))
-                
-                if self.isFromResults {
-                    self.performSegue(withIdentifier: "LoginResults", sender: self)
-                } else {
-                    self.performSegue(withIdentifier: "LoginHome", sender: self)
+                    print("is user logged in: ", (PersistenceService.checkUserLoggedIn()))
+                    
+                    if self.isFromResults {
+                        self.performSegue(withIdentifier: "LoginResults", sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: "LoginHome", sender: self)
+                    }
                 }
             }
         }
