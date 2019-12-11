@@ -11,8 +11,8 @@ import XCTest
 
 class UserTests: XCTestCase {
 
-    var validPerson = User("John", "Smith", 20)
-    var invalidPerson = User("", "", -1)
+    var validPerson = User("John", "Smith", "password")
+    var invalidPerson = User("", "", "")
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -29,37 +29,37 @@ class UserTests: XCTestCase {
     
     func testName() {
         print("Test name")
-        XCTAssertTrue(validPerson.firstName == "John")
+        XCTAssertTrue(validPerson.username == "John")
     }
     
     func testLastname() {
         print("Test name")
-        XCTAssertTrue(validPerson.lastName == "Smith")
+        XCTAssertTrue(validPerson.email == "Smith")
     }
     
     func testAge(){
         print("Test age")
-        XCTAssertTrue(validPerson.age == 20)
+        XCTAssertTrue(validPerson.password == "password")
     }
     
     func testFirstname2() {
         print("Test name")
-        XCTAssertTrue(invalidPerson.firstName == "Anonymous")
+        XCTAssertTrue(invalidPerson.username == "Anonymous")
     }
     
     func testLastname2() {
         print("Test name")
-        XCTAssertTrue(invalidPerson.lastName == "Anonymous")
+        XCTAssertTrue(invalidPerson.email == "Anonymous")
     }
     
     func testAge2(){
         print("Test age")
-        XCTAssertFalse(invalidPerson.age == -1)
+        XCTAssertFalse(invalidPerson.password == "Anonymous")
     }
     
     func testAge3() {
         print("Test age 3")
-        XCTAssert(invalidPerson.age == 0)
+        XCTAssert(invalidPerson.testResults == [])
     }
 
     func testPerformanceExample() {
