@@ -96,22 +96,24 @@ class LoginViewConroller: UIViewController {
     
     // Button action
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        
-        if userExists() == true {
-            PersistenceService.setUserLoggedIn()
+        DispatchQueue.global().async {
+            if self.userExists() == true {
+                PersistenceService.setUserLoggedIn()
 
-            print("is user logged in: ", (PersistenceService.checkUserLoggedIn()))
-            
-            if isFromResults {
-                performSegue(withIdentifier: "LoginResults", sender: self)
-            } else {
-                performSegue(withIdentifier: "LoginHome", sender: self)
+                print("is user logged in: ", (PersistenceService.checkUserLoggedIn()))
+                
+                if self.isFromResults {
+                    self.performSegue(withIdentifier: "LoginResults", sender: self)
+                } else {
+                    self.performSegue(withIdentifier: "LoginHome", sender: self)
+                }
             }
         }
     }
     
     func userExists() -> Bool {
         var isUser = false
+        
         let group = DispatchGroup()
         //group is used to control flow so that final return waits for fetchGetUsers loop to complete
         group.enter()

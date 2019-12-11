@@ -82,35 +82,38 @@ class RegisterViewController: UIViewController {
         if username.isValid(.username) {
 
             var usernameTaken = false
-            let group = DispatchGroup()
-            //group is used to control flow so that final return waits for fetchGetUsers loop to complete
-            group.enter()
-            NetworkRequest().fetchGetUsers{data in
-                //Iterate through json user objects
-                for object in data {
-                    //Check if valid and remove optional
-                    if let testUsername = object["storedUsername"] {
-                        print("fetched username: " + String(describing: testUsername))
-                        print("entered username: " + username)
-                        //Check if entered username matches a username in json.db
-                        if String(describing: testUsername) == username {
-                            usernameTaken = true
-                            print("Username taken, try another one")
-                            break
+            
+            DispatchQueue.global().async {
+                let group = DispatchGroup()
+                //group is used to control flow so that final return waits for fetchGetUsers loop to complete
+                group.enter()
+                NetworkRequest().fetchGetUsers{data in
+                    //Iterate through json user objects
+                    for object in data {
+                        //Check if valid and remove optional
+                        if let testUsername = object["storedUsername"] {
+                            print("fetched username: " + String(describing: testUsername))
+                            print("entered username: " + username)
+                            //Check if entered username matches a username in json.db
+                            if String(describing: testUsername) == username {
+                                usernameTaken = true
+                                print("Username taken, try another one")
+                                break
+                            }
                         }
                     }
+                    group.leave()
                 }
-                group.leave()
-            }
-            
-            group.wait()
-            if usernameTaken == true {
-                usernameValidity = false
-            }
-            else {
-                print("Username is valid")
-                usernameValidity = true
-                checkFields()
+                
+                group.wait()
+                if usernameTaken == true {
+                    self.usernameValidity = false
+                }
+                else {
+                    print("Username is valid")
+                    self.usernameValidity = true
+                    self.checkFields()
+                }
             }
         }
         else {
