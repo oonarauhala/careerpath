@@ -27,38 +27,38 @@ class UserTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
-    func testName() {
-        print("Test name")
+    func testUsername() {
+        print("Test username")
         XCTAssertTrue(validPerson.username == "John")
     }
     
-    func testLastname() {
-        print("Test name")
+    func testEmail() {
+        print("Test email")
         XCTAssertTrue(validPerson.email == "Smith")
     }
     
-    func testAge(){
-        print("Test age")
+    func testPassword(){
+        print("Test password")
         XCTAssertTrue(validPerson.password == "password")
     }
     
-    func testFirstname2() {
-        print("Test name")
+    func testUsername2() {
+        print("Test username")
         XCTAssertTrue(invalidPerson.username == "Anonymous")
     }
     
-    func testLastname2() {
-        print("Test name")
+    func testEmail2() {
+        print("Test email")
         XCTAssertTrue(invalidPerson.email == "Anonymous")
     }
     
-    func testAge2(){
-        print("Test age")
-        XCTAssertFalse(invalidPerson.password == "Anonymous")
+    func testPassword2(){
+        print("Test password")
+        XCTAssertFalse(invalidPerson.password == "")
     }
     
-    func testAge3() {
-        print("Test age 3")
+    func testEmptyArray() {
+        print("Test array 1")
         XCTAssert(invalidPerson.testResults == [])
     }
 
