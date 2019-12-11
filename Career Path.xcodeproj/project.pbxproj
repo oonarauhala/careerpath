@@ -27,12 +27,13 @@
 		6A0E5D87238536170057612D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0E5D85238536170057612D /* LaunchScreen.storyboard */; };
 		6A0E5D92238536170057612D /* Career_PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D91238536170057612D /* Career_PathTests.swift */; };
 		6A0E5D9D238536170057612D /* Career_PathUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0E5D9C238536170057612D /* Career_PathUITests.swift */; };
+		6A19BCB323A1151300395DBC /* CareerSuitability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A19BCB223A1151300395DBC /* CareerSuitability.swift */; };
+		6A19BCB723A1236300395DBC /* PersonalityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC62BE72386E66100826AA7 /* PersonalityType.swift */; };
+		6A19BCB823A1237F00395DBC /* PersonalityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC62BE82386E66100826AA7 /* PersonalityTest.swift */; };
 		6A3A3CCB239AF83E000055D3 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3A3CCA239AF83E000055D3 /* DesignView.swift */; };
 		6A88E3B3239E9EEC006572B3 /* PersonalityTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88E3B2239E9EEC006572B3 /* PersonalityTypeTests.swift */; };
-		6A88E3C5239EAC3E006572B3 /* PersonalityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC62BE72386E66100826AA7 /* PersonalityType.swift */; };
 		6A88E3CF239EB378006572B3 /* MenuItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88E3CE239EB378006572B3 /* MenuItemTests.swift */; };
 		6A88E3D1239FF34B006572B3 /* TestResultsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88E3D0239FF34A006572B3 /* TestResultsTest.swift */; };
-		6A88E3D523A0E867006572B3 /* CareerSuitability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A88E3D423A0E867006572B3 /* CareerSuitability.swift */; };
 		6A8DAACB2397ACF400DD8BDA /* ColorThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8DAACA2397ACF400DD8BDA /* ColorThemes.swift */; };
 		6A906AFA2393E984004D98D9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A906AF92393E984004D98D9 /* MenuViewController.swift */; };
 		6A906AFC2393EB8D004D98D9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A906AFB2393EB8D004D98D9 /* BaseViewController.swift */; };
@@ -115,11 +116,11 @@
 		6A0E5D98238536170057612D /* Career PathUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Career PathUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0E5D9C238536170057612D /* Career_PathUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career_PathUITests.swift; sourceTree = "<group>"; };
 		6A0E5D9E238536170057612D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A19BCB223A1151300395DBC /* CareerSuitability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerSuitability.swift; sourceTree = "<group>"; };
 		6A3A3CCA239AF83E000055D3 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
 		6A88E3B2239E9EEC006572B3 /* PersonalityTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityTypeTests.swift; sourceTree = "<group>"; };
 		6A88E3CE239EB378006572B3 /* MenuItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTests.swift; sourceTree = "<group>"; };
 		6A88E3D0239FF34A006572B3 /* TestResultsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultsTest.swift; sourceTree = "<group>"; };
-		6A88E3D423A0E867006572B3 /* CareerSuitability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareerSuitability.swift; sourceTree = "<group>"; };
 		6A8DAACA2397ACF400DD8BDA /* ColorThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemes.swift; sourceTree = "<group>"; };
 		6A906AF92393E984004D98D9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6A906AFB2393EB8D004D98D9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -268,7 +269,7 @@
 		6ACDD117238A96470016B6BD /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				6A88E3D423A0E867006572B3 /* CareerSuitability.swift */,
+				6A19BCB223A1151300395DBC /* CareerSuitability.swift */,
 				6A906AFD2393F7EF004D98D9 /* MenuTableViewCell.swift */,
 				6A0A7B7D238F1E7F00497DEC /* CareerListCell.xib */,
 				6AC62BEA2386E66100826AA7 /* RoundButton.swift */,
@@ -514,7 +515,7 @@
 				6AB78C372395332B001E2B45 /* TestResults.swift in Sources */,
 				6ACDD110238A917D0016B6BD /* CareerResponse.swift in Sources */,
 				6A94B1402392C18B00043001 /* DisplayState.swift in Sources */,
-				6A88E3D523A0E867006572B3 /* CareerSuitability.swift in Sources */,
+				6A19BCB323A1151300395DBC /* CareerSuitability.swift in Sources */,
 				6A0A7B7A238F1E6B00497DEC /* AlertService.swift in Sources */,
 				6AC62BF32386E66100826AA7 /* CareerInfoViewController.swift in Sources */,
 				6A906AFA2393E984004D98D9 /* MenuViewController.swift in Sources */,
@@ -532,9 +533,10 @@
 			files = (
 				6A88E3CF239EB378006572B3 /* MenuItemTests.swift in Sources */,
 				6AB2A41E2389863A003E2E0C /* UserTests.swift in Sources */,
+				6A19BCB823A1237F00395DBC /* PersonalityTest.swift in Sources */,
 				6A88E3D1239FF34B006572B3 /* TestResultsTest.swift in Sources */,
-				6A88E3C5239EAC3E006572B3 /* PersonalityType.swift in Sources */,
 				6AB2A4202389EF15003E2E0C /* DegreeTests.swift in Sources */,
+				6A19BCB723A1236300395DBC /* PersonalityType.swift in Sources */,
 				6A88E3B3239E9EEC006572B3 /* PersonalityTypeTests.swift in Sources */,
 				6AB2A4222389EF5A003E2E0C /* PersonalityTest_Tests.swift in Sources */,
 				6A0E5D92238536170057612D /* Career_PathTests.swift in Sources */,
