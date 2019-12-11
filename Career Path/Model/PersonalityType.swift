@@ -6,6 +6,8 @@
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
+// Personality type model, includes a description for each model
+
 enum PersonalityType : String {
     case
     ISTJ = "ISTJ: Introverted, Sensing, Thinking, Judging",

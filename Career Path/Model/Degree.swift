@@ -6,6 +6,8 @@
 //  Copyright © 2019 Team Awesome. All rights reserved.
 //
 
+// Degree model, includes degree info
+
 enum Degree : String, CaseIterable {
     case Doctorate = "Doctor's degree"
     case Master = "Master's degree"

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Model for menu item
 
 class Item {
     

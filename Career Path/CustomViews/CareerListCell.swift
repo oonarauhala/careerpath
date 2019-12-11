@@ -10,14 +10,12 @@ import UIKit
 
 class CareerListCell: UITableViewCell {
     
-    // new
     let suitabilityBar = CareerSuitability(frame: .zero)
     
     @IBOutlet weak var degree: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var salary: UILabel!
     @IBOutlet weak var img: UIImageView!
-    // new
     @IBOutlet weak var infoStackView: UIStackView!
     
     override func awakeFromNib() {
@@ -47,12 +45,9 @@ class CareerListCell: UITableViewCell {
         degree.textColor = UIColor.careerCellDegreeText(theme: theme)
         salary.textColor = UIColor.careerCellSalaryText(theme: theme)
         self.backgroundColor = UIColor.careerCellBackground(theme: theme)
-//        cell.layer.cornerRadius = 50
-//        cell.layer.masksToBounds = true
         
     }
     
-    // new
     func addSuitabilityBar(progress: Float) {
         // Adds a progress bar under the name label
         infoStackView.insertArrangedSubview(suitabilityBar, at: 1)

@@ -64,10 +64,6 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
         cell.salaryLabel.text = "Salary"
         cell.degreeLabel.text = "Degree"
         cell.setStyles(theme: colorTheme, cell: cell)
-        /*
-        cell.layer.borderColor = UIColor.white.cgColor
-        cell.layer.borderWidth = 3
-        */
         return cell
     }
     
@@ -125,23 +121,7 @@ class ProfileViewController: BaseViewController, UIImagePickerControllerDelegate
     }
     
     
-    
     //location - is it necessary?
-    
     func loadUserInfo() {
-        
-        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

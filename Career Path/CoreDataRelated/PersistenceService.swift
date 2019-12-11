@@ -262,5 +262,4 @@ class PersistenceService {
         UserDefaults.standard.set(nil, forKey: "Email")
         
     }
-
 }

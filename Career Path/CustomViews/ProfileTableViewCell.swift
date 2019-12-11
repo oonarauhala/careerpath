@@ -39,5 +39,4 @@ class ProfileTableViewCell: UITableViewCell {
         self.backgroundColor = UIColor.careerCellBackground(theme: theme)
        
     }
-
 }

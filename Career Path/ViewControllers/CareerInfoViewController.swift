@@ -79,23 +79,8 @@ class CareerInfoViewController: UIViewController {
         careerImg.image = careerImage
         //career_name_label
         careerNameLabel.text = careerUnwrapped.careerName
-        
-        //Katja
-        //text to image
-        //careerImg.image = textToImage(drawText: careerUnwrapped.careerName, inImage: careerImage, atPoint: CGPoint(x:145, y:600))
-        /*
-        let coverLayer = CALayer()
-        coverLayer.frame = careerImg.bounds
-        coverLayer.backgroundColor = UIColor.black.cgColor
-        coverLayer.opacity = 0.3
-        careerImg.layer.addSublayer(coverLayer)
-      */
-        //Katja
-        
         descriptionLabelSetup(c: careerUnwrapped)
         educationLabelSetup(c: careerUnwrapped)
-        
-    
     }
     
     func descriptionLabelSetup(c: Career) {

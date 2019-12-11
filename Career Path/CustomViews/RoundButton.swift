@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Round button class
+
 @IBDesignable class RoundButton: UIButton {
     
     override init(frame: CGRect) {
@@ -113,7 +115,5 @@ import UIKit
             }
         }
     }
-    
-    
 }
 

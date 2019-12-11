@@ -8,6 +8,8 @@
 
 import Foundation
 
+// User model
+
 struct User: Codable {
     
     private  let storedUsername: String
