@@ -231,8 +231,9 @@ class CareerListViewController: BaseViewController {
     // Saves the test results when the user is logged in
     private func saveData() {
         if displayState == .Results {
-            guard let res = results else { fatalError("no results found") }
+            guard var res = results else { fatalError("no results found") }
             PersistenceService.saveUserToDefaults(username: res.user.username, email: res.user.email, results: res.personalityType.convertToInt())
+            res.user.testResults.append(res.personalityType.convertToInt())
             // saves a new user or updates an existing one
             PersistenceService.saveUserToBackEnd(user: res.user)
         }

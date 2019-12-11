@@ -398,15 +398,19 @@
     {
       "storedUsername": "asdasd",
       "storedPassword": "asdasd",
-      "storedEmail": "ad@asd.com",
-      "testResults": [],
+      "storedEmail": "asdasd@asd.asd",
+      "testResults": [
+        6
+      ],
       "id": 9
     },
     {
       "storedUsername": "asd",
       "storedPassword": "password",
       "storedEmail": "sfsdfasdasd",
-      "testResults": [],
+      "testResults": [
+        2
+      ],
       "id": 10
     }
   ]

@@ -197,6 +197,7 @@ class PersistenceService {
         var userID: Int?
         let group = DispatchGroup()
         let request = NetworkRequest()
+        print("user results", user.testResults)
         //group is used to control flow so that final return waits for fetchGetUsers loop to complete
         group.enter()
         request.fetchGetUsers{data in

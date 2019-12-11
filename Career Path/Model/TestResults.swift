@@ -7,7 +7,7 @@
 //
 
 struct TestResults {
-    let user: User
+    var user: User
     let personalityType: PersonalityType
     // implement keywords to provide a more
     // detailed display of careers if time
